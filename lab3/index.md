@@ -1,3 +1,8 @@
+---
+title: Lab 3
+layout: default
+---
+
 # Lab #3: Coding up the mood ring
 
 ## Part 1: Multiple Timers, Program Structure
