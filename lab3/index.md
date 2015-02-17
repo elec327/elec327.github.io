@@ -1,7 +1,7 @@
 ---
 title: Lab 3
 layout: default
-group: navigation
+group: labs-navigation
 ---
 
 # Lab #3: Coding up the mood ring
