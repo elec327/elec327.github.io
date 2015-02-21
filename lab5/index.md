@@ -19,7 +19,8 @@ headers to the 6 pins so that you can plug the breakout board into a solderless 
 make sure the pins are parallel it can help to hold it in the breadboard while soldering.
 **Caution:** if you apply too much heat you'll melt your breadboard!
 
-![APA102 soldered onto breakout board](/assets/images/APA102C_5050Breakout.jpg "Breakout Board")
+<img src="/assets/images/APA102C_5050Breakout.jpg" alt="APA102 soldered onto breakout board"
+width="200">
 
 #### Part 1: SPI control
 
