@@ -14,13 +14,19 @@ communications that will be the foundation of the Simon game._
 
 #### Part 0: Solder a APA102C SPI-controlled RGB LED to a breakout board
 
+<div class="row">
+<div class="col-md-3">
+<a href="/assets/images/APA102C_5050Breakout.jpg" class="thumbnail">
+<img src="/assets/images/APA102C_5050Breakout.jpg" alt="APA102 soldered onto breakout
+board"></a>
+</div>
+<div class="col-md-9">
 Solder one of the SPI-controlled LEDs to a "5050" breakout board. Additionally, solder pin
 headers to the 6 pins so that you can plug the breakout board into a solderless breadboard. To
 make sure the pins are parallel it can help to hold it in the breadboard while soldering.
 **Caution:** if you apply too much heat you'll melt your breadboard!
-
-<img src="/assets/images/APA102C_5050Breakout.jpg" alt="APA102 soldered onto breakout board"
-width="200">
+</div>
+</div>
 
 #### Part 1: SPI control
 
