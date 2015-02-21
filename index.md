@@ -1,49 +1,73 @@
 ---
-layout: jumbo
+layout: home
+browser_title: ELEC327
 title: Home
 group: navigation
-jumbotron_content: |
-  <H1>ELEC 327 - Digital Systems Laboratory</H1>
-  <H2>Spring 2015</H2>
-  <br>
-  One of the most critical aspects of modern computer systems involves interfacing with the
-  world. This course will focus on how power-efficient embedded systems are built. Students
-  should learn the fundamentals of embedded system programming and feel competent to design,
-  build, and manufacture their own embedded devices. Furthermore, students should understand how
-  embedded systems interface with external peripheral devices. Finally, students should
-  understand how application-specific blocks enable modern commercial devices.
 ---
 
-### Instructor -- Caleb Kemere (caleb.kemere@rice.edu)
+{::options parse_block_html="true" /}
 
-### Location -- AL121/AL124
+<H2>ELEC 327 - Digital Systems Laboratory (2015)</H2>
 
-### Time -- Tuesdays/Thursdays 9:25-10:40 AM
+---
 
-### Prerequisites -- ELEC220
+_One of the most critical aspects of modern computer systems involves interfacing with the
+world. This course will focus on how power-efficient embedded systems are built. Students
+should learn the fundamentals of embedded system programming and feel competent to design,
+build, and manufacture their own embedded devices. Furthermore, students should understand
+how embedded systems interface with external peripheral devices. Finally, students should
+understand how application-specific blocks enable modern commercial devices._
 
-### Syllabus
+---
 
-### Github repository
+<div class="row">
 
-### Useful links
-  + [MSP430 Launchpad Wiki]()
-  + [MSP430G2553 Datasheet]()
-  + [MSP430x2xx User Guide]()
-  + MSP430 Workshop Lab Code [zip file]()
+<div class="col-md-6">
 
-### Labs
-<ul>
-  {% assign pages_list= site.pages %}
+**Instructor** -- Caleb Kemere (caleb.kemere@rice.edu)
+
+**Location** -- AL121/AL124
+
+**Time** -- Tuesdays/Thursdays 9:25-10:40 AM
+
+**Prerequisites** -- ELEC220
+
+**Syllabus** -- [here](/syllabus.html)
+
+**Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/yggyhiygghjhhi5/AAA-APbF8HEdlO-HLU_8oJrya)
+
+
+**Github repository** - [https://github.com/elec327](https://github.com/elec327)
+
+**Useful links**
+
+  + [MSP430 Launchpad Wiki](http://processors.wiki.ti.com/index.php/MSP430_LaunchPad_(MSP-EXP430G2))
+  + [MSP430G2553 Datasheet](assets/documents/msp430g2553.pdf)
+  + [MSP430x2xx User Guide](assets/documents/slau144j_userguide.pdf)
+  + MSP430 Workshop Lab Code [zip file](assets/documents/MSP430WorkshopLabs.zip)
+
+
+**Previous versions of the class**
+
+  + [2013](http://dsp.rice.edu/elec327-2013)
+  + [2014](http://dsp.rice.edu/elec327-2014)
+
+
+</div>
+
+<div class="col-md-6">
+
+<table class="table table-bordered">
+<thead>
+  <tr><th>Labs</th><th>Description</th></tr>
+</thead>
+<tbody>
+  {% assign pages_list= site.pages  | sort: 'title' %}
   {% assign group = 'labs-navigation' %}
-  {% include JB/pages_list %}
-</ul>
+  {% include pages_table %}
+</tbody>
+</table>
 
-### [Lectures]()
-
-### Previous versions of the class
-  + [2013]()
-  + [2014]()
-
-
+</div>
+</div>
 
