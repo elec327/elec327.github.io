@@ -15,20 +15,27 @@ The game ["Simon"](https://en.wikipedia.org/wiki/Simon_(game)) is a classic toy 
 working memory of the player. In this lab, you will design the PCB for your implementation of
 Simon and work on the code to process button presses. 
 
-4 buttons
-4 APA102 SPI RGB LEDs
-(probably either in a row or in a circle)
-Power switch
-AAA battery pack
-Piezo buzzer
+Parts:
+- 4 buttons with 1206 capacitors in parallel
+- 4 APA102 SPI RGB LEDs (probably either in a row or in a circle)
+- Power switch
+- AAA battery pack
+- Piezo buzzer (wired up for PWM - see Part 2)
 
+#### Part 2: Playing tones via PWM
 
-#### Part 2: Software Debouncing
+Wire a piezo buzzer between to 2 PWM-capable pins. By connecting the device in this manner and
+enabling one or both channels, the volume of the sound can be changed. Write code that plays a
+standard octave scale starting from middle C (261 Hz). Each note should be 1 second long with a
+1 second pause in between. The scale should then repeat. Every other scale should be a higher
+volume.
+
+#### Part 3: Software Debouncing
 
 Two buttons which must be pressed in the pattern 1, 2, 1, 1, 2, 2. The LED should get
-progressively brighter as pattern is entered faster and faster. If pattern is entered
-incorrectly, LED should go off. Reset by holding both buttons simultaneously for 2 s, which
-causes LED to flash.
+progressively brighter and the tone progressively higher frequency as pattern is entered faster
+and faster. If pattern is entered incorrectly, LED should go off. Reset by holding both buttons
+simultaneously for 2 s, which causes LED to flash.
 
 **Save this code as `debounce.c`. Create a demo video that shows you playing and then resetting
 and playing again. Upload your answered questions, code and the video URL to owlspace.**
