@@ -32,8 +32,15 @@ be played for 1 second. The scale should then repeat. Every other scale should b
 volume. Here is some sample code to get you going:
 
 <pre><code>
+/* 
+   ELEC327 Lab 6 Buzzer Example Code.
+   Drive a piezo buzzer connected between ground and Pin 1.2.
+   Plays a major C chord.
+*/
+
 #include "msp430g2553.h"
 
+// Notes for a major C chord
 int periods[] = {1000000/261.63, 
    1000000/329.63,
    1000000/392.00,
