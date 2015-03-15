@@ -24,17 +24,24 @@ Parts:
 
 #### Part 2: Playing tones via PWM
 
-Wire a piezo buzzer between to 2 PWM-capable pins. By connecting the device in this manner and
-enabling one or both channels, the volume of the sound can be changed. Write code that plays a
-standard 8-note octave scale (or different pattern if you choose) starting from middle C (see
-[Wikipedia table](https://en.wikipedia.org/wiki/Scientific_pitch_notation)). Each note should
-be played for 1 second. The scale should then repeat. Every other scale should be a higher
-volume. Sample code to get you going is in [piezo_sample.c](lab6/piezosample.c).
+<p class="text-success">
+*While you don't need to turn in the code for this part, I still recommend you do it! The sample
+uses the TimerA1 module for PWM and the watchdog timer as a "tick" generator, which is probably
+a good framework.*
+</p>
+
+Before implementing the full code for this lab, you should start by getting the sound aspect
+set up. Wire a piezo buzzer between to 2 PWM-capable pins. By connecting the device in this
+manner and enabling one or both channels, the volume of the sound can be changed. Write code
+that plays a standard 8-note octave scale (or different pattern if you choose) starting from
+middle C (see [Wikipedia table](https://en.wikipedia.org/wiki/Scientific_pitch_notation)). Each
+note should be played for 1 second. The scale should then repeat. Every other scale should be a
+higher volume. Sample code to get you going is in [piezo_sample.c](lab6/piezosample.c).
 
 
 #### Part 3: Software Debouncing
 
-Two buttons which must be pressed in the pattern 1, 2, 1, 1, 2, 2. The LED should get
+For the full Two buttons which must be pressed in the pattern 1, 2, 1, 1, 2, 2. The LED should get
 progressively brighter and the tone progressively higher frequency as pattern is entered faster
 and faster. If pattern is entered incorrectly, LED should go off. Reset by holding both buttons
 simultaneously for 2 s, which causes LED to flash.
