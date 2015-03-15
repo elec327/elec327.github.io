@@ -31,6 +31,7 @@ standard 8-note octave scale (or different pattern if you choose) starting from 
 be played for 1 second. The scale should then repeat. Every other scale should be a higher
 volume. Here is some sample code to get you going:
 
+<pre>
 <code>
 int periods[] = {1000000/261.63, 
    1000000/329.63,
@@ -70,6 +71,7 @@ __interrupt void watchdog_timer(void)
 }
 
 </code>
+</pre>
 
 #### Part 3: Software Debouncing
 
