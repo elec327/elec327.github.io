@@ -36,7 +36,7 @@ manner and enabling one or both channels, the volume of the sound can be changed
 that plays a standard 8-note octave scale (or different pattern if you choose) starting from
 middle C (see [Wikipedia table](https://en.wikipedia.org/wiki/Scientific_pitch_notation)). Each
 note should be played for 1 second. The scale should then repeat. Every other scale should be a
-higher volume. Sample code to get you going is in [piezo_sample.c](piezosample.c).
+higher volume. Sample code to get you going is in [piezo_sample.c](piezo_sample.c).
 
 
 #### Part 3: Software Debouncing
