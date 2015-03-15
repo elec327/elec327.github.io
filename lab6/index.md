@@ -31,8 +31,9 @@ standard 8-note octave scale (or different pattern if you choose) starting from 
 be played for 1 second. The scale should then repeat. Every other scale should be a higher
 volume. Here is some sample code to get you going:
 
-<pre>
-<code>
+<pre><code>
+#include "msp430g2553.h"
+
 int periods[] = {1000000/261.63, 
    1000000/329.63,
    1000000/392.00,
@@ -48,7 +49,6 @@ void main(void){
   BCSCTL1 = CALBC1_1MHZ; // Set the DCO to 1 MHz
   DCOCTL = CALDCO_1MHZ; // And load calibration data
 
-  P1OUT = 0;
   P1DIR |= BIT2; //
   P1SEL |= BIT2; // BIT2 is TA0.1 PWM output  
   
@@ -69,9 +69,7 @@ __interrupt void watchdog_timer(void)
   CCR1 = periods[which_period]>>2;
   CCR0 = periods[which_period];
 }
-
-</code>
-</pre>
+</code></pre>
 
 #### Part 3: Software Debouncing
 
