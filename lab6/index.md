@@ -31,7 +31,7 @@ standard 8-note octave scale (or different pattern if you choose) starting from 
 be played for 1 second. The scale should then repeat. Every other scale should be a higher
 volume. Here is some sample code to get you going:
 
-<pre><code>
+```C
 /* 
    ELEC327 Lab 6 Buzzer Example Code.
    Drive a piezo buzzer connected between ground and Pin 1.2.
@@ -76,7 +76,7 @@ __interrupt void watchdog_timer(void)
   CCR1 = periods[which_period]>>2;
   CCR0 = periods[which_period];
 }
-</code></pre>
+```
 
 #### Part 3: Software Debouncing
 
