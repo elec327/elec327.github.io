@@ -47,13 +47,16 @@ switches provided to you in class are reasonable, but still bounce noticeably.
 Humans can control their fingers on timescales of hundreds of milliseconds. In the final
 portion of this lab, you will build a system which trains you to tap your fingers as fast as
 possible in a particular pattern. Wire two buttons on your breadboard to your MSP430. You will
-learn to press them in the pattern 1, 2, 1, 1, 2, 2. The system will mark your progress with an
+learn to press them in the pattern **1, 2, 1, 1, 2, 2**. The system will mark your progress with an
 LED and a tone-playing buzzer.  The LED should get progressively brighter and the tone
-progressively higher frequency as pattern is entered faster and faster. If pattern is entered
+progressively higher frequency as pattern is entered faster and faster. You should choose the
+values such that they are noticable and there are at least **8 levels**. If pattern is entered
 incorrectly, LED and sound should go off.  At any time, you should be able to reset the
 training by holding both buttons simultaneously for 2 s. Resetting should cause the LED to flash.
 
 **Save this code as `debounce.c`. Create a demo video that shows you playing and then resetting
 and playing again. Upload your answered questions, code and the video URL to owlspace.**
 
+**Bonus:** Implement a system in which doing something (entering the reset pattern twice?)
+causes the system to enter a "programming" mode, in which the pattern can be changed.
 
