@@ -24,10 +24,10 @@ Parts:
 
 #### Part 2: Playing tones via PWM
 
-<p class="text-success">
-*While you don't need to turn in the code for this part, I still recommend you do it! The sample
+<p class="bg-success">
+While you don't need to turn in the code for this part, I still recommend you do it! The sample
 uses the TimerA1 module for PWM and the watchdog timer as a "tick" generator, which is probably
-a good framework.*
+a good framework.
 </p>
 
 Before implementing the full code for this lab, you should start by getting the sound aspect
@@ -36,13 +36,13 @@ manner and enabling one or both channels, the volume of the sound can be changed
 that plays a standard 8-note octave scale (or different pattern if you choose) starting from
 middle C (see [Wikipedia table](https://en.wikipedia.org/wiki/Scientific_pitch_notation)). Each
 note should be played for 1 second. The scale should then repeat. Every other scale should be a
-higher volume. Sample code to get you going is in [piezo_sample.c](lab6/piezosample.c).
+higher volume. Sample code to get you going is in [piezo_sample.c](piezosample.c).
 
 
 #### Part 3: Software Debouncing
 
-The point of this portion of the lab is to implement switch debouncing in software. The
-switches provided to you in class are reasonable, but still bounce noticeably.
+*The point of this portion of the lab is to implement switch debouncing in software. The
+switches provided to you in class are reasonable, but still bounce noticeably.*
 
 Humans can control their fingers on timescales of hundreds of milliseconds. In the final
 portion of this lab, you will build a system which trains you to tap your fingers as fast as
