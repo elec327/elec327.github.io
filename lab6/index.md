@@ -22,6 +22,10 @@ Parts:
 - AAA battery pack
 - Piezo buzzer (wired up for PWM - see Part 2)
 
+Here's a video from Vitor Azevedo Andriotti (Spring 2015) showing a Simon board in action.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nrsBVdJFrKc" frameborder="0" allowfullscreen></iframe>
+
+
 #### Part 2: Playing tones via PWM
 
 <p class="bg-success">
