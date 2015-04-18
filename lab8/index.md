@@ -76,6 +76,8 @@ MSP430 and by reading the data sheets for the two other integrated circuits, the
 digital to analog converter (DS4432)](DS4432.pdf) and the [digitally-controlled switch
 (TS3A4751)](TS3A4751.pdf).
 
+![DBS Schematic](DBSSchematic.png)
+
 The goal of the IPG is to deliver biphasic current pulses (with each phase 60 μs in duration)
 with a programmable frequency and current amplitude. The   Outline the structure of code that would 
 
