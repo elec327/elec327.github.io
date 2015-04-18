@@ -22,18 +22,15 @@ embedded system which must be both small and ulta-low power. The goal of this la
 learn more about devices which interface with the nervous system and to consider the design of
 an IPG.
 
-
-#### Deep Brain Stimulator module
-
-#### Questions
+#### Exercises
 <ol class="questions">
 <li>
-Read this [IEEE Spectrum article from 2006](Moore2006.pdf). What are two stimulation therapies
+Read this <a href="Moore2006.pdf">IEEE Spectrum article from 2006</a>. What are two stimulation therapies
 that are FDA approved for treating depression. What are two other therapies that are being
 tested for efficacy in depressed patients (as of 2006 - note that AFAIK, these tests are
 on-going).</li>
 <li>
-To treat seizures, Company A and Company B both have systems which control stimulation in
+Read this IEEE To treat seizures, Company A and Company B both have systems which control stimulation in
 "closed loop", i.e., in response to some detected signature. Assume the Company A system is
 measuring variability in heartrate, and the Company B system is measuring the spectral power in
 a "local field potential" rhythm with a center frequency of ~30 Hz. Which system do you think
