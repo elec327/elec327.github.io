@@ -16,11 +16,16 @@ working memory of the player. In this lab, you will design the PCB for your impl
 Simon and work on the code to process button presses. 
 
 Parts:
-- 4 buttons with 1206 capacitors in parallel
-- 4 APA102 SPI RGB LEDs (probably either in a row or in a circle)
-- Power switch
-- AAA battery pack
-- Piezo buzzer (wired up for PWM - see Part 2)
+  + 4 buttons with 1206 capacitors in parallel
+  + 4 APA102 SPI RGB LEDs (probably either in a row or in a circle)
+  + Power switch
+  + AAA battery pack
+  + Piezo buzzer (wired up for PWM - see Part 2)
+
+Here's a video from Vitor Azevedo Andriotti (Spring 2015) showing a Simon board in action.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nrsBVdJFrKc" frameborder="0" allowfullscreen></iframe>
+
 
 #### Part 2: Playing tones via PWM
 
