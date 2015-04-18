@@ -100,9 +100,8 @@ For the second part of the lab, in about 2/3rds of a page,
 </ol>
 
 
-**Upload your answered questions and design study to owlspace.**
-
-**For up to 20 bonus points, give suggestions for other good questions to ask (include answers!)
-and/or other ways this assignment could be made more interesting.**
+**Upload your answered questions and design study to owlspace.  For up to 20 bonus points, give
+suggestions for other good questions to ask (include answers!) and/or other ways this
+assignment could be made more interesting.**
 
 
