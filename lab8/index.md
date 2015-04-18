@@ -29,8 +29,8 @@ power. The goal of this lab is for you to learn more about devices which interfa
 nervous system and to consider the design of an IPG.
 
 If you are interested in learning more about DBS, a good review is [Oluigbo et al, _IEEE
-Reviews in Bioengineering_ 2012](Oluigbo2012.pdf]. If you are interested in learning more about
-the mechanisms of DBS in Parkinson's disease, a good review is [Johnson el al,
+Reviews in Bioengineering_ 2012][Oluigbo2012.pdf]. If you are interested in learning more about
+the mechanisms of DBS in Parkinson's disease, a good review is [Johnson et al,
 _NeuroTherapeutics_ 2008](Johnson2008.pdf).
 </div>
 </div>
@@ -67,6 +67,17 @@ for a Kinetra stimulator set to 5 mA stimulation and 60 us pulse widths (continu
 stimulation)?
 </li>
 </ol>
+
+#### Design Study (40 pts)
+
+Below is the schematic for a simple MSP430-based system for delivering constant-current
+stimulation (i.e., an IPG). Your task is to evaluate the design using your knowledge of the
+MSP430 and by reading the data sheets for the two other integrated circuits, the [current-mode
+digital to analog converter (DS4432)](DS4432.pdf) and the [digitally-controlled switch
+(TS3A4751)](TS3A4751.pdf).
+
+The goal of the IPG is to deliver biphasic current pulses (with each phase 60 μs in duration)
+with a programmable frequency and current amplitude. The   Outline the structure of code that would 
 
 **Upload your answered questionsto owlspace.**
 
