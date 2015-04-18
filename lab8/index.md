@@ -88,13 +88,15 @@ requires to turn on is equivalent to the amount of time it takes to transmit the
 commmands. In addition, assume you are running with a 3V battery.
 
 For the second part of the lab, in about 2/3rds of a page,
-  - Outline the structure of code that would create the desired stimulation pattern, including
+<ul class="questions">
+<li>Outline the structure of code that would create the desired stimulation pattern, including
     if/when the MSP430 would be in low power mode, when/how the switch matrix is activated, and
-    when/how the current generator is configured. (30 pts)
-  - Summarize the average power consumption of your design by adding up power for each of the 3
+    when/how the current generator is configured. **(30 pts)** </li>
+<li>Summarize the average power consumption of your design by adding up power for each of the 3
     devices (with time spent in relevant power modes for the MSP430). What size battery (in mA
-    hours) would you need to run for 1 year? (30 pts)
-  - Could you change the circuit to lower the power consumption? (10 pts)
+    hours) would you need to run for 1 year? **(30 pts)** </li>
+<li>Could you change the circuit to lower the power consumption? **(10 pts)**</li>
+</ul>
 
 
 **Upload your answered questions and design study to owlspace.**
