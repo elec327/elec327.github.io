@@ -29,7 +29,7 @@ power. The goal of this lab is for you to learn more about devices which interfa
 nervous system and to consider the design of an IPG.
 
 If you are interested in learning more about DBS, a good review is [Oluigbo et al, _IEEE
-Reviews in Bioengineering_ 2012][Oluigbo2012.pdf]. If you are interested in learning more about
+Reviews in Bioengineering_ 2012](Oluigbo2012.pdf). If you are interested in learning more about
 the mechanisms of DBS in Parkinson's disease, a good review is [Johnson et al,
 _NeuroTherapeutics_ 2008](Johnson2008.pdf).
 </div>
