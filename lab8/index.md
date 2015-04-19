@@ -43,9 +43,9 @@ that are FDA approved for treating depression. What are two other therapies that
 tested for efficacy in depressed patients (as of 2006 - note that AFAIK, these tests are
 on-going).</li>
 <li>
-Read this <a href="Denison2015">IEEE Spectrum article from 2015</a> for background. To treat
-seizures, Company A and Company B both have systems which control stimulation in "closed loop",
-i.e., in response to some detected signature. Assume the Company A system is measuring
+Read this <a href="Denison2015.pdf">IEEE Spectrum article from 2015</a> for background. To
+treat seizures, Company A and Company B both have systems which control stimulation in "closed
+loop", i.e., in response to some detected signature. Assume the Company A system is measuring
 variability in heartrate, and the Company B system is measuring the spectral power in a "local
 field potential" rhythm with a center frequency of ~30 Hz. Which system do you think requires
 more power for data acquisition and why? Which system do you think requires more power for
@@ -82,7 +82,7 @@ The goal of the IPG is to deliver biphasic current pulses (with each phase 60 μ
 with a programmable frequency and current amplitude. For the purposes of this lab, you can
 assume that we want 130 Hz stimulation and 50 μA pulses. The DS4432 is a digitally-controlled
 current source, but cannot generate biphasic pulses. In order to generate biphasic pulses the
-design relies on a switch matrix as in Figure 4 in this [paper](Farahmand2012.pdf]. Even though
+design relies on a switch matrix as in Figure 4 in this [paper](Farahmand2012.pdf). Even though
 the data sheet does not specify this, you may assume that the amount of time the DS4432
 requires to turn on is equivalent to the amount of time it takes to transmit the relevant I2C
 commmands. In addition, assume you are running with a 3V battery.
