@@ -53,7 +53,7 @@ signal processing? Which system do you think will have lower latency?
 </li>
 <li>
 Let's try to reverse engineer the power consumption of a commercial IPG. For this and the next
-question, make reference to <a href"MedtronicIPGManual.pdf">this programming manual
+question, make reference to <a href="MedtronicIPGManual.pdf">this programming manual
 for some of the Medtronic IPGs</a>. Look at the energy use data in Table 13 (for the Kinetra
 system from Medtronic). If the device consumes some ammount of constant power (due to digital
 blocks) plus some amount of variable power depending on stimulation intensity, we would expect
