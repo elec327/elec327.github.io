@@ -78,14 +78,18 @@ digital to analog converter (DS4432)](DS4432.pdf) and the [digitally-controlled 
 
 ![DBS Schematic](DBSSchematic.png)
 
-The goal of the IPG is to deliver biphasic current pulses (with each phase 60 μs in duration)
-with a programmable frequency and current amplitude. For the purposes of this lab, you can
-assume that we want 130 Hz stimulation and 50 μA pulses. The DS4432 is a digitally-controlled
-current source, but cannot generate biphasic pulses. In order to generate biphasic pulses the
-design relies on a switch matrix as in Figure 4 in this [paper](Farahmand2012.pdf). Even though
-the data sheet does not specify this, you may assume that the amount of time the DS4432
-requires to turn on is equivalent to the amount of time it takes to transmit the relevant I2C
-commmands. In addition, assume you are running with a 3V battery.
+The goal of the IPG is to deliver biphasic current pulses, as shown below, with a programmable
+frequency and current amplitude. 
+
+![Biphasic Pulses](BiphasicPulse.png)
+
+For the purposes of this lab, you can
+assume that we want 130 Hz stimulation and 50 μA pulses with 60 μs pulse width. The DS4432 is a
+digitally-controlled current source, but cannot generate biphasic pulses. In order to generate
+biphasic pulses the design relies on a switch matrix as in Figure 4 in [Farahamand
+2012](Farahmand2012.pdf). Even though the data sheet does not specify this, you may assume that
+the amount of time the DS4432 requires to turn on is equivalent to the amount of time it takes
+to transmit the relevant I2C commmands. In addition, assume you are running with a 3V battery.
 
 For the second part of the lab, in about 2/3rds of a page,
 
