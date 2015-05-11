@@ -39,19 +39,21 @@ You will be graded on:
 #### Projects from previous years
 
 **2015**
-  * [A Biometric Security Application for Vending Machine & Safe Box](http://zjelec.github.io/ELEC-327-Final-Project/)
-  * [The "Kemere Shoe"](http://va17.github.io/ELEC327-Final-Project/)
-  * [My Heart Is A Stereo](http://ryanlidesign.wix.com/portfolio#!designs/c1dru)  
-  * [The "IR-controlled Car"](http://xyh1.github.io/Rice_University_ELEC327_MSP430_IR-Motors/)
-  * [The "Longboard Light-Painting Speedometer"](http://ethanwhassat.github.io/LONGBOARD-LIGHT-PAINTING-SPEEDOMETER/)
+
+- [A Biometric Security Application for Vending Machine & Safe Box](http://zjelec.github.io/ELEC-327-Final-Project/)
+- [The "Kemere Shoe"](http://va17.github.io/ELEC327-Final-Project/)
+- [My Heart Is A Stereo](http://ryanlidesign.wix.com/portfolio#!designs/c1dru)  
+- [The "IR-controlled Car"](http://xyh1.github.io/Rice_University_ELEC327_MSP430_IR-Motors/)
+- [The "Longboard Light-Painting Speedometer"](http://ethanwhassat.github.io/LONGBOARD-LIGHT-PAINTING-SPEEDOMETER/)
 
 **2014**
-  * [Fan Controller](https://www.youtube.com/watch?v=mhptsetAkEA)
-  * [Robot](https://www.youtube.com/watch?v=cXXAIJgqIdM)
-  * [Whiteboard Eraser](http://youtu.be/5l_BqY-AgVQ)
-  * [Light Follower](https://www.youtube.com/watch?v=1jrtxBQFj9A)
-  * [Robot](https://www.youtube.com/watch?v=pwvoO46o1E8)
-  * [Laser Targeting](https://www.youtube.com/watch?v=hBBP-9Gh-Sk)
-  * [Maze Game](https://www.youtube.com/watch?v=vogIEGx5ChQ)
+
+- [Fan Controller](https://www.youtube.com/watch?v=mhptsetAkEA)
+- [Robot](https://www.youtube.com/watch?v=cXXAIJgqIdM)
+- [Whiteboard Eraser](http://youtu.be/5l_BqY-AgVQ)
+- [Light Follower](https://www.youtube.com/watch?v=1jrtxBQFj9A)
+- [Robot](https://www.youtube.com/watch?v=pwvoO46o1E8)
+- [Laser Targeting](https://www.youtube.com/watch?v=hBBP-9Gh-Sk)
+- [Maze Game](https://www.youtube.com/watch?v=vogIEGx5ChQ)
 
 
