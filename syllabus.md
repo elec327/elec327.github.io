@@ -3,7 +3,7 @@ layout: default
 title: Syllabus
 group: navigation
 ---
-##ELEC 327: Digital Systems Laboratory (Spring 2015)
+##ELEC 327: Digital Systems Laboratory (Spring 2016)
 
 ###Syllabus
 
@@ -16,9 +16,11 @@ Office Hours: (please verify via email) Monday, Wednesday 9:00-10:00am (RMC Coff
 caleb.kemere@rice.edu
 
 **Lab Assistants:**
-- Galen Schmidt ( [sgs2@rice.edu](mailto:sgs2@rice.edu))
-- Abhipray Sahoo ( [as83@rice.edu](mailto:as83@rice.edu))
-- Boying Meng (bm15@rice.edu)
+- Xin Huang ( [xyh1](mailto:xyh1@rice.edu))
+- Michael Tsehaie ( [mht4](mailto:mht4@rice.edu))
+- Stephen Xia ( [sx7](mailto:sx7@rice.edu))
+- Daniel Zdeblick ( [djz3](mailto:djz3@rice.edu))
+
 
 ---
 
