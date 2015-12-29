@@ -16,10 +16,12 @@ Office Hours: (please verify via email) Monday, Wednesday 9:00-10:00am (RMC Coff
 caleb.kemere@rice.edu
 
 **Lab Assistants:**
-- Xin Huang ( [xyh1](mailto:xyh1@rice.edu))
-- Michael Tsehaie ( [mht4](mailto:mht4@rice.edu))
-- Stephen Xia ( [sx7](mailto:sx7@rice.edu))
-- Daniel Zdeblick ( [djz3](mailto:djz3@rice.edu))
+  
+  
+  - Xin Huang ( [xyh1](mailto:xyh1@rice.edu))
+  - Michael Tsehaie ( [mht4](mailto:mht4@rice.edu))  -- Office hours Monday 2-5 pm.
+  - Stephen Xia ( [sx7](mailto:sx7@rice.edu))
+  - Daniel Zdeblick ( [djz3](mailto:djz3@rice.edu))
 
 
 ---
