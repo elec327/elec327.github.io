@@ -9,17 +9,31 @@ description: Morse Code with Timers
 
 ### Lab #1: Morse Code with Timers on the MSP430 (250 pts)
 
-The goal for this assignment is threefold. First, we want you to get CCS and/or Energia up and
-running. Second, we want you to become familiar with the _User Guide_ and datasheet (these will
-answer so many questions for you in the future). Finally, we want you to learn to program an
-MSP430G2553 when it is separated from the Launchpad. You should turn in (1) your **commented**
-morse\_code.c file, (2) your answers to the questions (given at the end of this document) and
-(3) a youtube link to a demo video of your code running after completing Part 3 of the lab.
+<div class="alert alert-info" role="alert">
+#### _There are three goals for this assignment:_
+
+
+  - To get CCS and/or Energia up and running. 
+  - To become familiar with the _User Guide_ and datasheet (these will answer so many questions for you in the future). 
+  - To learn to program an MSP430G2553 when it is separated from the Launchpad. 
+  
+</div>
+
+<div class="alert alert-danger" role="alert">
+#### _What should be turned in?_
+
+
+  1. Your **commented** morse\_code.c file. 
+  2. Your answers to the questions (given at the end of this document) 
+  3. A youtube link to a demo video of your code running after completing Part 3 of the lab.
+
+</div>
+
 
 #### Part 0: Installation (optional)
 
 You are welcome to install CCS on your own personal computers. If you choose to do so, follow
-the instructions in Lab 1 of the Student Guide. Instructions for installing Energia can be
+the instructions in Lab 1 of the Student Guide. Note that the Instructions for installing Energia can be
 found at the project home page: http://energia.nu/
 
 #### Part 1: Verify CCS/Energia and Launchpad functionality and examine the skeleton code
@@ -113,10 +127,10 @@ What is the minimum size of memory that can be addressed? Would you describe the
 CPU as 8 bit or 16 bit?</li>
 <li>What is the difference between the "indexed" and "indirect
 register" addressing mode</li>
-<li>What is the largest (i.e. most memory bytes used) possible operatio</li>
-<li>What is the longest (i.e. most clock cycles) possible operatio</li>
+<li>What is the largest (i.e. most memory bytes used) possible operation?</li>
+<li>What is the longest (i.e. most clock cycles) possible operation?</li>
 <li>What is the maximum operating voltage for the MSP430g2553? What is the maximum operating
-frequency? What is the minimum operating voltage to run at 16 MH</li>
+frequency? What is the minimum operating voltage to run at 16 MH?</li>
 </ol>
 
 _Questions from the skeleton code:_
