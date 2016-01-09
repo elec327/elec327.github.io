@@ -10,7 +10,7 @@ description: Morse Code with Timers
 ### Lab #1: Morse Code with Timers on the MSP430 (250 pts)
 
 <div class="alert alert-info" role="alert">
-#### _There are three goals for this assignment:_
+#### **There are three goals for this assignment:**
 
 
   - To get CCS and/or Energia up and running. 
@@ -20,7 +20,7 @@ description: Morse Code with Timers
 </div>
 
 <div class="alert alert-danger" role="alert">
-#### _What should be turned in?_
+#### **What should be turned in?**
 
 
   1. Your **commented** morse\_code.c file. 
@@ -32,9 +32,15 @@ description: Morse Code with Timers
 
 #### Part 0: Installation (optional)
 
-You are welcome to install CCS on your own personal computers. If you choose to do so, follow
-the instructions in Lab 1 of the Student Guide. Note that the Instructions for installing Energia can be
-found at the project home page: http://energia.nu/
+You are welcome to install TI's **Code Composer Studio** (CCS) on your own personal computers. There are beta versions
+available for both OSX and Linux, but in the past these have not supported all of the features
+of the Windows version installed in lab. [**Energia**](http://energia.nu/) is a clone of the Arduino environment for
+the MSP430. We will not use the Java-based approach used by Arduino, but the compiliing and
+device programming components are still quite useful. Note that the Instructions for installing Energia can be
+found at the project home page: [http://energia.nu/](http://energia.nu/). We will not
+officially support Energia users in the class, however, we have found it to be quite usable in
+a minimal sense.
+
 
 #### Part 1: Verify CCS/Energia and Launchpad functionality and examine the skeleton code
 
