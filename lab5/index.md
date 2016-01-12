@@ -1,5 +1,5 @@
 ---
-title: Lab 4
+title: Lab 5
 layout: default
 group: labs-navigation
 description: Making the (Randomizing) Mood Ring
@@ -7,7 +7,7 @@ description: Making the (Randomizing) Mood Ring
 
 {::options parse_block_html="true" /}
 
-## Lab #4: Building and programing the mood ring PCB with randomness
+## Lab #5: Building and programing the mood ring PCB with randomness
 
 _This lab builds on Lab 3 to make a device that flashes an RGB LED in an interesting pattern in
 a way that depends on the ambient temperature. The goal is for you to continue to master

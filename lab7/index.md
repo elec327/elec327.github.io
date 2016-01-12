@@ -1,5 +1,5 @@
 ---
-title: Lab 6
+title: Lab 7
 layout: default
 group: labs-navigation
 description: Software Debouncing and the Simon PCB
@@ -7,7 +7,7 @@ description: Software Debouncing and the Simon PCB
 
 {::options parse_block_html="true" /}
 
-## Lab #6: Software Debouncing and the Simon PCB
+## Lab #7: Software Debouncing and the Simon PCB
 
 #### Part 1: The Simon PCB
 

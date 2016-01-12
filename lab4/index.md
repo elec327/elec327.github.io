@@ -1,5 +1,5 @@
 ---
-title: Lab 3
+title: Lab 4
 layout: default
 group: labs-navigation
 description: Coding the Mood Ring
@@ -7,7 +7,7 @@ description: Coding the Mood Ring
 
 {::options parse_block_html="true" /}
 
-## Lab #3: Coding up the mood ring
+## Lab #4: Coding up the mood ring
 
 #### Part 1: Multiple Timers, Program Structure
 

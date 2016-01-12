@@ -1,5 +1,5 @@
 ---
-title: Lab 7
+title: Lab 8
 layout: default
 group: labs-navigation
 description: Programing Simon
@@ -7,7 +7,7 @@ description: Programing Simon
 
 {::options parse_block_html="true" /}
 
-## Lab #7: Programming Simon
+## Lab #8: Programming Simon
 
 #### Part 1: Populate your Simon PCB
 

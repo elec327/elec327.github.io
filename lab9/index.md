@@ -1,5 +1,5 @@
 ---
-title: Lab 8
+title: Lab 9
 layout: default
 group: labs-navigation
 description: Deep Brain Stimulation Case Study
@@ -7,7 +7,7 @@ description: Deep Brain Stimulation Case Study
 
 {::options parse_block_html="true" /}
 
-## Lab #8: Deep Brain Stimulation Case Study
+## Lab #9: Deep Brain Stimulation Case Study
 
 #### Deep Brain Stimulation Background
 <div class="row">

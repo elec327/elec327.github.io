@@ -1,11 +1,11 @@
 ---
-title: Lab 2
+title: Lab 3
 layout: default
 group: labs-navigation
 description: PWM, LPM, and PCBs
 ---
 
-## Lab #2: _PWM, Low Power Modes and PCBs_
+## Lab #3: _PWM, Low Power Modes and PCBs_
 
 #### Part 1: Different Clocks, Low Power Mode, and PWM
 

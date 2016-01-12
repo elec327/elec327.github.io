@@ -1,5 +1,5 @@
 ---
-title: Lab 5
+title: Lab 6
 layout: default
 group: labs-navigation
 description: Random Mood Ring with SPI RGB LED
@@ -7,7 +7,7 @@ description: Random Mood Ring with SPI RGB LED
 
 {::options parse_block_html="true" /}
 
-## Lab #5: Using serial communications (SPI controlling an LED driver)
+## Lab #6: Using serial communications (SPI controlling an LED driver)
 
 _This lab builds on Lab 4. The goal is for you to be comfortable with SPI serial
 communications that will be the foundation of the Simon game._
