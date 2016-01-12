@@ -2,7 +2,7 @@
 title: Lab 7
 layout: default
 group: labs-navigation
-description: Software Debouncing and the Simon PCB
+description: Software Debouncing
 ---
 
 {::options parse_block_html="true" /}
