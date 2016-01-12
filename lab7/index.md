@@ -1,43 +1,67 @@
 ---
-title: Lab 7
+title: Lab 6
 layout: default
 group: labs-navigation
-description: Programing Simon
+description: Software Debouncing and the Simon PCB
 ---
 
 {::options parse_block_html="true" /}
 
-## Lab #7: Programming Simon
+## Lab #6: Software Debouncing and the Simon PCB
 
-#### Part 1: Populate your Simon PCB
+#### Part 1: The Simon PCB
 
-Solder up your Simon PCBs.
+The game ["Simon"](https://en.wikipedia.org/wiki/Simon_(game)) is a classic toy which tests the
+working memory of the player. In this lab, you will design the PCB for your implementation of
+Simon and work on the code to process button presses. 
 
-#### Part 2: Code up the game
+Parts:
+  + 4 buttons with 1206 capacitors in parallel
+  + 4 APA102 SPI RGB LEDs (probably either in a row or in a circle)
+  + Power switch
+  + AAA battery pack
+  + Piezo buzzer (wired up for PWM - see Part 2)
 
-We will create a game that follows a variant in which the pattern to be remembered is generated
-by adding one element each cycle. The player then has some amount of time ("the timeout
-period") to correctly enter the pattern. If they fail to enter it in time or enter an incorrect
-pattern, the device plays a "Game Over - Lost" animation. If the player is able to remember a
-maximum number of elements ("maximum sequence size"), the device plays a "Game Over - Won"
-animation. The "Game Over" animations should play in a continuous loop. However, after a few
-seconds, pressing any button should start the game over.
+Here's a video from Vitor Azevedo Andriotti (Spring 2015) showing a Simon board in action.
 
-Details:
-- On initial boot, the devices should play either one of the "Game Over" animations or a third
-  novel animation. Pushing any button should then start the game.
-- Sequences should be random each game.
-- When a button is pressed, the appropriate LED should flash (and tone should sound).
-- The timeout period should not be a constant. Rather, each time a player pushes a button, a
-  new timeout should start. Thus, a timeout of 1-2 s is appropriate.
-- Errors should result in immediate game over (i.e., button presses should be processed
-  immediately).
-- You should make the maximum sequence size adjustable. For your video, sequences of length 5
-  are appropriate.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nrsBVdJFrKc" frameborder="0" allowfullscreen></iframe>
 
-**Save this code as `simon.c`. Create a demo video that shows you playing through to a win,
-running the "Game Over - Win" animation, and then pushing a button to restart and then playing
-through but making a mistake to generate the "Game Over - Loss" animation. Upload your answered
-questions, code and the video URL to owlspace.**
 
+#### Part 2: Playing tones via PWM
+
+<p class="bg-success">
+While you don't need to turn in the code for this part, I still recommend you do it! The sample
+uses the TimerA1 module for PWM and the watchdog timer as a "tick" generator, which is probably
+a good framework.
+</p>
+
+Before implementing the full code for this lab, you should start by getting the sound aspect
+set up. Wire a piezo buzzer between to 2 PWM-capable pins. By connecting the device in this
+manner and enabling one or both channels, the volume of the sound can be changed. Write code
+that plays a standard 8-note octave scale (or different pattern if you choose) starting from
+middle C (see [Wikipedia table](https://en.wikipedia.org/wiki/Scientific_pitch_notation)). Each
+note should be played for 1 second. The scale should then repeat. Every other scale should be a
+higher volume. Sample code to get you going is in [piezo_sample.c](piezo_sample.c).
+
+
+#### Part 3: Software Debouncing
+
+*The point of this portion of the lab is to implement switch debouncing in software. The
+switches provided to you in class are reasonable, but still bounce noticeably.*
+
+Humans can control their fingers on timescales of hundreds of milliseconds. In the final
+portion of this lab, you will build a system which trains you to tap your fingers as fast as
+possible in a particular pattern. Wire two buttons on your breadboard to your MSP430. You will
+learn to press them in the pattern **1, 2, 1, 1, 2, 2**. The system will mark your progress with an
+LED and a tone-playing buzzer.  The LED should get progressively brighter and the tone
+progressively higher frequency as pattern is entered faster and faster. You should choose the
+values such that they are noticable and there are at least **8 levels**. If pattern is entered
+incorrectly, LED and sound should go off.  At any time, you should be able to reset the
+training by holding both buttons simultaneously for 2 s. Resetting should cause the LED to flash.
+
+**Save this code as `debounce.c`. Create a demo video that shows you playing and then resetting
+and playing again. Upload your answered questions, code and the video URL to owlspace.**
+
+**Bonus:** Implement a system in which doing something (entering the reset pattern twice?)
+causes the system to enter a "programming" mode, in which the pattern can be changed.
 
