@@ -2,7 +2,7 @@
 title: Lab 5
 layout: default
 group: labs-navigation
-description: Soldering #2 and Random Number Generation
+description: Soldering Redux and Random Number Generation
 ---
 
 {::options parse_block_html="true" /}
