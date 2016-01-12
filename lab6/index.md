@@ -2,7 +2,7 @@
 title: Lab 6
 layout: default
 group: labs-navigation
-description: Random Mood Ring with SPI RGB LED
+description: Serial Communications (SPI + I2C)
 ---
 
 {::options parse_block_html="true" /}

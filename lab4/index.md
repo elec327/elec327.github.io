@@ -2,7 +2,7 @@
 title: Lab 4
 layout: default
 group: labs-navigation
-description: Coding the Mood Ring
+description: ADC, Software Architecture, Mood Ring
 ---
 
 {::options parse_block_html="true" /}
