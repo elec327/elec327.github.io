@@ -1,5 +1,5 @@
 ---
-title: Midterm Project
+title: Project 1 - Midterm
 layout: default
 group: labs-navigation
 description: Midterm Project

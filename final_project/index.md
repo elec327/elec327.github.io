@@ -1,5 +1,5 @@
 ---
-title: Final Project
+title: Project 2 - Final
 layout: default
 group: labs-navigation
 description: Final Project
