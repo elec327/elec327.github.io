@@ -44,13 +44,13 @@ a minimal sense.
 
 #### Part 1: Verify CCS/Energia and Launchpad functionality and examine the skeleton code
 
-Compile the included lab1\_skeleton.c file to verify that CCS is setup correctly. (In Energia,
-you will need to create a new "sketch", add a tab with the name lab1.c or somesuch, erase the
-stuff in the first tab, and then code away in the second ".c" one.) You should also read
-through this file: it shows the minimum amount of code needed to run the MSP430 in an infinite
-loop. If you ever don't know what some variable acronym means, look it up! A useful practice is
-right clicking the name and going to "Open Declaration" (instructions for CCS are in red). For
-instance, in this file, doing this on `CALBC\_1MHZ` brings you to:
+Compile the included [lab1\_skeleton.c](lab1_skeleton.c) file to verify that CCS is setup
+correctly. (In Energia, you will need to create a new "sketch", add a tab with the name lab1.c
+or somesuch, erase the stuff in the first tab, and then code away in the second ".c" one.) You
+should also read through this file: it shows the minimum amount of code needed to run the
+MSP430 in an infinite loop. If you ever don't know what some variable acronym means, look it
+up! A useful practice is right clicking the name and going to "Open Declaration" (instructions
+for CCS are in red). For instance, in this file, doing this on `CALBC\_1MHZ` brings you to:
 
 `SFR\_8BIT(CALCBC1\_1MHZ)/\* BSCTL1 Calibration Data for 1 MHz \*/`
 
@@ -66,6 +66,17 @@ registers common to most MSP430s, while the data sheet has register values and p
 specific to the G2553. So, searching for "BCSCTL1" on the user guide takes you to Chapter 5 and
 Chapter 24, from which you can figure out that this line will set the frequency of the DCO to a
 calibrated 1 MHz.
+
+You'll notice a function called "\_\_delay\_cycles" plays a major role. You will find that
+documentation of this function is somehwat lacking on the internet. If you look in the [MSP430
+Optimizing Compiler Guide](assets/documents/slau132k.pdf), you will see that it is not a C
+function, but rather an "intrinsic". In hindsight, if it's role is to delay the processor a
+precise number of cycles that can range from 1 to some large number, it could not be a function
+(because calling a function takes more than one cycle!). A compiler intrinsic is something like
+a macro - it is something that is replaced by appropriate code at compile time. In this case,
+\_\_delay\_cycles is marked as deprecated, no doubt because its use leads to poor quality code
+because it blocks the processor but still runs at full power. For this lab, however, you should
+use it to achieve the defined results (except perhaps the bonus!).
 
 #### Part 2: Blinking a Morse Code Message
 

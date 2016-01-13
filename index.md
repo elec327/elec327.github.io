@@ -44,6 +44,7 @@ understand how application-specific blocks enable modern commercial devices._
   + [MSP430 Launchpad Wiki](http://processors.wiki.ti.com/index.php/MSP430_LaunchPad_(MSP-EXP430G2))
   + [MSP430G2553 Datasheet](assets/documents/msp430g2553.pdf)
   + [MSP430x2xx User Guide](assets/documents/slau144j_userguide.pdf)
+  + [MSP430 Optimizing C/C++ Compiler](assets/documents/slau132k.pdf)
   + [MSP430G2xx3 Examples](assets/documents/slac485e.zip)
   + MSP430 Workshop Lab Code [zip file](assets/documents/MSP430WorkshopLabs.zip)
 
