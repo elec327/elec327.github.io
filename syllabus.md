@@ -37,7 +37,7 @@ Note – after spring break lectures will shift to about once per week. Students
 We use 3 different digital resources:
 
 1. The primary location assignments and lecture notes (and other resources) is the course
-website – [http://dsp.rice.edu/courses/elec327](http://dsp.rice.edu/courses/elec327)
+website – [http://elec327.github.io](http://elec327.github.io)
 2. We use Piazza ([http://piazza.com](http://piazza.com)) for announcements and for
    communication. If you have specific questions about course content or assignments, please post
    them on Piazza. As a corollary, you may find it useful to check for answers as questions
@@ -72,7 +72,9 @@ including printed-circuit board design and assembly.
 for printed circuit board orders , where late submissions may not be accepted. Students wishing
 to submit late assignments should contact the instructor prior to the due date.
 
-**Honor code:**  You are encouraged to work _with _other students in ELEC327 on the labs. Each
+**Honor code:**  You are encouraged to work **with** other students in ELEC327 on the labs. Each
 student should turn in their own lab writeup (except for midterm and final project, which
-should be done in pairs).
+should be done in pairs). I would like you to write your own code and (especially) comments for
+the labs.
+
 
