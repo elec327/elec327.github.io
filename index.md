@@ -34,7 +34,7 @@ understand how application-specific blocks enable modern commercial devices._
 
 **Syllabus** -- [here](/syllabus.html)
 
-**Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/yggyhiygghjhhi5/AAA-APbF8HEdlO-HLU_8oJrya)
+**Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/ftoj5gq10k3zqzq/AABzEduNoxbCRr0ly9zBi7qha)
 
 
 **Github repository** - [https://github.com/elec327](https://github.com/elec327)
