@@ -29,6 +29,8 @@ description: Morse Code with Timers
 
 </div>
 
+#### Due Date: __Monday, January 18 at 11 pm__
+
 
 #### Part 0: Installation (optional)
 
