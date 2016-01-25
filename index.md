@@ -32,7 +32,7 @@ understand how application-specific blocks enable modern commercial devices._
 
 **Prerequisites** -- ELEC220
 
-**Syllabus** -- [here](/syllabus.html)
+**Syllabus & Lab Office Hours** -- [here](/syllabus.html)
 
 **Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/ftoj5gq10k3zqzq/AABzEduNoxbCRr0ly9zBi7qha)
 

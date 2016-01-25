@@ -29,7 +29,9 @@ caleb.kemere@rice.edu
 **Class Hours:** Tuesday, Thursday 9:25-10:50 Room AL 121 (subject to change)  
 Note – after spring break lectures will shift to about once per week. Students are expected to spend significant out-of-class time (~10 hours per week) working on lab assignments.
 
-**Lab Help Sessions:** TBD, in lab (Room AL 124 – Keypad code: 1599#)
+**Lab Help Sessions:** See Lab Assistant hours or by request on [Piazza](https://piazza.com/class/ijk6s504wdz2uw) or through email  
+Help sessions held in lab room A124                                                                                     
+Lab Access Keypad Code: ...-- -.... ----. ----. #
 
 ---
 
