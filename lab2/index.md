@@ -5,25 +5,77 @@ group: labs-navigation
 description: Timers and Soldering
 ---
 
+{::options parse_block_html="true" /}
+
+
 ## Lab #2: _Timers and Soldering_
 
-#### Part 1: Soldering
+_The goals of this lab are two-fold. First, we aim for you to gain experience soldering small,
+surface mount parts both for skill acquisition and in order to give you some background as you
+begin PCB design in the next lab. Second, the goal is to begin learning about interrupts,
+specifically by making use of the interrupt associated with one of the Timer modules._
 
+#### Part 1: Soldering a pendant
 <div class="row">
-<div class="col-md-3">
-<b>Finished Product</b>
-<a href="Pendant.png" class="thumbnail">
-<img src="Pendant.png" alt="Finshed product" height="128"></a>
+<div class="col-md-3 col-sm-6 col-xs-6">
+<div class="thumbnail">
+<a href="Pendant.png"> <img src="Pendant.png" alt="Pendant PCB"></a>
+
+<div class="caption"><p>Lab 2 6-LED pendant PCB.</p></div>
+
 </div>
-<div class="col-md-9">
+</div>
+<div class="col-md-9 col-sm-12 col-xs-12">
 Start by soldering on the MSP430. It is the most challenging piece of the puzzle and getting it
 in place will make everything else easier. The best bet for dual-inline packages like this one
 is to tack one corner down, then the opposite one, then fill in the rest. 
 
+You may need to reference the [board](Pendant.brd) and/or [schematic](Pendant.sch) files in
+order to know what other parts go where. In particular notice which components are resistors,
+which are capacitors, and which are light emitting diodes (LEDs).
+
+<ol class="questions">
+<li>Either examine the PCB closely or look at the schematic for the pendant. Which GPIO pins
+are connected to LEDs?</li>
+<li>In a normal diode, which terminal does positive (conventional) current flow out of, cathode
+or anode? In the pendant circuit, which pin is this terminal connected to?</li>
+<li>What value (0 or 1) will result in the diode turning on? How would the circuit be changed
+to allow the other value to turn the diode on?</li>
+</ol>
+
 </div>
 </div>
 
-Here's a helpful video:
+Precise modeling of the current/voltage characteristic of a diode is complicated, but
+important for a number of applications (such as detecting light with a photo diode). A
+very simple model of a diode switches from infinite resistance to zero resistance at the
+"threshold voltage". Thus, when on, the current through the diode must be limited. A resistor
+in series with the diode serves to limit the current, and you will see such a resitor in the
+pendant circuit. In order to find the proper value of this resistance, you need to know
+something about the LED and also something about the rest of the circuit.
+
+<ol start="4" class="questions">
+<li>Use a multimeter in lab to measure the threshold voltage of the supplied
+LEDs.  How does this compare to the "forward voltage" found in the
+[datasheet](http://www.digikey.com/scripts/DkSearch/dksus.dll?Detail&itemSeq=188389478).  </li>
+<li>Further examining the datasheet, what is the maximum value of forward current that you
+should apply? What appears to be the recommended forward current level?</li>
+<li>Assume that you will be using one a CR2032 battery, which has a nominal voltage of 3V. What
+voltage will appear on the output of the LED drive pins when they are on?</li>
+<li>Measure the voltage of a new CR2032 - what voltage do you find? After you build the circuit
+and program the pendant, measure again with the device running. What value do you find
+now?</li>
+<li>Finally, assume that the threshold voltage of the diode is 2 V, and the MSP430 on voltage
+is 3 V, and that the desired on current is 5 mA. What value of current-limiting resistor should
+you use? What would be the minimum resistance such that the current is less than the maximum
+(DC) specified in the data sheet?
+</li>
+</ol>
+
+**Use the value of resistor which will achieve 5 mA on current along with the LEDs and a 47 K
+pull-up resitor on the ~RST pin to finish the pendant.**
+
+Here is a helpful video:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7B_-qmJLfng"
 frameborder="0" allowfullscreen></iframe>
@@ -31,5 +83,30 @@ frameborder="0" allowfullscreen></iframe>
 
 #### Part 2: Using the Timer interrupts
 
+The second part of the lab is to program the pendant to do something interesting. The pattern
+that is desired is as follows: 
 
+  - One LED should be lit at any one time.
+  - Which LED is lit should change every 333 ms.
+  - Which LED is lit should rotate clockwise 3 times, followed by counter clockwise 3 times,
+    then repeating clockwise again, and so on.
 
+Refer to the [lab2_skeleton.c](lab2_skeleton.c) file. In order for it to work, you will need to
+set up the proper GPIO pins (lines 26-30), and properly set/reset GPIO in the switch statement.
+You need to create a `next_led()` function, which should return the values 0 through
+5, indicating the next LED to be lit, and maintaining state from one function call to another.
+You will also need to adjust the clocks and timer interrupt setup code to achieve the desired
+timing. In principle, the code could all go in the interrupt, but in general it is best to have
+interrupt service routines execute as quickly as possible. **BONUS:** Make
+`next_led()` return an unsigned int, with the higher byte corresponding to PORT2 and
+the lower byte to PORT1. Then eliminate the switch statement and directly write the PORT1/2
+values after the function call. **SUPER BONUS** In addition to the pendant pattern described
+above, program the pendant to operate as a clock. (More later)
+
+<ol class="questions" start="9">
+<li>Timer modes - continous vs up. (More coming)</li>
+<li>How do you set a pin to be an output? What is the default mode for GPIO pins?</li>
+</ol>
+
+**Save your code as `pendant.c`. Create a demo video that shows the pendant operating.
+Upload your answered questions, code and the video URL to owlspace.**
