@@ -57,7 +57,7 @@ something about the LED and also something about the rest of the circuit.
 <ol start="4" class="questions">
 <li>Use a multimeter in lab to measure the threshold voltage of the supplied
 LEDs.  How does this compare to the "forward voltage" found in the
-[datasheet](http://www.digikey.com/scripts/DkSearch/dksus.dll?Detail&itemSeq=188389478).  </li>
+[datasheet](http://www.digikey.com/product-detail/en/LTST-C150KRKT/160-1405-1-ND/386760).  </li>
 <li>Further examining the datasheet, what is the maximum value of forward current that you
 should apply? What appears to be the recommended forward current level?</li>
 <li>Assume that you will be using one a CR2032 battery, which has a nominal voltage of 3V. What

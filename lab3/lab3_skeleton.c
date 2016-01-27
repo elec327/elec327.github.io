@@ -2,7 +2,7 @@
  * Minimum code needed to create a timer-based interrupt. The following code is
  * equivalent to (after all setup code):
  *
- * while(1){
+ * while(1){/Users/ckemere/Development/elec327.github.io/lab3/lab3_skeleton.c
  *   __delay_cycles(1000);
  *   i++;
  * }
