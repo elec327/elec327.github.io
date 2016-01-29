@@ -105,10 +105,12 @@ above, program the pendant to operate as a clock. (More later)
 
 <ol class="questions" start="9">
 <li>How do you set a pin to be an output? What is the default mode for GPIO pins?</li>
-<li> If your main function begins with the instruction `BSCCTL2 = 0;` what will be the
+<li> 
+If your main function begins with the instruction `BSCCTL2 = 0;` what will be the
 frequency of the CPU clock (`MCLK`)? What will be the frequency of the submain clock (`SMCLK`)?
 (Hint: you will also need to figure out what the default setting for the DCO is, and assume
-that it is set.) </li>
+that it is set.) 
+</li>
 <li> Assume that the SMCLK has been configured to 1 MHz. Assume you are given the following
 configuration of Timer A0: `TA0CTL = TASSEL_2 | ID_3 | MC_1 | TAIE;`. What register do you need
 to set, and to what value in order to generate interrupts every 1 millisecond?</li>
