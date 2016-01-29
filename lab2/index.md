@@ -104,7 +104,14 @@ interrupt service routines execute as quickly as possible. **BONUS:** Make
 `next_led()` return an unsigned int, with the higher byte corresponding to PORT2 and
 the lower byte to PORT1. Then eliminate the switch statement and directly write the PORT1/2
 values after the function call. **SUPER BONUS:** In addition to the pendant pattern described
-above, program the pendant to operate as a clock. (More later)
+above, program the pendant to operate as a clock. Represent the second hand as a flashing LED
+that moves around the circle, blinking at 1 Hz in each position 6 times. In addition, light
+up the LEDs that correspond to the hour hand and the minute hand, assuming that we have a day
+divided into 4 six hour segments rather than two twelve hour ones. Or figure out another cool
+way of making a clock.
+
+To answer the following questions, you will need to refer to Chapters 5 and 12 of the User
+Guide.
 
 9. How do you set a pin to be an output? What is the default mode for GPIO
 pins? 
