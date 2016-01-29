@@ -103,7 +103,7 @@ timing. In principle, the code could all go in the interrupt, but in general it 
 interrupt service routines execute as quickly as possible. **BONUS:** Make
 `next_led()` return an unsigned int, with the higher byte corresponding to PORT2 and
 the lower byte to PORT1. Then eliminate the switch statement and directly write the PORT1/2
-values after the function call. **SUPER BONUS** In addition to the pendant pattern described
+values after the function call. **SUPER BONUS:** In addition to the pendant pattern described
 above, program the pendant to operate as a clock. (More later)
 
 9. How do you set a pin to be an output? What is the default mode for GPIO
