@@ -104,8 +104,19 @@ values after the function call. **SUPER BONUS** In addition to the pendant patte
 above, program the pendant to operate as a clock. (More later)
 
 <ol class="questions" start="9">
-<li>Timer modes - continous vs up. (More coming)</li>
 <li>How do you set a pin to be an output? What is the default mode for GPIO pins?</li>
+<li> If your main function begins with the instruction `BSCCTL2 = 0;` what will be the
+frequency of the CPU clock (`MCLK`)? What will be the frequency of the submain clock (`SMCLK`)?
+(Hint: you will also need to figure out what the default setting for the DCO is, and assume
+that it is set.) </li>
+<li> Assume that the SMCLK has been configured to 1 MHz. Assume you are given the following
+configuration of Timer A0: `TA0CTL = TASSEL_2 | ID_3 | MC_1 | TAIE;`. What register do you need
+to set, and to what value in order to generate interrupts every 1 millisecond?</li>
+<li> Instead, assume you are given the following configuration of Timer A0: `TA0CTL = TASSEL_2
+| ID_3 | MC_2 | TAIE;`. You can still achieve a 1 ms interrupt, but now you will additionally
+be required to update the register in the previous question in your ISR. What is the proper
+update command? What would happen to your program if you forgot to initialize the register in
+your main function and only modified it in the ISR?</li>
 </ol>
 
 **Save your code as `pendant.c`. Create a demo video that shows the pendant operating.
