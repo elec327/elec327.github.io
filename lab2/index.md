@@ -128,8 +128,9 @@ to set, and to what value in order to generate interrupts every 1 millisecond?
 12. Instead, assume you are given the following configuration of Timer A0: `TA0CTL = TASSEL_2
 | ID_3 | MC_2 | TAIE;`. You can still achieve a 1 ms interrupt, but now you will additionally
 be required to update the register in the previous question in your ISR. What is the proper
-update command? What would happen to your program if you forgot to initialize the register in
-your main function and only modified it in the ISR?
+update command? (Hint: the right answer does not involve changing `TA0CTL`.) What would happen to
+your program if you forgot to initialize the register in your main function and only modified
+it in the ISR?
 {: class="questions" start="9"}
 
 **Save your code as `pendant.c`. Create a demo video that shows the pendant operating.
