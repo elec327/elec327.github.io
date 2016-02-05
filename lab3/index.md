@@ -5,86 +5,112 @@ group: labs-navigation
 description: PWM, LPM, and PCB Design
 ---
 
-## Lab #3: _PWM, Low Power Modes and PCB Design_
+
+{::options parse_block_html="true" /}
+
+
+## Lab #3: PWM, Low Power Modes and PCB Design
+
+<div class="alert alert-info" role="alert">
+#### **There are two goals for this assignment:**
+
+  - To learn and use PWM to modulate signal insensity
+  - To learn about low power modes and especially LPM3
+  - To learn and carry out various aspects of printed circuit board design
+  
+</div>
+
+<div class="alert alert-danger" role="alert">
+#### **What should be turned in?**
+
+  1. Your **commented** `PWM_test.c` file. 
+  2. Your answers to the questions. (Please submit in either PDF or TXT format.)
+  3. A youtube link to a demo video showing the LED changing intensity based on PWM.
+  4. The PDF of your Mood Ring PCB design.
+
+  In a separate owlspace submission, please upload
+
+  1. The Eagle CAD .sch and .brd files.
+  2. The manufacturing files - `your-file-name.GBL` (bottom layer), `your-file-name.GML` (board
+  outline), `your-file-name.GTL` (top layer) and `your-file-name.TXT` (drill locations).
+  **Don't zip, compress, or otherwise combine these files!**
+
+  See below for notes on potential **extra credit**, including using the SMD RGB LED or the
+  external temperature sensor.
+</div>
 
 #### Part 1: Different Clocks, Low Power Mode, and PWM
 
-So far, we've only used SMCLK sourced by the DCO. This, however, is a very fast clock, and we
+So far, we have only used SMCLK sourced by the DCO. This, however, is a very fast clock, and we
 will need to use a different one if we want to have our interrupts occur at a lower frequency.
 For the following questions, we highly recommend testing each function as you go, then doing
 whatever you need to tie it together at the end. Again, you should have both the MSP430G2553
 datasheet and user guide open while doing all of this, as you should need to use it
 extensively.
 
-<ol class="questions" start="1">
-<li>Using the DCO, what is the minimum frequency for a timer interrupt? What is the typical
-default frequency of the VLO? How do you turn on the VLO, and how do you change code from last
-week to run off the VLO instead of the DCO?</li>
-</ol>
+  1. Using the DCO, what is the minimum frequency for a timer interrupt? What is the typical
+  default frequency of the VLO? How do you turn on the VLO, and how do you change code from last
+  week to run off the VLO instead of the DCO?
+  {: class="questions"}
 
 In the skeleton code, the MSP430 runs full-time between each interrupt. To save on a lot of
 power, it is useful to put it into a low power mode (LPM) when certain clocks are not being
 used.
 
-<ol class="questions" start="2">
-<li> What clock sources can drive the ACLK? In which low power modes is only ACLK active? If
-we only want to enable the VLO when not in an interrupt, what low power mode should we put the
-MSP430 into?</li>
-<li>What line of code should we add to the end of our main loop to do this? How can you change
-this one line to also enable interrupts?</li>
-<li>What is the difference in supply current between LPM1 (when SMCLK is set to 1 MHz) and LPM3
-(when ACLK is set to use the VLO)?</li>
-</ol>
+  2. What clock sources can drive the ACLK? In which low power modes is only ACLK active? If
+  we only want to enable the VLO when not in an interrupt, what low power mode should we put the
+  MSP430 into?
+  4. What line of code should we add to the end of our main loop to do this? How can you change
+  this one line to also enable interrupts?
+  4. What is the difference in supply current between LPM1 (when SMCLK is set to 1 MHz) and LPM3
+  (when ACLK is set to use the VLO)?
+  {: class="questions" start="2"}
 
 To change the brightness of an LED (or most other analog devices), we use PWM. This essentially
 changes the brightness by altering the duty cycle of the output signal. We can control the
 total period either by allowing the timer counter to overflow or by setting register 0 register
 0 of the timer to be the period.
 
-<ol class="questions" start="5">
-<li>The timer counter register (TAR) is 16-bits. Assuming we use the VLO to drive the Timer
-module at 12 kHz, and run the counter in up/overflow mode, where it increments to 0xFFFF then
-overflows to 0x0, at what frequency will the TAR overflow? If we want our PWM modulation to not
-appear to flicker, the minimum modulation frequency is about 100-200 Hz. Is this achievable if
-the TAR is configured to overflow?</li>
-</ol>
+  5. The timer counter register (TAR) is 16-bits. Assuming we use the VLO to drive the Timer
+  module at 12 kHz, and run the counter in up/overflow mode, where it increments to 0xFFFF then
+  overflows to 0x0, at what frequency will the TAR overflow? If we want our PWM modulation to not
+  appear to flicker, the minimum modulation frequency is about 100-200 Hz. Is this achievable if
+  the TAR is configured to overflow?
+  {: class="questions" start="5"}
 
 The TimerA module allows us to set various pins to be on for a fraction of the timer counter
 period, creating a PWM signal when it is pulsed fast enough.
 
-<ol class="questions" start="6">
-<li>Say we want to use Timer A1 for our PWM signal. Which pins is register 1 of Timer A1
-capable of sending a PWM signal to? What should PxSEL, PxSEL2, and PxDIR be for these
-pins?</li>
-<li>In up mode, the timer will continuously count up to the value in TACCR0, resetting to 0
-every time it reaches it. If we want our output (using TACCR1) to be initially on for some
-fraction of each cycle and then turn off, what mode should we put the capture compare block in?
-How do we actually set it to this mode?</li>
-<li>To drive an RGB LED, you in general need 3 output pins. In general, what is the maximum
-number of PWM signals that can be generated by the Timer A1 module? What if the module
-is configured in up mode?</li>
-<li>If you had to generate 4 different PWM signals (i.e., using both Timer A1 and Timer A0)
-what is a valid set of 4 output pins?</li>
-</ol>
+  6. Say we want to use Timer A1 for our PWM signal. Which pins is register 1 of Timer A1
+  capable of sending a PWM signal to? What should PxSEL, PxSEL2, and PxDIR be for these
+  pins?
+  7. In up mode, the timer will continuously count up to the value in TACCR0, resetting to 0
+  every time it reaches it. If we want our output (using TACCR1) to be initially on for some
+  fraction of each cycle and then turn off, what mode should we put the capture compare block in?
+  How do we actually set it to this mode?
+  8. To drive an RGB LED, you in general need 3 output pins. In general, what is the maximum
+  number of PWM signals that can be generated by the Timer A1 module? What if the module
+  is configured in up mode?
+  9. If you had to generate 4 different PWM signals (i.e., using both Timer A1 and Timer A0)
+  what is a valid set of 4 output pins?
+  {: class="questions" start="6"}
 
 Write some code to toss all this together. Source Timer A1 off the VLO clock, leaving it at its
-default frequency. Configure your registers such that the duty cycle of the LED's input signal
+default frequency. Configure your registers such that the duty cycle of the LED input signal
 is 50%, and make sure to enable the LPM found in b). Since the PWM signals are automatically
 generated, you should not need an ISR.
 
-<ol class="questions" start="10">
-<li>If you were to set CCR0 to be 500, why does the LED flicker and not dim?</li>
-</ol>
+  10. If you were to set CCR0 to be 500, why does the LED flicker and not dim?
+  {: class="questions" start="10"}
 
 Set CCR0 such that you see no flicker. Remove the LED from the circuit and move your Vcc jumper
 to the MSP430 side of the board and use a multimeter to measure the amount of current the
-MSP430 is using (while it's still on the breadboard). Measure this again without any LPM on,
+MSP430 is using (while it is still on the breadboard). Measure this again without any LPM on,
 and comment on the difference.
 
-<ol class="questions" start="11">
-<li>What do you measure for each case, and why are they different? If you were using a 250mAh
-coin cell battery to power this circuit, how long could it run in each mode?</li>
-</ol>
+  11. What do you measure for each case, and why are they different? If you were using a 250mAh
+  coin cell battery to power this circuit, how long could it run in each mode?
+  {: class="questions" start="11"}
 
 Choose a level of CCR0 such that you do not see flicker when the duty cycle of the LED is 5%
 (i.e., on 5% of the time). **Create a video in which you change the duty cycle of the LED from 5%
@@ -92,43 +118,73 @@ to 30% to 60% to 95%, and turn in the code with LPM on as `PWM_test.c`.**
 
 #### Part 2: Designing a Mood Ring
 
-In this part, we'll put together most of the concepts from Part 1, creating a circuit with an
-RGB LED (ignoring the green part).
+In this part, we will put together most of the concepts from Part 1, creating a circuit with an
+RGB LED (ignoring the green part). In order to do the rest of the assignment, you will need to
+clone the [ELEC327 reposistory](https://github.com/ckemere/ELEC327) from github (if you have
+not done so yet). In the `Labs/Lab3/Datasheets` directory, you will find a data sheet for the
+[RGB LED](http://www.digikey.com/product-detail/en/WP154A4SUREQBFZGC/754-1615-ND/3084119) we
+will use on the Mood Ring PCB. (There are actually two. The default should be the through-hole
+version, and for **extra credit**, you can instead refer to the [surface mount
+version](http://www.digikey.com/product-detail/en/5988610307F/350-2087-1-ND/1291391).)
 
-<ol class="questions" start="12">
-<li>Refer to the RGB LED's data sheet – assuming your MSP430 is running at 3.6 V, what
-values of resistance should you use for each channel of the LED to limit the driving current in
-each channel to 6 mA?</li>
-</ol>
+  12. Refer to the data sheet for the RGB LEDs – assuming your MSP430 is running at 3.6 V, what
+  values of resistance should you use for each channel of the LED to limit the driving current in
+  each channel to 6 mA?
+  {: class="questions" start="12"}
 
-Once you have this working on a breadboard, the last thing we're going to do is make a
-schematic for it and actually order / assemble it on the received PCB. We'll be using Eagle for
-this part.
+Once you have this working on a breadboard, the last thing we are going to do is make a
+schematic for it and actually order / assemble it on the received PCB. We will be using Eagle for
+this part. In the `Labs/Lab2` directory, you will find a schematic which contains all but one
+of the parts you will need. These are all part of the ELEC327 library, which is found in the
+`PCBs` directory.
 
-Eagle comes with a good number of parts, but not all that you need. The first thing that you'll
-need to do is to make a part for the RGB LED. You should create a personal library for parts
-you make. Then, start with the "symbol". Make sure to adequately labels the various
+Eagle comes with a good number of parts, but not all that you need. The first thing that you
+will need to do is to make a part for the RGB LED. You should create a personal library for
+parts you make. Then, start with the "symbol". Make sure to adequately labels the various
 connections. Pay special attention to the direction of current flow through each LED. Then you
 should create a "footprint", referring to the data sheet for the spacing of the pads. Finally,
-combine the symbol and footprint so that the pins are connected to the right pads.
+combine the symbol and footprint so that the pins are connected to the right pads. By default
+you should be using the [through hole
+part](http://www.digikey.com/product-detail/en/WP154A4SUREQBFZGC/754-1615-ND/3084119). For
+**extra credit** you can instead use the [surface mount
+part](http://www.digikey.com/product-detail/en/5988610307F/350-2087-1-ND/1291391). **NOTE
+WHETHER THE CATHODE OR ANODE IS COMMON IN THE VERSION OF THE PART YOU USE!!!**
 
-Add this RGB LED to the provided project file. It contains all the necessary parts, except for
-the resistors (on the PCB, you'll be using a coin cell battery instead of USB power). Add those
-in, connect everything in the circuit, then everything in the schematic. Try to make the final
-board as small as you can reasonably get it. (You will be scored on minimum dimension and area,
-but beware of making it so small that you can't get it to work!) Additionally, for this
-project, PCB designs should be rectangular. After routing, check to make sure that it passes
-the electrical rule check (ERC) and design rule check (DRC). When you're finished, make a PDF
-of the board at 200% zoom. Then run the "BareBones.cam" CAM job to create the
-necessary files for manufacturing. We will submit a panel of the class's designs for
-manufacturing, and in a subsequent lab, you will assemble and test your PCBs. Thus, late
-submissions of this portion of the assignment will mean that you lose points not only for this
-lab but also a subsequent one!!!!
+Add this RGB LED to the provided project file. It contains all the necessary parts. Now, 
+connect everything in the schematic. **Keep in mind that the RGB LED should be connected to PWM
+output pins connected to available Timer outputs. Use the *TA\*.1 and TA\*.2* outputs and not the
+*TA\*.0* one so that you can use the VLO!!!!**{: style="text-decoration:underline"} 
+
+Next, then create a `.brd` file and route all of the connectionts. Keep in mind that the
+battery package is solid and plastic, so you should not place any parts on top of it. One
+solution is to put everything but the battery on one side of the PCB and the battery on the
+other, keeping in mind that you probably should not put through-hole parts on the opposite side
+of the board from where the battery is. Try to make the final board as small as you can
+reasonably get it. (You will be scored on minimum dimension and area, but beware of making it
+so small that you can't get it to work!) Additionally, for this project, PCB designs should be
+rectangular. After routing, check to make sure that it passes the electrical rule check (ERC)
+and design rule check (DRC), using the DRC rules given in the
+`PCBS/AdvancedCircuitsBarebones.dru` rule file. 
+
+When you're finished, make a PDF of the board at 200% zoom. Then run the CAM job in
+`PCBs/AdvancedBarebones.cam` to create the necessary files for manufacturing. We will submit a
+panel of the class's designs for manufacturing, and in a subsequent lab, you will assemble and
+test your PCBs. Thus, late submissions of this portion of the assignment will mean that you
+lose points not only for this lab but also a subsequent one!!!!
 
 **Upload your answered questions, code, and video URL, and the following PCB files to Owlspace:**
 
-+ the PDF of your board design
-+ the Eagle CAD .sch and .brd files
-+ manufacturing files - .GBL (bottom layer), .GML (board outline), .GTL (top layer) and .TXT
-(drill locations)
+  + the PDF of your board design
+  + the Eagle CAD .sch and .brd files
+  + manufacturing files - `your-file-name.GBL` (bottom layer), `your-file-name.GML` (board
+  outline), `your-file-name.GTL` (top layer) and `your-file-name.TXT` (drill locations)
+
+**Please do NOT zip these, just upload them individually. If you do not follow this instruction
+I will deduct points from your score. (I use an automated script to extract these files.)**
+
+For **extra credit**, create a part and include the external temperature sensor
+[TMP37](http://www.digikey.com/product-detail/en/TMP37GRTZ-REEL7/TMP37GRTZ-REEL7CT-ND/2467820)
+(the SOT-23-5 package).  You should connect all the pins as appropriate, including Vout and
+Shutdown, which should be connected to available MSP430 IO pins. The datasheet is included in
+the `Labs/Lab3/Datasheets` directory.
 
