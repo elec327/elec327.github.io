@@ -53,9 +53,10 @@ extensively.
   week to run off the VLO instead of the DCO?
   {: class="questions"}
 
-In the skeleton code, the MSP430 runs full-time between each interrupt. To save on a lot of
-power, it is useful to put it into a low power mode (LPM) when certain clocks are not being
-used.
+In the [skeleton
+code](https://raw.githubusercontent.com/ckemere/ELEC327/master/Labs/Lab3/lab3_skeleton.c), the
+MSP430 runs full-time between each interrupt. To save on a lot of power, it is useful to put it
+into a low power mode (LPM) when certain clocks are not being used.
 
   2. What clock sources can drive the ACLK? In which low power modes is only ACLK active? If
   we only want to enable the VLO when not in an interrupt, what low power mode should we put the
