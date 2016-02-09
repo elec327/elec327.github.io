@@ -9,27 +9,42 @@ description: ADC, Software Architecture, Mood Ring
 
 ## Lab #4: Coding up the mood ring
 
+<div class="alert alert-info" role="alert">
+#### **There are two goals for this assignment:**
+
+  - To learn and use the MSP430's analog-to-digital conversion circuitry
+  - To create structured code which carries out multiple asynchronous/independent functions
+  
+</div>
+
+<div class="alert alert-danger" role="alert">
+#### **What should be turned in?**
+
+  1. Your **commented** `timer_shift_PWM.c` and `mood_ring.c` files. 
+  2. Your answers to the questions. (Please submit in either PDF or TXT format.)
+  3. A youtube link to a demo video(s) showing the timer-shift and temperature/timer-shift
+  color intensities.
+
+</div>
+
 #### Part 1: Multiple Timers, Program Structure
 
 For Lab 2, you figured out how to run your MSP430 in Low Power Mode. In order to make your mood
 ring, you'll need to properly architect your code. To begin with, think about the different
 time scales at which you want to act:
 
-<ol class="questions">
-<li>For optimal power, which clock should you use for PWM? Ideally the PWM control frequency
-should be one or two orders of magnitude higher than the minimum (let's say > 5 kHz). How would
-you set the PWM control clock to run at 6 kHz?</li>
-<li>The MSP430G2553 has 3 timer modules –two are the TimerA type, and one is the Watchdog Timer
-(WDT+). Unlike the TimerA module, the WDT+ module cannot control PWM outputs and has less
-flexibility in general. However, it is very useful as a tool to trigger low level state
-changes. How would you configure the WDT+ module to generate periodic (maskable)
-interrupts?</li>
-<li>
-If your <code>main()</code> function contains an instruction which puts the CPU into a low power mode,
-what are the minimal interrupt service routine instructions required to wake the CPU and return
-function to the <code>main()</code> function?
-</li>
-</ol>
+  1. For optimal power, which clock should you use for PWM? Ideally the PWM control frequency
+  should be one or two orders of magnitude higher than the minimum (let's say > 5 kHz). How would
+  you set the PWM control clock to run at 6 kHz?
+  2. The MSP430G2553 has 3 timer modules –two are the TimerA type, and one is the Watchdog Timer
+  (WDT+). Unlike the TimerA module, the WDT+ module cannot control PWM outputs and has less
+  flexibility in general. However, it is very useful as a tool to trigger low level state
+  changes. How would you configure the WDT+ module to generate periodic (maskable)
+  interrupts?
+  3.  If your `main()` function contains an instruction which puts the CPU into a low power mode,
+  what are the minimal interrupt service routine instructions required to wake the CPU and return
+  function to the `main()` function?
+  {: class="questions"}
 
 You can either use two separate LEDs or an RGB LED unit soldered to a breakout board for the
 rest of Part 1. Modify your code from Lab 2 so that the `main()` function adjusts the PWM
@@ -39,10 +54,9 @@ LED through 16 levels (so that maximum blue corresponds with minimum red and vic
 of each color shift cycle. Set up the WDT+ module to generate an interrupt every second to wake
 up the CPU, so that the shifts in color happen every second.
 
-<ol class="questions" start="4">
-<li>Assuming you use the VLO to control the WDT and TimerA modules, what is the lowest
-LPM which will allow your device to continue to function?</li>
-</ol>
+  4. Assuming you use the VLO to control the WDT and TimerA modules, what is the lowest
+  LPM which will allow your device to continue to function?
+  {: class="questions" start="4"}
 
 **Save this code as timer\_shift\_PWM.c.** You will create a demo video which contains both the
 timer-shifted colors and temperature shifted colors.
@@ -53,15 +67,25 @@ In this part, we'll put together Part 1 and add in ADC to make a "mood ring" wit
 (ignoring the green part) controlled by the on board temperature sensor. We'll start off with a
 few questions that should guide learning how to use ADC:
 
-<ol class="questions" start="5">
-<li>How would you turn on the ADC10 module and tell it to sample from the internal temperature
-sensor? What is the default voltage range for conversion?</li>
-<li>What are two ways of discovering when the ADC10 module has finished a conversion? Which
-method will be more efficient from a power perspective?</li>
-<li>What is the minimum sampling period for the internal temperature sensor on the ADC10
-module? Assuming that you run the ADC10 using the VLO at 12 kHz, what is the maximum sampling
-rate for temperature?</li>
-</ol>
+  5. How would you turn on the ADC10 module and tell it to sample from the internal temperature
+  sensor? What is the default voltage range for conversion?
+  6. What are two ways of discovering when the ADC10 module has finished a conversion? Which
+  method will be more efficient from a power perspective?
+  7. What is the minimum sampling period for the internal temperature sensor on the ADC10
+  module? Assuming that you run the ADC10 using the VLO at 12 kHz, what is the maximum sampling
+  rate for temperature?
+  8. What kind of ADC is used in the MSP430? Take a look at the [datasheet for the Atmel SAM
+  D21](http://www.atmel.com/Images/Atmel-42181-SAM-D21_Datasheet.pdf), which is used in the
+  Arduino One. What type of ADC architecture do you think it uses (hint: take a look at the
+  "Conversion Timing" in the ADC section)?
+  9. Assume you've already maximized the sampling clock and minimized the hold time. If you
+  could make an architecturatl change to increase the rate at which samples were acquired by
+  the MSP430 ADC10, how could you do it? Is there a simple modification that would let users
+  trade off bit depth for sampling rate (hint: the SAM D21 has this feature)?
+  10. In an oversampling ADC, what multiple of the sampling rate yields an additional bit of
+  precision? In a sigma-delta ADC, what multiple of the sampling rate yields an additional bit
+  of precision?
+  {: class="questions" start="5"}
 
 Modify your `main()` function so that the code goes into low power mode twice: after enabling
 the ADC10 to sample and after changing the PWM parameters for the LEDs. Set up your ISRs for
