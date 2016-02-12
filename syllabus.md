@@ -3,6 +3,8 @@ layout: default
 title: Syllabus
 group: navigation
 ---
+
+
 ##ELEC 327: Digital Systems Laboratory (Spring 2016)
 
 ###Syllabus
@@ -17,13 +19,16 @@ caleb.kemere@rice.edu
 
 **Lab Assistants:**
   
-  
   - Xin Huang ( [xyh1](mailto:xyh1@rice.edu)) -- Office hours Monday 2-5:30 pm / Friday 8:30-10 am
   - Michael Tsehaie ( [mht4](mailto:mht4@rice.edu))  -- Office hours Monday 2-5 pm
   - Stephen Xia ( [sx7](mailto:sx7@rice.edu)) -- Office hours Wednesdays 8-10 pm
   - Daniel Zdeblick ( [djz3](mailto:djz3@rice.edu)) -- Office hours Friday 3-5 pm
 
 Additional Lab office hours may be requested on Piazza
+
+**Grader:**
+  
+  - Yuquiang Mu ( [ymu](mailto:ymu@rice.edu)) 
 
 ---
 
