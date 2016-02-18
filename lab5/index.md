@@ -9,7 +9,7 @@ description: Soldering Redux and Random Number Generation
 
 ## Lab #5: Building and programing the mood ring PCB with randomness
 
-_This lab builds on Lab 3 to make a device that flashes an RGB LED in an interesting pattern in
+_This lab builds on Lab 4 to make a device that flashes an RGB LED in an interesting pattern in
 a way that depends on the ambient temperature. The goal is for you to continue to master
 combining multiple elements of embedded system architecture while also exploring random number
 generation._
