@@ -19,7 +19,7 @@ generation._
 Begin by assembling your mood ring PCB and programming it with the code you developed for Lab
 3. PAY ATTENTION to the values of resistance you use with the RGB LED. If you make them too
 small, it may be fine when running from USB power, but cause problems when running from the
-batter
+battery.
 
 #### Part 1: Adding Randomness
 
@@ -53,9 +53,14 @@ file, creating a header file that contains the function declaration, and compili
 library. You then include the header and the compiled library into your project.)
 
 
+**BONUS:** If you added the external temperature sensor to your PCB, re-implement the
+temperature measurement using it.
+
 Save your control code as `random_mood_ring.c`. **Create a demo video that shows the shifting
 colors. You should demonstrate how changing the temperature causes changes in the color
 patterns. Upload your code and the video URL to owlspace. If you want to claim the library
-bonus, you should also upload a screenshot of your CCS project with the library included.**
+bonus, you should also upload a screenshot of your CCS project with the library included. If
+you want to claim the external sensor bonus, make sure you point out how you used it to measure
+temperature. Finally, if you used the SMD RGB LED, mention that as well.**
 
 
