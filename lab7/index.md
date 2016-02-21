@@ -9,25 +9,22 @@ description: Software Debouncing
 
 ## Lab #7: Software Debouncing and the Simon PCB
 
-#### Part 1: The Simon PCB
+<div class="alert alert-info" role="alert">
+#### **There are three goals for this lab:**
+  - To understand the effects of combining two PWM channels in one device.
+  - To understand and implement software debouncing.
+  
+</div>
 
-The game ["Simon"](https://en.wikipedia.org/wiki/Simon_(game)) is a classic toy which tests the
-working memory of the player. In this lab, you will design the PCB for your implementation of
-Simon and work on the code to process button presses. 
+<div class="alert alert-danger" role="alert">
+#### **What should you turn in?**
 
-Parts:
-  + 4 buttons with 1206 capacitors in parallel
-  + 4 APA102 SPI RGB LEDs (probably either in a row or in a circle)
-  + Power switch
-  + AAA battery pack
-  + Piezo buzzer (wired up for PWM - see Part 2)
+  1. Turn in your code as `debounce.c` and answered questions.
+  2. Create a demo video that shows you playing and then resetting and playing again.
 
-Here's a video from Vitor Azevedo Andriotti (Spring 2015) showing a Simon board in action.
+</div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nrsBVdJFrKc" frameborder="0" allowfullscreen></iframe>
-
-
-#### Part 2: Playing tones via PWM
+#### Part 1: Playing tones via PWM
 
 <p class="bg-success">
 While you don't need to turn in the code for this part, I still recommend you do it! The sample
@@ -44,7 +41,7 @@ note should be played for 1 second. The scale should then repeat. Every other sc
 higher volume. Sample code to get you going is in [piezo_sample.c](piezo_sample.c).
 
 
-#### Part 3: Software Debouncing
+#### Part 2: Software Debouncing
 
 *The point of this portion of the lab is to implement switch debouncing in software. The
 switches provided to you in class are reasonable, but still bounce noticeably.*
