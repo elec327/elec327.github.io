@@ -2,7 +2,7 @@
 title: Project 1 - Midterm
 layout: default
 group: labs-navigation
-description: Midterm Project: Simon
+description: Midterm Project - Simon
 ---
 
 {::options parse_block_html="true" /}
