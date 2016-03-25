@@ -37,7 +37,7 @@ walk through color space to change. The logic should be as follows:
 
 1. Each cycle of the main timing loop, generate 2 random numbers. Rescale them such that they
 are between -15 and +15 (this is assuming you have 255 possible levels of intensity). This will
-give two numbers r and b.  
+give two numbers r and b.
 2. Measure the temperature.
 3. If the current temperature is colder than it was the last cycle, subtract 8 from r and add 8
 to b. If it is warmer, subtract 8 from b and add 8 to r.
