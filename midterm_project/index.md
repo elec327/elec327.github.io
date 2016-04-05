@@ -22,11 +22,25 @@ description: Midterm Project
 #### **How will it be evaluated?**
 
   1. The device will be presented and demo'ed to the class (you will need evals from at least
-  10 other students) and the professor.
-  2. You should turn in your final firmware code and a youtube link to a demo video of your
+  5 other students and/or the professor).
+  2. Please turn in your self-criticism score (rubric given below), your code, and the size of
+  your board. For 5 bonus points, you may turn in a youtube link to a demo video of your
   code running.  **Specifically, your demo video should show you playing through to a win,
   running the "Game Over - Win" animation, and then pushing a button to restart and then
   playing through but making a mistake to generate the "Game Over - Loss" animation.**
+
+  **Rubric:** (10 pts each, 80 total plus up to 40 bonus - if more than 40 bonus deserved you
+  can ask for it) 
+  - Ergonomics-Shape (is it comfortable to hold and play?)
+  - Ergonomics-Debouncing (does it register just one button press when you press a button?)
+  - Gameplay-Timeout (does it game over after a while if no button is pressed?)
+  - Gameplay-MisplayingError (does it game over if the wrong button is pressed?)
+  - Gameplay-Win (does it do something special when the player wins?)
+  - Gameplay-Random (does it play a different sequence each time?)
+  - Style-Animations (are there animations for start/win and lose/game-over?)
+  - Style-SoundLight (do lights and sounds work well together and convey information?)
+  - Bonus - should be 5-15 pts per item (example bonus items: software debouncing, selectable
+    difficulty, long press, multiple button press, musical sequencer (40 pts!), etc.)
 
 </div>
 
