@@ -32,6 +32,8 @@ to hook into a 5V supply in order to drive them. The test point to the right of 
 connector on your g2553 Launchpads provides a 5V source. Use an N-channel mosfet to control the
 motor, driving the gate with PWM.
 
+<img src="./location_5V.png" width="400">
+
 **Task 1:** Wire up your motor to your launchpad:
   1. Connect the two inputs of the motor to your breadboard. Tape/glue a circle of cardboard to the
   drive pin of the motor so that you can see the motor rotating.
