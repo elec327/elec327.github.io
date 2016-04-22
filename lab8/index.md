@@ -60,7 +60,7 @@ character maps](./HD44780.pdf).
 
 <img src="./158-00.jpg" width="400">
 
-The product page for the LCD display is [here](https://www.adafruit.com/products/158).
+The product page for the hall-effect sensor is [here](https://www.adafruit.com/products/158).
 [Datasheet](US5881_rev007.pdf).
 
 **Task 3:** Integrate the Hall sensor.
