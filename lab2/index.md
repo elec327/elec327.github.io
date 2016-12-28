@@ -19,7 +19,7 @@ specifically by making use of the interrupt associated with one of the Timer mod
 <div class="row">
 <div class="col-md-3 col-sm-6 col-xs-6">
 <div class="thumbnail">
-<a href="Pendant.png"> <img src="Pendant.png" alt="Pendant PCB"></a>
+<a href="Pendant.png"> <img src="PendantGerber.png" alt="Pendant PCB"></a>
 
 <div class="caption"><p>Lab 2 6-LED pendant PCB.</p></div>
 
@@ -28,11 +28,14 @@ specifically by making use of the interrupt associated with one of the Timer mod
 <div class="col-md-9 col-sm-12 col-xs-12">
 Start by soldering on the MSP430. It is the most challenging piece of the puzzle and getting it
 in place will make everything else easier. The best bet for dual-inline packages like this one
-is to tack one corner down, then the opposite one, then fill in the rest. 
+is to tack one corner down, then the opposite one, then fill in the rest.
 
-You may need to reference the [board](Pendant.brd) and/or [schematic](Pendant.sch) files in
-order to know what other parts go where. In particular notice which components are resistors,
-which are capacitors, and which are light emitting diodes (LEDs).
+You may need to reference the
+[board](https://github.com/ckemere/ELEC327/raw/master/PCBs/Pendant/Pendant.brd)
+and/or [schematic](https://github.com/ckemere/ELEC327/raw/master/PCBs/Pendant/Pendant.sch)
+files in order to know what other parts go where. In particular notice which
+components are resistors, which are capacitors, and which are light emitting
+diodes (LEDs).
 
 1. Either examine the PCB closely or look at the schematic for the pendant. Which GPIO pins
 are connected to LEDs?
@@ -87,7 +90,7 @@ frameborder="0" allowfullscreen></iframe>
 #### Part 2: Using the Timer interrupts
 
 The second part of the lab is to program the pendant to do something interesting. The pattern
-that is desired is as follows: 
+that is desired is as follows:
 
   - One LED should be lit at any one time.
   - Which LED is lit should change every 333 ms.
@@ -114,12 +117,12 @@ To answer the following questions, you will need to refer to Chapters 5 and 12 o
 Guide.
 
 9. How do you set a pin to be an output? What is the default mode for GPIO
-pins? 
+pins?
 
 10. If your main function begins with the instruction `BSCCTL2 = 0;` what will be the
 frequency of the CPU clock (`MCLK`)? What will be the frequency of the submain clock (`SMCLK`)?
 (Hint: you will also need to figure out what the default setting for the DCO is, and assume
-that it is set.) 
+that it is set.)
 
 11. Assume that the SMCLK has been configured to 1 MHz. Assume you are given the following
 configuration of Timer A0: `TA0CTL = TASSEL_2 | ID_3 | MC_1 | TAIE;`. What register do you need
