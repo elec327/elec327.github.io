@@ -4,10 +4,9 @@ title: Syllabus
 group: navigation
 ---
 
+## ELEC 327: Digital Systems Laboratory (Spring 2017)
 
-##ELEC 327: Digital Systems Laboratory (Spring 2016)
-
-###Syllabus
+### Syllabus
 
 ***
 
@@ -18,17 +17,18 @@ Office Hours: (please verify via email) Monday, Wednesday 9:00-10:00am (RMC Coff
 caleb.kemere@rice.edu
 
 **Lab Assistants:**
-  
-  - Xin Huang ( [xyh1](mailto:xyh1@rice.edu)) -- Office hours Monday 2-5:30 pm / Friday 8:30-10 am
+  - TBD
+
+<!--   - Xin Huang ( [xyh1](mailto:xyh1@rice.edu)) -- Office hours Monday 2-5:30 pm / Friday 8:30-10 am
   - Michael Tsehaie ( [mht4](mailto:mht4@rice.edu))  -- Office hours Monday 2-5 pm
   - Stephen Xia ( [sx7](mailto:sx7@rice.edu)) -- Office hours Wednesdays 8-10 pm
   - Daniel Zdeblick ( [djz3](mailto:djz3@rice.edu)) -- Office hours Friday 3-5 pm
+  -->
 
 Additional Lab office hours may be requested on Piazza
 
 **Grader:**
-  
-  - Yuquiang Mu ( [ymu](mailto:ymu@rice.edu)) 
+  - TBD
 
 ---
 
@@ -85,4 +85,22 @@ student should turn in their own lab writeup (except for midterm and final proje
 should be done in pairs). I would like you to write your own code and (especially) comments for
 the labs.
 
+**Required Textbooks and Supplies:**
 
+No textbook is required. Students will be provided with one MSP430-G2553
+Launchpad and an associated "Sidekick" kit which contains a solderless breadboard
+and jumper wires. More jumpers will be available in lab. It is recommended
+that students procure a larger solderless breadboard - they can be purchased,
+for example, on Amazon for $30-40.
+
+**Lab Cleanliness:**
+
+Historically, the lab space has not been maintained in a neat and orderly manner.
+Starting in 2017, we will implement spot inspections and **class-wide grade
+deductions** to try to ensure that a high quality working and learning environment
+is maintained.
+
+**Waste:** In the process of learning how to assemble (i.e., solder) surface mount devices,
+there has been not-insignificant waste, where things end up on the floor. While
+we would prefer to avoid artificially limiting students supplies, we will do so
+if waste is not contained.
