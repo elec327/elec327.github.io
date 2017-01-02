@@ -23,7 +23,7 @@ description: Morse Code with Timers
 #### **What should be turned in?**
 
 
-  1. Your **commented** morse\_code.c file. 
+  1. Your **commented** morse-code.c file. 
   2. Your answers to the questions (given at the end of this document) 
   3. A youtube link to a demo video of your code running after completing Part 3 of the lab.
 
@@ -84,7 +84,7 @@ use it to achieve the defined results (except perhaps the bonus!).
 
 Using the P1.0 LED on your launchpad, blink a message in morse code. Look morse code up on
 wikipedia to find the code for each letter and how to separate letters. Submit your code in a
-separate file named `morse\_code.c`. **Every line should have a meaningful comment and extra
+separate file named `morse-code.c`. **Every line should have a meaningful comment and extra
 comments are welcome!** A few specifications:
 
 - A "unit" should be ¼ of a second.
