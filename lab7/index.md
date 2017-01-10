@@ -7,7 +7,7 @@ description: Software Debouncing
 
 {::options parse_block_html="true" /}
 
-## Lab #7: Software Debouncing and the Simon PCB
+## [NOT FINAL] Lab #7: Software Debouncing and the Simon PCB
 
 <div class="alert alert-info" role="alert">
 #### **There are three goals for this lab:**

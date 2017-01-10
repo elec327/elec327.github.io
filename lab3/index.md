@@ -9,7 +9,7 @@ description: PWM, LPM, and PCB Design
 {::options parse_block_html="true" /}
 
 
-## Lab #3: PWM, Low Power Modes and PCB Design
+## [NOT FINAL] Lab #3: PWM, Low Power Modes and PCB Design
 
 <div class="alert alert-info" role="alert">
 #### **There are three goals for this assignment:**

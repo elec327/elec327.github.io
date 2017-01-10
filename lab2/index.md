@@ -8,7 +8,7 @@ description: Timers and Soldering
 {::options parse_block_html="true" /}
 
 
-## Lab #2: _Timers and Soldering_
+## [NOT FINAL] Lab #2: _Timers and Soldering_
 
 _The goals of this lab are two-fold. First, we aim for you to gain experience soldering small,
 surface mount parts both for skill acquisition and in order to give you some background as you

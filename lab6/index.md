@@ -7,7 +7,7 @@ description: Serial Communications (SPI + I2C)
 
 {::options parse_block_html="true" /}
 
-## Lab #6: Using serial communications (SPI controlling an LED driver)
+## [NOT FINAL] Lab #6: Using serial communications (SPI controlling an LED driver)
 
 _This lab builds on Lab 4. The goal is for you to be comfortable with SPI serial
 communications that will be the foundation of the Simon game._

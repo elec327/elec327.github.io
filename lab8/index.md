@@ -7,7 +7,7 @@ description: Motor Speed Control
 
 {::options parse_block_html="true" /}
 
-## Lab #8: Motor Speed Control
+## [NOT FINAL] Lab #8: Motor Speed Control
 <div class="alert alert-info" role="alert">
 #### **There are three goals for this assignment:**
 

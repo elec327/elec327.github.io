@@ -7,7 +7,7 @@ description: Deep Brain Stimulation Case Study
 
 {::options parse_block_html="true" /}
 
-## Lab #9: Deep Brain Stimulation Case Study
+## [NOT FINAL] Lab #9: Deep Brain Stimulation Case Study
 
 #### Deep Brain Stimulation Background
 <div class="row">
