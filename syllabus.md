@@ -17,15 +17,20 @@ Office Hours: (please verify via email) Monday, Wednesday 9:00-10:00am (RMC Coff
 caleb.kemere@rice.edu
 
 **Lab Assistants:**
-  - TBD
+  - Alice Xie ( [zx7](mailto:zx7@rice.edu))
+  - Cody Peterson ( [cmp8](mailto:cmp8@rice.edu))
+  - Emilio Del Vecchio ( [edd5](mailto:edd5@rice.edu))
+  - Greg Harper ( [gdh3](mailto:gdh3@rice.edu))
+  - Keiko Kaplan ( [kfk3](mailto:kfk3@rice.edu))
+  - Kevin Lin ( [kevinlin](mailto:kevinlin@rice.edu))
+  - Randy Zhang ( [xz33](mailto:xz33@rice.edu))
 
-<!--   - Xin Huang ( [xyh1](mailto:xyh1@rice.edu)) -- Office hours Monday 2-5:30 pm / Friday 8:30-10 am
-  - Michael Tsehaie ( [mht4](mailto:mht4@rice.edu))  -- Office hours Monday 2-5 pm
-  - Stephen Xia ( [sx7](mailto:sx7@rice.edu)) -- Office hours Wednesdays 8-10 pm
-  - Daniel Zdeblick ( [djz3](mailto:djz3@rice.edu)) -- Office hours Friday 3-5 pm
-  -->
+** Lab Office Hours: **
+  - MW 3-5 pm
+  - Sunday 7-9 pm
+  - Tu/Th 7-9 pm
 
-Additional Lab office hours may be requested on Piazza
+Additional Lab office hours may be requested on Canvas
 
 **Grader:**
   - TBD
@@ -42,19 +47,21 @@ Lab Access Keypad Code: ...-- -.... ----. ----. #
 ---
 
 **Course website:**  
-We use 3 different digital resources:
+We use 2 different digital resources:
 
 1. The primary location assignments and lecture notes (and other resources) is the course
 website – [http://elec327.github.io](http://elec327.github.io)
-2. We use Piazza ([http://piazza.com](http://piazza.com)) for announcements and for
-   communication. If you have specific questions about course content or assignments, please post
-   them on Piazza. As a corollary, you may find it useful to check for answers as questions
-   arise.
-3. We use Owlspace for assignment submission and for posting rubrics for peer-grading.
+2. We use Canvas ([https://canvas.rice.edu/courses/2062](https://canvas.rice.edu/courses/2062))
+for announcements and for communication. If you have specific questions about course content or
+assignments, please post them on Canvas. As a corollary, you may find it useful to check for
+answers as questions arise.
+3. We additionally use Canvas for assignment submission and for posting rubrics for peer-grading.
 
 ---
 
-**Course Description:** One of the most critical aspects of modern computer systems involves interfacing with the world. This course will focus on how power-efficient user-facing systems are built.
+**Course Description:** One of the most critical aspects of modern computer systems involves
+interfacing with the world. This course will focus on how power-efficient user-facing systems
+are built.
 
 **Objective:** Students should learn the fundamentals of embedded system programming and feel
 competent to design, build, and manufacture their own embedded devices. &nbsp;Furthermore,
