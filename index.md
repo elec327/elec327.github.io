@@ -34,7 +34,7 @@ understand how application-specific blocks enable modern commercial devices._
 
 **Syllabus & Lab Office Hours** -- [here](/syllabus.html)
 
-**Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/ftoj5gq10k3zqzq/AABzEduNoxbCRr0ly9zBi7qha)
+**Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/mb9gijczcju1416/AABuRxyBV_vunMTpEvNFzIEOa?dl=0)
 
 
 **Github repository** - [https://github.com/elec327](https://github.com/elec327)
