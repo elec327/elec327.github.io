@@ -29,7 +29,7 @@ description: Morse Code with Timers
 
 </div>
 
-#### Due Date: __Monday, January 25 at 11 pm__
+#### Due Date: __Thursday, January 19 at 11:59 pm__
 
 
 #### Part 0: Installation (optional)
@@ -171,5 +171,5 @@ maximum current any one pin can output?</li>
 current? To be safe when using the MSP430, should you use a larger or smaller resistor?</li>
 </ol>
 
-**Upload your answers to the questions, your code, and a video URL to Owlspace.**
+**Upload your answers to the questions, your code, and a video URL to Canvas.**
 
