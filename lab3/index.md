@@ -9,7 +9,7 @@ description: PWM, LPM, and PCB Design
 {::options parse_block_html="true" /}
 
 
-## [NOT FINAL] Lab #3: PWM, Low Power Modes and PCB Design
+## Lab #3: PWM, Low Power Modes and PCB Design
 
 <div class="alert alert-info" role="alert">
 #### **There are three goals for this assignment:**
@@ -28,7 +28,7 @@ description: PWM, LPM, and PCB Design
   3. A youtube link to a demo video showing the LED changing intensity based on PWM.
   4. The PDF of your Mood Ring PCB design.
 
-  In a separate owlspace submission, please upload
+  In a separate Canvas submission, please upload
 
   1. The Eagle CAD .sch and .brd files.
   2. The manufacturing files - `your-file-name.GBL` (bottom layer), `your-file-name.GML` (board
@@ -173,7 +173,7 @@ panel of the class's designs for manufacturing, and in a subsequent lab, you wil
 test your PCBs. Thus, late submissions of this portion of the assignment will mean that you
 lose points not only for this lab but also a subsequent one!!!!
 
-**Upload your answered questions, code, and video URL, and the following PCB files to Owlspace:**
+**Upload your answered questions, code, and video URL, and the following PCB files to Canvas:**
 
   + the PDF of your board design
   + the Eagle CAD .sch and .brd files

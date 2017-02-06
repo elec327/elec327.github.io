@@ -8,12 +8,14 @@ description: Timers and Soldering
 {::options parse_block_html="true" /}
 
 
-## [NOT FINAL] Lab #2: _Timers and Soldering_
+## Lab #2: _Timers and Soldering_
 
 _The goals of this lab are two-fold. First, we aim for you to gain experience soldering small,
 surface mount parts both for skill acquisition and in order to give you some background as you
 begin PCB design in the next lab. Second, the goal is to begin learning about interrupts,
-specifically by making use of the interrupt associated with one of the Timer modules._
+specifically by making use of the interrupt associated with one of the Timer modules.
+
+This assignment is due Monday, February 6, 2017._
 
 #### Part 1: Soldering a pendant
 <div class="row">
@@ -137,4 +139,4 @@ it in the ISR?
 {: class="questions" start="9"}
 
 **Save your code as `pendant.c`. Create a demo video that shows the pendant operating.
-Upload your answered questions, code and the video URL to owlspace.**
+Upload your answered questions, code and the video URL to Canvas.**
