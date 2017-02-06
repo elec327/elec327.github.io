@@ -54,7 +54,7 @@ extensively.
   {: class="questions"}
 
 In the [skeleton
-code](https://raw.githubusercontent.com/ckemere/ELEC327/master/Labs/Lab3/lab3_skeleton.c), the
+code](https://raw.githubusercontent.com/elec327/ELEC327/master/Labs/Lab3/lab3_skeleton.c), the
 MSP430 runs full-time between each interrupt. To save on a lot of power, it is useful to put it
 into a low power mode (LPM) when certain clocks are not being used.
 
@@ -121,12 +121,12 @@ to 30% to 60% to 95%, and turn in the code with LPM on as `PWM_test.c`.**
 
 In this part, we will put together most of the concepts from Part 1, creating a circuit with an
 RGB LED (ignoring the green part). In order to do the rest of the assignment, you will need to
-clone the [ELEC327 reposistory](https://github.com/ckemere/ELEC327) from github (if you have
+clone the [ELEC327 reposistory](https://github.com/elec327/ELEC327) from github (if you have
 not done so yet). In the `Labs/Lab3/Datasheets` directory, you will find a data sheet for the
-[RGB LED](http://www.digikey.com/product-detail/en/WP154A4SUREQBFZGC/754-1615-ND/3084119) we
+[RGB LED](https://www.adafruit.com/products/315) we
 will use on the Mood Ring PCB. (There are actually two. The default should be the through-hole
 version, and for **extra credit**, you can instead refer to the [surface mount
-version](http://www.digikey.com/product-detail/en/5988610307F/350-2087-1-ND/1291391).)
+version](https://www.sparkfun.com/products/10866).)
 
   12. Refer to the data sheet for the RGB LEDs – assuming your MSP430 is running at 3.6 V, what
   values of resistance should you use for each channel of the LED to limit the driving current in
@@ -146,10 +146,10 @@ connections. Pay special attention to the direction of current flow through each
 should create a "footprint", referring to the data sheet for the spacing of the pads. Finally,
 combine the symbol and footprint so that the pins are connected to the right pads. By default
 you should be using the [through hole
-part](http://www.digikey.com/product-detail/en/WP154A4SUREQBFZGC/754-1615-ND/3084119). For
-**extra credit** you can instead use the [surface mount
-part](http://www.digikey.com/product-detail/en/5988610307F/350-2087-1-ND/1291391). **NOTE
-WHETHER THE CATHODE OR ANODE IS COMMON IN THE VERSION OF THE PART YOU USE!!!**
+part](https://www.adafruit.com/products/315). For **extra credit** you can instead use the
+[surface mount
+part](https://www.sparkfun.com/products/10866). **NOTE THAT THROUGH HOLE PART HAS A COMMON PIN,
+AND WHICH - CATHODE OR ANODE  - IS COMMON!!!**
 
 Add this RGB LED to the provided project file. It contains all the necessary parts. Now, 
 connect everything in the schematic. **Keep in mind that the RGB LED should be connected to PWM
