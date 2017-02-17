@@ -64,7 +64,8 @@ into a low power mode (LPM) when certain clocks are not being used.
   4. What line of code should we add to the end of our main loop to do this? How can you change
   this one line to also enable interrupts?
   4. What is the difference in supply current between LPM1 (when SMCLK is set to 1 MHz from the
-  DCO) and LPM3 (when ACLK is set to use the VLO)?
+  DCO) and LPM3 (when ACLK is set to use the VLO)? Note that when the DCO is on, LPM1 power
+  will be dominated by the DCO/DC generator and performance will be more like LPM0.
   {: class="questions" start="2"}
 
 To change the brightness of an LED (or most other analog devices), we use PWM. This essentially
