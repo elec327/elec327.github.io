@@ -104,13 +104,18 @@ generated, you should not need an ISR.
   10. If you were to set CCR0 to be 500, why does the LED flicker and not dim?
   {: class="questions" start="10"}
 
-Set CCR0 such that you see no flicker. Remove the LED from the circuit and move your Vcc jumper
-to the MSP430 side of the board and use a multimeter to measure the amount of current the
-MSP430 is using (while it is still on the breadboard). Measure this again without any LPM on,
-and comment on the difference.
+**Power consumption under different LPMs:** The current through the LED is going to be
+responsible for a reasonable fraction of the mood ring's power consumption. But what is its
+relative contribution compared to the MSP430. Set CCR0 such that you see no flicker. Assuming
+you're powering your MSP430 through the Launchpad USB connection, you can measure current
+consumption by connecting a voltmeter in series with VCC. You can access this at the jumper on
+the launchpad. To do this, move your Vcc jumper to the MSP430 side of the board and connect the
+multimeter between the two pins. Now, measure the current in 4 scenarios - with and without the
+LED attached and with and without the use of a LPM.
 
   11. What do you measure for each case, and why are they different? If you were using a 250mAh
-  coin cell battery to power this circuit, how long could it run in each mode?
+  coin cell battery to power this circuit, how long could it run in each mode? What fraction of
+  this lifetime is attributable to LED current?
   {: class="questions" start="11"}
 
 Choose a level of CCR0 such that you do not see flicker when the duty cycle of the LED is 5%
