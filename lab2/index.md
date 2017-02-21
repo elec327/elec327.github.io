@@ -42,8 +42,9 @@ diodes (LEDs).
 1. Either examine the PCB closely or look at the schematic for the pendant. Which GPIO pins
 are connected to LEDs?
 
-2. In a normal diode, which terminal does positive (conventional) current flow out of, cathode
-or anode? In the pendant circuit, which pin is this terminal connected to?
+2. In a normal, canonical (i.e., atomic), forward operating (i.e., not-breaking-down) diode,
+which terminal does positive (conventional) current flow out of, cathode or anode? In the
+pendant circuit, which pin is this terminal connected to?
 
 3. What value (0 or 1) will result in the diode turning on? How would the circuit be changed
 to allow the other value to turn the diode on?
@@ -68,16 +69,17 @@ LEDs.  How does this compare to the "forward voltage" found in the
 should apply? What appears to be the recommended forward current level?
 
 6. Assume that you will be using one a CR2032 battery, which has a nominal voltage of 3V. What
-voltage will appear on the output of the LED drive pins when they are on?
+voltage will appear on the output of the LED drive pins when they are on? (You can ignore the
+voltage drop through the MSP430!).
 
 7. Measure the voltage of a new CR2032 - what voltage do you find? After you build the circuit
 and program the pendant, measure again with the device running. What value do you find
 now?
 
-8. Finally, assume that the threshold voltage of the diode is 2 V, and the MSP430 on voltage
-is 3 V, and that the desired on current is 5 mA. What value of current-limiting resistor should
-you use? What would be the minimum resistance such that the current is less than the maximum
-(DC) specified in the data sheet?
+8. Finally, assume that the threshold voltage of the diode is 2 V, and the MSP430 output pin
+voltage is 3 V, and that the desired on current is 5 mA. What value of current-limiting
+resistor should you use? What would be the minimum resistance such that the current is less
+than the maximum (DC) specified in the data sheet?
 {: class="questions" start="4"}
 
 **Use the value of resistor which will achieve 5 mA on current along with the LEDs and a 47 K
@@ -118,13 +120,12 @@ way of making a clock.
 To answer the following questions, you will need to refer to Chapters 5 and 12 of the User
 Guide.
 
-9. How do you set a pin to be an output? What is the default mode for GPIO
-pins?
+9. How do you set a pin to be an output? What is the default mode for GPIO pins?
 
 10. If your main function begins with the instruction `BCSCTL2 = 0;` what will be the
 frequency of the CPU clock (`MCLK`)? What will be the frequency of the submain clock (`SMCLK`)?
 (Hint: you will also need to figure out what the default setting for the DCO is, and assume
-that it is set.)
+that it is set.) (Second hint: the DCO in the MSP430g2553 is calibrated by default.)
 
 11. Assume that the SMCLK has been configured to 1 MHz. Assume you are given the following
 configuration of Timer A0: `TA0CTL = TASSEL_2 | ID_3 | MC_1 | TAIE;`. What register do you need
