@@ -7,7 +7,7 @@ description: ADC, Software Architecture, Mood Ring
 
 {::options parse_block_html="true" /}
 
-## [NOT FINAL] Lab #4: Coding up the mood ring
+## Lab #4: Coding up the mood ring
 
 <div class="alert alert-info" role="alert">
 #### **There are two goals for this assignment:**
@@ -99,7 +99,7 @@ that any design decisions you made are easily available (which components are on
 label interval for timers in ms, etc). **Save this code as `mood_ring.c`. Create a demo video that
 shows the timer-shifting colors from Part 1 and temperature shifting color from Part 2. For
 Part 2, you should start with your device at one extreme, change it to the other, and then let
-it return. Upload your answered questions, code and the video URL to owlspace.**
+it return. Upload your answered questions, code and the video URL to Canvas.**
 
 **Bonus:** Add a "heart-beat" functionality to your mood ring where the LEDs flash at 0.5 Hz,
 but rather than flashing, become dimmer and brighter smoothly, with the color corresponding to
