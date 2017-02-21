@@ -121,7 +121,7 @@ Guide.
 9. How do you set a pin to be an output? What is the default mode for GPIO
 pins?
 
-10. If your main function begins with the instruction `BSCCTL2 = 0;` what will be the
+10. If your main function begins with the instruction `BCSCTL2 = 0;` what will be the
 frequency of the CPU clock (`MCLK`)? What will be the frequency of the submain clock (`SMCLK`)?
 (Hint: you will also need to figure out what the default setting for the DCO is, and assume
 that it is set.)
