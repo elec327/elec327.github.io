@@ -7,7 +7,7 @@ description: Serial Communications (SPI + I2C)
 
 {::options parse_block_html="true" /}
 
-## [NOT FINAL] Lab #6: Using serial communications (SPI controlling an LED driver)
+## Lab #6: Using serial communications (SPI controlling an LED driver)
 
 _This lab builds on Lab 4. The goal is for you to be comfortable with SPI serial
 communications that will be the foundation of the Simon game._
@@ -66,5 +66,5 @@ now drive the APA102C according to the temperature (and randomness). Turn this c
 receive a bonus. However, now you should do this using the "global intensity" bits. Make a
 video showing your APA102C being controlled by the temperature of the launch pad as in Lab 4.
 
-**Turn in the answers to the questions, your code, and a video URL on owlspace.**
+**Turn in the answers to the questions, your code, and a video URL on Canvas.**
 
