@@ -22,7 +22,7 @@ longer, formed as a presentaton (i.e., with slides) of your design and implement
 shorter (two minutes or less - functioning as a brief advertisement) mainly focusing on showing
 off your functioning product. For extra credit, create a github project (for your code and
 other design files) and associated website which has the written presentation content. On
-OwlSpace, submit either a link to this site or your written presentation, your code, and links
+Canvas, submit either a link to this site or your written presentation, your code, and links
 
 You will be graded on:
   + the quality of your presentation (written and oral). Do you do a good job of explaining
