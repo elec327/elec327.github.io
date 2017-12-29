@@ -7,7 +7,7 @@ group: navigation
 
 {::options parse_block_html="true" /}
 
-<H2>ELEC 327 - Digital Systems Laboratory (2017)</H2>
+<H2>ELEC 327 - Digital Systems Laboratory (2018)</H2>
 
 ---
 
@@ -53,7 +53,7 @@ understand how application-specific blocks enable modern commercial devices._
 
   + [2013](http://dsp.rice.edu/elec327-2013)
   + [2014](http://dsp.rice.edu/elec327-2014)
-  + [2017](http://elec327.github.io/2017)
+  + [2017](http://elec327.github.io/2017) - **CAREFUL YOU DON'T GET STUCK!**
 
 
 </div>
