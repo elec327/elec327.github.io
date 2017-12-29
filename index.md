@@ -26,7 +26,7 @@ understand how application-specific blocks enable modern commercial devices._
 
 **Instructor** -- Caleb Kemere (caleb.kemere@rice.edu)
 
-**Location** -- AL121/AL124
+**Location** -- DH 1075 (Lectures), AL124 (Lab)
 
 **Time** -- Tuesdays/Thursdays 9:25-10:40 AM
 
@@ -53,6 +53,7 @@ understand how application-specific blocks enable modern commercial devices._
 
   + [2013](http://dsp.rice.edu/elec327-2013)
   + [2014](http://dsp.rice.edu/elec327-2014)
+  + [2017](http://elec327.github.io/2017)
 
 
 </div>

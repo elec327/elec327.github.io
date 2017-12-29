@@ -16,14 +16,12 @@ Office: BRC 727
 Office Hours: (please verify via email) Monday, Wednesday 9:00-10:00am (RMC Coffee House)  
 caleb.kemere@rice.edu
 
+**Grader/TA:**
+  - Jill Juneau
+  - Shayok Dutta
+
 **Lab Assistants:**
-  - Alice Xie ( [zx7](mailto:zx7@rice.edu))
-  - Cody Peterson ( [cmp8](mailto:cmp8@rice.edu))
-  - Emilio Del Vecchio ( [edd5](mailto:edd5@rice.edu))
-  - Greg Harper ( [gdh3](mailto:gdh3@rice.edu))
-  - Keiko Kaplan ( [kfk3](mailto:kfk3@rice.edu))
-  - Kevin Lin ( [kevinlin](mailto:kevinlin@rice.edu))
-  - Randy Zhang ( [xz33](mailto:xz33@rice.edu))
+  - Rebecaa Lee ( [rbl2](mailto:rbl2@rice.edu))
 
 ** Lab Office Hours: **
   - MW 3-5 pm
@@ -32,13 +30,13 @@ caleb.kemere@rice.edu
 
 Additional Lab office hours may be requested on Canvas
 
-**Grader:**
-  - TBD
 
 ---
 
-**Class Hours:** Tuesday, Thursday 9:25-10:50 Room AL 121 (subject to change)  
-Note – after spring break lectures will shift to about once per week. Students are expected to spend significant out-of-class time (~10 hours per week) working on lab assignments.
+**Class Hours:** Tuesday, Thursday 9:25-10:50 Room DH 1075
+Our plan for this semester will be to have one lecture and one practicum each week during
+official class hours.  Students are expected to spend significant out-of-class time (~10 hours
+per week) working on lab assignments.
 
 **Lab Help Sessions:** See Lab Assistant hours or by request on [Piazza](https://piazza.com/class/ijk6s504wdz2uw) or through email  
 Help sessions held in lab room A124                                                                                     

@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+     <title>Lab 8</title> 
+    <meta name="description" content="Motor Speed Control">
+    <meta name="author" content="Caleb Kemere">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../assets/themes/bootstrap/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/themes/bootstrap/elec327.css" rel="stylesheet">
+  
+    <!--[if lt IE 9]>
+      <script src="/assets/themes/bootstrap/resources/respond/Respond.min.js"></script>
+    <![endif]-->
+
+    <link href="http://elec327.github.io/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="http://elec327.github.io/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+
+        <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">Rice ELEC327 - Digital Systems Laboratory</a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="../index.html">Home</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="http://elec327.github.io/syllabus">Syllabus</a></li>
+      	
+      
+    
+  
+    
+  
+
+
+
+            <li class="dropdown">
+              <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                aria-expanded="false">Labs <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                
+                
+                
+
+
+  
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="../lab1/index.html">Lab 1</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="../lab2/index.html">Lab 2</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="../lab3/index.html">Lab 3</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="../lab4/index.html">Lab 4</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="../lab5/index.html">Lab 5</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="../lab6/index.html">Lab 6</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="../lab7/index.html">Lab 7</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="active"><a href="index.html" class="active">Lab 8</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="../lab9/index.html">Lab 9</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="../midterm_project/index.html">Project 1 - Midterm</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="../final_project/index.html">Project 2 - Final</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+
+
+
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container">
+      
+<h2 id="not-final-lab-8-motor-speed-control">[NOT FINAL] Lab #8: Motor Speed Control</h2>
+<div class="alert alert-info" role="alert">
+  <h4 id="there-are-three-goals-for-this-assignment"><strong>There are three goals for this assignment:</strong></h4>
+
+  <ul>
+    <li>To gain experience with motors, Hall-effect sensors, and LCD displays</li>
+    <li>To construct software which carries out feedback-control in real-time.</li>
+  </ul>
+
+</div>
+
+<div class="alert alert-danger" role="alert">
+  <h4 id="what-should-be-turned-in"><strong>What should be turned in?</strong></h4>
+
+  <ol>
+    <li>Your <strong>commented</strong> code files.</li>
+    <li>Your answers to the questions. (Please submit in either PDF or TXT format.)</li>
+    <li>A youtube link to a demo video showing speed control.</li>
+  </ol>
+
+</div>
+
+<h3 id="motor-speed-control-with-pwm">Motor speed control with PWM</h3>
+
+<p>The motors in your Launchpad Sidekick kits require more than 3V to operate. Thus, you will need
+to hook into a 5V supply in order to drive them. The test point to the right of the USB
+connector on your g2553 Launchpads provides a 5V source. Use an N-channel mosfet to control the
+motor, driving the gate with PWM.</p>
+
+<p><img src="location_5V.png" width="400" /></p>
+
+<p><strong>Task 1:</strong> Wire up your motor to your launchpad:</p>
+<ol>
+  <li>Connect the two inputs of the motor to your breadboard. Tape/glue a circle of cardboard to the
+  drive pin of the motor so that you can see the motor rotating.</li>
+  <li>The N-channel MOSFET transistor will act as a switch on the “low-end” of the motor. Thus,
+  you should connect the Drain of the transistor to one wire of the motor, and +5V to the other
+  wire. The Source of the transistor should be connected to ground, and the Gate should be
+  connected to a PWM drive pin of the MSP430.</li>
+  <li>Use PWM to drive the motor at different speeds.</li>
+</ol>
+
+<h3 id="showing-information-via-an-lcd-display">Showing information via an LCD display</h3>
+
+<p><img src="181-04.jpg" width="400" /></p>
+
+<p>The product page for the LCD display is <a href="https://www.adafruit.com/products/181">here</a>. You will
+also find two data sheets - <a href="p181.pdf">the primary one</a> and <a href="HD44780.pdf">one with more detail about the
+character maps</a>.</p>
+
+<p><strong>Task 2:</strong> Display a message on the LCD display.</p>
+<ol>
+  <li>Wire up the LCD display either in 4 pin or 8 pin mode.</li>
+  <li>Display the message “000 RPM”.</li>
+  <li>Write a function to send out an arbitrary RPM message.</li>
+</ol>
+
+<h3 id="measuring-rotation-speed-using-a-hall-effect-sensor">Measuring rotation speed using a Hall-effect sensor</h3>
+
+<p><img src="158-00.jpg" width="400" /></p>
+
+<p>The product page for the hall-effect sensor is <a href="https://www.adafruit.com/products/158">here</a>.
+<a href="US5881_rev007.pdf">Datasheet</a>.</p>
+
+<p><strong>Task 3:</strong> Integrate the Hall sensor.</p>
+<ol>
+  <li>Add the Hall sensor to your breadboard with the input connected to a MSP430 pin.</li>
+  <li>Implement a magnetic switch where bringing a magnet close to the sensor turns off/on the
+  LED. (This will help you understand the effect of magnet distance and orientation.)</li>
+</ol>
+
+<h3 id="final-device">Final device</h3>
+
+<p>Now, put it all together. Add the magnet to the carboard being driven by the motor. Count the
+sensed magnetic switches and use this to set the PWM level to achieve a particular level of
+RPMs. <strong>Film a video where the motor runs at 10 RPM for 30 s and then 30 RPM for 30 s. Turn in
+your video and code!</strong></p>
+
+
+
+      <hr>
+      <footer>
+        <p>
+        &copy; 2017 <a href="http://kemerelab.com">Caleb Kemere</a>
+        and <a href="http://www.ece.rice.edu">Rice University ECE</a>
+        </p>
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-55673230-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+    <script src="../assets/themes/bootstrap/resources/jquery/jquery.min.js"></script>
+    <script src="../assets/themes/bootstrap/resources/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
