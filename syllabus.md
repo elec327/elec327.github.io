@@ -21,6 +21,10 @@ caleb.kemere@rice.edu
   - Shayok Dutta
 
 **Lab Assistants:**
+  - Joseph D'Amico ( [jvd2](mailto:jvd2@rice.edu))
+  - Matthew Disiena ( [mnd1](mailto:mnd1@rice.edu))
+  - Alex Dzeda ( [amd14](mailto:amd14@rice.edu))
+  - Connor Heggie ( [cbh6](mailto:cbh6@rice.edu))
   - Rebecaa Lee ( [rbl2](mailto:rbl2@rice.edu))
 
 ** Lab Office Hours: **
