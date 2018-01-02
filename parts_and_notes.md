@@ -21,3 +21,10 @@ Digikey
 Adafruit
 Seeedstudio
 
+---
+
+**Specific Parts:**
+
+Coin cell battery holder - BAT-HLD-001-THM -
+https://www.digikey.com/product-detail/en/linx-technologies-inc/BAT-HLD-001-THM/BAT-HLD-001-THM-ND/3044009
+

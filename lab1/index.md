@@ -69,6 +69,7 @@ specific to the G2553. So, searching for "BCSCTL1" on the user guide takes you t
 Chapter 24, from which you can figure out that this line will set the frequency of the DCO to a
 calibrated 1 MHz.
 
+NO DELAY CYCLES!!!!!
 You'll notice a function called "\_\_delay\_cycles" plays a major role. You will find that
 documentation of this function is somehwat lacking on the internet. If you look in the [MSP430
 Optimizing Compiler Guide](assets/documents/slau132k.pdf), you will see that it is not a C
@@ -99,11 +100,9 @@ comments are welcome!** A few specifications:
   letters and parts of the same letter can be hard coded into your array.
 - To help yourself write clean code, you should use "BITx" whenever you do anything with a pin
   on the MSP430.
-- **BONUS [High Speed]:** For those of you feeling particularly under-tasked by this lab, extra
-  credit will be given for a second implementation of code that runs as fast as possible.
-  Specifically, the goal is to minimize the "dot" time (the "dash" should be twice the dot).
-  You can use any and all tricks at your disposal (i.e., changing clock frequency, using
-  timers, etc), and should demonstrate the result using an oscilloscope.
+- **Continuing Bonus 1:** For those of you feeling particularly under-tasked by this lab, extra
+  credit will be given for a second implementation of code that reads in the LED flashes and
+  decodes the Morse code message. See Bonus page for more details.
 
 #### Part 3: Moving it to a Breadboard
 
@@ -141,22 +140,13 @@ Please reference your answers to one of the authoritative sources.
 _Questions from week 1 of class:_
 
 <ol class="questions" start="1">
-<li>What are the arguments for ALU instructions? How big (in bits) is the memory address space?
-What is the minimum size of memory that can be addressed? Would you describe the MSP430g2553
-CPU as 8 bit or 16 bit?</li>
-<li>What is the difference between the "indexed" and "indirect
-register" addressing mode</li>
-<li>What is the largest (i.e. most memory bytes used) possible operation?</li>
-<li>What is the longest (i.e. most clock cycles) possible operation?</li>
-<li>What is the maximum operating voltage for the MSP430g2553? What is the maximum operating
-frequency? What is the minimum operating voltage to run at 16 MH?</li>
+<li>Reverse engineer code for password!</li>
 </ol>
 
 _Questions from the skeleton code:_
 
 <ol class="questions" start="8">
-<li>In the initial skeleton code, what is the frequency and period of the LED? (up to 50 bonus
-points for ridiculously accurate responses)</li>
+<li>In the initial skeleton code, what is the frequency and period of the LED?</li>
 <li>If you wanted to slow down the flashing of the LED in the skeleton code, how could you do
 it?</li>
 </ol>

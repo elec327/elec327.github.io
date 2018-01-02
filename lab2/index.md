@@ -39,14 +39,14 @@ files in order to know what other parts go where. In particular notice which
 components are resistors, which are capacitors, and which are light emitting
 diodes (LEDs).
 
-1. Either examine the PCB closely or look at the schematic for the pendant. Which GPIO pins
+1. **(Not scored!)** Either examine the PCB closely or look at the schematic for the pendant. Which GPIO pins
 are connected to LEDs?
 
-2. In a normal, canonical (i.e., atomic), forward operating (i.e., not-breaking-down) diode,
+2. **(Not scored!)** In a normal, canonical (i.e., atomic), forward operating (i.e., not-breaking-down) diode,
 which terminal does positive (conventional) current flow out of, cathode or anode? In the
 pendant circuit, which pin is this terminal connected to?
 
-3. What value (0 or 1) will result in the diode turning on? How would the circuit be changed
+3. **(Not scored!)** What value (0 or 1) will result in the diode turning on? How would the circuit be changed
 to allow the other value to turn the diode on?
 {: class="questions"}
 
@@ -63,12 +63,13 @@ something about the LED and also something about the rest of the circuit.
 
 4. Use a multimeter in lab to measure the threshold voltage of the supplied
 LEDs.  How does this compare to the "forward voltage" found in the
-[datasheet](http://www.digikey.com/product-detail/en/LTST-C150KRKT/160-1405-1-ND/386760).
+[datasheet](http://www.digikey.com/product-detail/en/LTST-C150KRKT/160-1405-1-ND/386760). Why
+might they be different if they are?
 
-5. Further examining the datasheet, what is the maximum value of forward current that you
+5. **(Not scored!)** Further examining the datasheet, what is the maximum value of forward current that you
 should apply? What appears to be the recommended forward current level?
 
-6. Assume that you will be using one a CR2032 battery, which has a nominal voltage of 3V. What
+6. **(Not scored!)** Assume that you will be using one a CR2032 battery, which has a nominal voltage of 3V. What
 voltage will appear on the output of the LED drive pins when they are on? (You can ignore the
 voltage drop through the MSP430!).
 
@@ -107,22 +108,24 @@ You need to create a `next_led()` function, which should return the values 0 thr
 5, indicating the next LED to be lit, and maintaining state from one function call to another.
 You will also need to adjust the clocks and timer interrupt setup code to achieve the desired
 timing. In principle, the code could all go in the interrupt, but in general it is best to have
-interrupt service routines execute as quickly as possible. **BONUS:** Make
-`next_led()` return an unsigned int, with the higher byte corresponding to PORT2 and
-the lower byte to PORT1. Then eliminate the switch statement and directly write the PORT1/2
-values after the function call. **SUPER BONUS:** In addition to the pendant pattern described
-above, program the pendant to operate as a clock. Represent the second hand as a flashing LED
-that moves around the circle, blinking at 1 Hz in each position 6 times. In addition, light
-up the LEDs that correspond to the hour hand and the minute hand, assuming that we have a day
-divided into 4 six hour segments rather than two twelve hour ones. Or figure out another cool
-way of making a clock.
+interrupt service routines execute as quickly as possible. 
+
+**Phase 2:** Make `next_led()` return an unsigned int (int because its 16 bits, but why should
+it be unsigned?) , with the higher byte corresponding to the next binary value that should
+appear on the 6 pins of PORT2 and the lower byte to the 2 pins of PORT1. This will allow you to
+eliminate the switch statement and directly write to PORT2 and PORT1 (though the PORT1 value
+will have to be appropriately masked).
+
+**BONUS:** Have the button put the pendant into LPM4 sleep with LEDs off and wake it up
+from sleep when it is pushed again. For the bonus, you might also want the pattern of LED
+flashing to be more interesting.
 
 To answer the following questions, you will need to refer to Chapters 5 and 12 of the User
 Guide.
 
-9. How do you set a pin to be an output? What is the default mode for GPIO pins?
+9. **(Not scored.)** How do you set a pin to be an output? What is the default mode for GPIO pins?
 
-10. If your main function begins with the instruction `BCSCTL2 = 0;` what will be the
+10. **(Not scored.)** If your main function begins with the instruction `BCSCTL2 = 0;` what will be the
 frequency of the CPU clock (`MCLK`)? What will be the frequency of the submain clock (`SMCLK`)?
 (Hint: you will also need to figure out what the default setting for the DCO is, and assume
 that it is set.) (Second hint: the DCO in the MSP430g2553 is calibrated by default.)
