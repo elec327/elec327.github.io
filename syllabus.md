@@ -27,9 +27,8 @@ caleb.kemere@rice.edu
   - Connor Heggie ( [cbh6](mailto:cbh6@rice.edu))
   - Rebecaa Lee ( [rbl2](mailto:rbl2@rice.edu))
 
-** Lab Office Hours: **
+**Lab Office Hours:**
   - MW 3-5 pm
-  - Sunday 7-9 pm
   - Tu/Th 7-9 pm
 
 Additional Lab office hours may be requested on Canvas
