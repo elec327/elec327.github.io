@@ -34,6 +34,12 @@ caleb.kemere@rice.edu
 
 Additional Lab office hours may be requested on Canvas
 
+---
+**Text Book:** There is no text book, but you will need to purchase a solderless breadboard for
+prototyping. A smaller one is fine, but a larger one (such as
+[this
+one](https://www.amazon.com/Circuit-Test-MB-106-Breadboard-175x230mm-Holes/dp/B008MOLEGK/)) may
+be easier to use. Furthermore, you should take care of the MSP430 Launchpad you will be given.
 
 ---
 
