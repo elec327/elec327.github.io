@@ -153,7 +153,9 @@ _Questions from week 1 of class:_
 <ol class="questions" start="1">
 <li>_Reverse engineer code for password._
 Each of you will be given a different code binary. You should convert the machine code back
-into assembly and report on what it does.</li>
+into assembly and report on what it does. *Hint 1:* Remember that the MSP430 memory is
+little-endian. *Hint 2:* You'll want to make heavy use of Table 3-12 ("Core Instruction Map")
+in the User Guide!</li>
 
 </ol>
 
