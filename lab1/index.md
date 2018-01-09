@@ -139,7 +139,7 @@ the MSP430 on a breadboard using the launchpad, you only need to:
    high.
 
 Now, reproduce your morse code circuit on the breadboard using LEDs and resistors in the lab.
-There are, however, some differences you need to take into account – **see questions 8-10!**
+There are, however, some differences you need to take into account – **see questions below!**
 Wire the circuit on your breadboard, and successfully program it.
 
 #### Demoing code
@@ -166,7 +166,7 @@ in the User Guide!</li>
 
 _Questions from the skeleton code:_
 
-<ol class="questions" start="8">
+<ol class="questions" start="2">
 <li>In the initial skeleton code, what is the frequency and period of the LED?</li>
 <li>If you wanted to slow down the flashing of the LED in the skeleton code, how could you do
 it?</li>
@@ -174,7 +174,7 @@ it?</li>
 
 _Questions from bread-boarding:_
 
-<ol class="questions" start="10">
+<ol class="questions" start="4">
 <li>What is the forward voltage on the LED? What is its maximum forward current?</li>
 <li>What is the supply voltage coming out of the MSP430? On the MSP430G2553, what is the
 maximum current any one pin can output?</li>
@@ -182,5 +182,6 @@ maximum current any one pin can output?</li>
 current? To be safe when using the MSP430, should you use a larger or smaller resistor?</li>
 </ol>
 
-**Upload your answers to the questions, your code, and a video URL to Canvas.**
+**Upload your answers to the questions and your code. Make sure to demo functionality by
+deadline.**
 
