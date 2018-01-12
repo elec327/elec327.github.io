@@ -171,7 +171,10 @@ _Questions from week 1 of class:_
 <ol class="questions" start="1">
 <li>_Reverse engineer code to answer questionis._
 Each of you will have a sligthly different code binary. You should convert the machine code back
-into assembly and report on what it does. An example of what it will look like is here:
+into assembly and report on what it does. </li>
+</ol>
+
+An example of what it will look like is here:
 
 ![intel-hex](intel-hex.png)
 
@@ -191,11 +194,6 @@ The code flashes one of the Launchpad LEDs. You need to answer the following que
 How does the code work? (b) What is the period at which it happens?  (c) What register is used
 to keep track of timing? (d) Which LED flashes?
 
-</li>
-
-
-
-</ol>
 
 _Questions from the skeleton code:_
 
