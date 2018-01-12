@@ -34,14 +34,26 @@ description: Morse Code with Timers
 
 #### Part 0: Installation (optional)
 
-You are welcome to install TI's **Code Composer Studio** (CCS) on your own personal computers. There are beta versions
-available for both OSX and Linux, but in the past these have not supported all of the features
-of the Windows version installed in lab. [**Energia**](http://energia.nu/) is a clone of the Arduino environment for
-the MSP430. We will not use the Java-based approach used by Arduino, but the compiliing and
-device programming components are still quite useful. Note that the Instructions for installing Energia can be
+You are welcome to install TI's **Code Composer Studio** (CCS) on your own personal computers.
+There are beta versions available for both OSX and Linux, but in the past these have not
+supported all of the features of the Windows version installed in lab.
+
+[**Energia**](http://energia.nu/) is a clone of the Arduino environment for the MSP430. We will
+not use the Java-based approach used by Arduino, but the compiliing and device programming
+components are still quite useful. Note that the Instructions for installing Energia can be
 found at the project home page: [http://energia.nu/](http://energia.nu/). We will not
 officially support Energia users in the class, however, we have found it to be quite usable in
-a minimal sense.
+a minimal sense. Specifically, by creating a new tab in a sketch with a ".c" extension, one can
+write C-language code that is properly understood and compiled. You can then delete all the
+stuff in the original sketch window (though it appears you have to leave the file there for
+things to work). If you are going to use Energia, please make sure that you **do not** use the
+Arduino-style sketch code but rather C-language or assembly.
+
+[**msp430-gcc**](http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPGCC/latest/index_FDS.html)
+is a fork of the gcc compiler which has tools to compile, assemble, disasssemble, etc. MSP430
+code. By itself, this can be a useful tool for understanding MSP430 code. With the addition of
+the mspdebug package (available under Ubuntu Linux or Homebrew), code can also be uploaded to a
+device.
 
 
 #### Part 1: Verify CCS/Energia and Launchpad functionality and examine the skeleton code
@@ -114,7 +126,8 @@ comments are welcome!** A few specifications:
 - To help yourself write clean code, you should use "BITx" whenever you do anything with a pin
   on the MSP430.
 - You should use one of the timer interrupts for timing. Function LED flashing code is given in
-  an example from the MSP-example code archive [here](msp430g2xx3_ta_01.c).
+  an example from the MSP-example code archive in the "Labs/Lab1/" directory of the [course
+  repository](https://github.com/ckemere/ELEC327).
 - **Continuing Bonus 1:** For those of you feeling particularly under-tasked by this lab, extra
   credit will be given for a second implementation of code that reads in the LED flashes and
   decodes the Morse code message. See Bonus page for more details.
