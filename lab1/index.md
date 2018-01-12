@@ -169,11 +169,31 @@ Please reference your answers to one of the authoritative sources.
 _Questions from week 1 of class:_
 
 <ol class="questions" start="1">
-<li>_Reverse engineer code for password._
-Each of you will be given a different code binary. You should convert the machine code back
-into assembly and report on what it does. *Hint 1:* Remember that the MSP430 memory is
-little-endian. *Hint 2:* You'll want to make heavy use of Table 3-12 ("Core Instruction Map")
-in the User Guide!</li>
+<li>_Reverse engineer code to answer questionis._
+Each of you will have a sligthly different code binary. You should convert the machine code back
+into assembly and report on what it does. An example of what it will look like is here:
+
+![intel-hex](intel-hex.png)
+
+
+Download the [zip archive](BinaryFiles.zip) which contains 143 directories. You will be given
+access to a Google Sheets spreadsheet with your netid and the directory containing the code you
+should view. Each directory contains two files. An ELF format file, `binary_file.o`, which can be
+uploaded to the MSP430 and an Intel-Hex format file, `binary_file.hex` which contains the same
+information in ASCII format. The [Wikipedia page on Intel-Hex
+format](https://en.wikipedia.org/wiki/Intel_HEX) describes how to interpret
+this data. If you open it with "vim" or another code editor (e.g., atom, with the "intel-hex"
+colors enabled), you will see the fields of the file properly colorized. *Hint 1:* Remember
+that the MSP430 memory is little-endian. *Hint 2:* You'll want to make heavy use of Table 3-12
+("Core Instruction Map") in the User Guide!
+
+The code flashes one of the Launchpad LEDs. You need to answer the following questions: (a)
+How does the code work? (b) What is the period at which it happens?  (c) What register is used
+to keep track of timing? (d) Which LED flashes?
+
+</li>
+
+
 
 </ol>
 
