@@ -102,19 +102,17 @@ that is desired is as follows:
   - Which LED is lit should rotate clockwise 3 times, followed by counter clockwise 3 times,
     then repeating clockwise again, and so on.
 
-Refer to the [lab2_skeleton.c](lab2_skeleton.c) file. In order for it to work, you will need to
-set up the proper GPIO pins (lines 26-30), and properly set/reset GPIO in the switch statement.
-You need to create a `next_led()` function, which should return the values 0 through
-5, indicating the next LED to be lit, and maintaining state from one function call to another.
-You will also need to adjust the clocks and timer interrupt setup code to achieve the desired
-timing. In principle, the code could all go in the interrupt, but in general it is best to have
-interrupt service routines execute as quickly as possible. 
+Refer to the [lab2_skeleton.c](lab2_skeleton.c) file. In order for it to work, you will need
+to:
+  - set up the proper GPIO pins (lines 26-30)
+  - modify how the timer is set up so that it will properly trigger at 3Hz.
+  - properly implement the `next_led()` function. This function returns the values of PORT1 and
+    PORT2 that are appropriate for the next led to light up in sequence in the circle. Note
+    that it maintains state from one function call to the next!
 
-**Phase 2:** Make `next_led()` return an unsigned int (int because its 16 bits, but why should
-it be unsigned?) , with the higher byte corresponding to the next binary value that should
-appear on the 6 pins of PORT2 and the lower byte to the 2 pins of PORT1. This will allow you to
-eliminate the switch statement and directly write to PORT2 and PORT1 (though the PORT1 value
-will have to be appropriately masked).
+Also, look at the way the code is structured. In principle, the code could all go in the
+interrupt, but in general it is best to have interrupt service routines execute as quickly as
+possible. 
 
 **BONUS:** Have the button put the pendant into LPM4 sleep with LEDs off and wake it up
 from sleep when it is pushed again. For the bonus, you might also want the pattern of LED
