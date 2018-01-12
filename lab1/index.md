@@ -171,7 +171,11 @@ _Questions from week 1 of class:_
 <ol class="questions" start="1">
 <li>_Reverse engineer code to answer questionis._
 Each of you will have a sligthly different code binary. You should convert the machine code back
-into assembly and report on what it does.
+into assembly and understand how it works.  The code flashes one of the Launchpad LEDs. You
+need to answer the following questions: (a) How does the code work? (b) What is the period at
+which it happens?  (c) What register is used to keep track of timing? (d) Which LED flashes?
+</li>
+</ol>
 
     An example of what it will look like is here:
 
@@ -189,10 +193,6 @@ into assembly and report on what it does.
     that the MSP430 memory is little-endian. *Hint 2:* You'll want to make heavy use of Table 3-12
     ("Core Instruction Map") in the User Guide!
 
-The code flashes one of the Launchpad LEDs. You need to answer the following questions: (a)
-How does the code work? (b) What is the period at which it happens?  (c) What register is used
-to keep track of timing? (d) Which LED flashes? </li>
-</ol>
 
 
 _Questions from the skeleton code:_
