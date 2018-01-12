@@ -213,6 +213,6 @@ maximum current any one pin can output?</li>
 current? To be safe when using the MSP430, should you use a larger or smaller resistor?</li>
 </ol>
 
-**Upload your answers to the questions and your code. Make sure to demo functionality by
-deadline.**
+**Upload your answers to the questions to the Google Form, and your code to Canvas. Make sure
+to demo functionality by the deadline.**
 
