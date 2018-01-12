@@ -21,7 +21,7 @@ This assignment is due Monday, February 6, 2017._
 <div class="row">
 <div class="col-md-3 col-sm-6 col-xs-6">
 <div class="thumbnail">
-<a href="Pendant.png"> <img src="PendantGerber.png" alt="Pendant PCB"></a>
+<a href="Pendant.gif"> <img src="Pendant.gif" alt="Pendant PCB"></a>
 
 <div class="caption"><p>Lab 2 6-LED pendant PCB.</p></div>
 
