@@ -169,7 +169,7 @@ Please reference your answers to one of the authoritative sources.
 _Questions from week 1 of class:_
 
 <ol class="questions" start="1">
-<li>_Reverse engineer code to answer questionis._
+<li><i>Reverse engineer code to answer questions.</i>
 Each of you will have a sligthly different code binary. You should convert the machine code back
 into assembly and understand how it works.  The code flashes one of the Launchpad LEDs. You
 need to answer the following questions: (a) How does the code work? (b) What is the period at
