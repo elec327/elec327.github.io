@@ -199,13 +199,11 @@ _Questions from the skeleton code:_
 
 <ol class="questions" start="2">
 <li>In the initial skeleton code, what is the frequency and period of the LED?</li>
-<li>If you wanted to slow down the flashing of the LED in the skeleton code, how could you do
-it?</li>
 </ol>
 
 _Questions from bread-boarding:_
 
-<ol class="questions" start="4">
+<ol class="questions" start="3">
 <li>What is the forward voltage on the LED? What is its maximum forward current?</li>
 <li>What is the supply voltage coming out of the MSP430? On the MSP430G2553, what is the
 maximum current any one pin can output?</li>
