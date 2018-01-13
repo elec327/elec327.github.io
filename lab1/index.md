@@ -198,7 +198,7 @@ that the MSP430 memory is little-endian. *Hint 2:* You'll want to make heavy use
 _Questions from the skeleton code:_
 
 <ol class="questions" start="2">
-<li>In the initial skeleton code, what is the frequency and period of the LED?</li>
+<li>In the Part 1 skeleton code, what is the frequency and period of the LED?</li>
 </ol>
 
 _Questions from bread-boarding:_
