@@ -58,13 +58,15 @@ device.
 
 #### Part 1: Verify CCS/Energia and Launchpad functionality and examine the skeleton code
 
-Compile the included [lab1\_skeleton.c](lab1_skeleton.c) file to verify that CCS is setup
-correctly. (In Energia, you will need to create a new "sketch", add a tab with the name lab1.c
-or somesuch, erase the stuff in the first tab, and then code away in the second ".c" one.) You
-should also read through this file: it shows the minimum amount of code needed to run the
-MSP430 in an infinite loop. If you ever don't know what some variable acronym means, look it
-up! A useful practice is right clicking the name and going to "Open Declaration" (instructions
-for CCS are in red). For instance, in this file, doing this on `CALBC\_1MHZ` brings you to:
+Compile the included
+[lab1\_skeleton.c](https://github.com/ckemere/ELEC327/blob/master/Labs/Lab1/lab1_skeleton.c)
+file to verify that CCS is setup correctly. (In Energia, you will need to create a new
+"sketch", add a tab with the name lab1.c or somesuch, erase the stuff in the first tab, and
+then code away in the second ".c" one.) You should also read through this file: it shows the
+minimum amount of code needed to run the MSP430 in an infinite loop. If you ever don't know
+what some variable acronym means, look it up! A useful practice is right clicking the name and
+going to "Open Declaration" (instructions for CCS are in red). For instance, in this file,
+doing this on `CALBC\_1MHZ` brings you to:
 
 `SFR\_8BIT(CALCBC1\_1MHZ)/\* BSCTL1 Calibration Data for 1 MHz \*/`
 
