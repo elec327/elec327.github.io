@@ -102,21 +102,28 @@ that is desired is as follows:
   - Which LED is lit should rotate clockwise 3 times, followed by counter clockwise 3 times,
     then repeating clockwise again, and so on.
 
-Refer to the [lab2_skeleton.c](lab2_skeleton.c) file. In order for it to work, you will need
-to:
-  - set up the proper GPIO pins (lines 26-30)
-  - modify how the timer is set up so that it will properly trigger at 3Hz.
+Refer to the [skeleton code
+file](https://github.com/ckemere/ELEC327/blob/master/Labs/Lab2/pendant.c) file. In order for it
+to work, you will need to:
+  - modify the code so that the appropriate Port 2 pins are set up and outputting properly
+    (lines 43, 64, and 67)
   - properly implement the `next_led()` function. This function returns the values of PORT1 and
-    PORT2 that are appropriate for the next led to light up in sequence in the circle. Note
+    PORT2 that are appropriate for the next led to light up in sequence in the circle. The
+    PORT1 pins should be in the high byte and the PORT2 pins should be in the low byte. Note
     that it maintains state from one function call to the next!
 
-Also, look at the way the code is structured. In principle, the code could all go in the
-interrupt, but in general it is best to have interrupt service routines execute as quickly as
-possible. 
+Once the code is functioning, examine it carefully and make sure you fill in comments on all
+the lines that are marked. Additionally, think about they way the code is structured. In
+principle, the code could all go in the interrupt, but in general it is best to have interrupt
+service routines execute as quickly as possible. Additionally, see how when the button is
+pressed, it puus the pendant into LPM4 sleep with LEDs off and wakes it up from sleep when it
+is pushed again.
 
-**BONUS:** Have the button put the pendant into LPM4 sleep with LEDs off and wake it up
-from sleep when it is pushed again. For the bonus, you might also want the pattern of LED
-flashing to be more interesting.
+##### Final modification for full functionality
+
+After your code is functioning and you understand it well, make the appropriate changes so that
+between changing LED values, you go into **LPM3** rather than LMP0.
+
 
 To answer the following questions, you will need to refer to Chapters 5 and 12 of the User
 Guide.
@@ -140,5 +147,6 @@ your program if you forgot to initialize the register in your main function and 
 it in the ISR?
 {: class="questions" start="9"}
 
-**Save your code as `pendant.c`. Create a demo video that shows the pendant operating.
-Upload your answered questions, code and the video URL to Canvas.**
+**Save your code as `pendant.c`. You will need to demonstrate your device running and walk
+through your code comments and modifications for one of the course staff by the due date.
+Upload your answered questions to the Google doc, and the code to Canvas.**
