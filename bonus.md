@@ -6,10 +6,18 @@ group: navigation
 
 ## ELEC 327: Digital Systems Laboratory (Spring 2018) Bonus Projects
 
+Bonus projects should be submitted via email, and critically, with a Canvas post containing a
+YouTube video demostrating the projet. This way your fellow classmates will see what bonus
+projects are being done.
 
 ---
 
 ### Accelerometer and LED circle board
+
+  1. **[1 point for whoever is first]** - solder the MSP430 and shift registers onto the board
+  and make all 24 lights light up. Create a youtube video and post to campus. The first
+  timestamped video will be worth 1 bonus point. (Note that there may be a problem with the
+  PCB!)
 
   1. **[1 - 2 points]** - implement a clock. This will require that you properly solder the
   MSP430 and 3 shift register chips. The aesthetics of the clock and code will
@@ -44,3 +52,15 @@ photodiode or other light sensor to get the signal rather than a wire.
 
 ---
 
+### Lab 2 Bonus - Implement PWM modulation or other fun things
+
+**[1-2 points]** - Increase the Lab 2 pendant's battery life by implementing PWM modulation of the
+LEDs. Note that you will not be able to use the timer module PWM outputs because there aren't
+enough / the proper pins are not connected. You might use this for an interesting effect, such
+as making multiple LEDs light up simultaneously (but with the brightest one following the
+previous pattern).
+
+**[0.5-2 points]** - Create some sort of interesting game involving timing and pushing the
+button. You **must** implement a _long press_ to send the device into LPM4 (like turning off).
+
+---
