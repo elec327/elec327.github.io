@@ -33,8 +33,8 @@ in place will make everything else easier. The best bet for dual-inline packages
 is to tack one corner down, then the opposite one, then fill in the rest.
 
 You may need to reference the
-[board](https://github.com/ckemere/ELEC327/raw/master/PCBs/Pendant/Pendant.brd)
-and/or [schematic](https://github.com/ckemere/ELEC327/raw/master/PCBs/Pendant/Pendant.sch)
+[board](https://github.com/ckemere/ELEC327/raw/master/Labs/Lab2/Pendant.brd)
+and/or [schematic](https://github.com/ckemere/ELEC327/raw/master/Labs/Lab2/Pendant.sch)
 files in order to know what other parts go where. In particular notice which
 components are resistors, which are capacitors, and which are light emitting
 diodes (LEDs).
