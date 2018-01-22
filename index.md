@@ -37,7 +37,10 @@ understand how application-specific blocks enable modern commercial devices._
 **Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/iikqf8u242ekwe0/AAAj8hoVQ5VoL5WWNx3OUct7a?dl=0)
 
 
-**Github repository** - [https://github.com/elec327](https://github.com/elec327)
+**Github repository** -
+[https://github.com/ckemere/ELEC327](https://github.com/ckemere/ELEC327) (Note that this
+website is also hosted on github. If you're interested in how it works, you can find it just at
+https://github.com/elec327.)
 
 **Useful links**
 
