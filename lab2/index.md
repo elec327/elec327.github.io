@@ -145,6 +145,16 @@ be required to update the register in the previous question in your ISR. What is
 update command? (Hint: the right answer does not involve changing `TA0CTL`.) What would happen to
 your program if you forgot to initialize the register in your main function and only modified
 it in the ISR?
+
+13. In the timer ISR that you're given in the skeleton code, what is the purpose of this line
+of code: `__bic_SR_register_on_exit(LPM0_bits);`? Where is the code for this function found?
+
+14. In the pin IO ISR that you're given in the skeleton code, what is the purpose of this line
+of code: `__bis_SR_register_on_exit(LPM4_bits + GIE);`? In particular, why is the `GIE` bit
+needed here, whereas it wasn't for the timer interrupt?
+
+15. In the pin IO ISR that you're given in the skeleton code, what is the purpose of this line
+of code: `P1IFG &= ~BIT2;` Why is it needed for this ISR, but not the timer module one?
 {: class="questions" start="9"}
 
 **Save your code as `pendant.c`. You will need to demonstrate your device running and walk
