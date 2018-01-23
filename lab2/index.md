@@ -15,7 +15,7 @@ surface mount parts both for skill acquisition and in order to give you some bac
 begin PCB design in the next lab. Second, the goal is to begin learning about interrupts,
 specifically by making use of the interrupt associated with one of the Timer modules.
 
-This assignment is due Monday, February 6, 2017._
+This assignment is due Friday, January 26, 2017._
 
 #### Part 1: Soldering a pendant
 <div class="row">
