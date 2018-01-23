@@ -14,6 +14,11 @@ projects are being done.
 
 ### Accelerometer and LED circle board
 
+The EAGLE CAD design files are found in the `Bonus/` directory of the ELEC327 github
+repository. Here is a link to the [schematic
+](https://raw.githubusercontent.com/ckemere/ELEC327/master/Bonus/Bonus.sch) and one to the
+[board](https://raw.githubusercontent.com/ckemere/ELEC327/master/Bonus/Bonus.brd).
+
   1. **[1 point for whoever is first]** - solder the MSP430 and shift registers onto the board
   and make all 24 lights light up. Create a youtube video and post to campus. The first
   timestamped video will be worth 1 bonus point. (Note that there may be a problem with the
