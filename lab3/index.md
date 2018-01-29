@@ -77,7 +77,7 @@ forgogtten, timer module on the MSP430G2553, though. Before you look in the skel
 Lab 3, see if you can remember what it is.
 
 Now take a look at the [skeleton
-code](https://raw.githubusercontent.com/elec327/ELEC327/master/Labs/Lab3/lab3_skeleton.c). This
+code](https://raw.githubusercontent.com/ckemere/ELEC327/master/Labs/Lab3/lab3_skeleton.c). This
 program follows the same code pattern as in Lab 2. Succinclty, this pattern involves a main
 loop which contains the program logic. At the end of each main loop cycle, the device goes into
 LPM3, and then the timer interrupt wakes it back up.
@@ -152,7 +152,7 @@ in your code.**
 
 In this part, we will put together most of the concepts from Part 1, creating a circuit with an
 RGB LED and a temperature sensor. In order to do the rest of the assignment, you will need to
-clone the [ELEC327 reposistory](https://github.com/elec327/ELEC327) from github (if you have
+clone the [ELEC327 reposistory](https://github.com/ckemere/ELEC327) from github (if you have
 not done so yet). In the `Labs/Lab3/Datasheets` directory, you will find a data sheet for the
 [RGB LED](https://www.sparkfun.com/products/10866) we will use on the Mood Ring PCB, and a
 [temperature sensor](https://www.digikey.com/products/en?keywords=296-25569-1-ND). Refer to the
