@@ -6,7 +6,7 @@ group: navigation
 
 ## ELEC 327: Digital Systems Laboratory (Spring 2018) Bonus Projects
 
-Bonus projects should be submitted via email, and critically, with a Canvas post containing a
+Bonus projects should be submitted via email, and critically, with a Piazza post containing a
 YouTube video demostrating the projet. This way your fellow classmates will see what bonus
 projects are being done.
 
