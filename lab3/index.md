@@ -92,7 +92,8 @@ LPM3, and then the timer interrupt wakes it back up.
   will be dominated by the DCO/DC generator and performance will be more like LPM0.
   6. In VLO-driven mode for the ACLK, what frequencies are available for the WDT+ interrupt?
   What code in the skeleton that sets the interrupt nominally at ~1.5 Hz? Why do we describe the
-  WDT+ interrupt rates as "nominal"?
+  WDT+ interrupt rates as "nominal"? (One answer has to do with the fact that 12 kHz divided by
+  whatever is not exactly 1.5 Hz. That's not the answer I'm hoping for!)
   {: class="questions" start="3"}
 
 ##### PWM
