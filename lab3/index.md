@@ -143,7 +143,7 @@ generated, you should not need an ISR.
 
 ##### Lab 3 programming task
 Now, combine the PWM code you just wrote with the skeleton code. Your goal is for the LED to
-change duty cycle from 0% to 100% in 5% steps every clock tick. You should be able to
+change duty cycle from 0% to 100% in 5% steps every time the WDT interrupts. You should be able to
 accomplish this by changing the value of the CCR1 register. **Demo this functionality and turn
 in your code.**
 
