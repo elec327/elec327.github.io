@@ -155,8 +155,10 @@ In this part, we will put together most of the concepts from Part 1, creating a 
 RGB LED and a temperature sensor. In order to do the rest of the assignment, you will need to
 clone the [ELEC327 reposistory](https://github.com/ckemere/ELEC327) from github (if you have
 not done so yet). In the `Labs/Lab3/Datasheets` directory, you will find a data sheet for the
-[RGB LED](https://www.sparkfun.com/products/10866) we will use on the Mood Ring PCB, and a
-[temperature sensor](https://www.digikey.com/products/en?keywords=296-25569-1-ND). Refer to the
+[RGB LED](IN-S128TATRGB_V1.0.pdf) (Digikey part
+[1830-1096-1-ND](https://www.digikey.com/products/en?keywords=1830-1096-1-ND)) and a
+[temperature sensor](tmp20.pdf) (Digkey part
+[296-25569-1-ND](https://www.digikey.com/products/en?keywords=296-25569-1-ND)). Refer to the
 data sheet for the RGB LEDs to choose current-limiting resistors.
 
 The temperature sensor will be used with the built in analog to digital converter (ADC) module
