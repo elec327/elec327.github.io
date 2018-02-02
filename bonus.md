@@ -69,3 +69,28 @@ previous pattern).
 button. You **must** implement a _long press_ to send the device into LPM4 (like turning off).
 
 ---
+
+### Lab 3 Bonus - Extra details on the PCB
+
+__Note that all of these are PCB-related bonuses. You can create a second PCB for Lab 3, or
+submit these designs as part of the midterm or final project board runs. Alternatively, you
+could have them manufactured yourself.__
+
+**[1 point]** - Use the 32-pin QFN package of the MSP430 rather than the 20 pin one provided.
+You will have to find or create a proper EAGLE part for this device, which you should add to
+the ELEC327 library and generate a pull-request on github.
+
+**[1 point]** - Add a button to the Thermodot device to be used to go into LPM4 as in Lab 2.
+You may use a resistor and capacitor to debounce, or implement some sort of software
+debouncing.
+
+**[1-3 points]** - Add the necessary components to use this
+[thermistor](https://www.digikey.com/product-detail/en/ametherm/DG103395/570-1177-ND/5967491)
+to measure the temperature of a liquid. Note that you'll want to make a resistor divider
+circuit, with your ADC sampling the midpoint of the thermistor and a second resistor whos value
+you should choose intelligently. Turn your thermodot into a drink temperature alarm, possibly
+integrated into a cup. (For example, if the liquid is too hot to drink, display a red color and
+flash.) A useful device would probably also have a power button as described above.
+
+
+---
