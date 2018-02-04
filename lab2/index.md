@@ -13,19 +13,19 @@ description: Timers and Soldering
 _The goals of this lab are two-fold. First, we aim for you to gain experience soldering small,
 surface mount parts both for skill acquisition and in order to give you some background as you
 begin PCB design in the next lab. Second, the goal is to begin learning about interrupts,
-specifically by making use of the interrupt associated with one of the Timer modules.
+specifically by making use of the interrupt associated with one of the Timer modules._
 
-This assignment is due Friday, January 26, 2017._
+_This assignment is due Friday, January 26, 2017._
 
 #### Part 1: Soldering a pendant
 <div class="row">
 <div class="col-md-3 col-sm-6 col-xs-6">
-<div class="thumbnail">
-<a href="Pendant.gif"> <img src="Pendant.gif" alt="Pendant PCB"></a>
+<figure class="figure">
+<a href="Pendant.gif"> <img src="Pendant.gif" class="figure-img img-fluid rounded" alt="Pendant PCB"></a>
 
-<div class="caption"><p>Lab 2 6-LED pendant PCB.</p></div>
+<figcaption class="figure-caption"><p>Lab 2 6-LED pendant PCB.</p></figcaption>
 
-</div>
+</figure>
 </div>
 <div class="col-md-9 col-sm-12 col-xs-12">
 Start by soldering on the MSP430. It is the most challenging piece of the puzzle and getting it
