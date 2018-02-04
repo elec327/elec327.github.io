@@ -1,104 +1,81 @@
 ---
 title: Lab 9
+lab: 9
 layout: default
 group: labs-navigation
-description: Deep Brain Stimulation Case Study
+description: Motor Speed Control
 ---
 
 {::options parse_block_html="true" /}
 
-## [NOT FINAL] Lab #9: Deep Brain Stimulation Case Study
+## [NOT FINAL] Lab #8: Motor Speed Control
+<div class="alert alert-info" role="alert">
+#### **There are three goals for this assignment:**
 
-#### Deep Brain Stimulation Background
-<div class="row">
-<div class="col-md-3">
-<a href="Oluigbo2012pdf" class="thumbnail">
-<img src="DBSXray.png" alt="X-ray of DBS patient"></a>
-</div>
-<div class="col-md-9">
-Deep brain stimulation is an FDA-approved treatment for Parkinson's disease and essential
-tremors. As the name implies, DBS therapy involves the implantation of electrodes into
-structures deep in the brain ("deep" as opposed to surface or non-invasive transcranial
-stimulation, and "brain" as opposed to stimulation of peripheral nerves). As shown in the
-picture to the left, A DBS system comprises to elements - the electrodes which are implanted
-into the brain and deliver charge to the tissue, and the "implanted pulse generator" (IPG)
-which contains a battery and generates and controls the stimulation pulses.  In this course, we
-have been studying the implementation of small, low power embedded systems. An IPG is an
-excellent example of a very specialized embedded system which must be both small and ulta-low
-power. The goal of this lab is for you to learn more about devices which interface with the
-nervous system and to consider the design of an IPG.
-
-If you are interested in learning more about DBS, a good review is [Oluigbo et al, _IEEE
-Reviews in Bioengineering_ 2012](Oluigbo2012.pdf). If you are interested in learning more about
-the mechanisms of DBS in Parkinson's disease, a good review is [Johnson et al,
-_NeuroTherapeutics_ 2008](Johnson2008.pdf).
-</div>
+  - To gain experience with motors, Hall-effect sensors, and LCD displays
+  - To construct software which carries out feedback-control in real-time.
+  
 </div>
 
-#### Exercises (10 pts each)
-  1. Read this <a href="Moore2006.pdf">IEEE Spectrum article from 2006</a>. What are two stimulation therapies
-  that are FDA approved for treating depression. What are two other therapies that are being
-  tested for efficacy in depressed patients (as of 2006 - note that AFAIK, these tests are
-  on-going).
-  2. Read this <a href="Denison2015.pdf">IEEE Spectrum article from 2015</a> for background. To
-  treat seizures, Company A and Company B both have systems which control stimulation in "closed
-  loop", i.e., in response to some detected signature. Assume the Company A system is measuring
-  variability in heartrate, and the Company B system is measuring the spectral power in a "local
-  field potential" rhythm with a center frequency of ~30 Hz. Which system do you think requires
-  more power for data acquisition and why? Which system do you think requires more power for
-  signal processing? Which system do you think will have lower latency?
-  3. Let's try to reverse engineer the power consumption of a commercial IPG. For this and the next
-  question, make reference to <a href="MedtronicIPGManual.pdf">this programming manual
-  for some of the Medtronic IPGs</a>. Look at the energy use data in Table 13 (for the Kinetra
-  system from Medtronic). If the device consumes some ammount of constant power (due to digital
-  blocks) plus some amount of variable power depending on stimulation intensity, we would expect
-  the increase in energy consumption with increasing stimulation current and pulse width to rise
-  with a slope of approximately one. Is that what you observe? Why might this not be the case?
-  4. Some dystonias are treated with DBS at 40 Hz rather than the standard 130 Hz for Parkinson's
-  disease. What would you expect the difference in battery life to be between the two conditions
-  for a Kinetra stimulator set to 5 mA stimulation and 60 us pulse widths (continuous
-  stimulation)?
-  {: class="questions"}
+<div class="alert alert-danger" role="alert">
+#### **What should be turned in?**
 
-#### Design Study (70 pts)
+  1. Your **commented** code files. 
+  2. Your answers to the questions. (Please submit in either PDF or TXT format.)
+  3. A youtube link to a demo video showing speed control.
 
-Below is the schematic for a simple MSP430-based system for delivering constant-current
-stimulation (i.e., an IPG). Your task is to evaluate the design using your knowledge of the
-MSP430 and by reading the data sheets for the two other integrated circuits, the [current-mode
-digital to analog converter (DS4432)](DS4432.pdf) and the [digitally-controlled switch
-(TS3A4751)](TS3A4751.pdf).
+</div>
 
-![DBS Schematic](DBSSchematic.png)
+### Motor speed control with PWM
 
-The goal of the IPG is to deliver biphasic current pulses, as shown below, with a programmable
-frequency and current amplitude. 
+The motors in your Launchpad Sidekick kits require more than 3V to operate. Thus, you will need
+to hook into a 5V supply in order to drive them. The test point to the right of the USB
+connector on your g2553 Launchpads provides a 5V source. Use an N-channel mosfet to control the
+motor, driving the gate with PWM.
 
-![Biphasic Pulses](BiphasicPulse.png)
+<img src="./location_5V.png" width="400">
 
-For the purposes of this lab, you can
-assume that we want 130 Hz stimulation and 50 μA pulses with 60 μs pulse width. The DS4432 is a
-digitally-controlled current source, but cannot generate biphasic pulses. In order to generate
-biphasic pulses the design relies on a switch matrix as in Figure 4 in [Farahamand
-2012](Farahmand2012.pdf). Even though the data sheet does not specify this, you may assume that
-the amount of time the DS4432 requires to turn on is equivalent to the amount of time it takes
-to transmit the relevant I2C commmands. In addition, assume you are running with a 3V battery.
+**Task 1:** Wire up your motor to your launchpad:
+  1. Connect the two inputs of the motor to your breadboard. Tape/glue a circle of cardboard to the
+  drive pin of the motor so that you can see the motor rotating.
+  2. The N-channel MOSFET transistor will act as a switch on the "low-end" of the motor. Thus,
+  you should connect the Drain of the transistor to one wire of the motor, and +5V to the other
+  wire. The Source of the transistor should be connected to ground, and the Gate should be
+  connected to a PWM drive pin of the MSP430.
+  3.  Use PWM to drive the motor at different speeds.
 
-For the second part of the lab, in about 2/3rds of a page,
+### Showing information via an LCD display
 
-  1. Outline the structure of code that would create the desired stimulation pattern, including
-    if/when the MSP430 would be in low power mode, when/how the switch matrix is activated, and
-    when/how the current generator is configured. What clock frequency would the MSP430 run at
-    when in active mode (take into account the clock cycles required to trigger a GPIO!)? ((30 pts)
-  2. Summarize the average power consumption of your design by adding up power for each of the 3
-    devices (with time spent in relevant power modes for the MSP430). What size battery (in mA
-    hours) would you need to run for 1 year? (30 pts)
-  3. Could you change the circuit to lower the power consumption? (10 pts)
-  {: class="questions"}
+<img src="./181-04.jpg" width="400">
+
+The product page for the LCD display is [here](https://www.adafruit.com/products/181). You will
+also find two data sheets - [the primary one](./p181.pdf) and [one with more detail about the
+character maps](./HD44780.pdf). 
+
+**Task 2:** Display a message on the LCD display.
+  1. Wire up the LCD display either in 4 pin or 8 pin mode.
+  2. Display the message "000 RPM".
+  3. Write a function to send out an arbitrary RPM message.
+
+### Measuring rotation speed using a Hall-effect sensor
+
+<img src="./158-00.jpg" width="400">
+
+The product page for the hall-effect sensor is [here](https://www.adafruit.com/products/158).
+[Datasheet](US5881_rev007.pdf).
+
+**Task 3:** Integrate the Hall sensor.
+  1. Add the Hall sensor to your breadboard with the input connected to a MSP430 pin.
+  2. Implement a magnetic switch where bringing a magnet close to the sensor turns off/on the
+  LED. (This will help you understand the effect of magnet distance and orientation.)
 
 
+### Final device
 
-**Upload your answered questions and design study to owlspace.  For up to 20 bonus points, give
-suggestions for other good questions to ask (include answers!) and/or other ways this
-assignment could be made more interesting.**
+Now, put it all together. Add the magnet to the carboard being driven by the motor. Count the
+sensed magnetic switches and use this to set the PWM level to achieve a particular level of
+RPMs. **Film a video where the motor runs at 10 RPM for 30 s and then 30 RPM for 30 s. Turn in
+your video and code!**
+
 
 
