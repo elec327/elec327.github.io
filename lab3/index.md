@@ -36,7 +36,7 @@ description: PWM, LPM, and PCB Design
   2. The code for this demonstration.
   3. Your EAGLE CAD design.
 
-#### Part 1 of the lab will be due Feb 2, Part 2 will be due 
+#### Part 1 of the lab will be due Feb 2, Part 2 (now defined as Lab 4) will be due 2/9
 
 </div>
 
