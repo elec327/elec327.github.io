@@ -1,80 +1,65 @@
 ---
 title: Lab 8
+lab: 8
 layout: default
 group: labs-navigation
-description: Motor Speed Control
+description: Software Debouncing
 ---
 
 {::options parse_block_html="true" /}
 
-## [NOT FINAL] Lab #8: Motor Speed Control
-<div class="alert alert-info" role="alert">
-#### **There are three goals for this assignment:**
+## [NOT FINAL] Lab #7: Software Debouncing and the Simon PCB
 
-  - To gain experience with motors, Hall-effect sensors, and LCD displays
-  - To construct software which carries out feedback-control in real-time.
+<div class="alert alert-info" role="alert">
+#### **There are three goals for this lab:**
+  - To understand the effects of combining two PWM channels in one device.
+  - To understand and implement software debouncing.
   
 </div>
 
 <div class="alert alert-danger" role="alert">
-#### **What should be turned in?**
+#### **What should you turn in?**
 
-  1. Your **commented** code files. 
-  2. Your answers to the questions. (Please submit in either PDF or TXT format.)
-  3. A youtube link to a demo video showing speed control.
+  1. Turn in your code as `debounce.c` and answered questions.
+  2. Create a demo video that shows you playing and then resetting and playing again.
 
 </div>
 
-### Motor speed control with PWM
+#### Part 1: Playing tones via PWM
 
-The motors in your Launchpad Sidekick kits require more than 3V to operate. Thus, you will need
-to hook into a 5V supply in order to drive them. The test point to the right of the USB
-connector on your g2553 Launchpads provides a 5V source. Use an N-channel mosfet to control the
-motor, driving the gate with PWM.
+<p class="bg-success">
+While you don't need to turn in the code for this part, I still recommend you do it! The sample
+uses the TimerA1 module for PWM and the watchdog timer as a "tick" generator, which is probably
+a good framework.
+</p>
 
-<img src="./location_5V.png" width="400">
-
-**Task 1:** Wire up your motor to your launchpad:
-  1. Connect the two inputs of the motor to your breadboard. Tape/glue a circle of cardboard to the
-  drive pin of the motor so that you can see the motor rotating.
-  2. The N-channel MOSFET transistor will act as a switch on the "low-end" of the motor. Thus,
-  you should connect the Drain of the transistor to one wire of the motor, and +5V to the other
-  wire. The Source of the transistor should be connected to ground, and the Gate should be
-  connected to a PWM drive pin of the MSP430.
-  3.  Use PWM to drive the motor at different speeds.
-
-### Showing information via an LCD display
-
-<img src="./181-04.jpg" width="400">
-
-The product page for the LCD display is [here](https://www.adafruit.com/products/181). You will
-also find two data sheets - [the primary one](./p181.pdf) and [one with more detail about the
-character maps](./HD44780.pdf). 
-
-**Task 2:** Display a message on the LCD display.
-  1. Wire up the LCD display either in 4 pin or 8 pin mode.
-  2. Display the message "000 RPM".
-  3. Write a function to send out an arbitrary RPM message.
-
-### Measuring rotation speed using a Hall-effect sensor
-
-<img src="./158-00.jpg" width="400">
-
-The product page for the hall-effect sensor is [here](https://www.adafruit.com/products/158).
-[Datasheet](US5881_rev007.pdf).
-
-**Task 3:** Integrate the Hall sensor.
-  1. Add the Hall sensor to your breadboard with the input connected to a MSP430 pin.
-  2. Implement a magnetic switch where bringing a magnet close to the sensor turns off/on the
-  LED. (This will help you understand the effect of magnet distance and orientation.)
+Before implementing the full code for this lab, you should start by getting the sound aspect
+set up. Wire a piezo buzzer between to 2 PWM-capable pins. By connecting the device in this
+manner and enabling one or both channels, the volume of the sound can be changed. Write code
+that plays a standard 8-note octave scale (or different pattern if you choose) starting from
+middle C (see [Wikipedia table](https://en.wikipedia.org/wiki/Scientific_pitch_notation)). Each
+note should be played for 1 second. The scale should then repeat. Every other scale should be a
+higher volume. Sample code to get you going is in [piezo_sample.c](piezo_sample.c).
 
 
-### Final device
+#### Part 2: Software Debouncing
 
-Now, put it all together. Add the magnet to the carboard being driven by the motor. Count the
-sensed magnetic switches and use this to set the PWM level to achieve a particular level of
-RPMs. **Film a video where the motor runs at 10 RPM for 30 s and then 30 RPM for 30 s. Turn in
-your video and code!**
+*The point of this portion of the lab is to implement switch debouncing in software. The
+switches provided to you in class are reasonable, but still bounce noticeably.*
 
+Humans can control their fingers on timescales of hundreds of milliseconds. In the final
+portion of this lab, you will build a system which trains you to tap your fingers as fast as
+possible in a particular pattern. Wire two buttons on your breadboard to your MSP430. You will
+learn to press them in the pattern **1, 2, 1, 1, 2, 2**. The system will mark your progress with an
+LED and a tone-playing buzzer.  The LED should get progressively brighter and the tone
+progressively higher frequency as pattern is entered faster and faster. You should choose the
+values such that they are noticable and there are at least **8 levels**. If pattern is entered
+incorrectly, LED and sound should go off.  At any time, you should be able to reset the
+training by holding both buttons simultaneously for 2 s. Resetting should cause the LED to flash.
 
+**Save this code as `debounce.c`. Create a demo video that shows you playing and then resetting
+and playing again. Upload your answered questions, code and the video URL to owlspace.**
+
+**Bonus:** Implement a system in which doing something (entering the reset pattern twice?)
+causes the system to enter a "programming" mode, in which the pattern can be changed.
 

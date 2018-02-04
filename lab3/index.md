@@ -1,5 +1,6 @@
 ---
 title: Lab 3
+lab: 3
 layout: default
 group: labs-navigation
 description: PWM, LPM, and PCB Design
@@ -12,7 +13,7 @@ description: PWM, LPM, and PCB Design
 ## Lab #3: PWM, Low Power Modes and PCB Design
 
 <div class="alert alert-info" role="alert">
-#### **There are three goals for this assignment:**
+#### There are three goals for this assignment:
 
   - To learn and use PWM to modulate signal insensity
   - To learn and carry out various aspects of printed circuit board design
@@ -21,7 +22,7 @@ description: PWM, LPM, and PCB Design
 </div>
 
 <div class="alert alert-danger" role="alert">
-#### **What should be turned in?**
+#### What should be turned in?
 
   1. The EAGLE CAD .sch and .brd files for your design. (_Canvas_)
   2. The manufacturing files - `your-file-name.GBL` (bottom layer), `your-file-name.GML` (board
@@ -30,7 +31,7 @@ description: PWM, LPM, and PCB Design
   3. Your **commented** `PWM_test.c` file (_Canvas_, but different from PCB files)
   4. Your answers to the questions (_Google Form_)
 
-#### **What should be demo'd live?**
+#### What should be demo'd live?
   1. A demonstration of an LED with intensity being modulated using PWM.
   2. The code for this demonstration.
   3. Your EAGLE CAD design.
@@ -150,6 +151,8 @@ in your code.**
 
 
 #### Part 2: Designing a ThermoDot
+
+**This has now been redefined as Lab 4!**
 
 In this part, we will put together most of the concepts from Part 1, creating a circuit with an
 RGB LED and a temperature sensor. In order to do the rest of the assignment, you will need to

@@ -15,7 +15,7 @@
               <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Labs</a>
               <ul class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown"role="menu">
-                {% assign pages_list= site.pages | sort: 'title' %}
+                {% assign pages_list= site.pages | sort: 'lab' %}
                 {% assign group = 'labs-navigation' %}
                 {% include JB/pages_list %}
               </ul>

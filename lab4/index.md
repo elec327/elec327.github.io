@@ -1,107 +1,103 @@
 ---
 title: Lab 4
+lab: 4
 layout: default
 group: labs-navigation
-description: ADC, Software Architecture, Mood Ring
+description: PWM, LPM, and PCB Design
 ---
+
 
 {::options parse_block_html="true" /}
 
-## Lab #4: Coding up the mood ring
+
+## Lab #4: Thermodot PCB Design
 
 <div class="alert alert-info" role="alert">
-#### **There are two goals for this assignment:**
+#### There are three goals for this assignment:
 
-  - To learn and use the MSP430's analog-to-digital conversion circuitry
-  - To create structured code which carries out multiple asynchronous/independent functions
+  - To learn and carry out various aspects of printed circuit board design
   
 </div>
 
 <div class="alert alert-danger" role="alert">
-#### **What should be turned in?**
+#### What should be turned in?
 
-  1. Your **commented** `timer_shift_PWM.c` and `mood_ring.c` files. 
-  2. Your answers to the questions. (Please submit in either PDF or TXT format.)
-  3. A youtube link to a demo video(s) showing the timer-shift and temperature/timer-shift
-  color intensities.
+  1. The EAGLE CAD .sch and .brd files for your design. (_Canvas_)
+  2. The manufacturing files - `your-file-name.GBL` (bottom layer), `your-file-name.GML` (board
+  outline), `your-file-name.GTL` (top layer) and `your-file-name.TXT` (drill locations).
+  **Don't zip, compress, or otherwise combine these files!** (_Canvas_)
+  3. Your **commented** `PWM_test.c` file (_Canvas_, but different from PCB files)
+  4. Your answers to the questions (_Google Form_)
+
+#### What should be demo'd live?
+  1. Your EAGLE CAD design.
+
+#### Files are due Friday, February 9 at 7 AM 
+
+__The early AM due date allows me to aggregate and submit files.__
 
 </div>
 
-#### Part 1: Multiple Timers, Program Structure
+#### Designing a ThermoDot
 
-For Lab 2, you figured out how to run your MSP430 in Low Power Mode. In order to make your mood
-ring, you'll need to properly architect your code. To begin with, think about the different
-time scales at which you want to act:
+In this part, we will put together most of the concepts from Part 1, creating a circuit with an
+RGB LED and a temperature sensor. In order to do the rest of the assignment, you will need to
+clone the [ELEC327 reposistory](https://github.com/ckemere/ELEC327) from github (if you have
+not done so yet). In the `Labs/Lab3/Datasheets` directory, you will find a data sheet for the
+[RGB LED](IN-S128TATRGB_V1.0.pdf) (Digikey part
+[1830-1096-1-ND](https://www.digikey.com/products/en?keywords=1830-1096-1-ND)) and a
+[temperature sensor](tmp20.pdf) (Digkey part
+[296-25569-1-ND](https://www.digikey.com/products/en?keywords=296-25569-1-ND)). Refer to the
+data sheet for the RGB LEDs to choose current-limiting resistors.
 
-  1. For optimal power, which clock should you use for PWM? Ideally the PWM control frequency
-  should be one or two orders of magnitude higher than the minimum (let's say > 5 kHz). How would
-  you set the PWM control clock to run at 6 kHz?
-  2. The MSP430G2553 has 3 timer modules –two are the TimerA type, and one is the Watchdog Timer
-  (WDT+). Unlike the TimerA module, the WDT+ module cannot control PWM outputs and has less
-  flexibility in general. However, it is very useful as a tool to trigger low level state
-  changes. How would you configure the WDT+ module to generate periodic (maskable)
-  interrupts?
-  3.  If your `main()` function contains an instruction which puts the CPU into a low power mode,
-  what are the minimal interrupt service routine instructions required to wake the CPU and return
-  function to the `main()` function?
-  {: class="questions"}
+The temperature sensor will be used with the built in analog to digital converter (ADC) module
+of the MSP430g2553. So the output pin will need to be connected to an appopriate input pin. We
+will discuss the ADC module further in future weeks. For now, you can see from the data sheet
+that there are eight pins (labeled A0-A7) which can be used for ADC input. I suggest you
+connect the temperature sensor to pin P1.0/A0. If you look at the temperature sensor's data
+sheet, you'll see that it is recommended that a capacitor be placed between the output line and
+ground -- you may ignore this!
 
-You can either use two separate LEDs or an RGB LED unit soldered to a breakout board for the
-rest of Part 1. Modify your code from Lab 2 so that the `main()` function adjusts the PWM
-parameters to increase the brightness of the blue LED and decrease the brightness of the red
-LED through 16 levels (so that maximum blue corresponds with minimum red and vice versa). Your
-`main()` function should be an infinite loop, with a command to go into low power mode at the end
-of each color shift cycle. Set up the WDT+ module to generate an interrupt every second to wake
-up the CPU, so that the shifts in color happen every second.
+We will be using Eagle to design a PCB which contains the MSP430, RGB LED and a teperature
+sensor. In the `Labs/Lab3` directory, you will find a schematic which contains all but one
+of the parts you will need. These are all part of the ELEC327 library, which is found in the
+`PCBs` directory. You will need to create 2 new parts - the RGB LED and the temperature sensor.
+You will need to make both a schematic symbol and a package footprint.
 
-  4. Assuming you use the VLO to control the WDT and TimerA modules, what is the lowest
-  LPM which will allow your device to continue to function?
-  {: class="questions" start="4"}
+Eagle comes with a good number of parts, but not all that you need. Start with the RGB LED. You
+should create a personal library for parts you make. Then, start with the "symbol". Make sure
+to adequately labels the various connections. Pay special attention to the direction of current
+flow through each LED. Then you should create a "footprint", referring to the data sheet for
+the spacing of the pads. Finally, combine the symbol and footprint so that the pins are
+connected to the right pads. Then, do the same for the temperature sensor. 
 
-**Save this code as timer\_shift\_PWM.c.** You will create a demo video which contains both the
-timer-shifted colors and temperature shifted colors.
+Once you've made the RGB LED and the temperature sensor, add them to the schematic and connect
+them to the MSP430. We already have suggested P1.0/A0 for the temperature sensor. **The RGB LED
+should be connected to PWM output pins connected to available Timer outputs. Use the *TA\*.1
+and TA\*.2* outputs and not the *TA\*.0* one so that you can use the VLO!!!!** {: style="text-decoration:underline"} 
 
-#### Part 2: Making a Mood Ring
+Next, then create a `.brd` file and route all of the connectionts. Keep in mind that the
+battery package is solid and plastic, so you should not place any parts on top of it. One
+solution is to put everything but the battery on one side of the PCB and the battery on the
+other. Try to make the final board approximately 40 mm x 40 mm. Additionally, for this project,
+PCB designs should be rectangular. After routing, check to make sure that it passes the
+electrical rule check (ERC) and design rule check (DRC), using the DRC rules given in the
+`PCBS/AdvancedCircuitsBarebones.dru` rule file. 
 
-In this part, we'll put together Part 1 and add in ADC to make a "mood ring" with the RGB LED
-(ignoring the green part) controlled by the on board temperature sensor. We'll start off with a
-few questions that should guide learning how to use ADC:
+When you're finished, make a PDF of the board at 200% zoom. Then run the CAM job in
+`PCBs/AdvancedBarebones.cam` to create the necessary files for manufacturing. We will submit a
+panel of the class's designs for manufacturing, and in a subsequent lab, you will assemble and
+test your PCBs. Thus, late submissions of this portion of the assignment will mean that you
+lose points not only for this lab but also a subsequent one!!!!
 
-  5. How would you turn on the ADC10 module and tell it to sample from the internal temperature
-  sensor? What is the default voltage range for conversion?
-  6. What are two ways of discovering when the ADC10 module has finished a conversion? Which
-  method will be more efficient from a power perspective?
-  7. What is the minimum sampling period for the internal temperature sensor on the ADC10
-  module? Assuming that you run the ADC10 using the VLO at 12 kHz, what is the maximum sampling
-  rate for temperature?
-  8. What kind of ADC is used in the MSP430? Take a look at the [datasheet for the Atmel SAM
-  D21](http://www.atmel.com/Images/Atmel-42181-SAM-D21_Datasheet.pdf), which is used in the
-  Arduino One. What type of ADC architecture do you think it uses (hint: take a look at the
-  "Conversion Timing" in the ADC section)?
-  9. Assume you've already maximized the sampling clock and minimized the hold time. If you
-  could make an architecturatl change to increase the rate at which samples were acquired by
-  the MSP430 ADC10, how could you do it? Is there a simple modification that would let users
-  trade off bit depth for sampling rate (hint: the SAM D21 has this feature)?
-  10. In an oversampling ADC, what multiple of the sampling rate yields an additional bit of
-  precision? In a sigma-delta ADC, what multiple of the sampling rate yields an additional bit
-  of precision?
-  {: class="questions" start="5"}
+**Upload the following PCB files to Canvas:**
 
-Modify your `main()` function so that the code goes into low power mode twice: after enabling
-the ADC10 to sample and after changing the PWM parameters for the LEDs. Set up your ISRs for
-the ADC10 and WDT interrupts to return control to the `main()` function, with the WDT interrupt
-executing at 4 Hz. Once you receive a sample temperature, you should scale your LED output so
-that cold will be fully blue and hot will be fully red. (You can play around with "hot" and
-"cold" values, try to get them to a range where if you warm your hands and touch the MSP it's
-"hot" and if you don't touch it for a while or actively cool it it's "cold".)This is now the
-code for your "mood ring" on your breadboard. Make sure to comment your code in detail, such
-that any design decisions you made are easily available (which components are on which pins,
-label interval for timers in ms, etc). **Save this code as `mood_ring.c`. Create a demo video that
-shows the timer-shifting colors from Part 1 and temperature shifting color from Part 2. For
-Part 2, you should start with your device at one extreme, change it to the other, and then let
-it return. Upload your answered questions, code and the video URL to Canvas.**
+  + the PDF of your board design
+  + the Eagle CAD .sch and .brd files
+  + manufacturing files - `your-file-name.GBL` (bottom layer), `your-file-name.GML` (board
+  outline), `your-file-name.GTL` (top layer) and `your-file-name.TXT` (drill locations)
 
-**Bonus:** Add a "heart-beat" functionality to your mood ring where the LEDs flash at 0.5 Hz,
-but rather than flashing, become dimmer and brighter smoothly, with the color corresponding to
-the temperature.
+**Please do NOT zip these, just upload them individually. If you do not follow this instruction
+I will deduct points from your score. (I use an automated script to extract these files.)**
+
 
