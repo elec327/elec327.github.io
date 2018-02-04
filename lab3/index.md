@@ -152,7 +152,7 @@ in your code.**
 
 #### Part 2: Designing a ThermoDot
 
-**This has now been redefined as Lab 4!**
+*This has now been redefined as Lab 4!*
 
 In this part, we will put together most of the concepts from Part 1, creating a circuit with an
 RGB LED and a temperature sensor. In order to do the rest of the assignment, you will need to

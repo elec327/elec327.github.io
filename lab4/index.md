@@ -34,7 +34,7 @@ description: PWM, LPM, and PCB Design
 
 #### Files are due Friday, February 9 at 7 AM 
 
-__The early AM due date allows me to aggregate and submit files.__
+_The early AM due date allows me to aggregate and submit files._
 
 </div>
 
