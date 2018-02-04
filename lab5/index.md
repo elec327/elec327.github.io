@@ -8,7 +8,7 @@ description: ADC, Software Architecture, Mood Ring
 
 {::options parse_block_html="true" /}
 
-## Lab #4: Coding up the mood ring
+## Lab #5: Coding up the mood ring
 
 <div class="alert alert-info" role="alert">
 #### **There are two goals for this assignment:**
