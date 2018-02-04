@@ -8,7 +8,7 @@ description: Soldering Redux and Random Number Generation
 
 {::options parse_block_html="true" /}
 
-## [NOT FINAL] Lab #6: Building and programing the mood ring PCB with randomness
+## [NOT FINAL] Lab #6: Building and programing the Thermodot PCB with randomness
 
 _This lab builds on Lab 4 to make a device that flashes an RGB LED in an interesting pattern in
 a way that depends on the ambient temperature. The goal is for you to continue to master
