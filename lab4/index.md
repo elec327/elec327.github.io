@@ -13,7 +13,7 @@ description: PWM, LPM, and PCB Design
 ## Lab #4: Thermodot PCB Design
 
 <div class="alert alert-info" role="alert">
-#### There are three goals for this assignment:
+#### There is just one goal for this assignment:
 
   - To learn and carry out various aspects of printed circuit board design
   
