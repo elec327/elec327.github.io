@@ -68,7 +68,7 @@ https://github.com/elec327.)
   <tr><th>Labs</th><th>Description</th></tr>
 </thead>
 <tbody>
-  {% assign pages_list= site.pages  | sort: 'title' %}
+  {% assign pages_list= site.pages  | sort: 'lab' %}
   {% assign group = 'labs-navigation' %}
   {% include pages_table %}
 </tbody>
