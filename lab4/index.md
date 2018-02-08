@@ -26,8 +26,6 @@ description: PWM, LPM, and PCB Design
   2. The manufacturing files - `your-file-name.GBL` (bottom layer), `your-file-name.GML` (board
   outline), `your-file-name.GTL` (top layer) and `your-file-name.TXT` (drill locations).
   **Don't zip, compress, or otherwise combine these files!** (_Canvas_)
-  3. Your **commented** `PWM_test.c` file (_Canvas_, but different from PCB files)
-  4. Your answers to the questions (_Google Form_)
 
 #### What should be demo'd live?
   1. Your EAGLE CAD design.
@@ -79,20 +77,23 @@ and TA\*.2* outputs and not the *TA\*.0* one so that you can use the VLO!!!!** {
 Next, then create a `.brd` file and route all of the connectionts. Keep in mind that the
 battery package is solid and plastic, so you should not place any parts on top of it. One
 solution is to put everything but the battery on one side of the PCB and the battery on the
-other. Try to make the final board approximately 40 mm x 40 mm. Additionally, for this project,
+other. Try to make the final board approximately 20-40 mm x 40 mm. Additionally, for this project,
 PCB designs should be rectangular. After routing, check to make sure that it passes the
 electrical rule check (ERC) and design rule check (DRC), using the DRC rules given in the
 `PCBS/AdvancedCircuitsBarebones.dru` rule file. 
 
-When you're finished, make a PDF of the board at 200% zoom. Then run the CAM job in
-`PCBs/AdvancedBarebones.cam` to create the necessary files for manufacturing. We will submit a
-panel of the class's designs for manufacturing, and in a subsequent lab, you will assemble and
-test your PCBs. Thus, late submissions of this portion of the assignment will mean that you
-lose points not only for this lab but also a subsequent one!!!!
+After you place your components and route traces, please put your initials or some other
+identifying mark on the board **on either the top or bottom copper layer** (since this is a
+barebones process, there is no silkscreen).
+
+When you're finished, run the CAM job in `PCBs/AdvancedBarebones.cam` to create the necessary
+files for manufacturing. We will submit a panel of the class's designs for manufacturing, and
+in a subsequent lab, you will assemble and test your PCBs. Thus, late submissions of this
+portion of the assignment will mean that you lose points not only for this lab but also a
+subsequent one!!!!
 
 **Upload the following PCB files to Canvas:**
 
-  + the PDF of your board design
   + the Eagle CAD .sch and .brd files
   + manufacturing files - `your-file-name.GBL` (bottom layer), `your-file-name.GML` (board
   outline), `your-file-name.GTL` (top layer) and `your-file-name.TXT` (drill locations)
