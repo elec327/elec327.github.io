@@ -72,7 +72,7 @@ connected to the right pads. Then, do the same for the temperature sensor.
 Once you've made the RGB LED and the temperature sensor, add them to the schematic and connect
 them to the MSP430. We already have suggested P1.0/A0 for the temperature sensor. **The RGB LED
 should be connected to PWM output pins connected to available Timer outputs. Use the *TA\*.1
-and TA\*.2* outputs and not the *TA\*.0* one so that you can use the VLO!!!!** {: style="text-decoration:underline"} 
+and TA\*.2* outputs and not the *TA\*.0* one so that you can use the VLO!!!!**{: style="text-decoration:underline"} 
 
 Next, then create a `.brd` file and route all of the connectionts. Keep in mind that the
 battery package is solid and plastic, so you should not place any parts on top of it. One
