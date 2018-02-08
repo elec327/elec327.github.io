@@ -28,7 +28,7 @@ description: PWM, LPM, and PCB Design
   **Don't zip, compress, or otherwise combine these files!** (_Canvas_)
 
 #### What should be demo'd live?
-  1. Your EAGLE CAD design.
+  1. Your EAGLE CAD design, if desired.
 
 #### Files are due Friday, February 9 at 7 AM 
 
