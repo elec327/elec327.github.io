@@ -8,7 +8,7 @@ description: Serial Communications (SPI + I2C)
 
 {::options parse_block_html="true" /}
 
-## Lab #6: Using serial communications (SPI controlling an LED driver)
+## Lab #7: Using serial communications (SPI controlling an LED driver)
 
 _This lab builds on Lab 4. The goal is for you to be comfortable with SPI serial
 communications that will be the foundation of the Simon game._
@@ -16,14 +16,17 @@ communications that will be the foundation of the Simon game._
 #### Part 0: Solder a APA102C SPI-controlled RGB LED to a breakout board
 
 <div class="row">
+
 <div class="col-md-3 col-sm-6 col-xs-6">
 <figure class="figure">
-<a href="/assets/images/APA102C_5050Breakout.jpg" class="figure-img img-fluid rounded">
-<img src="/assets/images/APA102C_5050Breakout.jpg" alt="APA102 soldered onto breakout
-board"></a>
-<figcaption class="figure-caption">APA102 Serial-controlled LED on breakout board</figcaption>
+<a href="/assets/images/APA102C_5050Breakout.jpg" >
+<img src="/assets/images/APA102C_5050Breakout.jpg" class="figure-img img-fluid rounded" 
+  alt="APA102 soldered onto breakout board"></a>
+
+<figcaption class="figure-caption"><p>APA102 Serial-controlled LED on breakout board</p></figcaption>
 </figure>
 </div>
+
 <div class="col-md-9">
 Solder one of the SPI-controlled LEDs to a "5050" breakout board. Additionally, solder pin
 headers to the 6 pins so that you can plug the breakout board into a solderless breadboard. To
