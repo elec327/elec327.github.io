@@ -3,7 +3,7 @@ title: Lab 4
 lab: 4
 layout: default
 group: labs-navigation
-description: PWM, LPM, and PCB Design
+description: PCB Design, full stop
 ---
 
 

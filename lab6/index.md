@@ -3,7 +3,7 @@ title: Lab 6
 lab: 6
 layout: default
 group: labs-navigation
-description: Soldering Redux and Random Number Generation
+description: Soldering Redux and Finalizing Thermodot Firmware
 ---
 
 {::options parse_block_html="true" /}

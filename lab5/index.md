@@ -3,12 +3,12 @@ title: Lab 5
 lab: 5
 layout: default
 group: labs-navigation
-description: ADC, Software Architecture, Mood Ring
+description: ADC, Software Architecture, Beginnings of the Thermodot Firmware
 ---
 
 {::options parse_block_html="true" /}
 
-## Lab #5: Writing the Thermodot firmware
+## Lab #5: Writing the basic structure of the Thermodot firmware
 
 <div class="alert alert-info" role="alert">
 #### **There are two goals for this assignment:**
