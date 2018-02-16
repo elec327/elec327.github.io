@@ -84,15 +84,16 @@ with a few questions that should guide learning how to use ADC:
   temperature sensor on the ADC10 module? Assuming that you run the ADC10 using
   the VLO at 12 kHz, what is the maximum sampling rate for temperature?
   8. **[Not scored]** What kind of ADC is used in the MSP430? Take a look at the
-  [datasheet for the Atmel SAM
-  D21](http://www.atmel.com/Images/Atmel-42181-SAM-D21_Datasheet.pdf), which is
+  [datasheet for the Atmel (now Microchip!?!?) SAM
+  D21](https://www.microchip.com/wwwproducts/en/ATSAMD10D14), which is
   used in the Arduino One. What type of ADC architecture do you think it uses
   (hint: take a look at the "Conversion Timing" in the ADC section)?
   9. Assume you've already maximized the sampling clock and minimized the hold
   time. If you could make an architectural change to increase the rate at which
   samples were acquired by the MSP430 ADC10, how could you do it? Is there a
   simple modification that would let users trade off bit depth for sampling rate
-  (hint: the SAM D21 has this feature)?
+  (hint: the SAM D21 has this feature)? (I'm looking for one answer for both 
+  questions!)
   10. **[Not scored]** In an oversampling ADC, what multiple of the sampling
   rate yields an additional bit of precision? In a sigma-delta ADC, what
   multiple of the sampling rate yields an additional bit of precision?
