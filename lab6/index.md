@@ -18,7 +18,7 @@ combining multiple elements of embedded system architecture._
 <div class="alert alert-danger" role="alert">
 #### What should be turned in?
 
-  1. Your **commented** `thermodot.c` file (_Canvas_, but different from PCB files)
+  1. Your **commented** `thermodot.c` file (_Canvas_)
 
 #### What should be demo'd live?
   1. Showing how your device changes color depending on temperature.
