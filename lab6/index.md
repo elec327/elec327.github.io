@@ -31,10 +31,10 @@ combining multiple elements of embedded system architecture._
 
 #### Part 0: Building and programming the Thermodot PCB
 
-Begin by assembling your mood ring PCB and programming it with the code you developed for Lab
-3. PAY ATTENTION to the values of resistance you use with the RGB LED. If you make them too
-*big*, it may be fine when running from USB power, but cause problems when running from the
-battery.
+Begin by assembling your mood ring PCB and programming it with the code you
+developed for Lab 3. PAY ATTENTION to the values of resistance you use with the
+RGB LED. If you make them too **big**, it may be fine when running from USB power,
+but cause problems when running from the battery.
 
 #### Part 1: Firmware Requirements
 
@@ -47,14 +47,14 @@ for us, hot and cold are reversed from black body radiation).
 **Specific Requirements** It is not enough to just vary the PWM levels as many
 of you did for Lab 5. Different colors have different perceptual brightnesses,
 and many of you also noted that the perceptual variation in brightness from 0
-to 50% duty cycle is much larger than 50% to 100%. **You will be graded on whether
-your colors go through a perceptually-nice rainbow.** Be prepared to modify your
+to 50% duty cycle is much larger than 50% to 100%. __You will be graded on whether
+your colors go through a perceptually-nice rainbow.__ Be prepared to modify your
 code to sweep through the possible range of temperatures automatically for
 visualization purposes. You must demo your actual device **working from battery
 power**. Note that this will mean different currents flowing through the LED than
 when driven from USB power!
 
-**Your code** should be well commented and modular.
+**Your code should be well commented and modular!**
 
 Save your firmware as `thermodot.c`. Turn this in on Canvas and demo your
 device to the lab staff.
