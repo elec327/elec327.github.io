@@ -68,9 +68,14 @@ previous pattern).
 **[0.5-2 points]** - Create some sort of interesting game involving timing and pushing the
 button. You **must** implement a _long press_ to send the device into LPM4 (like turning off).
 
+**[0.5-1 points]** - Implement a 6-sided die. A long press should send the device into LPM4. A
+short press should cause a random LED to be illuminated. More points will be given for fun
+"rolling" animations (example - lights spin around or oscillate, and then slow down on the
+number).
+
 ---
 
-### Lab 3 Bonus - Extra details on the PCB
+### Lab 3 Bonus - Fancifying the Thermodot (PCB design + firmware)
 
 __Note that all of these are PCB-related bonuses. You can create a second PCB for Lab 3, or
 submit these designs as part of the midterm or final project board runs. Alternatively, you
