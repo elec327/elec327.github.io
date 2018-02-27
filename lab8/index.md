@@ -3,63 +3,59 @@ title: Lab 8
 lab: 8
 layout: default
 group: labs-navigation
-description: Software Debouncing
+description: Piezo buzzer and Simon PCB
 ---
 
 {::options parse_block_html="true" /}
 
-## [NOT FINAL] Lab #7: Software Debouncing and the Simon PCB
+## Lab #8: Piezo Buzzers with PWM (and the Simon PCB)
 
 <div class="alert alert-info" role="alert">
 #### **There are three goals for this lab:**
-  - To understand the effects of combining two PWM channels in one device.
-  - To understand and implement software debouncing.
-  
+  - To understand how PWM will affect sound production.
 </div>
 
 <div class="alert alert-danger" role="alert">
 #### **What should you turn in?**
+  1. Turn in your code as `pwm_songs.c` and answered questions. (_Canvas_)
+  2. Turn in the Simon EAGLE and gerber files.
 
-  1. Turn in your code as `debounce.c` and answered questions.
-  2. Create a demo video that shows you playing and then resetting and playing again.
-
+#### **What should you demonstrate?**
+  1. You _may_ choose to demonstrate your Simon PCB or sketch.
+  2. Demonstrate your functional sound sequence player.
 </div>
 
 #### Part 1: Playing tones via PWM
 
-<p class="bg-success">
-While you don't need to turn in the code for this part, I still recommend you do it! The sample
-uses the TimerA1 module for PWM and the watchdog timer as a "tick" generator, which is probably
-a good framework.
-</p>
+For the Simon midterm project, you'll need to generate sounds appropriate for button presses,
+success, and failure. Wire a piezo buzzer to a PWM-capable pin. Your goal is to create a
+set of functions (i.e., a library) that will allow you to play arbitrary sequences of tones at
+potentially different speeds. A piezo buzzer produces sounds by transducing electrical fields
+into motion using a piezoelectric material. They are good for higher frequencies, but not those
+in the lower part of our hearing spectrum. Begin by experimenting with PWM and the buzzer. Set
+your PWM carrier frequency to 440 Hz (an "A").
 
-Before implementing the full code for this lab, you should start by getting the sound aspect
-set up. Wire a piezo buzzer between to 2 PWM-capable pins. By connecting the device in this
-manner and enabling one or both channels, the volume of the sound can be changed. Write code
-that plays a standard 8-note octave scale (or different pattern if you choose) starting from
-middle C (see [Wikipedia table](https://en.wikipedia.org/wiki/Scientific_pitch_notation)). Each
-note should be played for 1 second. The scale should then repeat. Every other scale should be a
-higher volume. Sample code to get you going is in [piezo_sample.c](piezo_sample.c).
+  1. What happens as you vary the duty cycle from 0 to 50%? What about from 50% to 100%?
+  2.  Now build a timer module ISR to change the frequency every other cycle from 440 to 880 Hz
+  and back. How does this sound? Can you explain?
+  {: class="questions"}
 
+Now, modify the code you built for question 2 to be general. "Sound strings" should be
+specified as a sequence of frequences (or periods) stored in an array, with a separate "tone
+length" variable specifying how long each note should be played for. Note that because each
+tone has a different frequency, keeping track of how long each has played is a slightly
+nontrivial task (though you should be able to figure out a simple way of accumulating periods
+properly to account for their different lengths). You should create a function with prototype
+`void PlaySound(int* SoundString, int StringLength, int ToneDuration)` that initializes the
+proper global state variables and starts the sound playing. The ISR should ensure that, once
+started, the sound string is played once. You might want to create a special tone symbol which
+corresponds to a "rest", to enable more complex sounds.
 
-#### Part 2: Software Debouncing
+Create the proper sequences for the first lines of "Twinkle, twinkle little star", and "Mary had
+a little lamb". Set up an infinite loop so that you play a sequence and then have quiet for a
+few seconds. **You may use __delay_cycles for this part of this lab!** __Be prepared to
+demonstrate how your code works, including playing the two sequences at different speeds.__
 
-*The point of this portion of the lab is to implement switch debouncing in software. The
-switches provided to you in class are reasonable, but still bounce noticeably.*
+#### Part 2: Simon PCB - See midterm project for details
 
-Humans can control their fingers on timescales of hundreds of milliseconds. In the final
-portion of this lab, you will build a system which trains you to tap your fingers as fast as
-possible in a particular pattern. Wire two buttons on your breadboard to your MSP430. You will
-learn to press them in the pattern **1, 2, 1, 1, 2, 2**. The system will mark your progress with an
-LED and a tone-playing buzzer.  The LED should get progressively brighter and the tone
-progressively higher frequency as pattern is entered faster and faster. You should choose the
-values such that they are noticable and there are at least **8 levels**. If pattern is entered
-incorrectly, LED and sound should go off.  At any time, you should be able to reset the
-training by holding both buttons simultaneously for 2 s. Resetting should cause the LED to flash.
-
-**Save this code as `debounce.c`. Create a demo video that shows you playing and then resetting
-and playing again. Upload your answered questions, code and the video URL to owlspace.**
-
-**Bonus:** Implement a system in which doing something (entering the reset pattern twice?)
-causes the system to enter a "programming" mode, in which the pattern can be changed.
 
