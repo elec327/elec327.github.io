@@ -17,7 +17,9 @@ projects are being done.
 The EAGLE CAD design files are found in the `Bonus/` directory of the ELEC327 github
 repository. Here is a link to the [schematic
 ](https://raw.githubusercontent.com/ckemere/ELEC327/master/Bonus/Bonus.sch) and one to the
-[board](https://raw.githubusercontent.com/ckemere/ELEC327/master/Bonus/Bonus.brd).
+[board](https://raw.githubusercontent.com/ckemere/ELEC327/master/Bonus/Bonus.brd). Note that
+the accelerometer is mis-wired - the MISO and MOSI wires are reversed. You can fix this by
+cutting these traces and soldering on airwires. 
 
   1. **[1 point for whoever is first]** - solder the MSP430 and shift registers onto the board
   and make all 24 lights light up. Create a youtube video and post to campus. The first
@@ -29,6 +31,10 @@ repository. Here is a link to the [schematic
   determine total scorer. Example questions: is there a second hand that ticks? a separate hour
   and minute hand?  is there some sort of PWM-like intensity modulation? does the device
   calibrate and use the VLO for low power?
+
+  1. **[1 point]** - create a proof-of-concept accelerometer device (requiring the hardware
+  airwire fix described above). Get data from the accelerometer and display it somehow with the
+  LEDs. (Alternatively, an extra point will be applied for the following bonuses...)
 
   1. **[2 points]** - implement a tilt sensor in which the LED closest and furthest from the ground
   light up. The button should be used to make the device sleep/wake up. This will require that
