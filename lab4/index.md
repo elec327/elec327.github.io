@@ -93,6 +93,41 @@ in a subsequent lab, you will assemble and test your PCBs. Thus, late submission
 portion of the assignment will mean that you lose points not only for this lab but also a
 subsequent one!!!!
 
+### PCB Design Patterns and Anti-Patterns
+
+A "Design Pattern" is an approach for a design task that will help you put small steps together
+into a full hole. When routing the traces on a PCB, straight lines, symmetry, and right angles
+are one possible pattern to follow. Note that this requires not just rotely following a rule -
+think about how you will make the routes while placing the components and deciding their
+rotation/orientation.
+
+An "Anti-Design Pattern" is the opposite: rules of thumb that end up causing more problems than
+they solve. For the PCB example below, I imagine the student placing the components then
+thinking, "I will make the routes as straight as possible and introduce only minimal bends when
+necessary to avoid vias." The result are a number of places where traces and vias are minimally
+separated, or parallel traces travel very closely (minimal separation) for a long distance. A
+piece of conductive junk ended up between two traces on this board, causing hours and hours of
+confused debugging.
+
+
+<div class="row">
+<div class="col-md-3 col-sm-6 col-xs-6">
+<figure class="figure">
+<a href="PCB-Antidesign-Front.jpg"> <img src="PCB-Antidesign-Front.jpg" class="figure-img
+img-fluid rounded" alt="PCB Example Front"></a>
+<figcaption class="figure-caption"><p>Anti-design PCB front</p></figcaption>
+</figure>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-6">
+<figure class="figure">
+<a href="PCB-Antidesign-Back.jpg"> <img src="PCB-Antidesign-Back.jpg" class="figure-img
+img-fluid rounded" alt="PCB Example Back"></a>
+<figcaption class="figure-caption"><p>Anti-design PCB back</p></figcaption>
+</figure>
+</div>
+</div>
+
+
 **Upload the following PCB files to Canvas:**
 
   + the Eagle CAD .sch and .brd files
