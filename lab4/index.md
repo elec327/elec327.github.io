@@ -111,14 +111,14 @@ confused debugging.
 
 
 <div class="row">
-<div class="col-md-3 col-sm-6 col-xs-6">
+<div class="col-md-6 col-sm-6 col-xs-6">
 <figure class="figure">
 <a href="PCB-Antidesign-Front.jpg"> <img src="PCB-Antidesign-Front.jpg" class="figure-img
 img-fluid rounded" alt="PCB Example Front"></a>
 <figcaption class="figure-caption"><p>Anti-design PCB front</p></figcaption>
 </figure>
 </div>
-<div class="col-md-3 col-sm-6 col-xs-6">
+<div class="col-md-6 col-sm-6 col-xs-6">
 <figure class="figure">
 <a href="PCB-Antidesign-Back.jpg"> <img src="PCB-Antidesign-Back.jpg" class="figure-img
 img-fluid rounded" alt="PCB Example Back"></a>
