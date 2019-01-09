@@ -171,19 +171,23 @@ and showing the subsequent functioning.
 Please reference your answers to one of the authoritative sources.
 
 _Questions from week 1 of class:_
+Load the code in [main.asm](main.asm) into CCS, compile it and load it onto your launchpad. (A
+version that is Energia-compatible is in [main-energia.asm](main-energia.asm). Now 
+answer the following questions: 
 
 <ol class="questions" start="1">
 <li><i>Understanding simple assembly code.</i>
-Load the code in [main.asm](main.asm) into CCS, compile it and load it onto your launchpad. (A
-version that is Energia-compatible is in [main-energia.asm](main-energia.asm). Now 
-answer the following questions: (a) What does the code do? (b) How does it work (pseudocode)?
+(a) What does the code do? (b) How does it work (pseudocode)?
 (Make sure to specify things like active pins, registers used and things like the period of operations!) 
 </li>
-<li><i>Understanding disassmbly.</i>
+</ol>
+
 In CCS, you can see the disassembled code if you pause during debugging.
 
 ![Disassembly](Disassembly.png)
 
+<ol class="questions" start="2">
+<li><i>Understanding disassmbly.</i>
 (a) Interpret the disassembled data. What does "c004: 40B2 5A80 0120" mean? (Specifically, what
 does the "c004" refer to? What do the other numbers refer to? Why exactly are they those
 numbers?  (b) What does "c014: 4034 C350" mean? What would it have been if the code had used
