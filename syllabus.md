@@ -17,19 +17,18 @@ Office Hours: (please verify via email) Monday, Wednesday 9:00-10:00am (RMC Coff
 caleb.kemere@rice.edu
 
 **Grader/TA:**
-  - Jill Juneau
-  - Shayok Dutta
+  - ??
+  - ??
 
 **Lab Assistants:**
-  - Joseph D'Amico ( [jvd2](mailto:jvd2@rice.edu))
-  - Matthew Disiena ( [mnd1](mailto:mnd1@rice.edu))
-  - Alex Dzeda ( [amd14](mailto:amd14@rice.edu))
-  - Connor Heggie ( [cbh6](mailto:cbh6@rice.edu))
   - Rebecaa Lee ( [rbl2](mailto:rbl2@rice.edu))
+  - Sophie D'Amico ( [srd5](mailto:srd5@rice.edu))
+  - Luke Zhang ( [yz87](mailto:yz87@rice.edu))
+  - Logan Lawrence ( [lcl5](mailto:lcl5@rice.edu))
 
 **Lab Office Hours:**
-  - MW 3-5 pm
-  - Tu/Th 7-9 pm
+  - TBD
+  - TBD
 
 Additional Lab office hours may be requested on Canvas
 
@@ -42,8 +41,8 @@ be easier to use. Furthermore, you should take care of the MSP430 Launchpad you 
 
 ---
 
-**Class Hours:** Tuesday, Thursday 9:25-10:50 Room DH 1075
-Our plan for this semester will be to have one lecture and one practicum each week during
+**Class Hours:** Wednesday 3:30 -- 6 PM AL124
+Our plan for this semester will be to start with a brief lecture and then work on labs each week during
 official class hours.  Students are expected to spend significant out-of-class time (~10 hours
 per week) working on lab assignments.
 

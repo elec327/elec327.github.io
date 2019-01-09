@@ -36,8 +36,9 @@ description: Morse Code with Timers
 #### Part 0: Installation (optional)
 
 You are welcome to install TI's **Code Composer Studio** (CCS) on your own personal computers.
-There are beta versions available for both OSX and Linux, but in the past these have not
-supported all of the features of the Windows version installed in lab.
+The updated Launchpad you are using this semester appears to be wel supported in the Ubuntu
+version of CCS (as well as Windows). It is not yet known whether the beta OSX version is also
+working well.
 
 [**Energia**](http://energia.nu/) is a clone of the Arduino environment for the MSP430. We will
 not use the Java-based approach used by Arduino, but the compiliing and device programming

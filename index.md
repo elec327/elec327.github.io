@@ -7,7 +7,7 @@ group: navigation
 
 {::options parse_block_html="true" /}
 
-<H2>ELEC 327 - Digital Systems Laboratory (2018)</H2>
+<H2>ELEC 327 - Digital Systems Laboratory (2019)</H2>
 
 ---
 
@@ -26,9 +26,9 @@ understand how application-specific blocks enable modern commercial devices._
 
 **Instructor** -- Caleb Kemere (caleb.kemere@rice.edu)
 
-**Location** -- DH 1075 (Lectures), AL124 (Lab)
+**Location** -- AL124 (Lab and Lectures)
 
-**Time** -- Tuesdays/Thursdays 9:25-10:40 AM
+**Time** -- Wednesdays 3:30--6 PM
 
 **Prerequisites** -- ELEC220
 
@@ -57,7 +57,7 @@ https://github.com/elec327.)
   + [2013](http://dsp.rice.edu/elec327-2013)
   + [2014](http://dsp.rice.edu/elec327-2014)
   + [2017](http://elec327.github.io/2017) - **CAREFUL YOU DON'T GET STUCK!**
-  + [2018](http://elec327.github.io/2018/index.html) - **CAREFUL YOU DON'T GET STUCK!**
+  + [2018](http://elec327.github.io/2018) - **CAREFUL YOU DON'T GET STUCK!**
 
 
 </div>
