@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+     <title>Lab 2</title> 
+    <meta name="description" content="Timers and Soldering">
+    <meta name="author" content="Caleb Kemere">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/2018/assets/themes/bootstrap/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/2018/assets/themes/bootstrap/elec327.css" rel="stylesheet">
+  
+    <!--[if lt IE 9]>
+      <script src="/assets/themes/bootstrap/resources/respond/Respond.min.js"></script>
+    <![endif]-->
+
+    <link href="/2018/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/2018/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" role="navigation">
+        <div class="container">
+        <a class="navbar-brand" href="/2018/">Rice ELEC327 - Digital Systems Laboratory</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-dark mr-auto">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/bonus">Bonus</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/">Home</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/parts_and_notes">Syllabus</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/syllabus">Syllabus</a></li>
+      	
+      
+    
+  
+
+
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Labs</a>
+              <ul class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown"role="menu">
+                
+                
+                
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab1/">Lab 1</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item active"><a href="/2018/lab2/" class="dropdown-item active nav-link">Lab 2</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab3/">Lab 3</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab4/">Lab 4</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab5/">Lab 5</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab6/">Lab 6</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab7/">Lab 7</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab8/">Lab 8</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab9/">Lab 9</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab10/">Lab 10</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/midterm_project/">Project 1 - Midterm</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/final_project/">Project 2 - Final</a></li>
+      	
+      
+    
+  
+
+
+
+
+              </ul>
+            </li>
+          </ul>
+      </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container under-navbar">
+      
+<h2 id="lab-2-timers-and-soldering">Lab #2: <em>Timers and Soldering</em></h2>
+
+<p><em>The goals of this lab are two-fold. First, we aim for you to gain experience soldering small,
+surface mount parts both for skill acquisition and in order to give you some background as you
+begin PCB design in the next lab. Second, the goal is to begin learning about interrupts,
+specifically by making use of the interrupt associated with one of the Timer modules.</em></p>
+
+<p><em>This assignment is due Friday, January 26, 2017.</em></p>
+
+<h4 id="part-1-soldering-a-pendant">Part 1: Soldering a pendant</h4>
+<div class="row">
+  <div class="col-md-3 col-sm-6 col-xs-6">
+    <figure class="figure">
+      <p><a href="Pendant.gif"> <img src="Pendant.gif" class="figure-img img-fluid rounded" alt="Pendant PCB" /></a></p>
+
+      <figcaption class="figure-caption">
+        <p>Lab 2 6-LED pendant PCB.</p>
+      </figcaption>
+
+    </figure>
+  </div>
+  <div class="col-md-9 col-sm-12 col-xs-12">
+    <p>Start by soldering on the MSP430. It is the most challenging piece of the puzzle and getting it
+in place will make everything else easier. The best bet for dual-inline packages like this one
+is to tack one corner down, then the opposite one, then fill in the rest.</p>
+
+    <p>You may need to reference the
+<a href="https://github.com/ckemere/ELEC327/raw/master/Labs/Lab2/Pendant.brd">board</a>
+and/or <a href="https://github.com/ckemere/ELEC327/raw/master/Labs/Lab2/Pendant.sch">schematic</a>
+files in order to know what other parts go where. In particular notice which
+components are resistors, which are capacitors, and which are light emitting
+diodes (LEDs).</p>
+
+    <ol class="questions">
+      <li>
+        <p><strong>(Not scored!)</strong> Either examine the PCB closely or look at the schematic for the pendant. Which GPIO pins
+are connected to LEDs?</p>
+      </li>
+      <li>
+        <p><strong>(Not scored!)</strong> In a normal, canonical (i.e., atomic), forward operating (i.e., not-breaking-down) diode,
+which terminal does positive (conventional) current flow out of, cathode or anode? In the
+pendant circuit, which pin is this terminal connected to?</p>
+      </li>
+      <li>
+        <p><strong>(Not scored!)</strong> What value (0 or 1) will result in the diode turning on? How would the circuit be changed
+to allow the other value to turn the diode on?</p>
+      </li>
+    </ol>
+
+  </div>
+</div>
+
+<p>Precise modeling of the current/voltage characteristic of a diode is complicated, but
+important for a number of applications (such as detecting light with a photo diode). A
+very simple model of a diode switches from infinite resistance to zero resistance at the
+“threshold voltage”. Thus, when on, the current through the diode must be limited. A resistor
+in series with the diode serves to limit the current, and you will see such a resitor in the
+pendant circuit. In order to find the proper value of this resistance, you need to know
+something about the LED and also something about the rest of the circuit.</p>
+
+<ol class="questions" start="4">
+  <li>
+    <p>Use a multimeter in lab to measure the threshold voltage of the supplied
+LEDs.  How does this compare to the “forward voltage” found in the
+<a href="http://www.digikey.com/product-detail/en/LTST-C150KRKT/160-1405-1-ND/386760">datasheet</a>. Why
+might they be different if they are?</p>
+  </li>
+  <li>
+    <p><strong>(Not scored!)</strong> Further examining the datasheet, what is the maximum value of forward current that you
+should apply? What appears to be the recommended forward current level?</p>
+  </li>
+  <li>
+    <p><strong>(Not scored!)</strong> Assume that you will be using one a CR2032 battery, which has a nominal voltage of 3V. What
+voltage will appear on the output of the LED drive pins when they are on? (You can ignore the
+voltage drop through the MSP430!).</p>
+  </li>
+  <li>
+    <p>Measure the voltage of a new CR2032 - what voltage do you find? After you build the circuit
+and program the pendant, measure again with the device running. What value do you find
+now?</p>
+  </li>
+  <li>
+    <p>Finally, assume that the threshold voltage of the diode is 2 V, and the MSP430 output pin
+voltage is 3 V, and that the desired on current is 5 mA. What value of current-limiting
+resistor should you use? What would be the minimum resistance such that the current is less
+than the maximum (DC) specified in the data sheet?</p>
+  </li>
+</ol>
+
+<p><strong>Use the value of resistor which will achieve 5 mA on current along with the LEDs and a 47 K
+pull-up resitor on the ~RST pin to finish the pendant.</strong></p>
+
+<p>Here is a helpful video:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7B_-qmJLfng" frameborder="0" allowfullscreen=""></iframe>
+
+<h4 id="part-2-using-the-timer-interrupts">Part 2: Using the Timer interrupts</h4>
+
+<p>The second part of the lab is to program the pendant to do something interesting. The pattern
+that is desired is as follows:</p>
+
+<ul>
+  <li>One LED should be lit at any one time.</li>
+  <li>Which LED is lit should change every 333 ms.</li>
+  <li>Which LED is lit should rotate clockwise 3 times, followed by counter clockwise 3 times,
+then repeating clockwise again, and so on.</li>
+</ul>
+
+<p>Refer to the <a href="https://github.com/ckemere/ELEC327/blob/master/Labs/Lab2/pendant.c">skeleton code
+file</a> file. In order for it
+to work, you will need to:</p>
+<ul>
+  <li>modify the code so that the appropriate Port 2 pins are set up and outputting properly
+(lines 43, 64, and 67)</li>
+  <li>properly implement the <code class="highlighter-rouge">next_led()</code> function. This function returns the values of PORT1 and
+PORT2 that are appropriate for the next led to light up in sequence in the circle. The
+PORT1 pins should be in the high byte and the PORT2 pins should be in the low byte. Note
+that it maintains state from one function call to the next!</li>
+</ul>
+
+<p>Once the code is functioning, examine it carefully and make sure you fill in comments on all
+the lines that are marked. Additionally, think about they way the code is structured. In
+principle, the code could all go in the interrupt, but in general it is best to have interrupt
+service routines execute as quickly as possible. Additionally, see how when the button is
+pressed, it puus the pendant into LPM4 sleep with LEDs off and wakes it up from sleep when it
+is pushed again.</p>
+
+<h5 id="final-modification-for-full-functionality">Final modification for full functionality</h5>
+
+<p>After your code is functioning and you understand it well, make the appropriate changes so that
+between changing LED values, you go into <strong>LPM3</strong> rather than LMP0.</p>
+
+<p>To answer the following questions, you will need to refer to Chapters 5 and 12 of the User
+Guide.</p>
+
+<ol class="questions" start="9">
+  <li>
+    <p><strong>(Not scored.)</strong> How do you set a pin to be an output? What is the default mode for GPIO pins?</p>
+  </li>
+  <li>
+    <p><strong>(Not scored.)</strong> If your main function begins with the instruction <code class="highlighter-rouge">BCSCTL2 = 0;</code> what will be the
+frequency of the CPU clock (<code class="highlighter-rouge">MCLK</code>)? What will be the frequency of the submain clock (<code class="highlighter-rouge">SMCLK</code>)?
+(Hint: you will also need to figure out what the default setting for the DCO is, and assume
+that it is set.) (Second hint: the DCO in the MSP430g2553 is calibrated by default.)</p>
+  </li>
+  <li>
+    <p>Assume that the SMCLK has been configured to 1 MHz. Assume you are given the following
+configuration of Timer A0: <code class="highlighter-rouge">TA0CTL = TASSEL_2 | ID_3 | MC_1 | TAIE;</code>. What register do you need
+to set, and to what value in order to generate interrupts every 1 millisecond?</p>
+  </li>
+  <li>
+    <p>Instead, assume you are given the following configuration of Timer A0: <code class="highlighter-rouge">TA0CTL = TASSEL_2
+| ID_3 | MC_2 | TAIE;</code>. You can still achieve a 1 ms interrupt, but now you will additionally
+be required to update the register in the previous question in your ISR. What is the proper
+update command? (Hint: the right answer does not involve changing <code class="highlighter-rouge">TA0CTL</code>.) What would happen to
+your program if you forgot to initialize the register in your main function and only modified
+it in the ISR? <strong>[THIS QUESTION IS FATALLY FLAWED]</strong></p>
+  </li>
+  <li>
+    <p>In the timer ISR that you’re given in the skeleton code, what is the purpose of this line
+of code: <code class="highlighter-rouge">__bic_SR_register_on_exit(LPM0_bits);</code>? Where is the code for this function found?</p>
+  </li>
+  <li>
+    <p>In the pin IO ISR that you’re given in the skeleton code, what is the purpose of this line
+of code: <code class="highlighter-rouge">__bis_SR_register_on_exit(LPM4_bits + GIE);</code>? In particular, why is the <code class="highlighter-rouge">GIE</code> bit
+needed here, whereas it wasn’t for the timer interrupt? <strong>[THIS QUESTION IS FATALLY FLAWED]</strong></p>
+  </li>
+  <li>
+    <p>In the pin IO ISR that you’re given in the skeleton code, what is the purpose of this line
+of code: <code class="highlighter-rouge">P1IFG &amp;= ~BIT2;</code> Why is it needed for this ISR, but not the timer module one?</p>
+  </li>
+</ol>
+
+<p><strong>Save your code as <code class="highlighter-rouge">pendant.c</code>. You will need to demonstrate your device running and walk
+through your code comments and modifications for one of the course staff by the due date.
+Upload your answered questions to the Google doc, and the code to Canvas.</strong></p>
+
+
+      <hr>
+      <footer>
+        <p>
+        &copy; 2019 <a href="http://kemerelab.com">Caleb Kemere</a>
+        and <a href="http://www.ece.rice.edu">Rice University ECE</a>
+        </p>
+      </footer>
+    </div>
+
+    
+
+    <script src="/assets/themes/bootstrap/resources/jquery/jquery.min.js"></script>
+    <script src="/assets/themes/bootstrap/resources/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

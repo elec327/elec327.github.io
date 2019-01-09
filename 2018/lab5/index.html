@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+     <title>Lab 5</title> 
+    <meta name="description" content="ADC, Software Architecture, Beginnings of the Thermodot Firmware">
+    <meta name="author" content="Caleb Kemere">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/2018/assets/themes/bootstrap/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/2018/assets/themes/bootstrap/elec327.css" rel="stylesheet">
+  
+    <!--[if lt IE 9]>
+      <script src="/assets/themes/bootstrap/resources/respond/Respond.min.js"></script>
+    <![endif]-->
+
+    <link href="/2018/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/2018/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" role="navigation">
+        <div class="container">
+        <a class="navbar-brand" href="/2018/">Rice ELEC327 - Digital Systems Laboratory</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-dark mr-auto">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/bonus">Bonus</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/">Home</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/parts_and_notes">Syllabus</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/syllabus">Syllabus</a></li>
+      	
+      
+    
+  
+
+
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Labs</a>
+              <ul class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown"role="menu">
+                
+                
+                
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab1/">Lab 1</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab2/">Lab 2</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab3/">Lab 3</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab4/">Lab 4</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item active"><a href="/2018/lab5/" class="dropdown-item active nav-link">Lab 5</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab6/">Lab 6</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab7/">Lab 7</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab8/">Lab 8</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab9/">Lab 9</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/lab10/">Lab 10</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/midterm_project/">Project 1 - Midterm</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2018/final_project/">Project 2 - Final</a></li>
+      	
+      
+    
+  
+
+
+
+
+              </ul>
+            </li>
+          </ul>
+      </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container under-navbar">
+      
+<h2 id="lab-5-writing-the-basic-structure-of-the-thermodot-firmware">Lab #5: Writing the basic structure of the Thermodot firmware</h2>
+
+<div class="alert alert-info" role="alert">
+  <h4 id="there-are-two-goals-for-this-assignment"><strong>There are two goals for this assignment:</strong></h4>
+
+  <ul>
+    <li>To learn and use the MSP430’s analog-to-digital conversion circuitry</li>
+    <li>To create structured code which carries out multiple asynchronous/independent functions</li>
+  </ul>
+
+</div>
+
+<div class="alert alert-danger" role="alert">
+  <h4 id="what-should-be-turned-in"><strong>What should be turned in?</strong></h4>
+
+  <ol>
+    <li>Your <strong>commented</strong> <code class="highlighter-rouge">timer_shift_PWM.c</code> and <code class="highlighter-rouge">mood_ring.c</code> files.</li>
+    <li>Your answers to the questions. (<em>Canvas</em>)</li>
+  </ol>
+
+  <h4 id="what-should-be-demoed-live"><strong>What should be demo’ed live?</strong></h4>
+  <ol>
+    <li>Your timer-based and temperature-based RGB LED codes.</li>
+  </ol>
+
+  <h4 id="lab-5-will-be-due-feb-16"><strong>Lab 5 will be due Feb 16.</strong></h4>
+
+</div>
+
+<h4 id="part-1-multiple-timers-program-structure">Part 1: Multiple Timers, Program Structure</h4>
+
+<p>For Lab 2, you figured out how to run your MSP430 in Low Power Mode. In order to make your mood
+ring, you’ll need to properly architect your code. To begin with, think about the different
+time scales at which you want to act:</p>
+
+<ol class="questions">
+  <li>For optimal power, which clock should you use for PWM? Ideally the PWM control frequency
+  should be one or two orders of magnitude higher than the minimum (let’s say &gt; 5 kHz). How would
+  you set the PWM control clock to run at 6 kHz?</li>
+  <li><strong>[Not scored]</strong> The MSP430G2553 has 3 timer modules –two are the TimerA
+  type, and one is  the Watchdog Timer (WDT+). Unlike the TimerA module, the
+  WDT+ module cannot control PWM outputs and has less flexibility in general.
+  However, it is very useful as a tool to trigger low level state changes. How
+  would you configure the WDT+ module to generate periodic (maskable)
+  interrupts?</li>
+  <li><strong>[Not scored]</strong> If your <code class="highlighter-rouge">main()</code> function contains an instruction which
+  puts the CPU into a low power mode, what are the minimal interrupt service
+  routine instructions required to wake the CPU and return function to the
+  <code class="highlighter-rouge">main()</code> function?</li>
+</ol>
+
+<p>You can either use three separate LEDs a through-hole RGB LED, or a SMD unit
+soldered to a breakout board for the rest of Part 1. Modify your code from Lab 3
+so that the <code class="highlighter-rouge">main()</code> function adjusts the PWM parameters to increase the
+brightness of the green LED and decrease the brightness of the red LED through 100
+levels (so that maximum green corresponds with minimum red and vice versa). Your
+<code class="highlighter-rouge">main()</code> function should be an infinite loop, with a command to go into low
+power mode at the end of each color shift cycle. Set up the WDT+ module to
+generate an interrupts using the “16ms” scaling to wake up the CPU, so that the
+shifts in color happen smoothly.</p>
+
+<ol class="questions" start="4">
+  <li>Assuming you use the VLO to control the WDT and TimerA modules, what is the
+  lowest LPM which will allow your device to continue to function?</li>
+</ol>
+
+<p><strong>Save this code as timer_shift_PWM.c.</strong> You will demo both this
+timer-shifting colors as well as temperature shifted color from Part 2.</p>
+
+<h4 id="part-2-making-a-mood-ring">Part 2: Making a Mood Ring</h4>
+
+<p>In this part, we’ll put together Part 1 and add in ADC to make a “mood ring”
+with the RGB LED controlled by the on board temperature sensor. We’ll start off
+with a few questions that should guide learning how to use ADC:</p>
+
+<ol class="questions" start="5">
+  <li><strong>[Not scored]</strong> How would you turn on the ADC10 module and tell it to
+  sample from the internal temperature sensor? What is the default voltage range
+  for conversion?</li>
+  <li>What are two ways of discovering when the ADC10 module has finished a
+  conversion? Which method will be more efficient from a power perspective?</li>
+  <li><strong>[Not scored]</strong> What is the minimum sampling period for the internal
+  temperature sensor on the ADC10 module? Assuming that you run the ADC10 using
+  the VLO at 12 kHz, what is the maximum sampling rate for temperature?</li>
+  <li><strong>[Not scored]</strong> What kind of ADC is used in the MSP430? Take a look at the
+  <a href="https://www.microchip.com/wwwproducts/en/ATSAMD10D14">datasheet for the Atmel (now Microchip!?!?) SAM
+  D21</a>, which is
+  used in the Arduino One. What type of ADC architecture do you think it uses
+  (hint: take a look at the “Conversion Timing” in the ADC section)?</li>
+  <li>Assume you’ve already maximized the sampling clock and minimized the hold
+  time. If you could make an architectural change to increase the rate at which
+  samples were acquired by the MSP430 ADC10, how could you do it? Is there a
+  simple modification that would let users trade off bit depth for sampling rate
+  (hint: the SAM D21 has this feature)? (I’m looking for one answer for both 
+  questions!)</li>
+  <li><strong>[Not scored]</strong> In an oversampling ADC, what multiple of the sampling
+  rate yields an additional bit of precision? In a sigma-delta ADC, what
+  multiple of the sampling rate yields an additional bit of precision?</li>
+</ol>
+
+<p>Modify your <code class="highlighter-rouge">main()</code> function so that the code goes into low power mode twice:
+after enabling the ADC10 to sample temperature and after changing the PWM
+parameters for the LEDs. Set up your ISRs for the ADC10 and WDT interrupts to
+return control to the <code class="highlighter-rouge">main()</code> function, with the WDT interrupt executing at
+1/16 ms. Once you receive a sample temperature, you should scale your LED output
+so that cold will be fully blue and hot will be fully red. See the color chart
+<a href="https://en.wikipedia.org/wiki/Color_temperature">here</a>. You can play around
+with “hot” and “cold” values, try to get them to a range where if you warm your
+hands and touch the MSP it’s “hot” and if you don’t touch it for a while or
+actively cool it it’s “cold”. This is now the code for your “mood ring” on your
+breadboard. Make sure to comment your code in detail, such that any design
+decisions you made are easily available (which components are on which pins,
+label interval for timers in ms, etc). <strong>Save this code as <code class="highlighter-rouge">mood_ring.c</code>.</strong> You
+will demo this and the timer-based color shifting.</p>
+
+
+      <hr>
+      <footer>
+        <p>
+        &copy; 2019 <a href="http://kemerelab.com">Caleb Kemere</a>
+        and <a href="http://www.ece.rice.edu">Rice University ECE</a>
+        </p>
+      </footer>
+    </div>
+
+    
+
+    <script src="/assets/themes/bootstrap/resources/jquery/jquery.min.js"></script>
+    <script src="/assets/themes/bootstrap/resources/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
