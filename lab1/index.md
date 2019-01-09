@@ -173,41 +173,39 @@ Please reference your answers to one of the authoritative sources.
 _Questions from week 1 of class:_
 
 <ol class="questions" start="1">
-<li><i>Reverse engineer code to answer questions.</i>
-Each of you will have a sligthly different code binary. You should convert the machine code back
-into assembly and understand how it works.  The code flashes one of the Launchpad LEDs. You
-need to answer the following questions: (a) How does the code work? (b) What is the period at
-which it happens?  (c) What register is used to keep track of timing? (d) Which LED flashes?
+<li><i>Understanding simple assembly code.</i>
+Load the code in [main.asm](main.asm) into CCS, compile it and load it onto your launchpad. (A
+version that is Energia-compatible is in [main-energia.asm](main-energia.asm). Now 
+answer the following questions: (a) What does the code do? (b) How does it work (pseudocode)?
+(Make sure to specify things like active pins, registers used and things like the period of operations!) 
+</li>
+<li><i>Understanding disassmbly.</i>
+In CCS, you can see the disassembled code if you pause during debugging.
+
+![Disassembly](Disassembly.png)
+
+(a) Interpret the disassembled data. What does "c004: 40B2 5A80 0120" mean? (Specifically, what
+does the "c004" refer to? What do the other numbers refer to? Why exactly are they those
+numbers?  (b) What does "c014: 4034 C350" mean? What would it have been if the code had used
+register R5 instead? What if the initialization had been #30000 instead of #50000?
+(c) Why does assembly need to initialize the stack pointer in general? Is it necessary for this
+program?
+
+*Hint 1:* Remember that the MSP430 memory is little-endian. *Hint 2:* You'll want to make heavy
+use of Table 3-12 ("Core Instruction Map") in the User Guide!
 </li>
 </ol>
-
-An example of what it will look like is here:
-
-![intel-hex](intel-hex.png)
-
-
-Download the [zip archive](BinaryFiles.zip) which contains 143 directories. You will be given
-access to a Google Sheets spreadsheet with your netid and the directory containing the code you
-should view. Each directory contains two files. An ELF format file, `binary_file.o`, which can be
-uploaded to the MSP430 and an Intel-Hex format file, `binary_file.hex` which contains the same
-information in ASCII format. The [Wikipedia page on Intel-Hex
-format](https://en.wikipedia.org/wiki/Intel_HEX) describes how to interpret
-this data. If you open it with "vim" or another code editor (e.g., atom, with the "intel-hex"
-colors enabled), you will see the fields of the file properly colorized. *Hint 1:* Remember
-that the MSP430 memory is little-endian. *Hint 2:* You'll want to make heavy use of Table 3-12
-("Core Instruction Map") in the User Guide!
-
 
 
 _Questions from the skeleton code:_
 
-<ol class="questions" start="2">
+<ol class="questions" start="3">
 <li>In the Part 1 skeleton code, what is the frequency and period of the LED?</li>
 </ol>
 
 _Questions from bread-boarding:_
 
-<ol class="questions" start="3">
+<ol class="questions" start="4">
 <li>What is the forward voltage on the LED? What is its maximum forward current?</li>
 <li>What is the supply voltage coming out of the MSP430? On the MSP430G2553, what is the
 maximum current any one pin can output?</li>
@@ -215,6 +213,5 @@ maximum current any one pin can output?</li>
 current? To be safe when using the MSP430, should you use a larger or smaller resistor?</li>
 </ol>
 
-**Upload your answers to the questions to the Google Form, and your code to Canvas. Make sure
-to demo functionality by the deadline.**
+**Upload your answers and your code to Canvas. Make sure to demo functionality by the deadline.**
 
