@@ -46,7 +46,7 @@ Our plan for this semester will be to start with a brief lecture and then work o
 official class hours.  Students are expected to spend significant out-of-class time (~10 hours
 per week) working on lab assignments.
 
-**Lab Help Sessions:** See Lab Assistant hours or by request on [Piazza](https://piazza.com/class/ijk6s504wdz2uw) or through email  
+**Lab Help Sessions:** See Lab Assistant hours or by request on [Piazza](https://piazza.com/class/jqprx90wr5220s) or through email  
 Help sessions held in lab room A124                                                                                     
 Lab Access Keypad Code: ...-- -.... ----. ----. #
 
