@@ -138,21 +138,21 @@ that it is set.) (Second hint: the DCO in the MSP430g2553 is calibrated by defau
 
 11. Assume that the SMCLK has been configured to 1 MHz. Assume you are given the following
 configuration of Timer A0: `TA0CTL = TASSEL_2 | ID_3 | MC_1 | TAIE;`. What register do you need
-to set, and to what value in order to generate interrupts every 1 millisecond?
+to set, and to what value in order to generate interrupts every 1 millisecond? Will you need
+more/different ISR code?
 
 12. Instead, assume you are given the following configuration of Timer A0: `TA0CTL = TASSEL_2
-| ID_3 | MC_2 | TAIE;`. You can still achieve a 1 ms interrupt, but now you will additionally
+| ID_3 | MC_2;`. You can still achieve a 1 ms interrupt, but now you will additionally
 be required to update the register in the previous question in your ISR. What is the proper
-update command? (Hint: the right answer does not involve changing `TA0CTL`.) What would happen to
+update command? (Hint: the right answer invovles changing CCR0.) What would happen to
 your program if you forgot to initialize the register in your main function and only modified
-it in the ISR? **[THIS QUESTION IS FATALLY FLAWED]**
+it in the ISR? 
 
 13. In the timer ISR that you're given in the skeleton code, what is the purpose of this line
 of code: `__bic_SR_register_on_exit(LPM0_bits);`? Where is the code for this function found?
 
 14. In the pin IO ISR that you're given in the skeleton code, what is the purpose of this line
-of code: `__bis_SR_register_on_exit(LPM4_bits + GIE);`? In particular, why is the `GIE` bit
-needed here, whereas it wasn't for the timer interrupt? **[THIS QUESTION IS FATALLY FLAWED]**
+of code: `__bis_SR_register_on_exit(LPM4_bits + GIE);`? (Hint: it may be superfluous. If so, why?)
 
 15. In the pin IO ISR that you're given in the skeleton code, what is the purpose of this line
 of code: `P1IFG &= ~BIT2;` Why is it needed for this ISR, but not the timer module one?
