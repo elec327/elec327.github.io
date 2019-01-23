@@ -30,7 +30,7 @@ description: PWM, LPM, and PCB Design
   1. A demonstration of an LED with intensity being modulated using PWM.
   2. The code for this demonstration.
 
-#### Part 1 of the lab will be due Feb 2, 2018
+#### The lab will be due January 31, 2019
 
 </div>
 
@@ -138,9 +138,11 @@ generated, you should not need an ISR.
   {: class="questions" start="11"}
 
 ##### Lab 3 programming task
-Now, combine the PWM code you just wrote with the skeleton code. Your goal is for the LED to
-change duty cycle from 0% to 100% in 5% steps every time the WDT interrupts. You should be able to
-accomplish this by changing the value of the CCR1 register. **Demo this functionality and turn
+For the lab demo, combine the PWM code you just wrote with the skeleton code and run it on your
+Pendant from Lab 2. Your goal is for LED3 and LED7 to change intensity (duty cycle) from 0 to
+100% and back to 0% in 5% steps each time the WDT interrupts. They should move in opposite directions,
+one getting brighter and one getting dimmer. Hint: You should be able to accomplish this by
+changing the value of the TA0CCR1 and TA1CCR1 registers. **Demo this functionality and turn
 in your code.**
 
 
