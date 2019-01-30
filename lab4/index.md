@@ -42,8 +42,8 @@ In this part, we will put together most of the concepts from Part 1, creating a 
 RGB LED and a temperature sensor. In order to do the rest of the assignment, you will need to
 clone the [ELEC327 reposistory](https://github.com/ckemere/ELEC327) from github (if you have
 not done so yet). In the `Labs/Lab3/Datasheets` directory, you will find a data sheet for the
-[RGB LED](IN-S128TATRGB_V1.0.pdf) (Digikey part
-[1830-1096-1-ND](https://www.digikey.com/products/en?keywords=1830-1096-1-ND)) and a
+[RGB LED](https://github.com/ckemere/ELEC327/blob/master/Labs/Lab4/Datasheets/QBLP655R-RGB.pdf) (Digikey part
+[1516-1378-1-ND](https://www.digikey.com/product-detail/en/qt-brightek-qtb/QBLP655R-RGB/1516-1378-1-ND/9739223)) and a
 [temperature sensor](tmp20.pdf) (Digkey part
 [296-25569-1-ND](https://www.digikey.com/products/en?keywords=296-25569-1-ND)). Refer to the
 data sheet for the RGB LEDs to choose current-limiting resistors.
@@ -56,18 +56,20 @@ connect the temperature sensor to pin P1.0/A0. If you look at the temperature se
 sheet, you'll see that it is recommended that a capacitor be placed between the output line and
 ground -- you may ignore this!
 
-We will be using Eagle to design a PCB which contains the MSP430, RGB LED and a teperature
-sensor. In the `Labs/Lab3` directory, you will find a schematic which contains all but one
+We will be using Eagle to design a PCB which contains the MSP430, RGB LED and a temperature
+sensor. In the `Labs/Lab4` directory, you will find a schematic which contains all but two
 of the parts you will need. These are all part of the ELEC327 library, which is found in the
-`PCBs` directory. You will need to create 2 new parts - the RGB LED and the temperature sensor.
-You will need to make both a schematic symbol and a package footprint.
+`PCBs` directory. You will need to create these 2 new parts - the RGB LED and the temperature
+sensor.  You will need to make both a schematic symbol and a package footprint.
 
 Eagle comes with a good number of parts, but not all that you need. Start with the RGB LED. You
 should create a personal library for parts you make. Then, start with the "symbol". Make sure
 to adequately labels the various connections. Pay special attention to the direction of current
 flow through each LED. Then you should create a "footprint", referring to the data sheet for
 the spacing of the pads. Finally, combine the symbol and footprint so that the pins are
-connected to the right pads. Then, do the same for the temperature sensor. 
+connected to the right pads. Then, do the same for the temperature sensor. Note that for the
+temperature sensor, you can download an "Ultralibrarian" script from Digikey that will generate
+the symbol and footprint for you. Make sure you double check them, though!
 
 Once you've made the RGB LED and the temperature sensor, add them to the schematic and connect
 them to the MSP430. We already have suggested P1.0/A0 for the temperature sensor. **The RGB LED
