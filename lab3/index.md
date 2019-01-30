@@ -13,7 +13,7 @@ description: PWM, LPM, and PCB Design
 ## Lab #3: PWM and Low Power Modes 
 
 <div class="alert alert-info" role="alert">
-#### There are three goals for this assignment:
+#### There are two goals for this assignment:
 
   - To learn and use PWM to modulate signal insensity
   - To learn more about low power modes and especially LPM3
