@@ -105,8 +105,8 @@ constraint will still let a variety of pulse patterns to be generated. Hence the
 (continuous, up, up/down). 
 
   7. The timer counter register (TAR) is 16-bits. Assuming we use the VLO to drive the Timer
-  module at 12 kHz, and run the counter in up/overflow mode, where it increments to 0xFFFF then
-  overflows to 0x0, at what frequency will the TAR overflow? If we want our PWM modulation to not
+  module at 12 kHz, and run the counter in continuous mode (where it increments to 0xFFFF then
+  overflows to 0x0), at what frequency will the TAR overflow? If we want our PWM modulation to not
   appear to flicker, the minimum modulation frequency is about 100-200 Hz. Is this achievable if
   the TAR is configured to overflow?
   {: class="questions" start="7"}
