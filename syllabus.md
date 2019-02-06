@@ -4,7 +4,7 @@ title: Syllabus
 group: navigation
 ---
 
-## ELEC 327: Digital Systems Laboratory (Spring 2017)
+## ELEC 327: Digital Systems Laboratory (Spring 2019)
 
 ### Syllabus
 
@@ -17,8 +17,8 @@ Office Hours: (please verify via email) Monday, Wednesday 9:00-10:00am (RMC Coff
 caleb.kemere@rice.edu
 
 **Grader/TA:**
-  - ??
-  - ??
+  - Jill Juneau ( [jill.c.juneau](mailto:jill.c.juneau@rice.edu))
+  - Shayok Dutta ( [sd54](mailto:sd54@rice.edu))
 
 **Lab Assistants:**
   - Rebecaa Lee ( [rbl2](mailto:rbl2@rice.edu))
@@ -27,10 +27,9 @@ caleb.kemere@rice.edu
   - Logan Lawrence ( [lcl5](mailto:lcl5@rice.edu))
 
 **Lab Office Hours:**
-  - TBD
-  - TBD
+  - See [Piazza](https://piazza.com/class/jqprx90wr5220s)
 
-Additional Lab office hours may be requested on Canvas
+Additional Lab office hours may be requested on Piazza or by email
 
 ---
 **Text Book:** There is no text book, but you will need to purchase a solderless breadboard for
@@ -41,7 +40,7 @@ be easier to use. Furthermore, you should take care of the MSP430 Launchpad you 
 
 ---
 
-**Class Hours:** Wednesday 3:30 -- 6 PM AL124
+**Class Hours:** Wednesday 3:30 -- 6 PM DH1046/AL124/DH1020
 Our plan for this semester will be to start with a brief lecture and then work on labs each week during
 official class hours.  Students are expected to spend significant out-of-class time (~10 hours
 per week) working on lab assignments.
