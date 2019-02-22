@@ -90,12 +90,15 @@ Alternatively, you could have them manufactured yourself. Some of the bonuses ar
 exclusive (i.e., one PCB couldn't do everything); the rest should be considered additive
 (if you make one PCB that satisfies multiple bonuses, you get them all.)__
 
-<div class="alert alert-info" role="alert">
+<div class="alert alert-info" role="danger">
 **Keep in mind the lead time for these services can be as much as two weeks!**
 </div>
 
+**[0.5 points]** - Design and manufacture a PCB that includes nice features in silkscreen
+and/or soldermask layers.
+
 **[1-3 points]** - Design, manunfacture, populate, and program a board that uses an MSP430 to do
-something interesting.
+something interesting. 
 
 **[1 point]** - Use the 32-pin QFN package of the MSP430 rather than the 20 pin one provided.
 You will have to find or create a proper EAGLE part for this device, which you should add to
