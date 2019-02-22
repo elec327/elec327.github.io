@@ -90,6 +90,10 @@ Alternatively, you could have them manufactured yourself. Some of the bonuses ar
 exclusive (i.e., one PCB couldn't do everything); the rest should be considered additive
 (if you make one PCB that satisfies multiple bonuses, you get them all.)__
 
+<div class="alert alert-info" role="alert">
+**Keep in mind the lead time for these services can be as much as two weeks!**
+</div>
+
 **[1-3 points]** - Design, manunfacture, populate, and program a board that uses an MSP430 to do
 something interesting.
 
