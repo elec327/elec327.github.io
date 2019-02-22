@@ -17,14 +17,13 @@ device will be one foundation of the Simon game._
 <div class="alert alert-danger" role="alert">
 #### What should be turned in?
 
-  1. Your **commented** `random_rainbow.c` file (_Canvas_)
+  1. Your **commented** `rainbow_spi.c` file (_Canvas_)
 
 #### What should be demo'd live?
   1. Showing how your RGB led string changes color in an ordered manner.
-  2. Showing how your RGB led string changes color in a random manner.
   3. The code for this demonstration.
 
-#### The lab will be due March 2, 2018
+#### The lab will be due March 1, 2019
 
 </div>
 
@@ -45,8 +44,8 @@ device will be one foundation of the Simon game._
 <div class="col-md-9 col-sm-12 col-xs-12">
 #### Part 0: Solder a APA102C SPI-controlled RGB LED strip to jumper wires
 
-Cut a piece of APA102 strip 5 LEDs long. Take care to leave as much of the
-perforation intact on the entry side of the strip. (There are directional
+Cut a piece of APA102 strip 5 LEDs long. **Take care to leave as much of the
+perforation intact on the entry side of the strip.** (There are directional
 arrows which point in the direction of signal flow.)
 
 Solder 4 jumper wires to the exposed copper perforation holes as shown in
@@ -59,7 +58,7 @@ each of the perforations and applied heat to reflow the solder. Once you get a
 good connection, you may want to apply some epoxy resin over the wires.
 
 
-#### Part 1: SPI control
+#### SPI control
 
 Let's review serial communications. Also take a look at the [documentation for the APA102
 device](https://www.adafruit.com/product/2343).
@@ -100,24 +99,6 @@ LED should cycle one step behind the previous one so that the rainbow appears to
 move upward. Use the `_16ms` watchdog timer interrupt for timing, and increment
 the temperature by 16 each time step. **Save this as `rainbow_spi.c`.**
 
-#### Part 2: Randomness
-
-Next, we will add some randomness to the rainbow color movement. Implement the
-function `int rand32(int seed)`, which returns a number between 0 and 31. The
-function should included one or more static variables that maintain state across
-function calls such that each time the function is called, the return value is
-different. If the int seed argument is zero, it should be ignored. Otherwise, it
-should be used to initialize the state variables of the function. The
-expectation is that the sequence of values returned following a call with the
-same seed value will be the same.
-
-Now, change the shifting rainbow code so that at each time step, rather than
-the temperature of each LED incrementing, pick a random change with value
-`next_change = (7*last_change + 16 - rand32(0))/8`. This value should be
-constant for all LEDs in the chain. The result (hopefully) will be a rainbow
-that randomly appears to move up and down. Note that the divide by 8 operation
-should be implemented as a right shift, and that the `change` variables need
-to be signed `int`s rather than `char`s. **Save this code as `random_rainbow.c`.***
 
 </div>
 </div>

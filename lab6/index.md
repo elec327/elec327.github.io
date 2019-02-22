@@ -8,7 +8,7 @@ description: Soldering Redux and Finalizing Thermodot Firmware
 
 {::options parse_block_html="true" /}
 
-## Lab #6: Building and programing the Thermodot PCB with randomness
+## Lab #6: Building and programing the Thermodot PCB 
 
 _This lab builds on Lab 4 to make a device that flashes an RGB LED in an interesting pattern in
 a way that depends on the ambient temperature. The goal is for you to continue to master
@@ -47,12 +47,15 @@ for us, hot and cold are reversed from black body radiation).
 **Specific Requirements** It is not enough to just vary the PWM levels as many
 of you did for Lab 5. Different colors have different perceptual brightnesses,
 and many of you also noted that the perceptual variation in brightness from 0
-to 50% duty cycle is much larger than 50% to 100%. __You will be graded on whether
-your colors go through a perceptually-nice rainbow.__ Be prepared to modify your
-code to sweep through the possible range of temperatures automatically for
-visualization purposes. You must demo your actual device **working from battery
-power**. Note that this will mean different currents flowing through the LED than
-when driven from USB power!
+to 50% duty cycle is much larger than 50% to 100%. **The point of this exercise
+is to recognize that when you see an LED-based UI, thought has gone into choosing
+the drive levels to achieve colors which are mixtures of the primary LEDs to
+account for differing brightness and different __perceptual__ brightnesses (e.g.,
+of green.** __You will be graded on whether your colors go through a perceptually-nice
+rainbow.__ Be prepared to modify your code to sweep through the possible range of temperatures
+automatically for visualization purposes. You must demo your actual device **working from
+battery power**. Note that this will mean different currents flowing through the LED than when
+driven from USB power!
 
 **Your code should be well commented and modular!**
 

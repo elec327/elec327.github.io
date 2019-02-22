@@ -81,17 +81,24 @@ number).
 
 ---
 
-### Lab 3 Bonus - Fancifying the Thermodot (PCB design + firmware)
+### Lab 4-5 Bonus - Make your own PCB and related ideas
 
-__Note that all of these are PCB-related bonuses. You can create a second PCB for Lab 3, or
-submit these designs as part of the midterm or final project board runs. Alternatively, you
-could have them manufactured yourself.__
+__Note that all of these are PCB-related bonuses. You can create a second PCB for Lab 4, 
+submit these designs on your own to SeeedStudio or OSHPark (refer to Piazza post for log in
+information) or submit these designs as part of the midterm or final project board runs.
+Alternatively, you could have them manufactured yourself. Some of the bonuses are obviously
+exclusive (i.e., one PCB couldn't do everything); the rest should be considered additive
+(if you make one PCB that satisfies multiple bonuses, you get them all.)__
+
+**[1-3 points]** - Design, manunfacture, populate, and program a board that uses an MSP430 to do
+something interesting.
 
 **[1 point]** - Use the 32-pin QFN package of the MSP430 rather than the 20 pin one provided.
 You will have to find or create a proper EAGLE part for this device, which you should add to
-the ELEC327 library and generate a pull-request on github.
+the ELEC327 library and generate a pull-request on github. Manufacture, populate, and
+program the board.
 
-**[1 point]** - Add a button to the Thermodot device to be used to go into LPM4 as in Lab 2.
+**[1 point]** - Add a button to the Lab 4/5 device to be used to go into LPM4 as in Lab 2.
 You may use a resistor and capacitor to debounce, or implement some sort of software
 debouncing.
 

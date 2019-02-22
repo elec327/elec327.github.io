@@ -25,6 +25,8 @@ description: Piezo buzzer and Simon PCB
   2. Demonstrate your functional sound sequence player.
 </div>
 
+**This lab will be due March 8, 2019.**
+
 #### Part 1: Playing tones via PWM
 
 For the Simon midterm project, you'll need to generate sounds appropriate for button presses,
