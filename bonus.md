@@ -91,7 +91,7 @@ exclusive (i.e., one PCB couldn't do everything); the rest should be considered 
 (if you make one PCB that satisfies multiple bonuses, you get them all.)__
 
 <div class="alert alert-danger" role="alert">
-**Keep in mind the lead time for these services can be as much as two weeks!**
+<b>Keep in mind the lead time for these services can be as much as two weeks!</b>
 </div>
 
 **[0.5 points]** - Design and manufacture a PCB that includes nice features in silkscreen
