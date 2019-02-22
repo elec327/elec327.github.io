@@ -24,7 +24,7 @@ That will be a very important feature for the Simon game._
   3. The code for this demonstration.
 
 #### The lab will be due March 22, 2019
-
+</div>
 
 #### Randomness
 
