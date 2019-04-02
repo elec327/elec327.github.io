@@ -24,20 +24,22 @@ description: Midterm Project
 
   1. The device will be presented and demo'ed to the class (you will need evals from at least 2 
   other students and the professor or TAs).
-  2. In class demos will be April 5th, 2018.
+  2. In class demos will be April 10th, 2019.
   3. Please turn in your self-criticism score (rubric given below), your code, and the size of
   your board. 
 
-  **Rubric:** (10 pts each (code is 20 pts), 100 total) 
-  - Ergonomics-Shape (is it comfortable to hold and play?)
-  - Ergonomics-Debouncing (does it register just one button press when you press a button?)
-  - Gameplay-Timeout (does it game over after a while if no button is pressed?)
-  - Gameplay-MisplayingError (does it game over if the wrong button is pressed?)
-  - Gameplay-Win (does it do something special when the player wins?)
-  - Gameplay-Random (does it play a different sequence each timei, including after power cycles?)
-  - Style-Animations (are there animations for start/win and lose/game-over?)
-  - Style-SoundLight (do lights and sounds work well together and convey information?)
-  - Well-commented, logical code architecture (does the architecture make sense? are there good
+  **Rubric:** (10 pts each (mvp is 30 pts, code is 20 pts), 140 total) 
+  1. MVP: Does it actually run properly off of a battery and (occasionally) perform in a
+    Simon-esque way? (30 pts)
+  2. Ergonomics-Shape (is it comfortable to hold and play?)
+  3. Ergonomics-Debouncing (does it register just one button press when you press a button?)
+  4. Gameplay-Timeout (does it game over after a while if no button is pressed?)
+  5. Gameplay-MisplayingError (does it game over if the wrong button is pressed?)
+  6. Gameplay-Win (does it do something special when the player wins?)
+  7. Gameplay-Random (does it play a different sequence each timei, including after power cycles?)
+  8. Style-Animations (are there animations for start/win and lose/game-over?)
+  9. Style-SoundLight (do lights and sounds work well together and convey information?)
+  10. Well-commented, logical code architecture (does the architecture make sense? are there good
     comments?, functions (libraries?) used intelligently?) - 20 pts
 
 </div>
