@@ -62,7 +62,8 @@ capacitor and when you put the battery back in, it will start with LED1 again.
   1.35V. Finally, let's assume that the capacitor between power and ground which you soldered
   on is (actually) 10 µF. How long will it take for the voltage to drop from 3V to 1.35V?
   Experiment with your Lab 2 PCB. Do you find that the state is maintained as long as you
-  predicted?
+  predicted? Make and report whether power was maintained at at least 6 measurement points
+  (e.g., 10s, 20s, 30s, 60s, 90s, 120s).
   {: class="questions" start="2"}
 
 In Lab 2, you used the timer interrupt to wake up the CPU periodically to control which LED was
