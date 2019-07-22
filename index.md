@@ -61,6 +61,7 @@ https://github.com/elec327.)
   + [2014](http://dsp.rice.edu/elec327-2014)
   + [2017](http://elec327.github.io/2017) - **CAREFUL YOU DON'T GET STUCK!**
   + [2018](http://elec327.github.io/2018) - **CAREFUL YOU DON'T GET STUCK!**
+  + [2019](http://elec327.github.io/2019) - **CAREFUL YOU DON'T GET STUCK!**
 
 
 </div>
