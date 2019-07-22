@@ -63,7 +63,8 @@ capacitor and when you put the battery back in, it will start with LED1 again.
   on is (actually) 10 µF. How long will it take for the voltage to drop from 3V to 1.35V?
   Experiment with your Lab 2 PCB. Do you find that the state is maintained as long as you
   predicted? Make and report whether power was maintained at at least 6 measurement points
-  (e.g., 10s, 20s, 30s, 60s, 90s, 120s).
+  (e.g., 10s, 20s, 30s, 60s, 90s, 120s). How would you design a system to reliably run from a
+  capacitor if you needed to?
   {: class="questions" start="2"}
 
 In Lab 2, you used the timer interrupt to wake up the CPU periodically to control which LED was
