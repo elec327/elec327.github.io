@@ -12,22 +12,25 @@ group: navigation
 
 **Instructor:**
 Caleb Kemere  
-Office: BRC 727  
-Office Hours: (please verify via email) Monday, Wednesday 9:00-10:00am (RMC Coffee House)  
+Office: BRC 971  
+Office Hours: (please verify via email) Monday, Wednesday 8:00-9:00am (RMC Coffee House)  
 caleb.kemere@rice.edu
 
 **Grader/TA:**
-  - Jill Juneau ( [jill.c.juneau](mailto:jill.c.juneau@rice.edu))
-  - Shayok Dutta ( [sd54](mailto:sd54@rice.edu))
+  - Joshua Chu ( [jpc6](mailto:jpc6@rice.edu))
+  - Sibo Gao ( [sg63](mailto:sg63@rice.edu))
 
 **Lab Assistants:**
-  - Rebecaa Lee ( [rbl2](mailto:rbl2@rice.edu))
-  - Sophie D'Amico ( [srd5](mailto:srd5@rice.edu))
-  - Luke Zhang ( [yz87](mailto:yz87@rice.edu))
-  - Logan Lawrence ( [lcl5](mailto:lcl5@rice.edu))
+	- Tommy Yuan ([ty19](mailto:ty19@rice.edu))
+  - Janani Velchamy ([jv18](mailto:jv18@rice.edu))
+  - Manuel Pacheco ([jmp11](mailto:jmp11@rice.edu))
+  - Dora Cheng ([dyc1](mailto:dyc1@rice.edu))
+  - Patrick Han ([pyh1](mailto:pyh1@rice.edu))
+  - Tiger Yang ([ty18](mailto:ty18@rice.edu))
+  - Brian Shepetofsky ([bss12](mailto:bss12@rice.edu))
 
 **Lab Office Hours:**
-  - See [Piazza](https://piazza.com/class/jqprx90wr5220s)
+  - See [Piazza](piazza.com/rice/spring2020/elec327/home)
 
 Additional Lab office hours may be requested on Piazza or by email
 
@@ -56,7 +59,7 @@ We use 2 different digital resources:
 
 1. The primary location assignments and lecture notes (and other resources) is the course
 website – [http://elec327.github.io](http://elec327.github.io)
-2. We use Canvas ([https://canvas.rice.edu/courses/2062](https://canvas.rice.edu/courses/2062))
+2. We use Canvas ([https://canvas.rice.edu/courses/30233](https://canvas.rice.edu/courses/30233))
 for announcements and for communication. If you have specific questions about course content or
 assignments, please post them on Canvas. As a corollary, you may find it useful to check for
 answers as questions arise.
@@ -88,9 +91,10 @@ including printed-circuit board design and assembly.
 **Prerequisites:** ELEC 220. Also useful are 240 and 241.
 
 **Grading:** Grades will be based on: approximately eight lab modules (60%), a midterm project
-(15% each), and a final project (25%). Late assignments may be accepted (with penalty), except
-for printed circuit board orders , where late submissions may not be accepted. Students wishing
-to submit late assignments should contact the instructor prior to the due date.
+(15% each), a final project (30%), as well as extra credit options. Late assignments may be
+accepted (with penalty), except for printed circuit board orders , where late submissions may
+not be accepted. Students wishing to submit late assignments should contact the instructor
+prior to the due date.
 
 **Honor code:**  You are encouraged to work **with** other students in ELEC327 on the labs. Each
 student should turn in their own lab writeup (except for midterm and final project, which
