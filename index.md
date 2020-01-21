@@ -35,6 +35,8 @@ understand how application-specific blocks enable modern commercial devices._
 **Syllabus & Lab Office Hours** -- [here](/syllabus.html)
 
 **Lectures:** 
+[link to Dropbox folder for 2020](https://www.dropbox.com/sh/qco0mkogrgpxz7m/AACRTTyxawHX6kcf-IQu48XZa?dl=0)
+
 [link to Dropbox folder for 2019](https://www.dropbox.com/sh/fvg3qvzeby1qnyu/AACYieJX3GsY5ZZOm41a28yda?dl=0)
 
 [link to dropbox folder for 2018](https://www.dropbox.com/sh/iikqf8u242ekwe0/AAAj8hoVQ5VoL5WWNx3OUct7a?dl=0)

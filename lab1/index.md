@@ -87,7 +87,7 @@ calibrated 1 MHz.
 
 On the web, you may notice a function called "\_\_delay\_cycles". You will find that
 documentation of this function is somehwat lacking on the internet. If you look in the [MSP430
-Optimizing Compiler Guide](assets/documents/slau132k.pdf), you will see that it is not a C
+Optimizing Compiler Guide](/assets/documents/slau132k.pdf), you will see that it is not a C
 function, but rather an "intrinsic". In hindsight, if it's role is to delay the processor a
 precise number of cycles that can range from 1 to some large number, it could not be a function
 (because calling a function takes more than one cycle!). A compiler intrinsic is something like
