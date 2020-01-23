@@ -29,26 +29,32 @@ _This assignment is due Thursday, January 24, 2019._
 </figure>
 </div>
 <div class="col-md-9 col-sm-12 col-xs-12">
-Start by soldering on the MSP430. It is the most challenging piece of the puzzle and getting it
-in place will make everything else easier. The best bet for dual-inline packages like this one
-is to tack one corner down, then the opposite one, then fill in the rest.
+You need to solder all the components onto the PCB. New in 2020, we have a PCB oven in the lab,
+and there are multiple copies of a solder-paste stencil for the PCB. To use it, carefully tape
+the stencil over the PCB (lined up right, obvi!). Put a big blog of paste at one end, then
+carefully use the squeegee to spread it over. Scrape well, but without scraping the paste off
+the pads. Put excess solderpaste back into the container! Then, carefully remove the stencil
+and put all the surface mount parts on with tweezers (24 LEDs, 7 resistors, and 2 capacitors).
+You'll need to solder the button and the battery holder by hand.
 
 You may need to reference the
 [board](https://github.com/ckemere/ELEC327/raw/master/Labs/Lab2/Pendant.brd)
 and/or [schematic](https://github.com/ckemere/ELEC327/raw/master/Labs/Lab2/Pendant.sch)
 files in order to know what other parts go where. In particular notice which
 components are resistors, which are capacitors, and which are light emitting
-diodes (LEDs).
+diodes (LEDs). The LEDs in the outer ring all face in one direction and the LEDs in the inner
+ring all face the opposite direction. If you get the direction reversed for all of them, you
+can fix it in your code. (But if just a few LEDs are wrong, you'll have to take it off and
+reverse them!)
 
 1. **(Not scored!)** Either examine the PCB closely or look at the schematic for the pendant. Which GPIO pins
 are connected to LEDs?
 
 2. **(Not scored!)** In a normal, canonical (i.e., atomic), forward operating (i.e., not-breaking-down) diode,
 which terminal does positive (conventional) current flow out of, cathode or anode? In the
-pendant circuit, which pin is this terminal connected to?
+pendant circuit, which pin(s) is this terminal connected to?
 
-3. **(Not scored!)** What value (0 or 1) will result in the diode turning on? How would the circuit be changed
-to allow the other value to turn the diode on?
+3. **(Not scored!)** What value (0 or 1) will result in the 12 o'clock diodes turning on?
 {: class="questions"}
 
 </div>
@@ -100,25 +106,24 @@ that is desired is as follows:
 
   - One LED should be lit at any one time.
   - Which LED is lit should change every 333 ms.
-  - Which LED is lit should rotate clockwise 3 times, followed by counter clockwise 3 times,
-    then repeating clockwise again, and so on.
+  - The first LED that is lit should be the outside ring, 12 o'clock LED.
+  - Which LED is lit should rotate around the clock (clockwise), in the outer ring, then switch
+    at 12 o'clock to the inner ring, then back to the outer and so on. 
+  - (Note that in the hour I spent on my demo PCB for the video above, I couldn't get it to
+    start at 12 o'clock, so I realize that this is moderately non-trivial.)
 
 Refer to the [skeleton code
 file](https://github.com/ckemere/ELEC327/blob/master/Labs/Lab2/pendant.c) file. In order for it
 to work, you will need to:
-  - modify the code so that the appropriate Port 2 pins are set up and outputting properly
-    (lines 43, 64, and 67)
-  - properly implement the `next_led()` function. This function returns the values of PORT1 and
-    PORT2 that are appropriate for the next led to light up in sequence in the circle. The
-    PORT1 pins should be in the high byte and the PORT2 pins should be in the low byte. Note
-    that it maintains state from one function call to the next!
+  - properly implement the `next_led()` function. This function sets the values of PORT1 and
+    PORT2 that are appropriate for the next led to light up in sequence in the circle. Note
+    that you might want to use `static` variables to maintain state from one function call to
+    the next!
 
 Once the code is functioning, examine it carefully and make sure you fill in comments on all
 the lines that are marked. Additionally, think about they way the code is structured. In
 principle, the code could all go in the interrupt, but in general it is best to have interrupt
-service routines execute as quickly as possible. Additionally, see how when the button is
-pressed, it puus the pendant into LPM4 sleep with LEDs off and wakes it up from sleep when it
-is pushed again.
+service routines execute as quickly as possible.
 
 ##### Final modification for full functionality
 
@@ -150,12 +155,6 @@ it in the ISR?
 
 13. In the timer ISR that you're given in the skeleton code, what is the purpose of this line
 of code: `__bic_SR_register_on_exit(LPM0_bits);`? Where is the code for this function found?
-
-14. In the pin IO ISR that you're given in the skeleton code, what is the purpose of this line
-of code: `__bis_SR_register_on_exit(LPM4_bits + GIE);`? (Hint: it may be superfluous. If so, why?)
-
-15. In the pin IO ISR that you're given in the skeleton code, what is the purpose of this line
-of code: `P1IFG &= ~BIT2;` Why is it needed for this ISR, but not the timer module one?
 {: class="questions" start="9"}
 
 **Save your code as `pendant.c`. You will need to demonstrate your device running and walk
