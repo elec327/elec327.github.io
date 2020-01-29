@@ -21,18 +21,16 @@ repository. Here is a link to the [schematic
 the accelerometer is mis-wired - the MISO and MOSI wires are reversed. You can fix this by
 cutting these traces and soldering on airwires. 
 
-  1. **[1 point for whoever is first]** - solder the MSP430 and shift registers onto the board
-  and make all 24 lights light up. Create a youtube video and post to campus. The first
-  timestamped video will be worth 1 bonus point. (Note that there may be a problem with the
-  PCB!)
+  1. **[1 point for whoever is first]** - Make all 24 lights light up. Create a youtube video 
+  and post to campus. The first timestamped video will be worth 1 bonus point. (Note that 
+  there may be a problem with the PCB!)
 
-  1. **[1 - 2 points]** - implement a clock. This will require that you properly solder the
-  MSP430 and 3 shift register chips. The aesthetics of the clock and code will
+  1. **[1 - 2 points]** - implement a clock.  The aesthetics of the clock and code will
   determine total scorer. Example questions: is there a second hand that ticks? a separate hour
   and minute hand?  is there some sort of PWM-like intensity modulation? does the device
   calibrate and use the VLO for low power?
 
-  1. **[1 point]** - create a proof-of-concept accelerometer device (requiring the hardware
+  1. **[3 point]** - create a proof-of-concept accelerometer device (requiring the hardware
   airwire fix described above). Get data from the accelerometer and display it somehow with the
   LEDs. (Alternatively, an extra point will be applied for the following bonuses...)
 
@@ -65,19 +63,26 @@ photodiode or other light sensor to get the signal rather than a wire.
 
 ### Lab 2 Bonus - Implement PWM modulation or other fun things
 
+
 **[1-2 points]** - Increase the Lab 2 pendant's battery life by implementing PWM modulation of the
 LEDs. Note that you will not be able to use the timer module PWM outputs because there aren't
 enough / the proper pins are not connected. You might use this for an interesting effect, such
 as making multiple LEDs light up simultaneously (but with the brightest one following the
 previous pattern).
 
-**[0.5-2 points]** - Create some sort of interesting game involving timing and pushing the
-button. You **must** implement a _long press_ to send the device into LPM4 (like turning off).
+**[0.25-3 points]** - Implement a clock. Use the inner and outer loop of LEDs to show the minute and 
+hour hand. Do something cool (maybe using PWM?) to show a second hand ticking. Make
+a youtube video!
 
-**[0.5-1 points]** - Implement a 6-sided die. A long press should send the device into LPM4. A
+**[0.5-2 points]** - Create some sort of interesting game involving timing and pushing the
+button. You **must** implement a _long press_ to send the device into LPM4 (like turning off). 
+
+**[1-5 points]** - Implement capacitive touch with the two capacitive touch buttons.
+
+**[0.5-1 points]** - Implement 6, 12, or 24-sided die. A long press should send the device into LPM4. A
 short press should cause a random LED to be illuminated. More points will be given for fun
 "rolling" animations (example - lights spin around or oscillate, and then slow down on the
-number).
+number). Use some sort of special button presses to choose the number of sides of the dice.
 
 ---
 
