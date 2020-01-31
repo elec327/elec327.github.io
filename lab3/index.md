@@ -30,7 +30,7 @@ description: PWM, LPM, and PCB Design
   1. A demonstration of an LED with intensity being modulated using PWM.
   2. The code for this demonstration.
 
-#### The lab will be due January 31, 2019
+#### The lab will be due February 7, 2020
 
 </div>
 
@@ -54,7 +54,8 @@ a while, then put the battery back and push the button again. You'll see that it
 on where it left off. If you push the button while it's asleep, you'll rapidly discharge the
 capacitor and when you put the battery back in, it will start with LED1 again.
 
-  2. According to the datasheet, power consumption in LPM4 is ~100 nA @ 2.2V. Lets assume we
+  2. **(WILL BE MOVED TO A LATER LAB THIS SEMESTER!)**
+  According to the datasheet, power consumption in LPM4 is ~100 nA @ 2.2V. Lets assume we
   can model the device in LPM4 as a resistor. What is the resistance? Assume that right before
   you take the battery out, the capacitor is charged to 3V (i.e., battery voltage). Then, we
   can define the system as a capacitor discharging into a resistor. The brownout circuit will
@@ -142,11 +143,10 @@ automatically generated, you should not need an ISR.
 
 ##### Lab 3 programming task
 For the lab demo, combine the PWM code you just wrote with the skeleton code and run it on your
-Pendant from Lab 2. Your goal is for LED3 and LED7 to change intensity (duty cycle) from 0 to
-100% and back to 0% in 5% steps each time the WDT interrupts. They should move in opposite directions,
-one getting brighter and one getting dimmer. Hint: You should be able to accomplish this by
-changing the value of the TA0CCR1 and TA1CCR1 registers. **Demo this functionality and turn
-in your code.**
+Pendant from Lab 2. Your goal is to illuminate the outer and inner ring of LEDs, and for them
+change intensity (duty cycle) from 0 to 100% and back to 0% in 5% steps each time the WDT interrupts.
+Outer and inner should change in the opposite order, one getting brighter and one getting
+dimmer.  **Demo this functionality and turn in your code.**
 
 
 
