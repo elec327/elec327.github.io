@@ -115,8 +115,19 @@ constraint will still let a variety of pulse patterns to be generated. Hence the
   {: class="questions" start="7"}
 
 The TimerA module allows us to set various pins to be on for a fraction of the timer counter
-period, creating a PWM signal when it is pulsed fast enough. These pins are depicted in the
-device datasheet.
+period, creating a PWM signal when it is pulsed fast enough. When learning how to configure
+everything, it's worth understanding that different IOs of the Timer module can be connected to
+different physical output pins. That's why when you look at the picture on the device
+datasheet, you'll see multiple pins, for example, labeled `TA1.2`. The circuitry on the chip
+that configures what connects to an output pin is a complicated multiplexer, usually referred
+to as the "PinMux". In the device datasheet, the PinMux is described for the various pins
+starting on page 42 with a series of diagrams and tables (for different groups of pins on
+different pages!). You'll see in those tables that there are a set of registers, including
+`P1SEL` and `P1SEL2` which configure the PinMux. BUT WAIT! The PinMux isn't everything. In
+order to do PWM, you also need to configure the Timer module so that, e.g., the output
+referred to in the table as `TA1.1` is actually properly generated. For this, you'll need to
+look at the _User Guide_ chapter on the TimerA modules, specifically referencing output modes.
+You'll need to change values of both `TACTL` and `TACCTLx`!!
 
   8. Say we want to use Timer A1 for our PWM signal. Which pins is register 1 of Timer A1
   capable of sending a PWM signal to? What should PxSEL, PxSEL2, and PxDIR be for these
