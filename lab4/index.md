@@ -42,8 +42,8 @@ In this part, we will put together most of the concepts from Part 1, creating a 
 RGB LED and a temperature sensor. In order to do the rest of the assignment, you will need to
 clone the [ELEC327 reposistory](https://github.com/ckemere/ELEC327) from github (if you have
 not done so yet). In the `Labs/Lab3/Datasheets` directory, you will find a data sheet for the
-[RGB LED](https://github.com/ckemere/ELEC327/blob/master/Labs/Lab4/Datasheets/QBLP655R-RGB.pdf) (Digikey part
-[1516-1378-1-ND](https://www.digikey.com/product-detail/en/qt-brightek-qtb/QBLP655R-RGB/1516-1378-1-ND/9739223)) and a
+[RGB LED](https://github.com/ckemere/ELEC327/blob/master/Labs/Lab4/Datasheets/IN-S128TATRGB_V1.0.pdf) (Digikey part
+[1830-1096-1-ND](https://www.digikey.com/product-detail/en/inolux/IN-S128TATRGB/1830-1096-1-ND)) and a
 [temperature sensor](tmp20.pdf) (Digkey part
 [296-25569-1-ND](https://www.digikey.com/products/en?keywords=296-25569-1-ND)). Refer to the
 data sheet for the RGB LEDs to choose current-limiting resistors.
@@ -64,8 +64,8 @@ sensor.  You will need to make both a schematic symbol and a package footprint.
 
 Eagle comes with a good number of parts, but not all that you need. Start with the RGB LED. You
 should create a personal library for parts you make. Then, start with the "symbol". Make sure
-to adequately labels the various connections. Pay special attention to the direction of current
-flow through each LED. Then you should create a "footprint", referring to the data sheet for
+to adequately labels the various connections. **Pay special attention to the direction of current
+flow through each LED.** Then you should create a "footprint", referring to the data sheet for
 the spacing of the pads. Finally, combine the symbol and footprint so that the pins are
 connected to the right pads. Then, do the same for the temperature sensor. Note that for the
 temperature sensor, you can download an "Ultralibrarian" script from Digikey that will generate
