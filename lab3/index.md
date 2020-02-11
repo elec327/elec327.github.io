@@ -15,7 +15,7 @@ description: PWM, LPM, and PCB Design
 <div class="alert alert-info" role="alert">
 #### There are two goals for this assignment:
 
-  - To learn and use PWM to modulate signal insensity
+  - To learn and use PWM to modulate signal intensity
   - To learn more about low power modes and especially LPM3
   
 </div>
@@ -26,11 +26,11 @@ description: PWM, LPM, and PCB Design
   1. Your **commented** `PWM_test.c` file (_Canvas_, but different from PCB files)
   2. Your answers to the questions (_Canvas_)
 
-#### What should be demo'd live?
+#### What should be demoed live?
   1. A demonstration of an LED with intensity being modulated using PWM.
   2. The code for this demonstration.
 
-#### The lab will be due February 7, 2020
+#### The lab will be due February 7, 2020 at 11:59 AM (noon)
 
 </div>
 
@@ -46,16 +46,16 @@ be convenient if you want infrequent timer interrupts.
   {: class="questions"}
 
 LPM4 consumes very little power. I noticed, playing around with my Lab 2 pendant, that if I
-removed the battery while in LPM4, the capacitory between power and ground held enough charge
+removed the battery while in LPM4, the capacitor between power and ground held enough charge
 to keep the device functioning (in LPM4) for at least a few seconds. To see this yourself,
-remember that on first power up, the pendant will always start with LED1 illluminated. So start
+remember that on first power up, the pendant will always start with LED1 illuminated. Start
 it going, and then go into LPM4 when the next LED will _not_ be LED1. Remove the battery, wait
 a while, then put the battery back and push the button again. You'll see that it will continue
 on where it left off. If you push the button while it's asleep, you'll rapidly discharge the
 capacitor and when you put the battery back in, it will start with LED1 again.
 
   2. **(WILL BE MOVED TO A LATER LAB THIS SEMESTER!)**
-  According to the datasheet, power consumption in LPM4 is ~100 nA @ 2.2V. Lets assume we
+  According to the datasheet, power consumption in LPM4 is ~100 nA @ 2.2V. Let's assume we
   can model the device in LPM4 as a resistor. What is the resistance? Assume that right before
   you take the battery out, the capacitor is charged to 3V (i.e., battery voltage). Then, we
   can define the system as a capacitor discharging into a resistor. The brownout circuit will
@@ -71,12 +71,12 @@ capacitor and when you put the battery back in, it will start with LED1 again.
 In Lab 2, you used the timer interrupt to wake up the CPU periodically to control which LED was
 lit on your PCB. For Labs 3 -- 5, we want to generate PWM signals, which will end up
 potentially using both of the TimerA modules on the MSP430G2553. There is a third, easily
-forgogtten, timer module on the MSP430G2553, though. Before you look in the skeleton code for
+forgotten, timer module on the MSP430G2553, though. Before you look in the skeleton code for
 Lab 3, see if you can remember what it is.
 
 Now take a look at the [skeleton
 code](https://raw.githubusercontent.com/ckemere/ELEC327/master/Labs/Lab3/lab3_skeleton.c). This
-program follows the same code pattern as in Lab 2. Succinclty, this pattern involves a main
+program follows the same code pattern as in Lab 2. Succinctly, this pattern involves a main
 loop which contains the program logic. At the end of each main loop cycle, the device goes into
 LPM3, and then the timer interrupt wakes it back up.
   
@@ -99,7 +99,7 @@ LPM3, and then the timer interrupt wakes it back up.
 To change the brightness of an LED (or most other analog devices), we use PWM. This essentially
 changes the brightness by altering the duty cycle of the output signal. We could do this
 manually -- i.e., write code using the timer interrupts that makes the appropriate output bit
-high or low for the apropriate amount of time. However, many microcontrollers include special
+high or low for the appropriate amount of time. However, many microcontrollers include special
 hardware that allows for this to be done automatically. In the MSP430G2553, the two TimerA
 modules can drive up to 3 pins each with PWM signals, with the limitation that the fundamental
 frequency for the 3 pins must be the same -- the module's selected clock frequency. Because PWM
@@ -108,9 +108,9 @@ constraint will still let a variety of pulse patterns to be generated. Hence the
 (continuous, up, up/down). 
 
   7. The timer counter register (TAR) is 16-bits. Assuming we use the VLO to drive the Timer
-  module at 12 kHz, and run the counter in continuous mode (where it increments to 0xFFFF then
+  module at 12 kHz and run the counter in continuous mode (where it increments to 0xFFFF then
   overflows to 0x0), at what frequency will the TAR overflow? If we want our PWM modulation to not
-  appear to flicker, the minimum modulation frequency is about 100-200 Hz. Is this achievable if
+  appear to flicker the minimum modulation frequency is about 100-200 Hz. Is this achievable if
   the TAR is configured to overflow?
   {: class="questions" start="7"}
 
