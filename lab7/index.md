@@ -23,7 +23,7 @@ device will be one foundation of the Simon game._
   1. Showing how your RGB led string changes color in an ordered manner.
   3. The code for this demonstration.
 
-#### The lab will be due March 6, 2019 at noon
+#### The lab will be due March 6, 2019 at 11:59 PM.
 
 </div>
 
