@@ -20,12 +20,12 @@ description: Piezo buzzer and Simon PCB
   1. Turn in your code as `pwm_songs.c` and answered questions. (_Canvas_)
   2. Turn in the Simon EAGLE and gerber files.
 
-#### **What should you demonstrate?**
+#### **What should be demoed?**
   1. You _may_ choose to demonstrate your Simon PCB or sketch.
   2. Demonstrate your functional sound sequence player.
 </div>
 
-**This lab will be due March 8, 2019.**
+**Part 1 of this lab will be due March 8 at 11:59 PM.**
 
 #### Part 1: Playing tones via PWM
 
@@ -43,7 +43,7 @@ your PWM carrier frequency to 440 Hz (an "A").
   {: class="questions"}
 
 Now, modify the code you built for question 2 to be general. "Sound strings" should be
-specified as a sequence of frequences (or periods) stored in an array, with a separate "tone
+specified as a sequence of frequencies (or periods) stored in an array, with a separate "tone
 length" variable specifying how long each note should be played for. Note that because each
 tone has a different frequency, keeping track of how long each has played is a slightly
 nontrivial task (though you should be able to figure out a simple way of accumulating periods
