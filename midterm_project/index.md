@@ -22,9 +22,9 @@ description: Midterm Project
 <div class="alert alert-danger" role="alert">
 #### **How will it be evaluated?**
 
-  1. The device will be presented and demo'ed to the class (you will need evals from at least 2 
+  1. The device will be presented and demoed to the class (you will need evals from at least 2 
   other students and the professor or TAs).
-  2. In class demos will be April 10th, 2019.
+  2. In class demos will be April 15th, 2019.
   3. Please turn in your self-criticism score (rubric given below), your code, and the size of
   your board. 
 
@@ -36,7 +36,7 @@ description: Midterm Project
   4. Gameplay-Timeout (does it game over after a while if no button is pressed?)
   5. Gameplay-MisplayingError (does it game over if the wrong button is pressed?)
   6. Gameplay-Win (does it do something special when the player wins?)
-  7. Gameplay-Random (does it play a different sequence each timei, including after power cycles?)
+  7. Gameplay-Random (does it play a different sequence each time, including after power cycles?)
   8. Style-Animations (are there animations for start/win and lose/game-over?)
   9. Style-SoundLight (do lights and sounds work well together and convey information?)
   10. Well-commented, logical code architecture (does the architecture make sense? are there good
@@ -48,7 +48,7 @@ description: Midterm Project
 The game ["Simon"](https://en.wikipedia.org/wiki/Simon_(game)) is a classic toy which tests the
 working memory of the player. For the midterm project, you will create a small,
 coin cell-operated Simon game. This will involve PCB design and fairly involved firmware to
-acheive an enjoyable user experience. In addition, you will be invited to add some sort of
+achieve an enjoyable user experience. In addition, you will be invited to add some sort of
 interesting feature beyond the Simon game. In the past, this has ranged from simple animations
 to a mode in which the device becomes a music sequencer.
 
@@ -57,7 +57,7 @@ Here's a video from Vitor Azevedo Andriotti (Spring 2015) showing a Simon board 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nrsBVdJFrKc"
 frameborder="0" allowfullscreen></iframe>
 
-#### Rules for the The ELEC327 version of the Simon game
+#### Rules for the the ELEC327 version of the Simon game
 
 In our variant of Simon, the point of the game is to learn a sequence of *M* button presses.
 Each button corresponds to one of the LEDs and to one frequency of PWM tone. On the *n*th turn,
@@ -89,7 +89,7 @@ Details:
 
 #### The Simon PCB
 
-The first thing you must turn in is a layout of the Simon PCB. There is a hard upper limit on
+The first thing you must turn in is a layout of the Simon PCB. There is a hard upper-limit on
 size of 3 in. x 3 in., but the physical board will be graded on a combination of small size and
 ergonomics. Parts:
 
