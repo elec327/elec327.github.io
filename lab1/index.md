@@ -30,7 +30,7 @@ description: Morse Code with Timers
 
 </div>
 
-#### Due Date: __Wednesday, January 22 at 6 pm__
+#### Due Date: __Wednesday, January 24 at noon__
 
 
 #### Part 0: Installation (optional)
