@@ -19,11 +19,11 @@ That will be a very important feature for the Simon game._
 
   1. Your **commented** `random_rainbow.c` file (_Canvas_)
 
-#### What should be demo'd live?
+#### What should be demoed live?
   2. Showing how your RGB led string changes color in a random manner.
   3. The code for this demonstration.
 
-#### The lab will be due March 22, 2019
+#### The lab will be due March 27, 2019
 </div>
 
 #### Randomness
