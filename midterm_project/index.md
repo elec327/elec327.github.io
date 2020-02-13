@@ -57,7 +57,7 @@ Here's a video from Vitor Azevedo Andriotti (Spring 2015) showing a Simon board 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nrsBVdJFrKc"
 frameborder="0" allowfullscreen></iframe>
 
-#### Rules for the the ELEC327 version of the Simon game
+#### Rules for the ELEC327 version of the Simon game
 
 In our variant of Simon, the point of the game is to learn a sequence of *M* button presses.
 Each button corresponds to one of the LEDs and to one frequency of PWM tone. On the *n*th turn,
