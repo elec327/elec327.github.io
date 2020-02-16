@@ -25,7 +25,7 @@ combining multiple elements of embedded system architecture._
   2. Describing how you achieve a nice rainbow of colors.
   3. The code for this demonstration.
 
-#### The lab will be due Feb 23, 2018
+#### The lab will be due March 6, 2020
 
 </div>
 
