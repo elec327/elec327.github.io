@@ -23,7 +23,7 @@ That will be a very important feature for the Simon game._
   2. Showing how your RGB led string changes color in a random manner.
   3. The code for this demonstration.
 
-#### The lab will be due March 27, 2019
+#### The lab will be due April 3, at 11:59 PM
 </div>
 
 #### Randomness
