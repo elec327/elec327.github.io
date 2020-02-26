@@ -25,7 +25,7 @@ description: Piezo buzzer and Simon PCB
   2. Demonstrate your functional sound sequence player.
 </div>
 
-**Part 1 of this lab will be due March 27, at 11:59 PM.**
+**Part 1 of this lab will be due March 27, 2019 at 11:59 PM.**
 
 #### Part 1: Playing tones via PWM
 
