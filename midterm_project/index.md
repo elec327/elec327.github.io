@@ -24,7 +24,7 @@ description: Midterm Project
 
   1. The device will be presented and demoed to the class (you will need evals from at least 2 
   other students and the professor or TAs).
-  2. In class demos will be April 15th, 2019.
+  2. In class demos will be April 8th, 2019.
   3. Please turn in your self-criticism score (rubric given below), your code, and the size of
   your board. 
 
