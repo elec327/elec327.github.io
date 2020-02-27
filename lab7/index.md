@@ -19,11 +19,11 @@ device will be one foundation of the Simon game._
 
   1. Your **commented** `rainbow_spi.c` file (_Canvas_)
 
-#### What should be demo'd live?
+#### What should be demoed live?
   1. Showing how your RGB led string changes color in an ordered manner.
   3. The code for this demonstration.
 
-#### The lab will be due March 1, 2019
+#### The lab will be due March 13, 2019 at 11:59 PM. 
 
 </div>
 
@@ -42,7 +42,7 @@ device will be one foundation of the Simon game._
 
 </div>
 <div class="col-md-9 col-sm-12 col-xs-12">
-#### Part 0: Solder a APA102C SPI-controlled RGB LED strip to jumper wires
+#### Part 0: Solder an APA102C SPI-controlled RGB LED strip to jumper wires
 
 Cut a piece of APA102 strip 5 LEDs long. **Take care to leave as much of the
 perforation intact on the entry side of the strip.** (There are directional
@@ -70,12 +70,12 @@ In which category is the APA102?</li>
 best for controlling a large string of LEDs?</li>
 <li>The APA102 uses a modified form of SPI to enable control of multiple LEDs without needing a
 separate "chip select" line for each one. Briefly describe how it does this.</li>
-<li>How big (in bytes) is the SPI message requried to set the color of a single APA102? How
+<li>How big (in bytes) is the SPI message required to set the color of a single APA102? How
 big (in bytes) is the SPI message required to set the color of each LED in a chain of 4
 devices?</li>
 </ol>
 
-Now lets review the characteristics of the serial control hardware block
+Now let's review the characteristics of the serial control hardware block
 in your MSP430s, the USCI.
 
 <ol class="questions" start="5">

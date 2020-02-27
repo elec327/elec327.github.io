@@ -16,7 +16,7 @@ surface mount parts both for skill acquisition and in order to give you some bac
 begin PCB design in the next lab. Second, the goal is to begin learning about interrupts,
 specifically by making use of the interrupt associated with one of the Timer modules._
 
-_This assignment is due Friday, January 31, 2019 at **NOON**._
+_This assignment is due Friday, January 31, 2020 at **NOON**._
 
 #### Part 1: Soldering a pendant
 <div class="row">
@@ -33,7 +33,7 @@ You need to solder all the components onto the PCB. New in 2020, we have a PCB o
 and there are multiple copies of a solder-paste stencil for the PCB. To use it, carefully tape
 the stencil over the PCB (lined up right, obvi!). Put a big blog of paste at one end, then
 carefully use the squeegee to spread it over. Scrape well, but without scraping the paste off
-the pads. Put excess solderpaste back into the container! Then, carefully remove the stencil
+the pads. Put excess solder paste back into the container! Then, carefully remove the stencil
 and put all the surface mount parts on with tweezers (24 LEDs, 7 resistors, and 2 capacitors).
 You'll need to solder the button and the battery holder by hand.
 
@@ -64,7 +64,7 @@ Precise modeling of the current/voltage characteristic of a diode is complicated
 important for a number of applications (such as detecting light with a photo diode). A
 very simple model of a diode switches from infinite resistance to zero resistance at the
 "threshold voltage". Thus, when on, the current through the diode must be limited. A resistor
-in series with the diode serves to limit the current, and you will see such a resitor in the
+in series with the diode serves to limit the current, and you will see such a resistor in the
 pendant circuit. In order to find the proper value of this resistance, you need to know
 something about the LED and also something about the rest of the circuit.
 
@@ -91,7 +91,7 @@ than the maximum (DC) specified in the data sheet?
 {: class="questions" start="4"}
 
 **Use the value of resistor which will achieve 5 mA on current along with the LEDs and a 47 K
-pull-up resitor on the ~RST pin to finish the pendant.**
+pull-up resistor on the ~RST pin to finish the pendant.**
 
 Here is a helpful video:
 
@@ -121,7 +121,7 @@ to work, you will need to:
     the next!
 
 Once the code is functioning, examine it carefully and make sure you fill in comments on all
-the lines that are marked. Additionally, think about they way the code is structured. In
+the lines that are marked. Additionally, think about the way the code is structured. In
 principle, the code could all go in the interrupt, but in general it is best to have interrupt
 service routines execute as quickly as possible.
 
@@ -149,7 +149,7 @@ more/different ISR code?
 12. Instead, assume you are given the following configuration of Timer A0: `TA0CTL = TASSEL_2
 | ID_3 | MC_2;`. You can still achieve a 1 ms interrupt, but now you will additionally
 be required to update the register in the previous question in your ISR. What is the proper
-update command? (Hint: the right answer invovles changing CCR0.) What would happen to
+update command? (Hint: the right answer involves changing CCR0.) What would happen to
 your program if you forgot to initialize the register in your main function and only modified
 it in the ISR? 
 

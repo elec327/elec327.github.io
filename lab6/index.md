@@ -20,12 +20,12 @@ combining multiple elements of embedded system architecture._
 
   1. Your **commented** `thermodot.c` file (_Canvas_)
 
-#### What should be demo'd live?
+#### What should be demoed live?
   1. Showing how your device changes color depending on temperature.
   2. Describing how you achieve a nice rainbow of colors.
   3. The code for this demonstration.
 
-#### The lab will be due March 6, 2020
+#### The lab will be due March 6, 2018 at 11:59 PM.
 
 </div>
 
@@ -41,11 +41,11 @@ but cause problems when running from the battery.
 Unlike Lab 5, in this lab, the colors for your Thermodot should range throughout
 the color spectrum including red, green, and blue and shades in between. Bright red
 should correspond to hot and bright blue should be cold. For inspiration about
-the colors in between you can look at the [wikipedia page on color temperature](https://en.wikipedia.org/wiki/Color_temperature) (though note that
+the colors in between you can look at the [Wikipedia page on color temperature](https://en.wikipedia.org/wiki/Color_temperature) (though note that
 for us, hot and cold are reversed from black body radiation).
 
 **Specific Requirements** It is not enough to just vary the PWM levels as many
-of you did for Lab 5. Different colors have different perceptual brightnesses,
+of you did for Lab 5. Different colors have different perceptual brightness,
 and many of you also noted that the perceptual variation in brightness from 0
 to 50% duty cycle is much larger than 50% to 100%. **The point of this exercise
 is to recognize that when you see an LED-based UI, thought has gone into choosing

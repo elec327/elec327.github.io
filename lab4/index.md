@@ -27,12 +27,10 @@ description: PCB Design, full stop
   outline), `your-file-name.GTL` (top layer) and `your-file-name.TXT` (drill locations).
   **Don't zip, compress, or otherwise combine these files!** (_Canvas_)
 
-#### What should be demo'd live?
+#### What should be demoed live?
   1. Your EAGLE CAD design, if desired.
 
-#### Files are due Friday, February 9 at 7 AM 
-
-_The early AM due date allows me to aggregate and submit files._
+#### Files are due Friday, February 13 at 11 PM
 
 </div>
 
@@ -40,7 +38,7 @@ _The early AM due date allows me to aggregate and submit files._
 
 In this part, we will put together most of the concepts from Part 1, creating a circuit with an
 RGB LED and a temperature sensor. In order to do the rest of the assignment, you will need to
-clone the [ELEC327 reposistory](https://github.com/ckemere/ELEC327) from github (if you have
+clone the [ELEC327 reposistory](https://github.com/ckemere/ELEC327) from GitHub (if you have
 not done so yet). In the `Labs/Lab3/Datasheets` directory, you will find a data sheet for the
 [RGB LED](https://github.com/ckemere/ELEC327/blob/master/Labs/Lab4/Datasheets/IN-S128TATRGB_V1.0.pdf) (Digikey part
 [1830-1096-1-ND](https://www.digikey.com/product-detail/en/inolux/IN-S128TATRGB/1830-1096-1-ND)) and a
@@ -48,8 +46,8 @@ not done so yet). In the `Labs/Lab3/Datasheets` directory, you will find a data 
 [296-25569-1-ND](https://www.digikey.com/products/en?keywords=296-25569-1-ND)). Refer to the
 data sheet for the RGB LEDs to choose current-limiting resistors.
 
-The temperature sensor will be used with the built in analog to digital converter (ADC) module
-of the MSP430g2553. So the output pin will need to be connected to an appopriate input pin. We
+The temperature sensor will be used with the built-in analog to digital converter (ADC) module
+of the MSP430g2553. So, the output pin will need to be connected to an appropriate input pin. We
 will discuss the ADC module further in future weeks. For now, you can see from the data sheet
 that there are eight pins (labeled A0-A7) which can be used for ADC input. I suggest you
 connect the temperature sensor to pin P1.0/A0. If you look at the temperature sensor's data
@@ -77,7 +75,7 @@ should be connected to PWM output pins connected to available Timer outputs. Rem
 unique TA.x output pins -- TA1.1, TA1.2, and TA0.1 (TA0.2 iff you're not using the 20 pin
 device)!!!!**{: style="text-decoration:underline"} 
 
-Next, then create a `.brd` file and route all of the connectionts. Keep in mind that the
+Next, then create a `.brd` file and route all of the connections. Keep in mind that the
 battery package is solid and plastic, so you should not place any parts on top of it. One
 solution is to put everything but the battery on one side of the PCB and the battery on the
 other. Try to make the final board approximately 20-40 mm x 40 mm. Additionally, for this project,
@@ -106,7 +104,7 @@ rotation/orientation.
 An "Anti-Design Pattern" is the opposite: rules of thumb that end up causing more problems than
 they solve. For the PCB example below, I imagine the student placing the components then
 thinking, "I will make the routes as straight as possible and introduce only minimal bends when
-necessary to avoid vias." The result are a number of places where traces and vias are minimally
+necessary to avoid vias." The result is a number of places where traces and vias are minimally
 separated, or parallel traces travel very closely (minimal separation) for a long distance. A
 piece of conductive junk ended up between two traces on this board, causing hours and hours of
 confused debugging.

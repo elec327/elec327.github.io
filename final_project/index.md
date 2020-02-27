@@ -19,9 +19,9 @@ requiring the tight timing that bare-metal embedded systems can provide.
 Please put together a written report, 2-3 pages, which includes a description of your concept
 and actual design. Include pedagogical information about any sensors or special devices you
 have used. Diagrams, pictures, and drawings are welcome. In addition, create two videos, one
-longer, formed as a presentaton (i.e., with slides) of your design and implementation, and one
+longer, formed as a presentation (i.e., with slides) of your design and implementation, and one
 shorter (two minutes or less - functioning as a brief advertisement) mainly focusing on showing
-off your functioning product. For extra credit, create a github project (for your code and
+off your functioning product. For extra credit, create a GitHub project (for your code and
 other design files) and associated website which has the written presentation content. On
 Canvas, submit either a link to this site or your written presentation, your code, and links
 
@@ -29,8 +29,8 @@ You will be graded on:
   + the quality of your presentation (written and oral). Do you do a good job of explaining
   your system concept and architecture? Do you include pedagogical content that will educate
   listeners on specific sensors or actuators that you used? Is it enjoyable to watch/listen to?
-  + the quality of your design concept. In its complexity, real-time processing, and low-power
-  requirements does it match the capabilities of the MSP430? Is it interesting/fun?
+  + the quality of your design concept. Does it match the capabilities of the MSP430 in its complexity, 
+  real-time processing, and low-power requirements? Is it interesting/fun?
   + the quality of your execution on this concept. Does your final product match the vision
   that you described? Does the actual device (including PCB and other parts) seem polished?
   + the quality of your code and system architecture. Does your system architecture reflect
