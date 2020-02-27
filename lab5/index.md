@@ -27,7 +27,7 @@ description: ADC, Software Architecture, Beginnings of the Thermodot Firmware
 #### **What should be demoed live?**
   1. Your timer-based and temperature-based RGB LED codes.
 
-#### **Lab 5 will be due Feb 21 at 11:59 PM.**
+#### **Lab 5 will be due Feb 25, 2020.**
 
 </div>
 
