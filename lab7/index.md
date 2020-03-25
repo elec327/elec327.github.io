@@ -15,15 +15,16 @@ for you to be comfortable with SPI serial communications. This particular
 device will be one foundation of the Simon game._
 
 <div class="alert alert-danger" role="alert">
-#### What should be turned in?
+#### What should be turned in on Canvas?
 
-  1. Your **commented** `rainbow_spi.c` file (_Canvas_)
+  1. Your **commented** `rainbow_spi.c` file. Specifically, the
+comments should include any instructions that peer graders might need to compile
+and run your code. Please include the proper interrupt compiler directives to
+ensure that both the TI and gcc compilers will work.
 
-#### What should be demoed live?
-  1. Showing how your RGB led string changes color in an ordered manner.
-  3. The code for this demonstration.
+  2. Answers to the questions in a text or otherwise broadly-accessible format.
 
-#### The lab will be due March 13, 2019 at 11:59 PM. 
+#### The lab will be due March 31, 2019 at 5:00 PM. 
 
 </div>
 
