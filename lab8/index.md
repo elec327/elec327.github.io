@@ -17,15 +17,15 @@ description: Piezo buzzer and Simon PCB
 
 <div class="alert alert-danger" role="alert">
 #### **What should you turn in?**
-  1. Turn in your code as `pwm_songs.c` and answered questions. (_Canvas_)
-  2. Turn in the Simon EAGLE and gerber files.
+  1. Turn in your code in at least two .c files (and headers as needed) and answered questions. (_Canvas_)
+  2. ~~Turn in the Simon EAGLE and gerber files.~~ (not for 2020)
 
 #### **What should be demoed?**
-  1. You _may_ choose to demonstrate your Simon PCB or sketch.
-  2. Demonstrate your functional sound sequence player.
+  1. ~~You _may_ choose to demonstrate your Simon PCB or sketch.~~ (not for 2020)
+  2. ~~Demonstrate your functional sound sequence player.~~ (will be peer grading instead)
 </div>
 
-**Part 1 of this lab will be due March 27, 2019 at 11:59 PM. **
+**Part 1 of this lab will be due April 8, 2019 at 10 AM. **
 
 #### Part 1: Playing tones via PWM
 
@@ -42,21 +42,51 @@ your PWM carrier frequency to 440 Hz (an "A").
   and back. How does this sound? Can you explain?
   {: class="questions"}
 
-Now, modify the code you built for question 2 to be general. "Sound strings" should be
-specified as a sequence of frequencies (or periods) stored in an array, with a separate "tone
-length" variable specifying how long each note should be played for. Note that because each
-tone has a different frequency, keeping track of how long each has played is a slightly
-nontrivial task (though you should be able to figure out a simple way of accumulating periods
-properly to account for their different lengths). You should create a function with prototype
-`void PlaySound(int* SoundString, int StringLength, int ToneDuration)` that initializes the
-proper global state variables and starts the sound playing. The ISR should ensure that, once
-started, the sound string is played once. You might want to create a special tone symbol which
-corresponds to a "rest", to enable more complex sounds.
+Now, modify the code you built for question 2 to be general. The way that I
+think of music is as a series of notes, each with a corresponding duration. So a
+function that would play a song would have a prototype that looks like `void
+PlaySound(int *Notes, int* Durations, int Length)` (remember that arrays don't
+have a built in length in C!). Alternatively, one could think of the music as
+having a fundamental duration (e.g., one eighth note), and the song would be
+specified as a series of eighth notes at different frequencies. Then, the
+prototype would look like `void PlaySound(int *Notes, int Length, int
+Duration)`, where the `Duration` parameter is the length in time of the
+fundamental unit. While the `Notes` in either case are probably properly thought
+of as frequencies, you can choose to specify them as periods for runtime
+efficiency. You should implement one of these two prototypes, or, if you have a
+very good (and well-commented reason), another one.
+
+A few notes:
+  - Advanced musicians will recognize that in a lot of music there are tiny
+    implicit rests between individual notes that allow, for e.g., two quarter
+    notes versus an individual half-note to have different sounds. Implement
+    this for extra credit.
+  - Because each tone has a different frequency, keeping track of how long each
+    has played is a slightly nontrivial task (though you may be able to
+    figure out a simple way of accumulating periods properly to account for
+    their different lengths). Alternatively, you can use the second timer module
+    to help with note duration.
+  - `PlaySound()` should initialize the proper global state variables and start 
+    the sound playing. An interrupt-driven process should ensure that, once
+    started, the sound string is played only once. 
+  - You should organize your code into two or more source code files, one with
+    the `main()` function (and maybe other stuff), and one with `PlaySound()`
+    and maybe other stuff.
 
 Create the proper sequences for the first lines of "Twinkle, twinkle little star", and "Mary had
 a little lamb". Set up an infinite loop so that you play a sequence and then have quiet for a
-few seconds. **You may use __delay_cycles for this part of this lab!** __Be prepared to
-demonstrate how your code works, including playing the two sequences at different speeds.__
+few seconds. **You may use __delay_cycles for this part of this lab!** 
+
+You will be graded on the following:
+  - Code quality: use of multiple files, proper header calling, explanatory
+    comments, PlaySound() function with proper prototype, reasonable
+    architecture [about 40 pts]
+  - Functionality: changing a variable or commenting/uncommenting a small number
+    of lines of code should change which song is played, with comments
+    indicating how to do this for the peer grader; songs sound correct [about
+    40 pts]
+  - Extra: rests/pauses between notes implemented and demonstrated [up to 10
+    pts], LPM3 used [up to 5 pts], other special features
 
 #### Part 2: Simon PCB - See midterm project for details
 
