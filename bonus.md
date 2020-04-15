@@ -135,6 +135,8 @@ quality, humor, or other aesthetics.
 
 
 **[0.5 - 1 point each]** - Possible improvements or modifications for Simon:
+  - Implement software debouncing. (This requires removing the capacitors. Please reach out ASAP if you want a Simon
+    board without capacitors and I will mail it.)
   - Allow the user to select the level of difficulty - the timeout period and/or speed of initial
     sequence playing. You could implement this by which button is used to start the game after
     a reset.
