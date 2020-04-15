@@ -87,7 +87,6 @@ Details:
     immediately).
   - You should make the maximum sequence size adjustable. For your video, sequences of length 5
     are appropriate.
-  - You are expected to implement software debouncing (and don't use capacitors with switches!)
 
 
 #### The Simon PCB
