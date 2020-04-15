@@ -80,6 +80,9 @@ Details:
   - When a button is pressed, the appropriate LED should flash (and tone should sound).
   - The timeout period should not be a constant. Rather, each time a player pushes a button, a
     new timeout should start. Thus, a timeout of 1-2 s is appropriate.
+  - The light and sound associated with the button should be displayed/played as long as the button is held down, and
+    then should stop. (So _not_ like in the example video where they play for a constant length of time regardless of
+    how long the button is pressed for.)
   - Errors should result in immediate game over (i.e., button presses should be processed
     immediately).
   - You should make the maximum sequence size adjustable. For your video, sequences of length 5
