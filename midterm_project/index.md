@@ -52,9 +52,9 @@ achieve an enjoyable user experience. In addition, you will be invited to add so
 interesting feature beyond the Simon game. In the past, this has ranged from simple animations
 to a mode in which the device becomes a music sequencer.
 
-Here's a video from Vitor Azevedo Andriotti (Spring 2015) showing a Simon board in action.
+Here's a video from Tiger Yang (Spring 2019), showing a Simon board in action along with a number of bonuses.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nrsBVdJFrKc"
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=DYyrkACy08Q"
 frameborder="0" allowfullscreen></iframe>
 
 #### Rules for the ELEC327 version of the Simon game
@@ -79,7 +79,7 @@ Details:
     value on startup!)
   - When a button is pressed, the appropriate LED should flash (and tone should sound).
   - The light and sound associated with the button should be displayed/played as long as the button is held down, and
-    then should stop. (So _not_ like in the example video where they play for a constant length of time regardless of
+    then should stop. (So _not_ like in the example video below where they play for a constant length of time regardless of
     how long the button is pressed for.)
   - The timeout period should not be a constant. Rather, each time a player pushes a button, a
     new timeout should start. Thus, a timeout of 1-2 s is appropriate.
@@ -88,6 +88,11 @@ Details:
   - You should make the maximum sequence size adjustable. For your video, sequences of length 5
     are appropriate.
 
+Here's a video from Vitor Azevedo Andriotti (Spring 2015) showing a Simon board in action.
+Note that in this video, the buttons are not synchronized with the LED/sound feedback.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nrsBVdJFrKc"
+frameborder="0" allowfullscreen></iframe>
 
 #### The Simon PCB
 
