@@ -43,11 +43,11 @@ description: Final Project
   day of finals (Monday May 4).
 
   **Rubric:** (10 pts each (mvp is 30 pts, code is 20 pts), 130 total) 
-  1. MVP: Does it actually run properly off of a battery and (occasionally) perform in a
-    Simon-esque way? (30 pts)
+  1. MVP (minimally viable product): Does it actually run properly off of a
+    battery and (occasionally) perform in a Simon-esque way? (30 pts)
   2. Gameplay-ButtonFeedback (when a button is pressed during play, does the
-  light and sound asssociated with that button track the button press, i.e.,
-  start when it is depressed and stop when it is released?)
+    light and sound asssociated with that button track the button press, i.e.,
+    start when it is depressed and stop when it is released?)
   3. Gameplay-Timeout (does it game over after a while if no button is pressed?)
   4. Gameplay-MisplayingError (does it game over if the wrong button is pressed?)
   5. Gameplay-Win (does it do something special when the player wins?)
