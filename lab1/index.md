@@ -61,7 +61,7 @@ is padded with zeros to a final size of 100 bytes. Your program should print out
 in the message file provided as a command line argument.
 
 The characters in the header are described in the following table (you may recognize these if you've used
-the (python struct library)[https://docs.python.org/3/library/struct.html]) :
+the [python struct library](https://docs.python.org/3/library/struct.html)) :
 
 | Character | Type | Size (bytes) |
 | :---: | :---: | ---: |
@@ -99,8 +99,8 @@ write_list_to_file(example1, 'example1.bin')
 
 ```
 
-For the `example1.bin` file, the proper return value is `-600.0` (the number of trailing zeros
-is not critical). A template C file is given in (summate_template.c)[summate_template.c]. Your task
+For the [example1.bin](example1.bin) file, the proper return value is `-600.0` (the number of trailing zeros
+is not critical). A template C file is given in [summate_template.c](summate_template.c). Your task
 is to fill in the `compute_sum()` function.
 
 
