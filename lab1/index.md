@@ -3,20 +3,19 @@ title: Lab 1
 lab: 1
 layout: default
 group: labs-navigation
-description: Morse Code with Timers
+description: Intro C Programming
 ---
 
 {::options parse_block_html="true" /}
 
-### Lab #1: Morse Code with Timers on the MSP430 (250 pts)
+### Lab #1: Intro C Programming (100 pts)
 
 <div class="alert alert-info" role="alert">
-#### **There are three goals for this assignment:**
+#### **There are two goals for this assignment:**
 
 
-  - To get CCS and/or Energia up and running. 
-  - To become familiar with the _User Guide_ and datasheet (these will answer so many questions for you in the future). 
-  - To learn to program an MSP430G2553 when it is separated from the Launchpad. 
+  - To get a taste for writing code in the C programming language. 
+  - To build a mental understanding for pointers and type casting. 
   
 </div>
 
@@ -24,197 +23,87 @@ description: Morse Code with Timers
 #### **What should be turned in?**
 
 
-  1. Your **commented** morse-code.c file. 
-  2. Your answers to the questions (given at the end of this document) 
+  1. Your **commented** summate.c file. 
+  2. We will have an in class quiz in which you will be required to modify and run your program and report the answers. 
 
 </div>
 
-#### Due Date: __Wednesday, January 24 at noon__
+#### Due Date: __Tuesday, February 2, 2021__
 
 
-#### Part 0: Installation (optional)
+#### Introduction
 
-You are welcome to install TI's **Code Composer Studio** (CCS) on your own personal computers.
-The updated Launchpad you are using this semester appears to be well supported in the Ubuntu
-version of CCS (as well as Windows). It is not yet known whether the beta OSX version is also
-working well.
+You are welcome to use any C compiler that you have access too (e.g, if you are running Linux or another Unix-like environment
+on your own computer). The instructions below assume that you have logged into the Rice student cluster, CLEAR.
+You can connect to CLEAR using ssh: `ssh netid@ssh.clear.rice.edu` will work if you are on campus or VPN. Otherwise
+you will need to first `ssh netid@ssh-students.rice.edu`, and then type in `ssh.clear.rice.edu` at the `Enter remote host:` prompt.
+If you are on campus or connected via VPN, you can mount your home directory using the Samba protocol. (See [https://kb.rice.edu/93597] for
+assistance.) This will allow you to use a GUI code editor such as Visual Stuio Code.
+The examples done in class on Tuesday will be available in the `/clear/courses/elec327/2021/` directory.
 
-[**Energia**](http://energia.nu/) is a clone of the Arduino environment for the MSP430. We will
-not use the Java-based approach used by Arduino, but the compiling and device programming
-components are still quite useful. Note that the Instructions for installing Energia can be
-found at the project home page: [http://energia.nu/](http://energia.nu/). We will not
-officially support Energia users in the class, however, we have found it to be quite usable in
-a minimal sense. Specifically, by creating a new tab in a sketch with a ".c" extension, one can
-write C-language code that is properly understood and compiled. You can then delete all the
-stuff in the original sketch window (though it appears you have to leave the file there for
-things to work). If you are going to use Energia, please make sure that you **do not** use the
-Arduino-style sketch code but rather C-language or assembly.
+In C, variables are associated with "types". The core types include ASCII characters, integers, 
+and floating point numbers. In this lab, we will explore the fact that C allows us to directly
+reference memory, and allows portions of memory to be interpreted as different types. Because the
+interfaces to peripherals in embedded systems are through the memory bus, understanding how
+to access memory is critical to programming embedded systems. In addition, passing by reference 
+(using pointers) is the only method in C for giving a function a variable that it should modify.
 
-[**msp430-gcc**](http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPGCC/latest/index_FDS.html)
-is a fork of the gcc compiler which has tools to compile, assemble, disassemble, etc. MSP430
-code. By itself, this can be a useful tool for understanding MSP430 code. With the addition of
-the mspdebug package (available under Ubuntu Linux or Homebrew), code can also be uploaded to a
-device.
+#### The Task
 
+Many embedded systems will communicate data to a microprocessor. Sometimes, the structure of the
+data can be known precisely ahead of time, but sometimes the message payload may need to hold
+different items, including variables of different sizes. In this lab, your program needs to
+interpret a message that has been received from an embedded system. The messages contain a series
+of numbers, and the task for your program is to sum these. The challenge is that the numbers are
+all different types. Each message includes a header, which is a series of characters which describe
+the types of the numbers in the message. This is followed by the numbers themselves. The message
+is padded with zeros to a final size of 100 bytes. Your program should print out the sum of the numbers
+in the message file provided as a command line argument.
 
-#### Part 1: Verify CCS/Energia and Launchpad functionality and examine the skeleton code
+The characters in the header are described in the following table (you may recognize these if you've used
+the (python struct library)[https://docs.python.org/3/library/struct.html]) :
 
-Compile the included
-[lab1\_skeleton.c](https://github.com/ckemere/ELEC327/blob/master/Labs/Lab1/lab1_skeleton.c)
-file to verify that CCS is setup correctly. (In Energia, you will need to create a new
-"sketch", add a tab with the name lab1.c or somesuch, erase the stuff in the first tab, and
-then code away in the second ".c" one.) You should also read through this file: it shows the
-minimum amount of code needed to run the MSP430 in an infinite loop. If you ever don't know
-what some variable acronym means, look it up! A useful practice is right clicking the name and
-going to "Open Declaration" (instructions for CCS are in red). For instance, in this file,
-doing this on `CALBC\_1MHZ` brings you to:
+| Character | Type | Size (bytes) |
+| :---: | :---: | ---: |
+| 'b' | signed byte | 1 |
+| 'h' | signed short | 2 |
+| 'i' | signed int | 4 |
+| 'd' | signed double | 8 |
+| 'e' | special character denoting message end | 0 |
 
-`SFR\_8BIT(CALCBC1\_1MHZ)/\* BSCTL1 Calibration Data for 1 MHz \*/`
+The `'e'` character denotes the end of the header. The numbers directly follow it, packed tightly.
 
-And inspecting `BSTCTL1` shows:
+The code that I am using to create the files you will work with is actually python. It's here:
+```python
+import struct
 
-`SFR\_8BIT(BCSCTL1)/\* Basic Clock System Control \*/`
+def write_list_to_file(data_list, ofname):
+  format_only = [ x[0] for x in data_list]
+  data_only = [x[1] for x in data_list]
+  print('=c' + 'c'.join(format_only))
+  print(data_only)
+  of = open(ofname, 'wb')
+  of.write(struct.pack('='+'c'*(len(format_only)), *[bytes(c, "utf-8") for c in format_only]))
+  of.write(struct.pack('=c', b'e'))
+  of.write(struct.pack('='+''.join(format_only), *data_only))
+  padding = 100 - of.tell()
+  of.write(struct.pack('={}b'.format(padding), *bytearray(padding)))
+  of.close()
 
-What, then, is the "clock system control" that is being referred to? Two resources you should
-use extensively are the [MSP430x2xx Family User Guide](/assets/documents/slau144j_userguide.pdf)
-and the [MSP430G2553 datasheet](/assets/documents/msp430g2553.pdf), both of which can be found
-on the main 327 page (or by googling). The user guide explains how to use various functions or
-registers common to most MSP430s, while the data sheet has register values and pin information
-specific to the G2553. So, searching for "BCSCTL1" on the user guide takes you to Chapter 5 and
-Chapter 24, from which you can figure out that this line will set the frequency of the DCO to a
-calibrated 1 MHz.
+# 'b' = signed char, 'i' = 4 byte int, 'd' = 8 byte double
+# 'B' = unsigned char, 'I' = unsigned int, 'h' = 2 byte int
 
-On the web, you may notice a function called "\_\_delay\_cycles". You will find that
-documentation of this function is somewhat lacking on the internet. If you look in the [MSP430
-Optimizing Compiler Guide](/assets/documents/slau132k.pdf), you will see that it is not a C
-function, but rather an "intrinsic". In hindsight, if its role is to delay the processor a
-precise number of cycles that can range from 1 to some large number, it could not be a function
-(because calling a function takes more than one cycle!). A compiler intrinsic is something like
-a macro - it is something that is replaced by appropriate code at compile time. In this case,
-\_\_delay\_cycles is marked as deprecated, no doubt because its use leads to poor quality code
-because it blocks the processor but still runs at full power. In this class, you should
-generally not write code which calls this function. 
+example1 = [('b',-100), ('i',-100), ('d', -100.0), ('i', -100), ('d', -100.0), ('b', -100)]
 
-#### Part 2: Understanding what the C compiler is doing
-The goal of the compilation process is to turn a program written in a high-level language into
-machine code. 
+write_list_to_file(example1, 'example1.bin')
 
-**Please read** [this very interesting
-writeup](https://www.theunterminatedstring.com/the-greedy-c-runtime/) about what code is
-generated by a C compiler when it is naively called and after code size optimization is done.
-We will discuss the operations of the compiler/assembler in class.
+```
 
-For those of you interested in understanding how compiler-to-opcode conversion might have
-interesting effects in the modern-day context,
-[this](https://www.blackhat.com/docs/us-17/thursday/us-17-Domas-Breaking-The-x86-ISA.pdf) is an
-interesting presentation from the 2017 BlackHat conference.
-
-#### Part 3: Blinking a Morse Code Message
-
-Using the P1.0 LED on your launchpad, blink a message in Morse code. Look Morse code up on
-Wikipedia to find the code for each letter and how to separate letters. Submit your code in a
-separate file named `morse-code.c`. **Every line should have a meaningful comment and extra
-comments are welcome!** A few specifications:
-
-- A "unit" should be ¼ of a second.
-- Use whatever clock and Timer mode you want.
-- Organize your code such that to change the message, you only have to change one array at the
-  beginning of your program (this should be an array of Morse code "dots" and "dashes").
-- Be able to display either "SOS" or 3 other letters (i.e., your initials, the first 3 letters
-  of your first name, etc), depending on which array is commented out.
-- Your message should repeat.
-- Consider repetitions of your message different words. This means that you should have 7
-  "units" of off time between each repetition. If you want, this as well as spaces between
-  letters and parts of the same letter can be hard coded into your array.
-- To help yourself write clean code, you should use "BITx" whenever you do anything with a pin
-  on the MSP430.
-- You should use one of the timer interrupts for timing. Function LED flashing code is given in
-  an example from the MSP-example code archive in the "Labs/Lab1/" directory of the [course
-  repository](https://github.com/ckemere/ELEC327).
-- **Continuing Bonus 1:** For those of you feeling particularly under-tasked by this lab, extra
-  credit will be given for a second implementation of code that reads in the LED flashes and
-  decodes the Morse code message. See Bonus page for more details.
+For the `example1.bin` file, the proper return value is `-600.0` (the number of trailing zeros
+is not critical). A template C file is given in (summate_template.c)[summate_template.c]. Your task
+is to fill in the `compute_sum()` function.
 
 
-#### Part 3: Moving it to a Breadboard
-
-We'll be working with a lot of input/output devices in this class, and so it makes sense to be
-able to program an MSP430 on a breadboard so that it can run independently. Make this
-breadboard wiring clean, as you'll be testing a lot of circuits using it. To actually program
-the MSP430 on a breadboard using the launchpad, you only need to:
-
-1. Connect the TEST and RST pins on the EMULATION side of the launchpad to their respective
-   pins on the MSP430 (these are labeled on the launchpad where the MSP430 itself is usually
-   located).  
-2. Connect Vcc and GND (or some independent battery, but for now use the launchpad's power) to
-   their respective pins. For your convenience, jump these to the power lines on the
-   breadboard. To ensure a clean power supply to the MSP430, connect a 10uF capacitor anywhere on
-   the board between Vcc and GND.
-3. Connect a pull-up resistor to the RST pin, as it is active-low. That is, connect a large
-   resistor (47K from lab is fine) from the RST pin to Vcc, to ensure that its default state is
-   high.
-
-Now, reproduce your Morse code circuit on the breadboard using LEDs and resistors in the lab.
-There are, however, some differences you need to take into account – **see questions below!**
-Wire the circuit on your breadboard, and successfully program it.
-
-#### Demoing code
-
-Over the course of the semester we will be developing a good schedule for demos. You will be
-required to demonstrate your code to one of the course staff. You should be prepared to show
-your code running on a breadboard, as well as changing the Morse code message, reprogramming,
-and showing the subsequent functioning. 
-
-#### Questions (10 pts each):
-
-Please reference your answers to one of the authoritative sources.
-
-_Questions from week 1 of class:_
-Load the code in [main.asm](main.asm) into CCS, compile it and load it onto your launchpad. (A
-version that is Energia-compatible is in [main-energia.asm](main-energia.asm). Now 
-answer the following questions: 
-
-<ol class="questions" start="1">
-<li><i>Understanding simple assembly code.</i>
-(a) What does the code do? (b) How does it work (pseudocode)?
-(Make sure to specify things like active pins, registers used and things like the period of operations!) 
-</li>
-</ol>
-
-In CCS, you can see the disassembled code if you pause during debugging.
-
-![Disassembly](Disassembly.png)
-
-<ol class="questions" start="2">
-<li><i>Understanding disassmbly.</i>
-(a) Interpret the disassembled data. What does "c004: 40B2 5A80 0120" mean? (Specifically, what
-does the "c004" refer to? What do the other numbers refer to? Why exactly are they those
-numbers?  (b) What does "c014: 4034 C350" mean? What would it have been if the code had used
-register R5 instead? What if the initialization had been #30000 instead of #50000?
-(c) Why does assembly need to initialize the stack pointer in general? Is it necessary for this
-program?
-
-*Hint 1:* Remember that the MSP430 memory is little-endian. *Hint 2:* You'll want to make heavy
-use of Table 3-12 ("Core Instruction Map") in the User Guide!
-</li>
-</ol>
-
-
-_Questions from the skeleton code:_
-
-<ol class="questions" start="3">
-<li>In the Part 1 skeleton code, what is the frequency and period of the LED?</li>
-</ol>
-
-_Questions from bread-boarding:_
-
-<ol class="questions" start="4">
-<li>What is the forward voltage on the LED? What is its maximum forward current?</li>
-<li>What is the supply voltage coming out of the MSP430? On the MSP430G2553, what is the
-maximum current any one pin can output?</li>
-<li>Using all this, what is the resistor value you should use to supply exactly this maximum
-current? To be safe when using the MSP430, should you use a larger or smaller resistor?</li>
-</ol>
-
-**Upload your answers and your code to Canvas. Make sure to demo functionality by the deadline.**
+**Upload your code to Canvas and be ready for live coding (we'll introduce a wrinkle!)
+in class on Tuesday.**
 
