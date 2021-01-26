@@ -37,7 +37,8 @@ You are welcome to use any C compiler that you have access too (e.g, if you are 
 on your own computer). The instructions below assume that you have logged into the Rice student cluster, CLEAR.
 You can connect to CLEAR using ssh: `ssh netid@ssh.clear.rice.edu` will work if you are on campus or VPN. Otherwise
 you will need to first `ssh netid@ssh-students.rice.edu`, and then type in `ssh.clear.rice.edu` at the `Enter remote host:` prompt.
-If you are on campus or connected via VPN, you can mount your home directory using the Samba protocol. (See (https://kb.rice.edu/93597) for
+If you are on campus or connected via VPN, you can mount your home directory using the Samba protocol. (See 
+(https://kb.rice.edu/93597)[https://kb.rice.edu/93597] for
 assistance.) This will allow you to use a GUI code editor such as Visual Stuio Code.
 The examples done in class on Tuesday will be available in the `/clear/courses/elec327/2021/` directory.
 
