@@ -2,7 +2,7 @@
 title: Lab 7
 lab: 7
 layout: default
-group: labs-navigation
+group: labs-navigation-OLD
 description: Serial Communications (SPI + I2C)
 ---
 

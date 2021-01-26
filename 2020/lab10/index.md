@@ -2,7 +2,7 @@
 title: Lab 10
 lab: 10
 layout: default
-group: labs-navigation
+group: labs-navigation-OLD
 description: Deep Brain Stimulation Case Study
 ---
 

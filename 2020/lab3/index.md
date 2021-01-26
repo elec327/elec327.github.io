@@ -2,7 +2,7 @@
 title: Lab 3
 lab: 3
 layout: default
-group: labs-navigation
+group: labs-navigation-OLD
 description: PWM, LPM, and PCB Design
 ---
 

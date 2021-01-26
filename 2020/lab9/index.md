@@ -2,7 +2,7 @@
 title: Lab 9
 lab: 9
 layout: default
-group: labs-navigation
+group: labs-navigation-OLD
 description: Randomness
 ---
 

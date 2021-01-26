@@ -2,7 +2,7 @@
 title: Lab 4
 lab: 4
 layout: default
-group: labs-navigation
+group: labs-navigation-OLD
 description: PCB Design, full stop
 ---
 

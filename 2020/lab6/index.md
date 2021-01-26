@@ -2,7 +2,7 @@
 title: Lab 6
 lab: 6
 layout: default
-group: labs-navigation
+group: labs-navigation-OLD
 description: Soldering Redux and Finalizing Thermodot Firmware
 ---
 
