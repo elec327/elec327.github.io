@@ -58,7 +58,7 @@ device.
 #### Part 1: Verify CCS/Energia and Launchpad functionality and examine the skeleton code
 
 Compile the included
-[lab1\_skeleton.c](https://github.com/ckemere/ELEC327/blob/master/Labs/Lab1/lab1_skeleton.c)
+[delay_cycles_example.c](https://github.com/ckemere/ELEC327/blob/master/Labs/Lab1/delay_cycles_example.c)
 file to verify that CCS is setup correctly. (In Energia, you will need to create a new
 "sketch", add a tab with the name lab1.c or somesuch, erase the stuff in the first tab, and
 then code away in the second ".c" one.) You should also read through this file: it shows the
@@ -112,7 +112,12 @@ interesting presentation from the 2017 BlackHat conference.
 Using the P1.0 LED on your launchpad, blink a message in Morse code. Look Morse code up on
 Wikipedia to find the code for each letter and how to separate letters. Submit your code in a
 separate file named `morse-code.c`. **Every line should have a meaningful comment and extra
-comments are welcome!** A few specifications:
+comments are welcome!** Two example skeletons are given in:
+[lab1_skeleton.c](https://github.com/ckemere/ELEC327/blob/master/Labs/Lab1/lab1_skeleton.c)
+and
+[lab1_skeleton_ver2.c](https://github.com/ckemere/ELEC327/blob/master/Labs/Lab1/lab1_skeleton_ver2.c)
+
+A few specifications:
 
 - A "unit" should be ¼ of a second.
 - Use whatever clock and Timer mode you want, **but make sure that you are using an interrupt
@@ -175,7 +180,7 @@ Please reference your answers to one of the authoritative sources.
 _Questions from the skeleton code:_
 
 <ol class="questions" start="1">
-<li>In the Part 1 skeleton code, what is the frequency and period of the LED?
+<li>In the Part 1 delay cycles example code, what is the frequency and period of the LED?
 (Hint! You can assume that delay cycles is exact, but how many cycles does
 the next line take?)</li>
 </ol>
