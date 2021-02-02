@@ -48,6 +48,16 @@ cutting these traces and soldering on airwires.
 
 ---
 
+### Lab 1 Bonus - Color cyle Morse Code
+
+**[0.25 points]** - Make sure that your implementation of [Lab1 (Lab2 in 2021) morse code blinking
+project](lab2/) is using one of the Timer interrupts for character timing. Display the Morse
+code message on the RGB led of the Launchpad. Using a different timer interrupt, configure the
+color of the RGB LED to cycle through the rainbow (at least 16 different colors) while the
+message is being flashed. The color cycling should be faster than the character timing.
+
+---
+
 ### Lab 1 Bonus - Decode Morse Code
 
 **[2-6 points]** - **MVP (2 points):** after implementing the [Lab1 morse code blinking
