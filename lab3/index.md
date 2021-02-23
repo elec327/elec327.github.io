@@ -24,7 +24,7 @@ _This assignment is due Thursday, February 25, 2021 at **NOON**._
 <figure class="figure">
 <a href="Pendant.gif"> <img src="Pendant.gif" class="figure-img img-fluid rounded" alt="Pendant PCB"></a>
 
-<figcaption class="figure-caption"><p>Lab 2 6-LED pendant PCB.</p></figcaption>
+<figcaption class="figure-caption"><p>Lab 2 24-LED pendant PCB.</p></figcaption>
 
 </figure>
 </div>
