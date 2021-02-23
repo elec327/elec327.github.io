@@ -1,8 +1,8 @@
 ---
 title: Lab 3
-lab: 2
+lab: 3
 layout: default
-group: labs-navigation-OLD
+group: labs-navigation
 description: Timers and Soldering
 ---
 
@@ -16,7 +16,7 @@ surface mount parts both for skill acquisition and in order to give you some bac
 begin PCB design in the next lab. Second, the goal is to begin learning about interrupts,
 specifically by making use of the interrupt associated with one of the Timer modules._
 
-_This assignment is due Thursday, February 25, 2021 at **NOON**._
+_This assignment is due Tuesday, March 2, 2021 at **NOON**._
 
 #### Part 1: Soldering a pendant
 <div class="row">
