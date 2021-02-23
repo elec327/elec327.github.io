@@ -16,7 +16,7 @@ surface mount parts both for skill acquisition and in order to give you some bac
 begin PCB design in the next lab. Second, the goal is to begin learning about interrupts,
 specifically by making use of the interrupt associated with one of the Timer modules._
 
-_This assignment is due Tuesday, March 2, 2021 at **NOON**._
+_This assignment is due Thursday, March 4, 2021 at **NOON**._
 
 #### Part 1: Soldering a pendant
 <div class="row">
@@ -38,8 +38,8 @@ and put all the surface mount parts on with tweezers (24 LEDs, 7 resistors, and 
 You'll need to solder the button and the battery holder by hand.
 
 You may need to reference the
-[board](https://github.com/ckemere/ELEC327/blob/7d36bcb280d6d5742d6b83972e43ef906445634a/Labs/Lab2/Pendant.brd)
-and/or [schematic](https://github.com/ckemere/ELEC327/blob/7d36bcb280d6d5742d6b83972e43ef906445634a/Labs/Lab2/Pendant.sch)
+[board](https://raw.githubusercontent.com/ckemere/ELEC327/master/Labs/Lab2/Pendant.brd)
+and/or [schematic](https://raw.githubusercontent.com/ckemere/ELEC327/master/Labs/Lab2/Pendant.sch)
 files in order to know what other parts go where. In particular notice which
 components are resistors, which are capacitors, and which are light emitting
 diodes (LEDs). The LEDs in the outer ring all face in one direction and the LEDs in the inner
