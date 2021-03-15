@@ -2,7 +2,7 @@
 title: Lab 5
 lab: 5
 layout: default
-group: labs-navigation-OLD
+group: labs-navigation
 description: Serial Communications (SPI + I2C)
 ---
 
