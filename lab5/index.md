@@ -1,6 +1,6 @@
 ---
-title: Lab 7
-lab: 7
+title: Lab 5
+lab: 5
 layout: default
 group: labs-navigation-OLD
 description: Serial Communications (SPI + I2C)
@@ -8,7 +8,7 @@ description: Serial Communications (SPI + I2C)
 
 {::options parse_block_html="true" /}
 
-## Lab #7: Using serial communications (SPI controlling an LED driver)
+## Lab #5: Using serial communications (SPI controlling an LED driver)
 
 _This lab builds on the PWM and RGB LED work we've done earlier. The goal is
 for you to be comfortable with SPI serial communications. This particular
