@@ -39,8 +39,7 @@ description: Final Project
   Additionally, a small bonus will be given for each of your peer's Simon games
   you evaluate.
 
-  4. To facilitate peer grading, the code will be due TWO DAYS before the last
-  day of finals (Monday May 4).
+  4. To facilitate peer grading, the code will be due **April 15**.
 
   **Rubric:** (10 pts each (mvp is 30 pts, code is 20 pts), 130 total) 
   1. MVP (minimally viable product): Does it actually run properly off of a
