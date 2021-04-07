@@ -3,7 +3,7 @@ title: Midterm Project
 lab: 11
 layout: default
 group: labs-navigation
-description: Final Project
+description: Midterm Project
 ---
 
 {::options parse_block_html="true" /}
