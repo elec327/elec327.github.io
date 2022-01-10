@@ -13,19 +13,24 @@ group: navigation
 **Instructor:**
 Caleb Kemere  
 Office: BRC 971  
-Office Hours: (please verify via email) Monday, Wednesday 8:00-9:00am (RMC Coffee House)  
+Office Hours: After class or (please verify via email) many mornings between 8:30-9:30am RMC Coffee
+House (w/ free coffee!)
 caleb.kemere@rice.edu
 
 **Grader/TA:**
+<!---
   - Sibo Gao ( [sg63](mailto:sg63@rice.edu))
+--->
 
 **Lab Assistants:**
+<!---
   - Josue Casco-Rodriguez ([jc135](mailto:jc135@rice.edu))
   - Justin Cheung ([jrc17](mailto:jrc17@rice.edu))
   - Samantha Fuentes ([sf26](mailto:sf26@rice.edu))
+--->
 
 **Lab Office Hours:**
-  - See [Canvas](https://canvas.rice.edu/courses/39195)
+  - See [Canvas](https://canvas.rice.edu/courses/47062)
   
  **Lab Communication:**
   - Sign up for elec327.slack.com
@@ -37,14 +42,14 @@ Additional Lab office hours may be requested on Slack or by email
 
 ---
 
-**Class Hours:** TuTh 1:30-2:50 PM BRC284/AL124
-Until everyone is vaccinated, lectures will be dual mode (Zoom+in person optional). We will figure out a schedule for the lab
-that ensures minimal contact. Students are expected to spend significant out-of-class time (~10 hours
-per week) working on lab assignments.
+**Class Hours:** MW 2-3:15 PM BRC285/FE&P 118
+Through the first 2 weeks of the semester, lectures will be dual mode (Zoom+in person optional). We
+will figure out a schedule for the lab that ensures minimal contact. Students are expected to spend
+significant out-of-class time (~10 hours per week) working on lab assignments.
 
 **Lab Help Sessions:** See Lab Assistant hours or by request on Slack or through email  
-Help sessions held in lab room A124                                                                                     
-Lab Access Keypad Code: ...-- -.... ----. ----. #
+Help sessions held in lab room FE&P 118
+Lab Access Keypad Code: .--- ----. ....- ---..#
 
 ---
 
@@ -53,7 +58,7 @@ We use 2 different digital resources:
 
 1. The primary location assignments and lecture notes (and other resources) is the course
 website – [http://elec327.github.io](http://elec327.github.io)
-2. We use Canvas ([https://canvas.rice.edu/courses/39195](https://canvas.rice.edu/courses/39195))
+2. We use Canvas ([https://canvas.rice.edu/courses/47062](https://canvas.rice.edu/courses/47062))
 for announcements and for communication. If you have specific questions about course content or
 assignments, please post them on Canvas. As a corollary, you may find it useful to check for
 answers as questions arise.
@@ -66,7 +71,7 @@ interfacing with the world. This course will focus on how power-efficient user-f
 are built.
 
 **Objective:** Students should learn the fundamentals of embedded system programming and feel
-competent to design, build, and manufacture their own embedded devices. &nbsp;Furthermore,
+competent to design, build, and manufacture their own embedded devices. Furthermore,
 students should understand how embedded systems interface with external peripheral devices.
 Students should understand how application-specific blocks enable modern commercial devices.
 Finally, students should understand how to design and build their own embedded systems
