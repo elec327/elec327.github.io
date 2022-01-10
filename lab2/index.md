@@ -27,7 +27,7 @@ description: Morse Code with Timers
 
 </div>
 
-#### Due Date: __Tuesday, February 9 at 1:30__
+#### Due Date: __Monday, January 24 at 3:30__
 
 
 #### Part 0: Installation (will do in class!)
@@ -144,6 +144,7 @@ A few specifications:
   decodes the Morse code message. See Bonus page for more details.
 
 
+<!---
 #### Part 3: Moving it to a Breadboard (Don't do in 2021!!!!)
 
 We'll be working with a lot of input/output devices in this class, and so it makes sense to be
@@ -165,6 +166,7 @@ the MSP430 on a breadboard using the launchpad, you only need to:
 Now, reproduce your Morse code circuit on the breadboard using LEDs and resistors in the lab.
 There are, however, some differences you need to take into account – **see questions below!**
 Wire the circuit on your breadboard, and successfully program it.
+--->
 
 #### Demoing code
 
@@ -190,12 +192,13 @@ _Questions about the lab:_
 <ol class="questions" start="2">
 <li>In a later lab, we will use these LEDs:
 [https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/17-215SYGC-S530-E2-TR8/2691488](https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/17-215SYGC-S530-E2-TR8/2691488).
-What is the forward voltage on the LED? What is its maximum forward current?</li>
-<li>What is the supply voltage coming out of the MSP430 Launchpad? On the MSP430G2553, what is the
-maximum current any one pin can output?</li>
-<li>Using all this, what is the resistor value you should use to supply exactly this maximum
-current? To be safe when using the MSP430, should you use a larger or smaller resistor?</li>
-</ol>
+What is the typical forward voltage across the LED at 1 mA drive current (you'll have to squint at
+the figure in the datasheet!)? What is its maximum forward current?</li>
+<li>If the supply voltage of the MSP430 is 3.3 V, what voltage is sourced for an output pin that is
+logically high? On the MSP430G2553, what is the maximum current any one pin can output?</li>
+<li>If you want to be safe and provide a 1 mA current to your LED, what is the resistor value you
+should use in series with the LED? If you wanted the LED to be brighter, should you use a larger or
+smaller resistor?</li> </ol>
 
 **Upload your answers and your code to Canvas. Make sure to demo functionality by the deadline.**
 
