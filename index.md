@@ -7,7 +7,7 @@ group: navigation
 
 {::options parse_block_html="true" /}
 
-<H2>ELEC 327 - Digital Systems Laboratory (2019)</H2>
+<H2>ELEC 327 - Digital Systems Laboratory (2022)</H2>
 
 ---
 
