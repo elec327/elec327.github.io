@@ -28,7 +28,7 @@ understand how application-specific blocks enable modern commercial devices._
 
 **Location** -- AL124 (Lab and Lectures)
 
-**Time** -- Wednesdays 3:30--6 PM
+**Time** -- Mondays & Wednesdays 3-4:15 PM
 
 **Prerequisites** -- ELEC220
 
