@@ -28,7 +28,7 @@ description: Intro C Programming
 
 </div>
 
-#### Due Date: __Wednesday, January 26, 2022__
+#### Due Date: __Wednesday, January 19, 2022__
 
 
 #### Introduction

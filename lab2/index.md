@@ -27,7 +27,7 @@ description: Morse Code with Timers
 
 </div>
 
-#### Due Date: __Monday, January 24 at 3:30__
+#### Due Date: __Wednesday, January 24, 2022 at 3:30__
 
 
 #### Part 0: Installation (will do in class!)
