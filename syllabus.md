@@ -18,16 +18,9 @@ House (w/ free coffee!)
 caleb.kemere@rice.edu
 
 **Grader/TA:**
-<!---
-  - Sibo Gao ( [sg63](mailto:sg63@rice.edu))
---->
 
 **Lab Assistants:**
-<!---
-  - Josue Casco-Rodriguez ([jc135](mailto:jc135@rice.edu))
-  - Justin Cheung ([jrc17](mailto:jrc17@rice.edu))
-  - Samantha Fuentes ([sf26](mailto:sf26@rice.edu))
---->
+  - Mac Carr ([mac28](mailto:mac28@rice.edu))
 
 **Lab Office Hours:**
   - See [Canvas](https://canvas.rice.edu/courses/47062)
