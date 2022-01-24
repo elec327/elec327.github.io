@@ -4,7 +4,7 @@ title: Syllabus
 group: navigation
 ---
 
-## ELEC 327: Digital Systems Laboratory (Spring 2021)
+## ELEC 327: Digital Systems Laboratory (Spring 2022)
 
 ### Syllabus
 
