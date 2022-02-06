@@ -10,12 +10,13 @@ description: PCB Design, full stop
 {::options parse_block_html="true" /}
 
 
-## Lab #4: Color-Matcher PCB Design
+## Lab #4: Accelerometer PCB Design and PWM
 
 <div class="alert alert-info" role="alert">
-#### There is just one goal for this assignment:
+#### There are two goals for this assignment:
 
   - To learn and carry out various aspects of printed circuit board design
+  - To practice using Timer moldule-based PWM
   
 </div>
 
@@ -26,69 +27,81 @@ description: PCB Design, full stop
   2. The manufacturing files - `your-file-name.GBL` (bottom layer), `your-file-name.GML` (board
   outline), `your-file-name.GTL` (top layer) and `your-file-name.TXT` (drill locations).
   **Don't zip, compress, or otherwise combine these files!** (_Canvas_)
+  3. The code for your rainbow PWM program.
 
 #### What should be demoed live?
   1. Your EAGLE CAD design, if desired.
 
-#### Files are due Thursday, March 4 at noon 
+#### Files are due Friday, February 11 at 3:30 PM.
 
 </div>
 
-#### Designing a Color Matcher
+#### Hardware PWM
 
-By popular demand, this lab will be the design of a "Color Matcher" PCB, comprised of an
-RGB LED and a "Color Sensor" from Kingbright (APS5130PD7C-P22 [Digikey
-Link](https://www.digikey.com/en/products/detail/kingbright/APS5130PD7C-P22/8591561).  You may
-find it useful to clone the [ELEC327 reposistory](https://github.com/ckemere/ELEC327) from
-GitHub (if you have not done so yet). In the `Labs/Lab4/Datasheets` directory, you will find a
-data sheet for the Color Sensor, and an [RGB
-LED](https://github.com/ckemere/ELEC327/blob/master/Labs/Lab4/Datasheets/IN-S128TATRGB_V1.0.pdf)
-(Digikey part
-[1830-1096-1-ND](https://www.digikey.com/product-detail/en/inolux/IN-S128TATRGB/1830-1096-1-ND)).
-Refer to the data sheet for the RGB LEDs to choose current-limiting resistors.
+The Launchpad MSP430 has a built in RGB LED. It is connected to pins P2.3, P2.1, and 2.5. As we
+discussed in class, these correspond to the outputs for TA0.0, TA0.1, and TA0.2 (not respectively),
+but TA0.0 can't be used for PWM!!! Use a long jumper wire to connect TA1.1 or TA1.2 to the channel
+of the RGB LED so that you can drive all three colors with PWM.
 
-The color sensor will be used with the built-in analog to digital converter (ADC) module
-of the MSP430g2553.  We will discuss the ADC module further in future weeks. For now, you can
-see from the data sheet that there are eight pins (labeled A0-A7) which can be used for ADC
-input. 
+Your task is to write a program which cycles the LED through the colors of the rainbow. To do this,
+create an array of at least length 32 which contains R, G, and B values. You can generate these
+using Python (e.g., the [matplotlib hsv
+colormap](https://matplotlib.org/stable/tutorials/colors/colormaps.html)). Using the watchdog timer
+in timer mode with the VLO and the `/8192` divider, cycle through the values. You will need to:
+  - chose an appropriate PWM frequency
+  - configure TimerA0 and TimerA1 to run at this frequency
+  - configure the appropriate output pins using the P2SEL (or potentially P1SEL the TA0.1 or TA0.2 jumper pin) 
+  - configure the appropriate output mode in the TAxCCLx registers
+  - change the values of TAxCCR1 or TAxCCR2 based on the values in your array
+
+You do not need to use LPM3 in this lab!
+
+Once your code works to your satisfaction, save it as `rainbow.c` and turn it in on Canvas.
 
 
-We will be using Eagle to design a PCB which contains the MSP430, the color sensor, a button,
-and the RGB LED.  I have created a schematic for you, which is in the file
-[color_sensor.sch](color_sensor.sch).  In order to practice your PCB design skills, you will
-need to create one of these parts - the RGB LED.  You will need to make both a schematic symbol
-and a package footprint.
+#### Designing a "Which Way Is Up?" PCB
+
+By popular demand, this lab will feature a BGA-mounted accelerometer. The part we will use can be
+found in the Digikey catalog:
+[MXC4005XC](https://www.digikey.com/en/products/detail/memsic-inc/MXC4005XC/10322569), and the data
+sheet is also [here](MXC400xXC_Rev.B_4-24-15.pdf). The accelerometer uses the I2C serial data
+interface. If you look at the datasheet for the MSP430G2553, you'll see that only one of the serial
+interface modules handles I2C, USCI B0. The pins which need to be connected are P1.6 (SCL - I2C
+clock) and P1.7 (SDA - I2C data). The I2C bus requires pull-up resistors, which have been included
+in the schematic for you.
+
+Your task is to design a PCB with Eagle which includes the parts in the schematic - the MSP430, a
+battery holder, 4 LEDs, and various resistors - **AS WELL AS the MXC4005XC**, for which you have to
+create a library part (both a schematic symbol and library part). The goal is to lay out a PCB with
+the LEDs arranged in a plus-sign configuration. (You will program the device so that the LED that is
+pointing down always lights up.)
+
+
+You will likely find useful to clone the [ELEC327 reposistory](https://github.com/ckemere/ELEC327) from
+GitHub (if you have not done so yet).
+
 
 Eagle comes with a good number of parts, but not all that you need. You can either
 create a personal library for parts you make or add them to the ELEC327 library. Once you have
 created/opened the library, start with the "symbol". Make sure to adequately labels the various
-connections. **Pay special attention to the direction of current flow through each LED.** Then
-you should create a "footprint", referring to the data sheet for the spacing of the pads.
-Finally, combine the symbol and footprint so that the pins are connected to the right pads.
-Note that Digikey may provide an Eagle part design for the deisgn using an "Ultralibrarian"
+connections.  Note that Digikey may provide an Eagle part design for the deisgn using an "Ultralibrarian"
 script or a SnapEDA file. Feel free to make use of these, but you MUST DOUBLE CHECK the
 design!!!!
 
-Once you've made the RGB LED, add it to the schematic and connect it to the MSP430. We
-already have connected the switch and color sensor. **The RGB LED should be connected to PWM
-output pins connected to available Timer outputs. Remember to use 3 unique TA.x output pins --
-TA1.1, TA1.2, and TA0.1 (TA0.2 iff you're not using the 20 pin
-device)!!!!**{: style="text-decoration:underline"} 
+Once you've made the accelerometer part, add it to the schematic and connect it to the MSP430. 
 
 Next, then create a `.brd` file and route all of the connections. Keep in mind that the
 battery package is solid and plastic, so you should not place any parts on top of it. One
 solution is to put everything but the battery on one side of the PCB and the battery on the
-other. **Though remember that the pins of the switch poke through the board, so you may have
-issues if the bottom of the battery holder runs into them!** Try to make the final board
-approximately 20-40 mm x 40 mm. Additionally, for this project, PCB designs should be
-rectangular. After routing, check to make sure that it passes the electrical rule check (ERC)
-and design rule check (DRC), using the DRC rules given in the
-`PCBS/AdvancedCircuitsBarebones.dru` rule file. 
+other. Try to make the final board approximately square/circular, with a diameter of 20-40 mm.
+After routing, check to make sure that it passes the electrical rule check (ERC) and design rule
+check (DRC), using the DRC rules given in the `PCBS/AdvancedCircuitsBarebones.dru` rule file in the
+github repository.
 
 After you place your components and route traces, please put your initials or some other
 identifying mark on the board **on either the top or bottom copper layer** (since this is a
-barebones process, there is no silkscreen). **For 2021, we may also try to fab with a
-silkscreen. So if you want, feel free to use these layers!!!**
+barebones process, there is no silkscreen).{: style="text-decoration:underline"}
+
 
 When you're finished, run the CAM job in `PCBs/AdvancedBarebones.cam` to create the necessary
 files for manufacturing. We will submit a panel of the class's designs for manufacturing, and
