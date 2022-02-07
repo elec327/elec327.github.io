@@ -58,6 +58,8 @@ You do not need to use LPM3 in this lab!
 
 Once your code works to your satisfaction, save it as `rainbow.c` and turn it in on Canvas.
 
+Some sample code for the launchpad that generates a heart-beat effect using PWM of the red channel
+of the RGB led and the WDT for timing is in [template_code.c](template_code.c).
 
 #### Designing a "Which Way Is Up?" PCB
 
