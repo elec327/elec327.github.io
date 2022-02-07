@@ -11317,18 +11317,30 @@ Source: www.kingbright.com</description>
 <wire x1="40.64" y1="121.92" x2="30.48" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="I2CDATA" class="0">
+<net name="I2CSDA" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="15"/>
 <wire x1="0" y1="167.64" x2="25.4" y2="167.64" width="0.1524" layer="91"/>
 <label x="17.78" y="167.64" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="50.8" y1="193.04" x2="55.88" y2="193.04" width="0.1524" layer="91"/>
+<pinref part="I2CPULLUP1" gate="G$1" pin="2"/>
+<label x="43.18" y="193.04" size="1.778" layer="95"/>
+</segment>
 </net>
-<net name="I2CCLK" class="0">
+<net name="I2CSCL" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="14"/>
 <wire x1="0" y1="165.1" x2="25.4" y2="165.1" width="0.1524" layer="91"/>
 <label x="17.78" y="165.1" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="50.8" y1="182.88" x2="66.04" y2="182.88" width="0.1524" layer="91"/>
+<pinref part="I2C_PULLUP2" gate="G$1" pin="2"/>
+<wire x1="66.04" y1="182.88" x2="68.58" y2="182.88" width="0.1524" layer="91"/>
+<junction x="66.04" y="182.88"/>
+<label x="50.8" y="182.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LED1" class="0">
@@ -11357,20 +11369,6 @@ Source: www.kingbright.com</description>
 <pinref part="U$2" gate="G$1" pin="11"/>
 <wire x1="0" y1="157.48" x2="12.7" y2="157.48" width="0.1524" layer="91"/>
 <label x="7.62" y="157.48" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$9" class="0">
-<segment>
-<wire x1="50.8" y1="193.04" x2="55.88" y2="193.04" width="0.1524" layer="91"/>
-<pinref part="I2CPULLUP1" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="N$10" class="0">
-<segment>
-<wire x1="50.8" y1="182.88" x2="66.04" y2="182.88" width="0.1524" layer="91"/>
-<pinref part="I2C_PULLUP2" gate="G$1" pin="2"/>
-<wire x1="66.04" y1="182.88" x2="68.58" y2="182.88" width="0.1524" layer="91"/>
-<junction x="66.04" y="182.88"/>
 </segment>
 </net>
 </nets>

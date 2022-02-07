@@ -71,36 +71,28 @@ photodiode or other light sensor to get the signal rather than a wire.
 
 ---
 
-### Lab 2 Bonus - Implement PWM modulation or other fun things
+### Lab 3 Bonus - Create a large digital clock or other fun things with the handout PCB
 
+**[1 point]** - Implement a 2 digit stopwatch. With the display PCB oriented
+horizontally, implement a 2-digit display, and have it count hundredths of seconds. Use
+the two buttons as a start/stop and reset. When the time is greater than 9.9 seconds,
+while running, the display should show only seconds. When stopped, it should scroll the 
+full three-digit time.
 
-**[1-2 points]** - Increase the Lab 2 pendant's battery life by implementing PWM modulation of the
-LEDs. Note that you will not be able to use the timer module PWM outputs because there aren't
-enough / the proper pins are not connected. You might use this for an interesting effect, such
-as making multiple LEDs light up simultaneously (but with the brightest one following the
-previous pattern).
+**[1-2 points]** - Implement a multi-PCB clock. Use the header pins on the sides of the PCB to 
+chain 2, 4 or 6 of the display PCBs together. Program them such that the rightmost one controls
+the timing of the rest of the PCBs in the chain. Come up with an interesting way to use one pair 
+of buttons to control the full display, for example, to set the time, or to change the intensity.
 
-**[0.25-3 points]** - Implement a clock. Use the inner and outer loop of LEDs to show the minute and 
-hour hand. Do something cool (maybe using PWM?) to show a second hand ticking. Make
-a youtube video!
-
-**[0.5-2 points]** - Create some sort of interesting game involving timing and pushing the
-button. You **must** implement a _long press_ to send the device into LPM4 (like turning off). 
-
-**[1-5 points]** - Implement capacitive touch with the two capacitive touch buttons.
-
-**[0.5-1 points]** - Implement 6, 12, or 24-sided die. A long press should send the device into LPM4. A
-short press should cause a random LED to be illuminated. More points will be given for fun
-"rolling" animations (example - lights spin around or oscillate, and then slow down on the
-number). Use some sort of special button presses to choose the number of sides of the dice.
+**[0.5-2 points]** - Create some sort of interesting game involving the display and the buttons
+button. Optional: implement a _long press_ to send the device into LPM4 (like turning off). 
 
 ---
 
 ### Lab 4-5 Bonus - Make your own PCB and related ideas
 
-__Note that all of these are PCB-related bonuses. You can create a second PCB for Lab 4, 
-submit these designs on your own to SeeedStudio or OSHPark (refer to Piazza post for log in
-information) or submit these designs as part of the midterm or final project board runs.
+__Note that all of these are PCB-related bonuses. You can create a second PCB for Lab 4
+or submit these designs as part of the midterm or final project board runs.
 Alternatively, you could have them manufactured yourself. Some of the bonuses are obviously
 exclusive (i.e., one PCB couldn't do everything); the rest should be considered additive
 (if you make one PCB that satisfies multiple bonuses, you get them all.)__
@@ -112,17 +104,20 @@ exclusive (i.e., one PCB couldn't do everything); the rest should be considered 
 **[0.5 points]** - Design and manufacture a PCB that includes nice features in silkscreen
 and/or soldermask layers.
 
-**[1-3 points]** - Design, manunfacture, populate, and program a board that uses an MSP430 to do
-something interesting. 
+<div class="alert alert-info" role="alert">
+<b>[1-3 points]</b> - Design, manunfacture, populate, and program a board that uses an MSP430 to do
+something interesting. In particular, the PCB design should be in the shape of an Owl. If your design
+is chosen by the judges, it will be printed on a t-shirt for the ECE department!
+</div>
 
 **[1 point]** - Use the 32-pin QFN package of the MSP430 rather than the 20 pin one provided.
 You will have to find or create a proper EAGLE part for this device, which you should add to
 the ELEC327 library and generate a pull-request on github. Manufacture, populate, and
 program the board.
 
-**[1 point]** - Add a button to the Lab 4/5 device to be used to go into LPM4 as in Lab 2.
-You may use a resistor and capacitor to debounce, or implement some sort of software
-debouncing.
+**[1 point]** - Add a button (or capacitive touch pad!) to the Lab 4 device to be used to go 
+into LPM4 as in Lab 2.  You may use a capacitor (and resistor if desired) to debounce, or implement 
+some  sort of software debouncing.
 
 **[1-3 points]** - Add the necessary components to use this
 [thermistor](https://www.digikey.com/product-detail/en/ametherm/DG103395/570-1177-ND/5967491)
