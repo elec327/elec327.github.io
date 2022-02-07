@@ -46,7 +46,8 @@ of the RGB LED so that you can drive all three colors with PWM.
 Your task is to write a program which cycles the LED through the colors of the rainbow. To do this,
 create an array of at least length 32 which contains R, G, and B values. You can generate these
 using Python (e.g., the [matplotlib hsv
-colormap](https://matplotlib.org/stable/tutorials/colors/colormaps.html)). Using the watchdog timer
+colormap](https://matplotlib.org/stable/tutorials/colors/colormaps.html)). Sample code in a Jupyter
+notebook is [here](GenerateColorMap.ipynb). Using the watchdog timer
 in timer mode with the VLO and the `/8192` divider, cycle through the values. You will need to:
   - chose an appropriate PWM frequency
   - configure TimerA0 and TimerA1 to run at this frequency
