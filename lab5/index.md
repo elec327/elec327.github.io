@@ -3,109 +3,81 @@ title: Lab 5
 lab: 5
 layout: default
 group: labs-navigation
-description: Serial Communications (SPI + I2C)
+description: Processing Button Presses
 ---
 
 {::options parse_block_html="true" /}
 
-## Lab #5: Using serial communications (SPI controlling an LED driver)
+## Lab #5: Processing Button Presses and Code Logic
 
-_This lab builds on the PWM and RGB LED work we've done earlier. The goal is
-for you to be comfortable with SPI serial communications. This particular
-device will be one foundation of the Simon game._
+_This lab focuses on thinking about a state machine to process user input._
 
 <div class="alert alert-danger" role="alert">
 #### What should be turned in on Canvas?
 
-  1. Your **commented** `rainbow_spi.c`, `rainbow_spi.h`, and `main.c` files. Specifically, the
-comments should include any instructions that peer graders might need to compile and run your
-code. Please include the proper interrupt compiler directives to ensure that both the TI and
-gcc compilers will work.
+  1. Your **commented** `main.c`, `Numbers.h`, and `Numbers.c` files. Specifically, the comments
+  should include any instructions that peer graders might need to compile and run your code. Please
+  include the proper interrupt compiler directives to ensure that both the TI and gcc compilers will
+  work.
 
   2. Answers to the questions in a text or otherwise broadly-accessible format.
 
-#### The lab will be due March 23, 2021 at 11:59 AM. 
+#### The lab will be due February 18, 2022 at 11:59 PM. 
 
 </div>
 
 <div class="row">
 <div class="col-md-3 col-sm-6 col-xs-6">
 <figure class="figure">
-<a href="APA102-Strip-Front.jpg"> <img src="APA102-Strip-Front.jpg"
+<a href="Counter.jpg"> <img src="Counter.jpg"
     class="figure-img img-fluid rounded" alt="APA102 Strip"></a>
-<figcaption class="figure-caption"><p>APA102 Strip.</p></figcaption>
-</figure>
-<figure class="figure">
-<a href="simon.gif"> <img src="simon.gif"
-    class="figure-img img-fluid rounded" alt="Simon Board"></a>
-<figcaption class="figure-caption"><p>Simon Board with APA102.</p></figcaption>
+<figcaption class="figure-caption"><p>Display PCB showing a 2 digit number.</p></figcaption>
 </figure>
 
 </div>
 <div class="col-md-9 col-sm-12 col-xs-12">
-#### Part 0: Get some APA102C RGB LEDs
+#### Process buttons to make a timer
 
-In the old days, students would have to cut a piece of APA102 strip. **Starting
-in 2021, use the prefabricated Simon PCB, which has 4 LEDs arranged in a circle.**
+A kitchen timer has two important modes - countdown timing mode and set-the-time mode. Your job is
+to implement a seconds counter using your Lab 3 PCBs. Template code is provided to help you out a
+bit: [main.c](https://github.com/ckemere/ELEC327/raw/master/Labs/Lab5/main.c),
+[Numbers.h](https://github.com/ckemere/ELEC327/raw/master/Labs/Lab5/Numbers.h), and
+[Numbers.c](https://github.com/ckemere/ELEC327/raw/master/Labs/Lab5/Numbers.c). You'll want to make
+a new CCS project and add all three of these files.
 
-<div class="alert alert-danger" role="alert">
-(**Not required starting in 2021!!!**) If you are wanting to solder the LED strips here's the
-old instructions. **Take care to leave as much of the perforation intact on the entry side of
-the strip.** (There are directional arrows which point in the direction of signal flow.) Solder
-4 jumper wires to the exposed copper perforation holes as shown in the second picture to the
-left. When looking from the front, the 4 perforations are `VCC, CLK, DATA, GND`. I found that
-the easiest way to solder was to first apply lots of flux and then melt solder onto the
-perforations, making sure that it actually had flowed onto them. Then, I pre-tinned the exposed
-ends of the jumper wires.  Finally, I held the jumper wires in place on each of the
-perforations and applied heat to reflow the solder. Once you get a good connection, you may
-want to apply some epoxy resin over the wires.
-</div>
+##### What has been given you:
+The example code counts upwards from 01 to 99. Pressing one or both of the buttons will pause the
+counting. The `Numbers.*` files implement a module for displaying numbers. It provides two
+functions, `initialize_display()` and `display_number(int number)`. The `main.c` code calls these to
+interface with the display. If you look in the `Numbers.h` header file, you'll see that it tells you
+that the module uses TimerA1 and certain pins in P1 and P2. *This is a good model to follow! It took
+a fair bit of care to make sure that all P1/P2 values were never explicitly set, only modified, so
+that other parts of the system could make use of other pins.* 
 
-#### SPI control
+Looking at the main loop, currently, what happens is that the second timer (which uses the TimerA0
+module) and watchdog timer wake up the loop. The loop checks what the wakeup event was, and if it
+was the second timer, proceeds to update the display. But display update happens only if neither
+button is currently depressed.
 
-Let's review serial communications. Also take a look at the [documentation for the APA102
-device](https://www.adafruit.com/product/2343).
+There is a large comment that specifies your task for the lab. You will replace this with your own
+logic to process button presses. The timer should enter or exit "time-setting-mode" if the user
+pushes both buttons together (the mode change should happen on button release!). In
+"time-setting-mode", button Sw1 should increment the time and SW2 should decrement it. Holding down
+the buttons should result in continuous (but controlled) changing of the values. **Bonus:** Make the
+numbers flash when the device is in "time-setting-mode." In counting mode, the timer should count
+down to zero and then stop.
 
-<ol class="questions">
-<li>What are the two categories that all forms of serial communication can be divided into?
-In which category is the APA102?</li>
-<li>What are two major differences between SPI and I2C serial communications? Which would be
-best for controlling a large string of LEDs?</li>
-<li>The APA102 uses a modified form of SPI to enable control of multiple LEDs without needing a
-separate "chip select" line for each one. Briefly describe how it does this.</li>
-<li>How big (in bytes) is the SPI message required to set the color of a single APA102? How
-big (in bytes) is the SPI message required to set the color of each LED in a chain of 4
-devices?</li>
-</ol>
+**Hint:** You'll need some sort of state machine to keep track of whether you're in (A) timing mode (counting
+down) or (B) in setting mode. What happens inside the while loop will depend on this mode. In
+"time-setting-mode", you want to check whether a single button is depressed and update the display
+accordingly. In the special case where both buttons are depressed at once, you want to wait until
+one of them is released (loop around until true!) and then switch modes. In countdown mode, you need
+to check for both buttons being pressed (temporary state) and then released (switch modes).
+Otherwise, you just decrement the timer value every second until it is zero.
 
-Now let's review the characteristics of the serial control hardware block
-in your MSP430s, the USCI.
-
-<ol class="questions" start="5">
-<li>How many USCI blocks does the g2553 device have? What three protocols can be controlled by
-the USCI?</li>
-<li>On your launchpad, one of the serial modules is used to make a UART connection with the
-host computer (via USB). Which pins and which USCI module are used for this? </li>
-<li>Which pins can be used for the SPI clock and master-out-slave-in (MOSI)
-data?</li>
-</ol>
-
-The Simon PCB has 4 APA102C RGB LEDs connected to a MSP430 using appropriate 
-SPI clock and COPI lines. Three sample files are provide for you: [main.c](main.c),
-[rgb_interface.c](rgb_interface.c), and [rgb_interface.h](rgb_interface.h). These files
-demonstrate configuration of the USCI module so that the SPI clock frequency is within the
-acceptable range for the APA102C, and the data communication clock edges are proper. These
-examples also serve as an example of how to do modular programing. The current interface
-for LED control should be abstracted at least one more level as part of this lab.
-
-Write code to shift the LED colors through a rainbow (starting with red and
-going to blue as in Lab 6). There should be 256 color "temperature" levels. **You should
-modify the API so that the `main.c` function can simply call a `set_temperature(LED1, LED2,
-LED3, LED4)` function. Then configure the logic in `main.c` such that each
-LED should cycle one step behind the previous one so that the rainbow appears to
-move upward. Use the `_16ms` watchdog timer interrupt for timing, and increment
-the temperature by 16 each time step. (**Note that you will need to change from the _250ms
-in the current file!**) 
+**Hint 2:** Remember that the ports are active low. Also remember that if you're checking a for a
+button to be pressed, you're asking whether, e.g.,  `P1IN & 0x80 == 0` or `P1IN & 0x80 == 0x80`
+(tricky because it's not `== 1`!!!). 
 
 
 </div>
