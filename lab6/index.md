@@ -90,6 +90,8 @@ host computer (via USB). Which pins and which USCI module are used for this? </l
 data?</li>
 </ol>
 
+#### For the lab
+
 The Simon PCB has 4 APA102C RGB LEDs connected to a MSP430 using appropriate 
 SPI clock and COPI lines. Three sample files are provide for you: [main.c](main.c),
 [rgb_interface.c](rgb_interface.c), and [rgb_interface.h](rgb_interface.h). These files
@@ -98,15 +100,19 @@ acceptable range for the APA102C, and the data communication clock edges are pro
 examples also serve as an example of how to do modular programing. The current interface
 for LED control should be abstracted at least one more level as part of this lab.
 
-Write code to shift the LED colors through a rainbow (starting with red and
-going to blue as in Lab 6). There should be 256 color "temperature" levels. **You should
-modify the API so that the `main.c` function can simply call a `set_temperature(LED1, LED2,
-LED3, LED4)` function. Then configure the logic in `main.c` such that each
-LED should cycle one step behind the previous one so that the rainbow appears to
-move upward. Use the `_16ms` watchdog timer interrupt for timing, and increment
-the temperature by 16 each time step. (**Note that you will need to change from the _250ms
-in the current file!**) 
+The goal for the lab is to achieve a moving, color cycling effect.
+**You should modify the API so that the `main.c` function can simply call a `set_temperature(LED1, LED2, LED3, LED4)` function**.
+Here, the value of "temperature" should map to a color in the RGB space in a sensible way.
 
+Then configure the logic in `main.c` such that each LED should cycle one step behind the 
+previous one so that the rainbow appears to move upward. Use the `_16ms` watchdog timer interrupt for timing, and increment
+the temperature each time step. (**Note that you will need to change from the _250ms in the current file!**) 
+You should implement at least **32 levels of color**. **Note:** We have noted that different generations
+of the APA102 LEDs have different color order (GRB vs BRG). Make sure that your code works
+for your LEDs. If you have different LEDs on your board, you can fix it programatically
+or by resoldering.
 
-</div>
+**Optional** Once you have finished the rest of the lab, come back to `rgb_interface.c` and
+convert it to use th USCI TX interrupt.
+
 </div>
