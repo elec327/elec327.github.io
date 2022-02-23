@@ -132,7 +132,7 @@ convert it to use th USCI TX interrupt.
 </div>
 <div class="col-md-3 col-sm-6 col-xs-6">
 <figure class="figure">
-<a href="https://en.wikipedia.org/wiki/Color_temperature#/media/File:PlanckianLocus.png"> <img src="https://en.wikipedia.org/wiki/Color_temperature#/media/File:PlanckianLocus.png"
+<a href="https://en.wikipedia.org/wiki/Color_temperature#/media/File:PlanckianLocus.png"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/PlanckianLocus.png/1024px-PlanckianLocus.png"
     class="figure-img img-fluid rounded" alt="Planckian Locus of Color Space"></a>
 <figcaption class="figure-caption"><p>Wikipedia Color Space.</p></figcaption>
 </figure>
