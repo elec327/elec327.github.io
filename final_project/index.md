@@ -40,6 +40,13 @@ You will be graded on:
   concepts we cover in class (low power modes, hardware modules, timers, PWM, etc)? Is your
   code well thought out and well commented? Is your hardware (i.e., PCB/circuit) well designed?
 
+
+#### Lame-O Backup project
+If you are struggling to come up with a project, I have designed and manufactured PCBs that could
+be used to play Tic-Tac-Toe. You may optionally choose to take one of these PCBs and write the code
+for the game on it. 
+
+
 #### Projects from previous years
 
 **2015**
