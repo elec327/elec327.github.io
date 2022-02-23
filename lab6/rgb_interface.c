@@ -10,7 +10,7 @@
 
 
 uint8_t start_frame[] = {0,0,0,0};
-uint8_t end_frame[] = {0,0,0,0};
+uint8_t end_frame[] = {0xFF,0xFF,0xFF,0xFF};
 
 void rgb_init_spi(void){
     //COPI on p1.2, SCLK on p1.4
