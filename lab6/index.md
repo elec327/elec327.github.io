@@ -60,6 +60,7 @@ ends of the jumper wires.  Finally, I held the jumper wires in place on each of 
 perforations and applied heat to reflow the solder. Once you get a good connection, you may
 want to apply some epoxy resin over the wires.
 </div>
+</div>
 
 #### SPI control
 
@@ -90,6 +91,9 @@ host computer (via USB). Which pins and which USCI module are used for this? </l
 data?</li>
 </ol>
 
+
+<div class="row">
+<div class="col-md-9 col-sm-12 col-xs-12">
 #### For the lab
 
 The Simon PCB has 4 APA102C RGB LEDs connected to a MSP430 using appropriate 
@@ -101,18 +105,36 @@ examples also serve as an example of how to do modular programing. The current i
 for LED control should be abstracted at least one more level as part of this lab.
 
 The goal for the lab is to achieve a moving, color cycling effect.
-**You should modify the API so that the `main.c` function can simply call a `set_temperature(LED1, LED2, LED3, LED4)` function**.
+**You should modify the API so that the `main.c` function can simply call a 
+`set_temperature(int LED1_temp, int LED2_temp, int LED3_temp, int LED4_temp)` function**.
 Here, the value of "temperature" should map to a color in the RGB space in a sensible way.
+The wikipedia page on [color temperature](https://en.wikipedia.org/wiki/Color_temperature) includes
+the diagram to the right. The goal is that your function makes a nice 1-dimensional mapping 
+through 3-dimensional color space. (It doesn't have to correspond to temperature in Kelvin
+or wavelength or whatever other logical things might be imagined.)
+_This lab builds on the previous one in the sense that hopefully you already
+figured out some RGB values that make a nice rainbow!_
+**Special Case:** The value 0 of temperature should mean the LED is off!
 
 Then configure the logic in `main.c` such that each LED should cycle one step behind the 
-previous one so that the rainbow appears to move upward. Use the `_16ms` watchdog timer interrupt for timing, and increment
-the temperature each time step. (**Note that you will need to change from the _250ms in the current file!**) 
-You should implement at least **32 levels of color**. **Note:** We have noted that different generations
+previous one so that the rainbow appears to move upward. Use the `_250ms` watchdog timer interrupt for timing, and increment
+the temperature each time step. (This is already set in the current file!)
+To accentuate the effect of rotating colors, make one LED off (i.e., temperature 0) each time step, 
+and have the LED which is off shift around the circle.
+You should implement at least **32 levels of color**. **BUT**, the color changes should be distinctly visible. 
+ **Note:** We have noted that different generations
 of the APA102 LEDs have different color order (GRB vs BRG). Make sure that your code works
 for your LEDs. If you have different LEDs on your board, you can fix it programatically
 or by resoldering.
 
 **Optional** Once you have finished the rest of the lab, come back to `rgb_interface.c` and
 convert it to use th USCI TX interrupt.
-
+</div>
+<div class="col-md-3 col-sm-6 col-xs-6">
+<figure class="figure">
+<a href="https://en.wikipedia.org/wiki/Color_temperature#/media/File:PlanckianLocus.png"> <img src="https://en.wikipedia.org/wiki/Color_temperature#/media/File:PlanckianLocus.png"
+    class="figure-img img-fluid rounded" alt="Planckian Locus of Color Space"></a>
+<figcaption class="figure-caption"><p>Wikipedia Color Space.</p></figcaption>
+</figure>
+</div>
 </div>
