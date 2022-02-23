@@ -26,7 +26,7 @@ description: Piezo buzzer and Simon PCB
   code (which will allow you to highlight anything special in your code).
 </div>
 
-**This lab will be due March 30, 2021 at noon. **
+**This lab will be due March 4, 2021 at 5 pm. **
 
 #### Part 1: Playing tones via PWM
 
