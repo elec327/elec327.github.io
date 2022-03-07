@@ -51,7 +51,7 @@ description: Midterm Project
   4. Gameplay-MisplayingError (does it game over if the wrong button is pressed?)
   5. Gameplay-Win (does it do something special when the player wins?)
   6. Gameplay-Random (does it play a different sequence each time, including after power cycles?)
-  7. Style-Animations (are there animations for start/win and lose/game-over?)
+  7. Style-Animations (are there mustic/light animations for start/win and lose/game-over?)
   8. Style-SoundLight (do lights and sounds work well together and convey information?)
   9. Is it easy to change the length of a sequence required to win?
   10. Well-commented, logical code architecture (does the architecture make sense? are there good
