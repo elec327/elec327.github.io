@@ -103,10 +103,9 @@ Details:
   - You should make the maximum sequence size adjustable. For your video, sequences of length 5
     are appropriate.
 
-Here's a video from Vitor Azevedo Andriotti (Spring 2015) showing a Simon board in action.
-Note that in this video, the buttons are not synchronized with the LED/sound feedback.
+Here's a nice video from Joshua Harper (Spring 2022) showing a Simon board in action.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nrsBVdJFrKc"
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=6odXYgCBaWI"
 frameborder="0" allowfullscreen></iframe>
 
 Physical information is given in the
