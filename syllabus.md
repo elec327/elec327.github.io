@@ -17,16 +17,18 @@ Office Hours: After class or (please verify via email) many mornings between 8:3
 House (w/ free coffee!)
 caleb.kemere@rice.edu
 
-**Grader/TA:**
+**Teaching Assistants:**
+  - Matthew Parker ([mcp12](mailto:Matthew.C.Parker@rice.edu))
+  - Joshua Woods ([jw145](joshua.woods@rice.edu))
 
 **Lab Assistants:**
   - Mac Carr ([mac28](mailto:mac28@rice.edu))
 
-**Lab Office Hours:**
-  - See [Canvas](https://canvas.rice.edu/courses/47062)
+**Canvas link:**
+  - [Canvas](https://canvas.rice.edu/courses/57123)
   
  **Lab Communication:**
-  - Sign up for elec327.slack.com
+  - Sign up for elec327.slack.com (**Create an account** in the top right corner of the sign in page!)
 
 Additional Lab office hours may be requested on Slack or by email
 
@@ -35,13 +37,11 @@ Additional Lab office hours may be requested on Slack or by email
 
 ---
 
-**Class Hours:** MW 2-3:15 PM BRC285/FE&P 118
-Through the first 2 weeks of the semester, lectures will be dual mode (Zoom+in person optional). We
-will figure out a schedule for the lab that ensures minimal contact. Students are expected to spend
-significant out-of-class time (~10 hours per week) working on lab assignments.
+**Class Hours:** MW 2-3:15 PM BRC284/FE&P 122B
+Students are expected to spend significant out-of-class time (~10 hours per week) working on lab assignments.
 
 **Lab Help Sessions:** See Lab Assistant hours or by request on Slack or through email  
-Help sessions held in lab room FE&P 118
+Help sessions held in lab room FE&P 122B
 Lab Access Keypad Code: .--- ----. ....- ---..#
 
 ---

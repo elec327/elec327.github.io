@@ -7,7 +7,7 @@ group: navigation
 
 {::options parse_block_html="true" /}
 
-<H2>ELEC 327 - Digital Systems Laboratory (2022)</H2>
+<H2>ELEC 327 - Digital Systems Laboratory (2022)</H3>
 
 ---
 
@@ -26,15 +26,17 @@ understand how application-specific blocks enable modern commercial devices._
 
 **Instructor** -- Caleb Kemere (caleb.kemere@rice.edu)
 
-**Location** -- FE&P 118 (Lab) or BRC 285 (Some Lectures)
+**Location** -- FE&P 122B (Lab) or BRC 284 (Some Lectures)
 
 **Time** -- Mondays & Wednesdays 2-3:15 PM
 
-**Prerequisites** -- ELEC220
+**Prerequisites** -- ELEC220, ELEC326, COMP140
 
 **Syllabus & Lab Office Hours** -- [here](/syllabus.html)
 
 **Lectures:** 
+[link to Dropbox folder for 2023](https://www.dropbox.com/sh/cdhfke2z5ei7yox/AAAH6RoPw1t7u4mZVjz3Dm_Ca?dl=0)
+
 [link to Dropbox folder for 2022](https://www.dropbox.com/sh/fm5q04qsg7ndzdu/AAB1uFuNtMVNyuNYrUtYK4SKa?dl=0)
 
 [link to Dropbox folder for 2021](https://www.dropbox.com/sh/gpzajdxxvakqnit/AADe0Unaett7n7GcfhxWl_R-a?dl=0)
