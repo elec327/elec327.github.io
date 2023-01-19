@@ -4,7 +4,7 @@ title: Syllabus
 group: navigation
 ---
 
-## ELEC 327: Digital Systems Laboratory (Spring 2022)
+## ELEC 327: Digital Systems Laboratory (Spring 2023)
 
 ### Syllabus
 
@@ -37,7 +37,7 @@ Additional Lab office hours may be requested on Slack or by email
 
 ---
 
-**Class Hours:** MW 2-3:15 PM BRC284/FE&P 122B
+**Class Hours:** MW 2-3:15 PM SST (Space Science)106/FE&P 122B
 Students are expected to spend significant out-of-class time (~10 hours per week) working on lab assignments.
 
 **Lab Help Sessions:** See Lab Assistant hours or by request on Slack or through email  
@@ -84,13 +84,14 @@ including printed-circuit board design and assembly.
 
 **Prerequisites:** ELEC 220. Also useful are 240 and 241.
 
-**Grading:** Grades will be based on: approximately five lab modules (25%), a
-midterm project (20% each), a final project (30%), a skills matrix/class participation/in-class
-quizzes (25%). A number of extra credit options will be available throughout
-the semester for a maximum of 30% of the final grade. Late
-assignments may be accepted (with penalty), except for printed circuit board
-orders , where late submissions may not be accepted. Students wishing to submit
-late assignments should contact the instructor prior to the due date.
+**Grading:** Grades will be based on: _completion_ of approximately five lab
+modules (25%), a midterm project (20%), a final project (30%), a skills
+matrix/class participation/in-class quizzes (25%). A number of extra credit
+options will be available throughout the semester for a maximum of 30% of the
+final grade. Late assignments may be accepted (with penalty), except for
+printed circuit board orders , where late submissions may not be accepted.
+Students wishing to submit late assignments should contact the instructor prior
+to the due date.
 
 **Honor code:**  You are encouraged to work **with** other students in ELEC327 on the labs. Each
 student should turn in their own lab writeup (except for midterm and final project, which
@@ -100,7 +101,7 @@ this in your returned assignments.
 
 **Required Textbooks and Supplies:**
 
-No textbook is required. Students will be provided with one MSP430-G2553
+No textbook is required. Students will be provided with one ~~MSP430-G2553~~ MSP430-FR2433
 Launchpad. A large solderless breadboard may be useful for prototyping. Prototyping jumpers 
 will be available in lab. A larger solderless breadboard can be purchased,
 for example, on Amazon for $30-40.
