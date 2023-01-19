@@ -84,7 +84,7 @@ including printed-circuit board design and assembly.
 
 **Prerequisites:** ELEC 220. Also useful are 240 and 241.
 
-**Grading:** Grades will be based on: _completion_ of approximately five lab
+**Grading:** Grades will be based on: __completion._ of approximately five lab
 modules (25%), a midterm project (20%), a final project (30%), a skills
 matrix/class participation/in-class quizzes (25%). A number of extra credit
 options will be available throughout the semester for a maximum of 30% of the
@@ -101,7 +101,7 @@ this in your returned assignments.
 
 **Required Textbooks and Supplies:**
 
-No textbook is required. Students will be provided with one ~~MSP430-G2553~~ MSP430-FR2433
+No textbook is required. Students will be provided with one MSP430-G2553 or MSP430-FR2433
 Launchpad. A large solderless breadboard may be useful for prototyping. Prototyping jumpers 
 will be available in lab. A larger solderless breadboard can be purchased,
 for example, on Amazon for $30-40.
