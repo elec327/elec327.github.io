@@ -27,7 +27,7 @@ description: Morse Code with Timers
 
 </div>
 
-#### Due Date: __Wednesday, January 24, 2022 at 3:30__
+#### Due Date: __Monday, January 30, 2022 at 3:30__
 
 
 #### Part 0: Installation (will do in class!)
@@ -175,7 +175,7 @@ required to demonstrate your code to one of the course staff. You should be prep
 your code running on a breadboard, as well as changing the Morse code message, reprogramming,
 and showing the subsequent functioning. 
 
-#### Questions (10 pts each):
+#### Questions (**not graded/for reference**):
 
 Please reference your answers to one of the authoritative sources.
 
@@ -200,5 +200,5 @@ logically high? On the MSP430G2553, what is the maximum current any one pin can 
 should use in series with the LED? If you wanted the LED to be brighter, should you use a larger or
 smaller resistor?</li> </ol>
 
-**Upload your answers and your code to Canvas. Make sure to demo functionality by the deadline.**
+**Upload your code to Canvas. You will demo functionality in class on Monday.**
 
