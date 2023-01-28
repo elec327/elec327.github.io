@@ -1,41 +1,90 @@
-#include <msp430.h>
 
-int main(void)
-{
-  int col = 0;
-  int row = 0;
-  int i;
+#include <msp430.h>				
 
-  BCSCTL3 |= LFXT1S_2;                    // ACLK = VLO
-  WDTCTL = WDTPW + WDTHOLD;               // Stop WDT
-  TACTL = TASSEL_1 + MC_1;                // ACLK, upmode
-  CCR0 = 1000;                            // Interrupt should happen every ~12 kHz / 1000
-  CCTL0 = CCIE;                           // CCR0 interrupt enabled
+// For pixels to be turned on, the column value has
+//   to be 1, and the row has to be zero. So a blank
+//   display looks like this:
+char blank_screen[5] = { 0x7F, 0x7F, 0x7F, 0x7F, 0x7F};
 
-  // Rows are P1.0 through P1.6
-  // Columns are P2.0 through p2.4
 
-  P1DIR = 0x7F;                          // Set rows as output
-  P2DIR = 0x1F;                          // Set columns as output
+// TODO!!!!
+// You need to define your font for the numbers 0-9
+char zero[5], one[5], two[5], three[5], four[5], five[5],
+     six[5], seven[5], eight[5], nine[5];
+char **numbers;
 
-  // Based on schematic, to light up, a column has to be high (1) and a row low (0).
-  P1OUT = 0;                             // Default rows to on (low)
-  P2OUT = 0;                             // Default columns to off (low)
+char *current_character;
 
-  while(1)
-  {
-    col = 0x01; // start with the first column
-    for (i = 0; i < 5; i++) {
-        P2OUT = col;
-        //P1OUT = row; // row = 0 -> all rows on
-        P1OUT = ~col; // fun effect
-        col = col << 1; // move to the next column
-        __bis_SR_register(LPM3_bits + GIE);     // Enter LPM3
-    }
-  }
+int current_column = 0;
+
+// TODO!!!!
+void refresh(void) {
+    // We'll write code in class to implement this function
+    // Iterate through columns
+    //     P1OUT = current_character[column]
 }
 
-// Timer A0 interrupt service routine
+void update_display(int value) {
+    current_character = numbers[value];
+}
+
+
+void main(void)
+{
+    BCSCTL3 |= LFXT1S_2;         // ACLK = VLO
+
+    // Configure Watchdog Timer to give us an interrupt
+    // The watchdog timer is 16 bits, and has limited configurability
+    // Set interval timer mode, reset counter, drive it with ACLK
+    //  the interval is set by WDTIS1 + WDTIS0 to be 64 clock ticks
+    //  this should be plenty fast for display refresh.
+    WDTCTL = WDTPW + WDTTMSEL + WDTCNTCL +WDTSSEL + (WDTIS1 + WDTIS0);
+    IE1 |= WDTIE;                // Enable WDT interrupt
+
+
+    // Configure Timer A0 to give us an interrupt being driven by ACLK
+    TA0CTL = TASSEL_1 + MC_1;  // ACLK, upmode
+    // TODO!!!!
+    TA0CCR0 = 1000;     // You'll need to set this to achieve 1 second interrupts!
+    TA0CCTL0 = CCIE;    // CCR0 interrupt enabled
+
+
+    P1DIR |= 0x7F;	// configure P1 as output
+    P2DIR |= 0x1F;  // configure P2 as output
+
+    P1OUT = 0x7F;   // Rows will default to high
+    P2OUT = 0x1F;   // Columns will default to high
+
+    numbers[0] = zero;
+    numbers[1] = one;
+    numbers[2] = two;
+    numbers[3] = three;
+    numbers[4] = four;
+    numbers[5] = five;
+    numbers[6] = six;
+    numbers[7] = seven;
+    numbers[8] = eight;
+    numbers[9] = nine;
+
+
+	int value = 0;
+
+	__enable_interrupt();   // equivalent to __bis_SR_register(GIE)
+
+	while(1)
+	{
+	    __low_power_mode_3() // equivalent to __bis_SR_register(LPM3_bits);     // Enter LPM3
+
+	    // This loop executes once per second as controlled by TA0
+        update_display(value);
+        value = value + 1;
+        if (value == 10)
+            value = 0;
+
+	}
+}
+
+
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector=TIMER0_A0_VECTOR
 __interrupt void Timer_A (void)
@@ -45,5 +94,22 @@ void __attribute__ ((interrupt(TIMER0_A0_VECTOR))) Timer_A (void)
 #error Compiler not supported!
 #endif
 {
-  __bic_SR_register_on_exit(LPM3_bits);
+    __low_power_mode_off_on_exit(); // equivalent to __bic_SR_register_on_exit(LPM3_bits);
 }
+
+
+
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+#pragma vector=WDT_VECTOR
+__interrupt void watchdog_timer (void)
+#elif defined(__GNUC__)
+void __attribute__ ((interrupt(WDT_VECTOR))) watchdog_timer (void)
+#else
+#error Compiler not supported!
+#endif
+{
+    refresh();
+    // ** don't ** leave low power here
+}
+
+
