@@ -4,7 +4,7 @@ title: Bonus
 group: navigation
 ---
 
-## ELEC 327: Digital Systems Laboratory (Spring 2018) Bonus Projects
+## ELEC 327: Digital Systems Laboratory (Spring 2023) Bonus Projects
 
 Bonus projects should be submitted via email, and critically, with a Piazza post containing a
 YouTube video demostrating the projet. This way your fellow classmates will see what bonus
@@ -86,6 +86,10 @@ of buttons to control the full display, for example, to set the time, or to chan
 
 **[0.5-2 points]** - Create some sort of interesting game involving the display and the buttons
 button. Optional: implement a _long press_ to send the device into LPM4 (like turning off). 
+
+**[0.25 points]** - Demonstrate your soldering skill by removing the 7 330 ohm resistors that
+limit the LED current and replace them with smaller 100 ohm resistors to make the display
+brighter. (Note that they are 0402 size!)
 
 ---
 
