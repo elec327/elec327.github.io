@@ -21,7 +21,12 @@ int current_column = 0;
 void refresh(void) {
     // We'll write code in class to implement this function
     // Iterate through columns
-    //     P1OUT = current_character[column]
+    // P2OUT = 0x01 << current_column;
+    // P1OUT = current_character[current_column++];
+
+    // NOTE - outputs are inverted. You could make your life easier by doing the inversion here!
+
+    // wrap current column appropriately
 }
 
 void update_display(int value) {
@@ -32,14 +37,7 @@ void update_display(int value) {
 void main(void)
 {
     BCSCTL3 |= LFXT1S_2;         // ACLK = VLO
-
-    // Configure Watchdog Timer to give us an interrupt
-    // The watchdog timer is 16 bits, and has limited configurability
-    // Set interval timer mode, reset counter, drive it with ACLK
-    //  the interval is set by WDTIS1 + WDTIS0 to be 64 clock ticks
-    //  this should be plenty fast for display refresh.
-    WDTCTL = WDTPW + WDTTMSEL + WDTCNTCL +WDTSSEL + (WDTIS1 + WDTIS0);
-    IE1 |= WDTIE;                // Enable WDT interrupt
+    WDTCTL = WDTPW | WDTHOLD;   // Stop WDT
 
 
     // Configure Timer A0 to give us an interrupt being driven by ACLK
@@ -48,6 +46,10 @@ void main(void)
     TA0CCR0 = 1000;     // You'll need to set this to achieve 1 second interrupts!
     TA0CCTL0 = CCIE;    // CCR0 interrupt enabled
 
+    TA1CTL = TASSEL_1 + MC_1;  // ACLK, upmode
+//     TODO!!!!
+    TA1CCR0 = 60;     // You'll need to set this to for refresh!
+    TA1CCTL0 = CCIE;    // CCR0 interrupt enabled
 
     P1DIR |= 0x7F;	// configure P1 as output
     P2DIR |= 0x1F;  // configure P2 as output
@@ -66,6 +68,7 @@ void main(void)
     numbers[8] = eight;
     numbers[9] = nine;
 
+    current_character = numbers[0];
 
 	int value = 0;
 
@@ -73,18 +76,32 @@ void main(void)
 
 	while(1)
 	{
-	    __low_power_mode_3() // equivalent to __bis_SR_register(LPM3_bits);     // Enter LPM3
-
 	    // This loop executes once per second as controlled by TA0
-        update_display(value);
-        value = value + 1;
-        if (value == 10)
-            value = 0;
+            update_display(value);
+            value = value + 1;
+            if (value == 10)
+                value = 0;
+
+	    __low_power_mode_3() // equivalent to __bis_SR_register(LPM3_bits);     // Enter LPM3
 
 	}
 }
 
 
+// Timer 1 interrupt service routine (refresh)
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+#pragma vector=TIMER1_A0_VECTOR
+__interrupt void Timer_A (void)
+#elif defined(__GNUC__)
+void __attribute__ ((interrupt(TIMER1_A0_VECTOR))) Timer_A (void)
+#else
+#error Compiler not supported!
+#endif
+{
+    refresh();
+}
+
+// Timer 0 interrupt service routine (count)
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector=TIMER0_A0_VECTOR
 __interrupt void Timer_A (void)
@@ -99,17 +116,5 @@ void __attribute__ ((interrupt(TIMER0_A0_VECTOR))) Timer_A (void)
 
 
 
-#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-#pragma vector=WDT_VECTOR
-__interrupt void watchdog_timer (void)
-#elif defined(__GNUC__)
-void __attribute__ ((interrupt(WDT_VECTOR))) watchdog_timer (void)
-#else
-#error Compiler not supported!
-#endif
-{
-    refresh();
-    // ** don't ** leave low power here
-}
 
 
