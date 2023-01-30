@@ -11,7 +11,8 @@ char blank_screen[5] = { 0x7F, 0x7F, 0x7F, 0x7F, 0x7F};
 // You need to define your font for the numbers 0-9
 char zero[5], one[5], two[5], three[5], four[5], five[5],
      six[5], seven[5], eight[5], nine[5];
-char **numbers;
+
+char *numbers[10];
 
 char *current_character;
 
