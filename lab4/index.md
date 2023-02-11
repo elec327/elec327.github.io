@@ -65,7 +65,7 @@ We will solve this in class and then have a quiz about it!
 Some sample code for the launchpad that generates a heart-beat effect using PWM of the red channel
 of the RGB led and the WDT for timing is in [template_code.c](template_code.c).
 
-#### Designing a "Which Way Is Up?" PCB
+#### Designing a RGB Trinket PCB
 
 <!--
 By popular demand, this lab will feature a BGA-mounted accelerometer. The part we will use can be
@@ -82,16 +82,17 @@ You will likely find useful to clone the [ELEC327 reposistory](https://github.co
 GitHub (if you have not done so yet).
 
 Your task is to design a PCB with Eagle which includes the following parts from the ELEC327 library:
-   - A MSP430FR2411
+   - A [MSP430FR2411](https://github.com/ckemere/ELEC327/raw/master/Labs/Lab4/Datasheets/msp430fr2422.pdf)
    - A decoupling capacitor in 1206 package
    - A 1632 battery holder
-   - One surface mount push button (SWITCH_SPST, SMD variant)
-   - One RGB LED (IN-S128TATRGB)
+   - One surface mount push button (TACTILE-6.2MM, which has slightly larger pads)
+   - One RGB LED [IN-S128TATRGB](https://github.com/ckemere/ELEC327/raw/master/Labs/Lab4/Datasheets/IN-S128TATRGB_V1.0.pdf)
    - One header for programming (1x04-LOCK)
    - 4 1206 resistors (3 for current limiting the LED and one connected between _RST and VCC)
 
+<div class="alert alert-info" role="alert">
 Connect them properly so that the RGB LED can be driven by TA0.1, TA0.2, and TA1.1.
-
+</div>
 
 Eagle comes with a good number of parts, but not all that you need. You can either
 create a personal library for parts you make or add them to the ELEC327 library. Once you have
@@ -111,7 +112,6 @@ github repository.
 After you place your components and route traces, please put your initials or some other
 identifying mark on the board **on either the top or bottom copper layer** (since this is a
 barebones process, there is no silkscreen).{: style="text-decoration:underline"}
-
 
 When you're finished, run the CAM job in `PCBs/AdvancedBarebones.cam` to create the necessary
 files for manufacturing. We will submit a panel of the class's designs for manufacturing, and
