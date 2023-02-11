@@ -10,7 +10,7 @@ description: PCB Design, full stop
 {::options parse_block_html="true" /}
 
 
-## Lab #4: Accelerometer PCB Design and PWM
+## Lab #4: RGB LED PCB Design and PWM
 
 <div class="alert alert-info" role="alert">
 #### There are two goals for this assignment:
@@ -27,43 +27,47 @@ description: PCB Design, full stop
   2. The manufacturing files - `your-file-name.GBL` (bottom layer), `your-file-name.GML` (board
   outline), `your-file-name.GTL` (top layer) and `your-file-name.TXT` (drill locations).
   **Don't zip, compress, or otherwise combine these files!** (_Canvas_)
-  3. The code for your rainbow PWM program.
 
 #### What should be demoed live?
   1. Your EAGLE CAD design, if desired.
 
-#### Files are due Friday, February 11 at 3:30 PM.
+#### Files are due Wednesday, February 15 at midnight.
 
 </div>
 
-#### Hardware PWM
+#### Hardware PWM Quiz preview
 
-The Launchpad MSP430 has a built in RGB LED. It is connected to pins P2.3, P2.1, and 2.5. As we
-discussed in class, these correspond to the outputs for TA0.0, TA0.1, and TA0.2 (not respectively),
-but TA0.0 can't be used for PWM!!! Use a long jumper wire to connect TA1.1 or TA1.2 to the channel
-of the RGB LED so that you can drive all three colors with PWM.
+The Launchpad MSP430 FR2433 does not have a built in RGB LED, though it does have two regular LEDs, which
+are connected to pins P1.0 and P1.1. As we discussed in class, these correspond to the outputs for TA0.1, 
+and TA0.2.  TA0.0 can't be used for PWM (which is why its presumably not broken out)!!! 
 
-Your task is to write a program which cycles the LED through the colors of the rainbow. To do this,
-create an array of at least length 32 which contains R, G, and B values. You can generate these
-using Python (e.g., the [matplotlib hsv
+In class, we will write a program which cycles one LED in brightness then the other.
+To do this, create an array of at least length 32 which contains LED1 and LED2 values. 
+
+<!---
+You can generate these using Python (e.g., the [matplotlib hsv
 colormap](https://matplotlib.org/stable/tutorials/colors/colormaps.html)). Sample code in a Jupyter
-notebook is [here](GenerateColorMap.ipynb). Using the watchdog timer
+notebook is [here](GenerateColorMap.ipynb). 
+--->
+
+Using the watchdog timer
 in timer mode with the VLO and the `/8192` divider, cycle through the values. You will need to:
   - chose an appropriate PWM frequency
-  - configure TimerA0 and TimerA1 to run at this frequency
-  - configure the appropriate output pins using the P2SEL (or potentially P1SEL the TA0.1 or TA0.2 jumper pin) 
-  - configure the appropriate output mode in the TAxCCLx registers
-  - change the values of TAxCCR1 or TAxCCR2 based on the values in your array
+  - configure TimerA0 to run at this frequency
+  - configure the appropriate output pins using the P1SEL
+  - configure the appropriate output mode in the TA0CCLx registers
+  - change the values of TA0CCR1 or T0xCCR2 based on the values in your array
 
 You do not need to use LPM3 in this lab!
 
-Once your code works to your satisfaction, save it as `rainbow.c` and turn it in on Canvas.
+We will solve this in class and then have a quiz about it!
 
 Some sample code for the launchpad that generates a heart-beat effect using PWM of the red channel
 of the RGB led and the WDT for timing is in [template_code.c](template_code.c).
 
 #### Designing a "Which Way Is Up?" PCB
 
+<!--
 By popular demand, this lab will feature a BGA-mounted accelerometer. The part we will use can be
 found in the Digikey catalog:
 [MXC4005XC](https://www.digikey.com/en/products/detail/memsic-inc/MXC4005XC/10322569), and the data
@@ -73,25 +77,28 @@ interface modules handles I2C, USCI B0. The pins which need to be connected are 
 clock) and P1.7 (SDA - I2C data). The I2C bus requires pull-up resistors, which have been included
 in the schematic for you.
 
-Your task is to design a PCB with Eagle which includes the parts in the schematic - the MSP430, a
-battery holder, 4 LEDs, and various resistors - **AS WELL AS the MXC4005XC**, for which you have to
-create a library part (both a schematic symbol and library part). The goal is to lay out a PCB with
-the LEDs arranged in a plus-sign configuration. (You will program the device so that the LED that is
-pointing down always lights up.)
-
-
+-->
 You will likely find useful to clone the [ELEC327 reposistory](https://github.com/ckemere/ELEC327) from
 GitHub (if you have not done so yet).
+
+Your task is to design a PCB with Eagle which includes the following parts from the ELEC327 library:
+   - A MSP430FR2411
+   - A decoupling capacitor in 1206 package
+   - A 1632 battery holder
+   - One surface mount push button (SWITCH_SPST, SMD variant)
+   - One RGB LED (IN-S128TATRGB)
+   - One header for programming (1x04-LOCK)
+   - 4 1206 resistors (3 for current limiting the LED and one connected between _RST and VCC)
+
+Connect them properly so that the RGB LED can be driven by TA0.1, TA0.2, and TA1.1.
 
 
 Eagle comes with a good number of parts, but not all that you need. You can either
 create a personal library for parts you make or add them to the ELEC327 library. Once you have
 created/opened the library, start with the "symbol". Make sure to adequately labels the various
-connections.  Note that Digikey may provide an Eagle part design for the deisgn using an "Ultralibrarian"
+connections.  For reference, note that Digikey may provide an Eagle part design for the deisgn using an "Ultralibrarian"
 script or a SnapEDA file. Feel free to make use of these, but you MUST DOUBLE CHECK the
-design!!!!
-
-Once you've made the accelerometer part, add it to the schematic and connect it to the MSP430. 
+design!!!! You shouldn't need to do this for this lab.
 
 Next, then create a `.brd` file and route all of the connections. Keep in mind that the
 battery package is solid and plastic, so you should not place any parts on top of it. One
