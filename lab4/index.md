@@ -92,7 +92,7 @@ Your task is to design a PCB with Eagle which includes the following parts from 
 
 <div class="alert alert-info" role="alert">
  - Connect them properly so that the RGB LED can be driven by TA0.1, TA0.2, and TA1.1.
- - Connect one side of the switch to either VCC or GND, and connect the other end to an unused GPIO pin.
+ - Connect one side of the switch to VCC, and connect the other end to an unused GPIO pin.
 </div>
 
 Eagle comes with a good number of parts, but not all that you need. You can either
