@@ -20,9 +20,7 @@ _This lab focuses on thinking about a state machine to process user input._
   include the proper interrupt compiler directives to ensure that both the TI and gcc compilers will
   work.
 
-  2. Answers to the questions in a text or otherwise broadly-accessible format.
-
-#### The lab will be due February 18, 2022 at 11:59 PM. 
+#### The lab will be due February 22, 2023 at 1:59 PM. 
 
 </div>
 
