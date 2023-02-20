@@ -1,6 +1,6 @@
 ---
-title: Lab 7
-lab: 7
+title: Lab 6
+lab: 6
 layout: default
 group: labs-navigation
 description: Piezo buzzer and Simon PCB
@@ -26,7 +26,7 @@ description: Piezo buzzer and Simon PCB
   code (which will allow you to highlight anything special in your code).
 </div>
 
-**This lab will be due March 4, 2021 at 5 pm. **
+**This lab will be due March 1, 2023 at 2 pm. **
 
 #### Part 1: Playing tones via PWM
 
