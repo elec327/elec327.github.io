@@ -1,95 +1,140 @@
 ---
-title: Lab 6
-lab: 6
+title: Lab 7
+lab: 7
 layout: default
 group: labs-navigation
-description: Piezo buzzer and Simon PCB
+description: Serial Communications (SPI + I2C)
 ---
 
 {::options parse_block_html="true" /}
 
-## Lab #7: Piezo Buzzers with PWM (and the Simon PCB)
+## Lab #6: Using serial communications (SPI controlling an LED driver)
 
-<div class="alert alert-info" role="alert">
-#### **There are three goals for this lab:**
-  - To understand how PWM will affect sound production.
-</div>
+_This lab builds on the PWM and RGB LED work we've done earlier. The goal is
+for you to be comfortable with SPI serial communications. This particular
+device will be one foundation of the Simon game._
 
 <div class="alert alert-danger" role="alert">
-#### **What should you turn in?**
-  1. Turn in your code in at least two .c files (and headers as needed) and answered questions. (_Canvas_)
+#### What should be turned in on Canvas?
 
-#### **What should be demoed?**
-  1. If you choose to use the Simon-Giveaway board, the graders can run it on their boards.
+  1. Your **commented** `rainbow_spi.c`, `rainbow_spi.h`, and `main.c` files. Specifically, the
+comments should include any instructions that peer graders might need to compile and run your
+code. Please include the proper interrupt compiler directives to ensure that both the TI and
+gcc compilers will work.
 
-  2. Alternatively, you may choose to make a video showing functionality and describing your
-  code (which will allow you to highlight anything special in your code).
+  2. Answers to the questions in a text or otherwise broadly-accessible format.
+
+#### The lab will be due March 23, 2021 at 11:59 AM. 
+
 </div>
 
-**This lab will be due March 1, 2023 at 2 pm. **
+<div class="row">
+<div class="col-md-3 col-sm-6 col-xs-6">
+<figure class="figure">
+<a href="APA102-Strip-Front.jpg"> <img src="APA102-Strip-Front.jpg"
+    class="figure-img img-fluid rounded" alt="APA102 Strip"></a>
+<figcaption class="figure-caption"><p>APA102 Strip.</p></figcaption>
+</figure>
+<figure class="figure">
+<a href="simon.gif"> <img src="simon.gif"
+    class="figure-img img-fluid rounded" alt="Simon Board"></a>
+<figcaption class="figure-caption"><p>Simon Board with APA102.</p></figcaption>
+</figure>
 
-#### Part 1: Playing tones via PWM
+</div>
+<div class="col-md-9 col-sm-12 col-xs-12">
+#### Part 0: Get some APA102C RGB LEDs
 
-For the Simon midterm project, you'll need to generate sounds appropriate for button presses,
-success, and failure. There are piezo buzzers in the lab that can be connected to your
-launchpad, or you can (wisely) use the Simon-Giveaway board. If you choose to use one from lab,
-wire a piezo buzzer to a PWM-capable pin. Your goal is to create a set of functions (i.e., a
-library) that will allow you to play arbitrary sequences of tones at potentially different
-speeds. A piezo buzzer produces sounds by transducing electrical fields into motion using a
-piezoelectric material. They are good for higher frequencies, but not those in the lower part
-of our hearing spectrum. Begin by experimenting with PWM and the buzzer. Set your PWM carrier
-frequency to 440 Hz (an "A").
+In the old days, students would have to cut a piece of APA102 strip. **Starting
+in 2021, use the prefabricated Simon PCB, which has 4 LEDs arranged in a circle.**
 
-  1. What happens as you vary the duty cycle from 0 to 50%? What about from 50% to 100%?
-  2.  Now build a timer module ISR to change the frequency every other cycle from 440 to 880 Hz
-  and back. How does this sound? Can you explain?
-  {: class="questions"}
+<div class="alert alert-danger" role="alert">
+(**Not required starting in 2021!!!**) If you are wanting to solder the LED strips here's the
+old instructions. **Take care to leave as much of the perforation intact on the entry side of
+the strip.** (There are directional arrows which point in the direction of signal flow.) Solder
+4 jumper wires to the exposed copper perforation holes as shown in the second picture to the
+left. When looking from the front, the 4 perforations are `VCC, CLK, DATA, GND`. I found that
+the easiest way to solder was to first apply lots of flux and then melt solder onto the
+perforations, making sure that it actually had flowed onto them. Then, I pre-tinned the exposed
+ends of the jumper wires.  Finally, I held the jumper wires in place on each of the
+perforations and applied heat to reflow the solder. Once you get a good connection, you may
+want to apply some epoxy resin over the wires.
+</div>
+</div>
 
-Now, modify the code you built for question 2 to be general. The way that I
-think of music is as a series of notes, each with a corresponding duration. So a
-function that would play a song would have a prototype that looks like `void
-PlaySound(int *Notes, int* Durations, int Length)` (remember that arrays don't
-have a built in length in C!). Alternatively, one could think of the music as
-having a fundamental duration (e.g., one eighth note), and the song would be
-specified as a series of eighth notes at different frequencies. Then, the
-prototype would look like `void PlaySound(int *Notes, int Length, int
-Duration)`, where the `Duration` parameter is the length in time of the
-fundamental unit. While the `Notes` in either case are probably properly thought
-of as frequencies, you can choose to specify them as periods for runtime
-efficiency. You should implement one of these two prototypes, or, if you have a
-very good (and well-commented reason), another one.
+#### SPI control
 
-A few notes:
-  - Advanced musicians will recognize that in a lot of music there are tiny
-    implicit rests between individual notes that allow, for e.g., two quarter
-    notes versus an individual half-note to have different sounds. Implement
-    this for extra credit.
-  - Because each tone has a different frequency, keeping track of how long each
-    has played is a slightly nontrivial task (though you may be able to
-    figure out a simple way of accumulating periods properly to account for
-    their different lengths). Alternatively, you can use the second timer module
-    to help with note duration.
-  - `PlaySound()` should initialize the proper global state variables and start 
-    the sound playing. An interrupt-driven process should ensure that, once
-    started, the sound string is played only once. 
-  - You should organize your code into two or more source code files, one with
-    the `main()` function (and maybe other stuff), and one with `PlaySound()`
-    and maybe other stuff.
+Let's review serial communications. Also take a look at the [documentation for the APA102
+device](https://www.adafruit.com/product/2343).
 
-Create the proper sequences for the first lines of "Twinkle, twinkle little star", and "Mary had
-a little lamb". Set up an infinite loop so that you play a sequence and then have quiet for a
-few seconds. **You may use __delay_cycles for this part of this lab!** 
+<ol class="questions">
+<li>What are the two categories that all forms of serial communication can be divided into?
+In which category is the APA102?</li>
+<li>What are two major differences between SPI and I2C serial communications? Which would be
+best for controlling a large string of LEDs?</li>
+<li>The APA102 uses a modified form of SPI to enable control of multiple LEDs without needing a
+separate "chip select" line for each one. Briefly describe how it does this.</li>
+<li>How big (in bytes) is the SPI message required to set the color of a single APA102? How
+big (in bytes) is the SPI message required to set the color of each LED in a chain of 4
+devices?</li>
+</ol>
 
-You will be graded on the following:
-  - Code quality: use of multiple files, proper header calling, explanatory
-    comments, PlaySound() function with proper prototype, reasonable
-    architecture [about 40 pts]
-  - Functionality: changing a variable or commenting/uncommenting a small number
-    of lines of code should change which song is played, with comments
-    indicating how to do this for the peer grader; songs sound correct [about
-    40 pts]
-  - Extra: rests/pauses between notes implemented and demonstrated [up to 10
-    pts], LPM3 used [up to 5 pts], other special features
+Now let's review the characteristics of the serial control hardware block
+in your MSP430s, the USCI.
+
+<ol class="questions" start="5">
+<li>How many USCI blocks does the g2553 device have? What three protocols can be controlled by
+the USCI?</li>
+<li>On your launchpad, one of the serial modules is used to make a UART connection with the
+host computer (via USB). Which pins and which USCI module are used for this? </li>
+<li>Which pins can be used for the SPI clock and master-out-slave-in (MOSI)
+data?</li>
+</ol>
 
 
+<div class="row">
+<div class="col-md-9 col-sm-12 col-xs-12">
+#### For the lab
 
+The Simon PCB has 4 APA102C RGB LEDs connected to a MSP430 using appropriate 
+SPI clock and COPI lines. Three sample files are provide for you: [main.c](main.c),
+[rgb_interface.c](rgb_interface.c), and [rgb_interface.h](rgb_interface.h). These files
+demonstrate configuration of the USCI module so that the SPI clock frequency is within the
+acceptable range for the APA102C, and the data communication clock edges are proper. These
+examples also serve as an example of how to do modular programing. The current interface
+for LED control should be abstracted at least one more level as part of this lab.
+
+The goal for the lab is to achieve a moving, color cycling effect.
+**You should modify the API so that the `main.c` function can simply call a 
+`set_temperature(int LED1_temp, int LED2_temp, int LED3_temp, int LED4_temp)` function**.
+Here, the value of "temperature" should map to a color in the RGB space in a sensible way.
+The wikipedia page on [color temperature](https://en.wikipedia.org/wiki/Color_temperature) includes
+the diagram to the right. The goal is that your function makes a nice 1-dimensional mapping 
+through 3-dimensional color space. (It doesn't have to correspond to temperature in Kelvin
+or wavelength or whatever other logical things might be imagined.)
+_This lab builds on the previous one in the sense that hopefully you already
+figured out some RGB values that make a nice rainbow!_
+**Special Case:** The value 0 of temperature should mean the LED is off!
+
+Then configure the logic in `main.c` such that each LED should cycle one step behind the 
+previous one so that the rainbow appears to move upward. Use the `_250ms` watchdog timer interrupt for timing, and increment
+the temperature each time step. (This is already set in the current file!)
+To accentuate the effect of rotating colors, make one LED off (i.e., temperature 0) each time step, 
+and have the LED which is off shift around the circle.
+You should implement at least **32 levels of color**. **BUT**, the color changes should be distinctly visible. 
+ **Note:** We have noted that different generations
+of the APA102 LEDs have different color order (GRB vs BRG). Make sure that your code works
+for your LEDs. If you have different LEDs on your board, you can fix it programatically
+or by resoldering.
+
+**Optional** Once you have finished the rest of the lab, come back to `rgb_interface.c` and
+convert it to use th USCI TX interrupt.
+</div>
+<div class="col-md-3 col-sm-6 col-xs-6">
+<figure class="figure">
+<a href="https://en.wikipedia.org/wiki/Color_temperature#/media/File:PlanckianLocus.png"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/PlanckianLocus.png/1024px-PlanckianLocus.png"
+    class="figure-img img-fluid rounded" alt="Planckian Locus of Color Space"></a>
+<figcaption class="figure-caption"><p>Wikipedia Color Space.</p></figcaption>
+</figure>
+</div>
+</div>

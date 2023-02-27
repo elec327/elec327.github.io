@@ -93,8 +93,8 @@ frameborder="0" allowfullscreen></iframe>
 The first part of the design is to implement an incrementing numeric display using the PCB. The
 numbers should increment once per second.
 
-The second part of the lab is to implement a dimming mode. Dimming is implemented using PWM,
-with the display switching between off and on rather than just cycling between columns.
+<!-- The second part of the lab is to implement a dimming mode. Dimming is implemented using PWM,
+with the display switching between off and on rather than just cycling between columns. -->
 
 The final part of the lab is that you should have another variable that determines whether your PCB is
 displaying the numbers 0-2 (i.e., hours), the numbers 0-6 (i.e., tens of minutes or seconds), or the
@@ -145,3 +145,5 @@ estimate a linear relationship between the number of LEDs used and the current c
 the slope (in units of mA per LED)? What is the intercept? What is responsible for the intercept?
 {: class="questions" start="9"}
 -->
+
+
