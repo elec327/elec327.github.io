@@ -46,7 +46,7 @@ speeds. A piezo buzzer produces sounds by transducing electrical fields into mot
 piezoelectric material. They are good for higher frequencies, but not those in the lower part
 of our hearing spectrum. 
 
-Example code in [piezo_example.c](piezo_example.c) is set up to play through a C-major chord using
+Example code in [piezo_sample.c](piezo_sample.c) is set up to play through a C-major chord using
 the watchdog timer to switch between the different notes. Program your board with this code.
 You may notice that the level of volume produced by the buzzer is fairly high. If you
 re-configure `P2.1` as an INPUT, and set the pull-up or pull-down resistor, the volume will
