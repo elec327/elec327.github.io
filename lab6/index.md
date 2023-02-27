@@ -8,7 +8,7 @@ description: Piezo buzzer and Simon PCB
 
 {::options parse_block_html="true" /}
 
-## Lab #7: Piezo Buzzers with PWM (and the Simon PCB)
+## Lab #6: Piezo Buzzers with PWM (and the Simon PCB)
 
 <div class="alert alert-info" role="alert">
 #### **There are three goals for this lab:**
