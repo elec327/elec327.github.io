@@ -1,13 +1,13 @@
-/* 
+/*
    ELEC327 Lab 6 Buzzer Example Code.
-   Drive a piezo buzzer connected between ground and Pin 1.2.
+   Drive a piezo buzzer connected between Pins 2.1 and 2.5.
    Plays a major C chord.
 */
 
 #include "msp430g2553.h"
 
 // Notes for a major C chord
-int periods[] = {1000000/261.63, 
+int periods[] = {1000000/261.63,
    1000000/329.63,
    1000000/392.00,
    1000000/523.5};
@@ -22,13 +22,14 @@ void main(void){
   BCSCTL1 = CALBC1_1MHZ; // Set the DCO to 1 MHz
   DCOCTL = CALDCO_1MHZ; // And load calibration data
 
-  P1DIR |= BIT2; //
-  P1SEL |= BIT2; // BIT2 is TA0.1 PWM output  
+  P2DIR |= BIT5 + BIT1; // We need 2.5 and 2.1 connected!
+  P2SEL |= BIT5; // P2.5 is TA1.2 PWM output
+  P2OUT = 0; // Set 2.1 to GND
 
-  CCR0 = periods[which_period];
-  CCR1 = periods[which_period]>>2; // divde by 2
-  CCTL1 = OUTMOD_6;
-  TACTL = TASSEL_2 + MC_1; // SMCLK, upmode
+  TA1CCR0 = periods[which_period];
+  TA1CCR2 = periods[which_period]>>2; // divde by 2
+  TA1CCTL2 = OUTMOD_6;
+  TA1CTL = TASSEL_2 + MC_1; // SMCLK, upmode
 
   WDTCTL = WDT_ADLY_250;  // Set Watchdog Timer to ~3 s with VLO
   IE1 |= WDTIE;
@@ -39,6 +40,6 @@ void main(void){
 __interrupt void watchdog_timer(void)
 {
   which_period = (which_period + 1) % 4;
-  CCR1 = periods[which_period]>>2;
-  CCR0 = periods[which_period];
+  TA1CCR2 = periods[which_period]>>2;
+  TA1CCR0 = periods[which_period];
 }
