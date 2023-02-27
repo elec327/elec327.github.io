@@ -1,6 +1,6 @@
 ---
-title: Lab 7
-lab: 7
+title: Lab 6
+lab: 6
 layout: default
 group: labs-navigation
 description: Serial Communications (SPI + I2C)
@@ -24,7 +24,7 @@ gcc compilers will work.
 
   2. Answers to the questions in a text or otherwise broadly-accessible format.
 
-#### The lab will be due March 23, 2021 at 11:59 AM. 
+#### The lab will be due March 8, 2023 at 1:59 PM. 
 
 </div>
 
