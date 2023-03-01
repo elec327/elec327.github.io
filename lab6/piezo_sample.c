@@ -27,8 +27,8 @@ void main(void){
   P2OUT = 0; // Set 2.1 to GND
 
   TA1CCR0 = periods[which_period];
-  TA1CCR2 = periods[which_period]>>2; // divde by 2
-  TA1CCTL2 = OUTMOD_6;
+  TA1CCR2 = periods[which_period]>>1; // divde by 2
+  TA1CCTL2 = OUTMOD_7;
   TA1CTL = TASSEL_2 + MC_1; // SMCLK, upmode
 
   WDTCTL = WDT_ADLY_250;  // Set Watchdog Timer to ~3 s with VLO
@@ -40,6 +40,6 @@ void main(void){
 __interrupt void watchdog_timer(void)
 {
   which_period = (which_period + 1) % 4;
-  TA1CCR2 = periods[which_period]>>2;
+  TA1CCR2 = periods[which_period]>>1;
   TA1CCR0 = periods[which_period];
 }
