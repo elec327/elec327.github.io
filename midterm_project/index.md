@@ -8,7 +8,7 @@ description: Midterm Project
 
 {::options parse_block_html="true" /}
 
-## Midterm Project (2022): Creating "Simon"
+## Midterm Project (2023): Creating "Simon"
 
 <div class="alert alert-info" role="alert">
 #### **There are three goals for this project:**
@@ -39,7 +39,7 @@ description: Midterm Project
   Additionally, a small bonus will be given for each of your peer's Simon games
   you evaluate.
 
-  4. To facilitate peer grading, the code will be due **March 28, 2022**.
+  4. To facilitate peer grading, the code will be due **March 27, 2023**.
 
   **Rubric:** (10 pts each (mvp is 30 pts, code is 20 pts), 130 total) 
   1. MVP (minimally viable product): Does it actually run properly off of a
