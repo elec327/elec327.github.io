@@ -108,12 +108,17 @@ Here's a nice video from Joshua Harper (Spring 2022) showing a Simon board in ac
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=6odXYgCBaWI"
 frameborder="0" allowfullscreen></iframe>
 
+#### Helpful Tips
+Much of Simon can be pieced together by using code developed from previous labs. To help you,
+
+ - Example code for Labs 5, 6, and 7 has been provided to you via the class Slack channel. 
+ - More code is provided on the github: [Simon Github](https://github.com/ckemere/ELEC327/tree/master/Labs/Midterm/Firmware)
+ - Remember that the LFSR random number generator can be used to both generate the button/light sequences **and** check
+   the playback (if you store the seed used and start over during the button pressing)
+
 Physical information is given in the
-[ELEC327 Simon repository](https://raw.githubusercontent.com/ckemere/ELEC327/master/Labs/Midterm/)
+[ELEC327 Simon repository](https://github.com/ckemere/ELEC327/tree/master/Labs/Midterm/)
 Eagle CAD schematic in the ELEC327 git repository. 
 
-*Note that you are not **limited** to the listed parts. You can add additional parts from the
-list above or other lab supplies, but if you do, you are expected to demo their utility as part
-of your project!*
 
 
