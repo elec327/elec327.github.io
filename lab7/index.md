@@ -22,7 +22,7 @@ comments should include any instructions that peer graders might need to compile
 code. Please include the proper interrupt compiler directives to ensure that both the TI and
 gcc compilers will work.
 
-  2. Answers to the questions in a text or otherwise broadly-accessible format.
+  2. Answers to the questions in a text or otherwise broadly-accessible format. [**NOT FOR 2023**]
 
 #### The lab will be due March 8, 2023 at 1:59 PM. 
 
