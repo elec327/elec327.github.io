@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+     <title>Lab 3</title> 
+    <meta name="description" content="Timers, PWM, and Logic_and Soldering">
+    <meta name="author" content="Caleb Kemere">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/2023/assets/themes/bootstrap/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/2023/assets/themes/bootstrap/elec327.css" rel="stylesheet">
+  
+    <!--[if lt IE 9]>
+      <script src="/assets/themes/bootstrap/resources/respond/Respond.min.js"></script>
+    <![endif]-->
+
+    <link href="/2023/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/2023/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" role="navigation">
+        <div class="container">
+        <a class="navbar-brand" href="/2023/">Rice ELEC327 - Digital Systems Laboratory</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-dark mr-auto">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/bonus">Bonus</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/">Home</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/parts_and_notes">Parts/Notes</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/syllabus">Syllabus</a></li>
+      	
+      
+    
+  
+
+
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Labs</a>
+              <ul class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown"role="menu">
+                
+                
+                
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab1/">Lab 1</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab2/">Lab 2</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item active"><a href="/2023/lab3/" class="dropdown-item active nav-link">Lab 3</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab4/">Lab 4</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab5/">Lab 5</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab6/">Lab 6</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab7/">Lab 7</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/midterm_project/">Midterm Project</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/final_project/">Final Project</a></li>
+      	
+      
+    
+  
+
+
+
+
+              </ul>
+            </li>
+          </ul>
+      </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container under-navbar">
+      
+<h2 id="lab-3-timers-pwm-and-logic">Lab #3: <em>Timers, PWM, and Logic</em></h2>
+
+<p><em>The goals of this lab are two-fold. First, we aim for you to continue gaining experience
+understanding active and low power modes. Second, the goal is to begin to do more complex software design
+involving multiple digital IO pins interacting and multiple interrupts.</em></p>
+
+<p><em>This assignment is due Wednesday, Febrary 8, 2023.</em></p>
+
+<div class="row">
+  <div class="col-md-3 col-sm-6 col-xs-6">
+    <figure class="figure">
+      <p><a href="Display.jpg"> <img src="Display.jpg" class="figure-img img-fluid rounded" alt="Display PCB" /></a></p>
+
+      <figcaption class="figure-caption">
+        <p>Lab 3 35-LED display PCB.</p>
+      </figcaption>
+
+    </figure>
+  </div>
+  <div class="col-md-9 col-sm-12 col-xs-12">
+    <p>The PCB has been largely pre-soldered for you, but you will need to attach the LED module and a programming header. 
+If you want to add the battery pack or side-connection headers, you can also do that.</p>
+
+    <p>In order to do the lab, you will need to reference the <a href="Display-2023.brd">board</a> and/or <a href="Display-2023.sch">schematic</a>
+files in order to know how the LEDs are connected to the MSP430. These PCB design files are done in
+EAGLE cad, which you can download from the Autodesk website for free. You will need to learn how to
+use this software later in the course, so it’s a good idea to begin familiarizing yourself with it.
+In the meantime, a screen shot of the schematic can also be found <a href="Schematic P1.png">here</a>.</p>
+
+    <ol class="questions">
+      <li>
+        <p><strong>(Not scored!)</strong> Either examine the PCB closely or look at the schematic for the display. Which GPIO pins
+are connected to LEDs?</p>
+      </li>
+      <li>
+        <p><strong>(Not scored!)</strong> In a normal, canonical (i.e., atomic), forward operating (i.e., not-breaking-down) diode,
+which terminal does positive (conventional) current flow out of, cathode or anode? In the
+display circuit, which pin(s) is this terminal connected to?</p>
+      </li>
+      <li>
+        <p><strong>(Not scored!)</strong> What values for the rows and columns (0 or 1) will result in the bottom left
+and top right diodes turning on?</p>
+      </li>
+    </ol>
+
+  </div>
+</div>
+
+<p>Precise modeling of the current/voltage characteristic of a diode is complicated, but
+important for a number of applications (such as detecting light with a photo diode). A
+very simple model of a diode switches from infinite resistance to zero resistance at the
+“threshold voltage”. Thus, when on, the current through the diode must be limited. A resistor
+in series with the diode serves to limit the current, and you will see such a resistor in the
+display schematic. In order to find the proper value of this resistance, you need to know
+something about the LED and also something about the rest of the circuit.</p>
+
+<!--
+4. **(Not scored!)** Use a multimeter in lab to measure the threshold voltage of the supplied
+LEDs.  How does this compare to the "forward voltage" found in the
+[datasheet](http://www.digikey.com/product-detail/en/LTST-C150KRKT/160-1405-1-ND/386760). Why
+might they be different if they are?
+
+5. **(Not scored!)** Further examining the datasheet, what is the maximum value of forward current that you
+should apply? What appears to be the recommended forward current level?
+
+6. **(Not scored!)** Assume that you will be using one a CR2032 battery, which has a nominal voltage of 3V. What
+voltage will appear on the output of the LED drive pins when they are on? (You can ignore the
+voltage drop through the MSP430!).
+
+7. **(Not Scored!)** Measure the voltage of a new AAA battery - what voltage do you find? After you build the circuit
+and program the display, measure again with the device running off 2 AAAs. What value do you find now?
+
+8. **(Not Scored!)** Finally, assume that the threshold voltage of the diode is 2 V, and the MSP430 output pin
+voltage is 3 V, and that the desired on current is 5 mA. What value of current-limiting
+resistor should you use? What would be the minimum resistance such that the current is less
+than the maximum (DC) specified in the data sheet?
+{: class="questions" start="4"}
+
+-->
+
+<p>Here is a helpful video:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7B_-qmJLfng" frameborder="0" allowfullscreen=""></iframe>
+
+<h4 id="lab-specification">Lab Specification</h4>
+
+<p>The first part of the design is to implement an incrementing numeric display using the PCB. The
+numbers should increment once per second.</p>
+
+<!-- The second part of the lab is to implement a dimming mode. Dimming is implemented using PWM,
+with the display switching between off and on rather than just cycling between columns. -->
+
+<p>The final part of the lab is that you should have another variable that determines whether your PCB is
+displaying the numbers 0-2 (i.e., hours), the numbers 0-6 (i.e., tens of minutes or seconds), or the
+numbers 0-9.</p>
+
+<p><strong>Save your code as <code class="language-plaintext highlighter-rouge">display.c</code>. You will need to demonstrate your device running and walk
+through your code comments and modifications for one of the course staff by the due date.
+Upload your answered questions to the Google doc, and the code to Canvas.</strong></p>
+
+<h4 id="details">Details</h4>
+
+<p>Pursuant to helping you doing the lab, the <a href="lab3_skeleton.c">skeleton code</a> will set up the MSP430
+so that the ACLK is being driven by the VLO (which you remember runs ~12 kHz), and TimerA0 is being
+driven by the ACLK. <strong>These two conditions are required for the Timer to continue to function when the
+device is in LPM3 (CPU and DCO off!).</strong> The display PCB is designed as a matrix - each LED is
+addressed by a row and a column. Each row and column in turn are connected to a GPIO pin: the rows
+are connected to P1.0 - P1.6 and the columns are connected to pins P2.0 - P2.4. If you look at the 
+<a href="TA20-11GWA-30100.pdf">datasheet</a> for the LED array, you’ll see that the individual LEDs are set up to 
+flow current from the row input to the column out. This means two things:</p>
+
+<p>First, to turn on an 
+individual pixel, the relevant row pin must be set to a high level and the column pin to a low level – 
+the row pin is a <strong>current source</strong> and the column pin is a <strong>current sink</strong>. To turn off that LED, you
+can make both row and column pin have the same level (either high or low) or you can also change
+the direction of one of them from input to output.</p>
+
+<p>Second, an arbitrary pattern across the whole display cannot be displayed simultaneously. Rather,
+the LEDs will have to be rapidly scanned, and rely on the eye to integrate the result into a static image.</p>
+
+<p>The skeleton code presents a simple design in which the display is operated by cycling through each
+column of LEDs, but you’ll need to fit in three key pieces for the first specification.</p>
+
+<ul>
+  <li>The 5x7 font for each number in 0-9. Each column is stored as the lower 7 bits of a char, <strong>where a 1 corresponds to a pixel off</strong>.</li>
+  <li>The refresh function, which will copy the font to the display a column at a time.</li>
+  <li>The timer interrupt period to achieve one second increments.</li>
+</ul>
+
+<!-- 
+9. (This Question **IS** Scored!) Use the Energy Trace software to measure the power consumption of
+the display PCB when it is programmed to light one LED per column. Change the two lines of code that
+enter and exit LPM3 to instead enter and exit LPM0. What is the difference in averge current
+consumed? What is the primary culprit for the residual current in LPM3? (Why does it still consume
+so much current?)
+
+10. (This Question **IS** Scored!) Return the code to go in and out of LPM3. Now change the code
+so that each cycle an entire column is lit (commenting line 31 and uncommenting line 30). How much
+current is consumed on average now? Change the code so that only 4 LEDs are lit each cycle. Can you
+estimate a linear relationship between the number of LEDs used and the current consumption? What is
+the slope (in units of mA per LED)? What is the intercept? What is responsible for the intercept?
+{: class="questions" start="9"}
+-->
+
+
+
+      <hr>
+      <footer>
+        <p>
+        &copy; 2024 <a href="http://kemerelab.com">Caleb Kemere</a>
+        and <a href="http://www.ece.rice.edu">Rice University ECE</a>
+        </p>
+      </footer>
+    </div>
+
+    
+
+    <script src="/assets/themes/bootstrap/resources/jquery/jquery.min.js"></script>
+    <script src="/assets/themes/bootstrap/resources/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

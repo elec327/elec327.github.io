@@ -1,0 +1,460 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+     <title>Lab 1</title> 
+    <meta name="description" content="Intro C Programming">
+    <meta name="author" content="Caleb Kemere">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/2023/assets/themes/bootstrap/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/2023/assets/themes/bootstrap/elec327.css" rel="stylesheet">
+  
+    <!--[if lt IE 9]>
+      <script src="/2023/assets/themes/bootstrap/resources/respond/Respond.min.js"></script>
+    <![endif]-->
+
+    <link href="/2023/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/2023/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" role="navigation">
+        <div class="container">
+        <a class="navbar-brand" href="/2023/">Rice ELEC327 - Digital Systems Laboratory</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-dark mr-auto">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/bonus">Bonus</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/">Home</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/parts_and_notes">Parts/Notes</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/syllabus">Syllabus</a></li>
+      	
+      
+    
+  
+
+
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Labs</a>
+              <ul class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown"role="menu">
+                
+                
+                
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item active"><a href="/2023/lab1/" class="dropdown-item active nav-link">Lab 1</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab2/">Lab 2</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab3/">Lab 3</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab4/">Lab 4</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab5/">Lab 5</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab6/">Lab 6</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab7/">Lab 7</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/midterm_project/">Midterm Project</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/final_project/">Final Project</a></li>
+      	
+      
+    
+  
+
+
+
+
+              </ul>
+            </li>
+          </ul>
+      </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container under-navbar">
+      
+<h3 id="lab-1-intro-c-programming-100-pts">Lab #1: Intro C Programming (100 pts)</h3>
+
+<div class="alert alert-info" role="alert">
+  <h4 id="there-are-two-goals-for-this-assignment"><strong>There are two goals for this assignment:</strong></h4>
+
+  <ul>
+    <li>To get a taste for writing code in the C programming language.</li>
+    <li>To build a mental understanding for pointers and type casting.</li>
+  </ul>
+
+</div>
+
+<div class="alert alert-danger" role="alert">
+  <h4 id="what-should-be-turned-in"><strong>What should be turned in?</strong></h4>
+
+  <ol>
+    <li>Your <strong>commented</strong> summate.c file.</li>
+    <li>We will have an in class quiz in which you will be required to modify and run your program and report the answers.</li>
+  </ol>
+
+</div>
+
+<h4 id="due-date-wednesday-january-19-2022">Due Date: <strong>Wednesday, January 19, 2022</strong></h4>
+
+<h4 id="introduction">Introduction</h4>
+
+<p>You are welcome to use any C compiler that you have access too (e.g, if you are running Linux or another Unix-like environment
+on your own computer). The instructions below assume that you have logged into the Rice student cluster, CLEAR.
+You can connect to CLEAR using ssh: <code class="language-plaintext highlighter-rouge">ssh netid@ssh.clear.rice.edu</code> will work if you are on campus or VPN. Otherwise
+you will need to first <code class="language-plaintext highlighter-rouge">ssh netid@ssh-students.rice.edu</code>, and then type in <code class="language-plaintext highlighter-rouge">ssh.clear.rice.edu</code> at the <code class="language-plaintext highlighter-rouge">Enter remote host:</code> prompt.
+If you are on campus or connected via VPN, you can mount your home directory using the Samba protocol. (See 
+(https://kb.rice.edu/93597)[https://kb.rice.edu/93597] for
+assistance.) This will allow you to use a GUI code editor such as Visual Stuio Code.
+The examples done in class on Tuesday will be available in the <code class="language-plaintext highlighter-rouge">/clear/courses/elec327/2021/</code> directory.</p>
+
+<p>In C, variables are associated with “types”. The core types include ASCII characters, integers, 
+and floating point numbers. In this lab, we will explore the fact that C allows us to directly
+reference memory, and allows portions of memory to be interpreted as different types. Because the
+interfaces to peripherals in embedded systems are through the memory bus, understanding how
+to access memory is critical to programming embedded systems. In addition, passing by reference 
+(using pointers) is the only method in C for giving a function a variable that it should modify.</p>
+
+<h4 id="the-task">The Task</h4>
+
+<p>Many embedded systems will communicate data to a microprocessor. Sometimes, the structure of the
+data can be known precisely ahead of time, but sometimes the message payload may need to hold
+different items, including variables of different sizes. In this lab, your program needs to
+interpret a message that has been received from an embedded system. The messages contain a series
+of numbers, and the task for your program is to sum these. The challenge is that the numbers are
+all different types. Each message includes a header, which is a series of characters which describe
+the types of the numbers in the message. This is followed by the numbers themselves. The message
+is padded with zeros to a final size of 100 bytes. Your program should print out the sum of the numbers
+in the message file provided as a command line argument.</p>
+
+<p>The characters in the header are described in the following table (you may recognize these if you’ve used
+the <a href="https://docs.python.org/3/library/struct.html">python struct library</a>) :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Character</th>
+      <th style="text-align: center">Type</th>
+      <th style="text-align: right">Size (bytes)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">‘b’</td>
+      <td style="text-align: center">signed byte</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">‘h’</td>
+      <td style="text-align: center">signed short</td>
+      <td style="text-align: right">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">‘i’</td>
+      <td style="text-align: center">signed int</td>
+      <td style="text-align: right">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">‘d’</td>
+      <td style="text-align: center">signed double</td>
+      <td style="text-align: right">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">‘e’</td>
+      <td style="text-align: center">special character denoting message end</td>
+      <td style="text-align: right">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code class="language-plaintext highlighter-rouge">'e'</code> character denotes the end of the header. The numbers directly follow it, packed tightly.</p>
+
+<p>The code that I am using to create the files you will work with is actually python. It’s [here]
+(make_example.py):</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">struct</span>
+
+<span class="k">def</span> <span class="nf">write_list_to_file</span><span class="p">(</span><span class="n">data_list</span><span class="p">,</span> <span class="n">ofname</span><span class="p">):</span>
+  <span class="n">format_only</span> <span class="o">=</span> <span class="p">[</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data_list</span><span class="p">]</span>
+  <span class="n">data_only</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data_list</span><span class="p">]</span>
+  <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">=</span><span class="sh">'</span> <span class="o">+</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">format_only</span><span class="p">))</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">data_only</span><span class="p">)</span>
+  <span class="n">of</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="n">ofname</span><span class="p">,</span> <span class="sh">'</span><span class="s">wb</span><span class="sh">'</span><span class="p">)</span>
+  <span class="n">of</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="nf">pack</span><span class="p">(</span><span class="sh">'</span><span class="s">=</span><span class="sh">'</span><span class="o">+</span><span class="sh">'</span><span class="s">c</span><span class="sh">'</span><span class="o">*</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">format_only</span><span class="p">)),</span> <span class="o">*</span><span class="p">[</span><span class="nf">bytes</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="sh">"</span><span class="s">utf-8</span><span class="sh">"</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">format_only</span><span class="p">]))</span>
+  <span class="n">of</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="nf">pack</span><span class="p">(</span><span class="sh">'</span><span class="s">=c</span><span class="sh">'</span><span class="p">,</span> <span class="sa">b</span><span class="sh">'</span><span class="s">e</span><span class="sh">'</span><span class="p">))</span>
+  <span class="n">of</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="nf">pack</span><span class="p">(</span><span class="sh">'</span><span class="s">=</span><span class="sh">'</span><span class="o">+</span><span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">format_only</span><span class="p">),</span> <span class="o">*</span><span class="n">data_only</span><span class="p">))</span>
+  <span class="n">padding</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">of</span><span class="p">.</span><span class="nf">tell</span><span class="p">()</span>
+  <span class="n">of</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="nf">pack</span><span class="p">(</span><span class="sh">'</span><span class="s">={}b</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">padding</span><span class="p">),</span> <span class="o">*</span><span class="nf">bytearray</span><span class="p">(</span><span class="n">padding</span><span class="p">)))</span>
+  <span class="n">of</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+
+<span class="c1"># 'b' = signed char, 'i' = 4 byte int, 'd' = 8 byte double
+</span>
+<span class="n">example1</span> <span class="o">=</span> <span class="p">[(</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">i</span><span class="sh">'</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">d</span><span class="sh">'</span><span class="p">,</span> <span class="o">-</span><span class="mf">100.0</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">i</span><span class="sh">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">d</span><span class="sh">'</span><span class="p">,</span> <span class="o">-</span><span class="mf">100.0</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">example2</span> <span class="o">=</span> <span class="p">[(</span><span class="sh">'</span><span class="s">i</span><span class="sh">'</span><span class="p">,</span><span class="mi">10000</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">example3</span> <span class="o">=</span> <span class="p">[(</span><span class="sh">'</span><span class="s">d</span><span class="sh">'</span><span class="p">,</span><span class="mf">1e7</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">i</span><span class="sh">'</span><span class="p">,</span><span class="mi">10000</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)]</span>
+
+<span class="nf">write_list_to_file</span><span class="p">(</span><span class="n">example1</span><span class="p">,</span> <span class="sh">'</span><span class="s">example1.bin</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">write_list_to_file</span><span class="p">(</span><span class="n">example2</span><span class="p">,</span> <span class="sh">'</span><span class="s">example2.bin</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">write_list_to_file</span><span class="p">(</span><span class="n">example3</span><span class="p">,</span> <span class="sh">'</span><span class="s">example3.bin</span><span class="sh">'</span><span class="p">)</span>
+
+
+</code></pre></div></div>
+
+<p>For the <a href="example1.bin">example1.bin</a> file, the proper return value is <code class="language-plaintext highlighter-rouge">-600.0</code> (the number of
+trailing zeros is not critical). More examples: <a href="example2.bin">example2.bin</a> and 
+<a href="example3.bin">example3.bin</a>. A template C file is given in
+<a href="summate_template.c">summate_template.c</a>. Your task is to fill in the <code class="language-plaintext highlighter-rouge">compute_sum()</code> function.</p>
+
+<p><strong>Upload your code to Canvas and be ready for live coding (we’ll introduce a wrinkle!)
+in class on Tuesday.</strong></p>
+
+
+
+      <hr>
+      <footer>
+        <p>
+        &copy; 2024 <a href="http://kemerelab.com">Caleb Kemere</a>
+        and <a href="http://www.ece.rice.edu">Rice University ECE</a>
+        </p>
+      </footer>
+    </div>
+
+    
+
+    <script src="/2023/assets/themes/bootstrap/resources/jquery/jquery.min.js"></script>
+    <script src="/2023/assets/themes/bootstrap/resources/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

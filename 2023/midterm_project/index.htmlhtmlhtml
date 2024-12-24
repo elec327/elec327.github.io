@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+     <title>Midterm Project</title> 
+    <meta name="description" content="Midterm Project">
+    <meta name="author" content="Caleb Kemere">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/2023/assets/themes/bootstrap/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/2023/assets/themes/bootstrap/elec327.css" rel="stylesheet">
+  
+    <!--[if lt IE 9]>
+      <script src="/assets/themes/bootstrap/resources/respond/Respond.min.js"></script>
+    <![endif]-->
+
+    <link href="/2023/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/2023/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" role="navigation">
+        <div class="container">
+        <a class="navbar-brand" href="/2023/">Rice ELEC327 - Digital Systems Laboratory</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-dark mr-auto">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/bonus">Bonus</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/">Home</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/parts_and_notes">Parts/Notes</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/syllabus">Syllabus</a></li>
+      	
+      
+    
+  
+
+
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Labs</a>
+              <ul class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown"role="menu">
+                
+                
+                
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab1/">Lab 1</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab2/">Lab 2</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab3/">Lab 3</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab4/">Lab 4</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab5/">Lab 5</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab6/">Lab 6</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab7/">Lab 7</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item active"><a href="/2023/midterm_project/" class="dropdown-item active nav-link">Midterm Project</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/final_project/">Final Project</a></li>
+      	
+      
+    
+  
+
+
+
+
+              </ul>
+            </li>
+          </ul>
+      </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container under-navbar">
+      
+<h2 id="midterm-project-2023-creating-simon">Midterm Project (2023): Creating “Simon”</h2>
+
+<div class="alert alert-info" role="alert">
+  <h4 id="there-are-three-goals-for-this-project"><strong>There are three goals for this project:</strong></h4>
+
+  <ul>
+    <li>To design and implement a somewhat complex embedded system that is evaluated by your peers
+based on principles like usability and enjoyment.</li>
+    <li>To construct, organize and implement a multi-module code project.</li>
+  </ul>
+
+</div>
+
+<div class="alert alert-danger" role="alert">
+  <h4 id="how-will-it-be-evaluated"><strong>How will it be evaluated?</strong></h4>
+
+  <ol>
+    <li>
+      <p>The code for your Simon game will be submitted via canvas. Please include
+  only code files and a “README.txt” that describes (a) briefly your code architecture
+  and approach, (b) the score that you think you should get based on the rubric
+  below, and (c) how to access or run any special features. You may include two
+  different “main.c” files if desired, but the default functionality should be
+  Simon.</p>
+    </li>
+    <li>
+      <p>Prof. Kemere or the lab assistants will be running your code on their
+  boards for evaluation. Your score for the final project will be based on the
+  rubric below.</p>
+    </li>
+    <li>
+      <p>Students from the class will be given the chance to evaluate
+  based on a simpler rubric. These scores will not be used for grading, but
+  course bonus will be assigned based on the final ranking of Simon programs.
+  Additionally, a small bonus will be given for each of your peer’s Simon games
+  you evaluate.</p>
+    </li>
+    <li>
+      <p>To facilitate peer grading, the code will be due <strong>March 27, 2023</strong>.</p>
+    </li>
+  </ol>
+
+  <p><strong>Rubric:</strong> (10 pts each (mvp is 30 pts, code is 20 pts), 130 total)</p>
+  <ol>
+    <li>MVP (minimally viable product): Does it actually run properly off of a
+    battery and (occasionally) perform in a Simon-esque way? (30 pts)</li>
+    <li>Gameplay-ButtonFeedback (when a button is pressed during play, does the
+    light and sound asssociated with that button track the button press, i.e.,
+    start when it is depressed and stop when it is released?)</li>
+    <li>Gameplay-Timeout (does it game over after a while if no button is pressed?)</li>
+    <li>Gameplay-MisplayingError (does it game over if the wrong button is pressed?)</li>
+    <li>Gameplay-Win (does it do something special when the player wins?)</li>
+    <li>Gameplay-Random (does it play a different sequence each time, including after power cycles?)</li>
+    <li>Style-Animations (are there mustic/light animations for start/win and lose/game-over?)</li>
+    <li>Style-SoundLight (do lights and sounds work well together and convey information?)</li>
+    <li>Is it easy to change the length of a sequence required to win?</li>
+    <li>Well-commented, logical code architecture (does the architecture make sense? are there good
+    comments?, functions (libraries?) used intelligently?) - 20 pts</li>
+  </ol>
+
+</div>
+
+<p>The game <a href="https://en.wikipedia.org/wiki/Simon_(game)">“Simon”</a> is a classic toy which tests the
+working memory of the player. For the final project, you will create a small,
+coin cell-operated Simon game. This will involve PCB design and fairly involved firmware to
+achieve an enjoyable user experience. In addition, you will be invited to add some sort of
+interesting feature beyond the Simon game. In the past, this has ranged from simple animations
+to a mode in which the device becomes a music sequencer.</p>
+
+<p>Here’s a video from Tiger Yang (Spring 2019), showing a Simon board in action along with a number of bonuses.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=DYyrkACy08Q" frameborder="0" allowfullscreen=""></iframe>
+
+<h4 id="rules-for-the-elec327-version-of-the-simon-game">Rules for the ELEC327 version of the Simon game</h4>
+
+<p>In our variant of Simon, the point of the game is to learn a sequence of <em>M</em> button presses.
+Each button corresponds to one of the LEDs and to one frequency of PWM tone. On the <em>n</em>th turn,
+the device plays the first <em>n</em> elements of the sequence. So one tone/LED on turn one, two on
+turn two, etc. The pattern of the <em>n-1</em> elements of the sequence are the same as the previous
+turn. Each turn, after the sequence is played, the player must push the appropriate buttons to
+recreate the sequence. If they do it correctly, the game proceeds to the <em>n+1</em>th turn. If they
+make an error or wait too long (measured by the time since the last button press), they lose.
+Winning corresponds to playing the full <em>M</em>-element sequence. If the player loses, the device
+should play a “Game Over - Lost” animation that continues until it is reset. Similarly, if the
+player wins, the device should play a “Game Over - Won” animation until it is reset (e.g., by
+power cycling or pressing a button).</p>
+
+<p>Details:</p>
+
+<ul>
+  <li>On initial boot, the devices should play either one of the “Game Over” animations or a
+third novel animation. Pushing any button should then start the game.</li>
+  <li>Sequences should be random each game (make sure your random routine produces a different
+value on startup!)</li>
+  <li>When a button is pressed, the appropriate LED should flash (and tone should sound).</li>
+  <li>The light and sound associated with the button should be displayed/played as long as the button is held down, and
+then should stop. (So <em>not</em> like in the example video below where they play for a constant length of time regardless of
+how long the button is pressed for.)</li>
+  <li>The timeout period should not be a constant. Rather, each time a player pushes a button, a
+new timeout should start. Thus, a timeout of 1-2 s is appropriate.</li>
+  <li>Errors should result in immediate game over (i.e., button presses should be processed
+immediately).</li>
+  <li>You should make the maximum sequence size adjustable. For your video, sequences of length 5
+are appropriate.</li>
+</ul>
+
+<p>Here’s a nice video from Joshua Harper (Spring 2022) showing a Simon board in action.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=6odXYgCBaWI" frameborder="0" allowfullscreen=""></iframe>
+
+<h4 id="helpful-tips">Helpful Tips</h4>
+<p>Much of Simon can be pieced together by using code developed from previous labs. To help you,</p>
+
+<ul>
+  <li>Example code for Labs 5, 6, and 7 has been provided to you via the class Slack channel.</li>
+  <li>More code is provided on the github: <a href="https://github.com/ckemere/ELEC327/tree/master/Labs/Midterm/Firmware">Simon Github</a></li>
+  <li>Remember that the LFSR random number generator can be used to both generate the button/light sequences <strong>and</strong> check
+the playback (if you store the seed used and start over during the button pressing)</li>
+</ul>
+
+<p>Physical information is given in the
+<a href="https://github.com/ckemere/ELEC327/tree/master/Labs/Midterm/">ELEC327 Simon repository</a>
+Eagle CAD schematic in the ELEC327 git repository.</p>
+
+
+
+      <hr>
+      <footer>
+        <p>
+        &copy; 2024 <a href="http://kemerelab.com">Caleb Kemere</a>
+        and <a href="http://www.ece.rice.edu">Rice University ECE</a>
+        </p>
+      </footer>
+    </div>
+
+    
+
+    <script src="/assets/themes/bootstrap/resources/jquery/jquery.min.js"></script>
+    <script src="/assets/themes/bootstrap/resources/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

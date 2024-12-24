@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+     <title>Lab 6</title> 
+    <meta name="description" content="Piezo buzzer and Simon PCB">
+    <meta name="author" content="Caleb Kemere">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/2023/assets/themes/bootstrap/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/2023/assets/themes/bootstrap/elec327.css" rel="stylesheet">
+  
+    <!--[if lt IE 9]>
+      <script src="/assets/themes/bootstrap/resources/respond/Respond.min.js"></script>
+    <![endif]-->
+
+    <link href="/2023/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/2023/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" role="navigation">
+        <div class="container">
+        <a class="navbar-brand" href="/2023/">Rice ELEC327 - Digital Systems Laboratory</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-dark mr-auto">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/bonus">Bonus</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/">Home</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/parts_and_notes">Parts/Notes</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/syllabus">Syllabus</a></li>
+      	
+      
+    
+  
+
+
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Labs</a>
+              <ul class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown"role="menu">
+                
+                
+                
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab1/">Lab 1</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab2/">Lab 2</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab3/">Lab 3</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab4/">Lab 4</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab5/">Lab 5</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item active"><a href="/2023/lab6/" class="dropdown-item active nav-link">Lab 6</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab7/">Lab 7</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/midterm_project/">Midterm Project</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/final_project/">Final Project</a></li>
+      	
+      
+    
+  
+
+
+
+
+              </ul>
+            </li>
+          </ul>
+      </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container under-navbar">
+      
+<h2 id="lab-6-piezo-buzzers-with-pwm-and-the-simon-pcb">Lab #6: Piezo Buzzers with PWM (and the Simon PCB)</h2>
+
+<div class="alert alert-info" role="alert">
+  <h4 id="there-are-three-goals-for-this-lab"><strong>There are three goals for this lab:</strong></h4>
+  <ul>
+    <li>To understand how PWM will affect sound production.</li>
+  </ul>
+</div>
+
+<div class="alert alert-danger" role="alert">
+  <h4 id="what-should-you-turn-in"><strong>What should you turn in?</strong></h4>
+  <ol>
+    <li>Turn in your code in at least two .c files (and headers as needed) and answered questions. (<em>Canvas</em>)</li>
+  </ol>
+
+  <h4 id="what-should-be-demoed"><strong>What should be demoed?</strong></h4>
+  <ol>
+    <li>
+      <p>If you choose to use the Simon-Giveaway board, the graders can run it on their boards.</p>
+    </li>
+    <li>
+      <p>Alternatively, you may choose to make a video showing functionality and describing your
+  code (which will allow you to highlight anything special in your code).</p>
+    </li>
+  </ol>
+</div>
+
+<p>**This lab will be due March 1, 2023 at 2 pm. **</p>
+
+<h4 id="part-1-playing-tones-via-pwm">Part 1: Playing tones via PWM</h4>
+
+<p>For the Simon midterm project, you’ll need to generate sounds appropriate for button presses,
+success, and failure. You will begin to use your Simon board in this lab, developing code
+to play sounds on its buzzer. If you look at the <a href="https://github.com/ckemere/ELEC327/blob/07ee4e43732058bed81754431f8a43ebf6909a19/Labs/Midterm/Simon-2023.sch">schematic</a> and <a href="https://github.com/ckemere/ELEC327/blob/07ee4e43732058bed81754431f8a43ebf6909a19/Labs/Midterm/Simon-2023.brd">board</a> files on github,
+you’ll see that the piezo buzzer is connected between pins <code class="language-plaintext highlighter-rouge">P2.5</code> and <code class="language-plaintext highlighter-rouge">P2.1</code>. If you look
+at the <a href="https://github.com/ckemere/ELEC327/blob/07ee4e43732058bed81754431f8a43ebf6909a19/Documents/msp430g2553.pdf">datasheet</a> for the MSP430G2553, you’ll see that <code class="language-plaintext highlighter-rouge">P2.5</code> corresponds to the Timer module PWM output <code class="language-plaintext highlighter-rouge">TA1.2</code>.
+In order to produce sound on the buzzer, you’ll need to output a PWM signal to <code class="language-plaintext highlighter-rouge">P2.5</code> and
+actively connect <code class="language-plaintext highlighter-rouge">P2.1</code> to either GND or VCC by configuring it’s GPIO information.
+<strong>Remember - to play SOUND with PWM, you need to change the frequency rather than
+the duty cycle.</strong> (The duty cycle can always be half of the square wave frequency.)</p>
+
+<p>Your goal is to create a set of functions (i.e., a
+library) that will allow you to play arbitrary sequences of tones at potentially different
+speeds. A piezo buzzer produces sounds by transducing electrical fields into motion using a
+piezoelectric material. They are good for higher frequencies, but not those in the lower part
+of our hearing spectrum.</p>
+
+<p>Example code in <a href="piezo_sample.c">piezo_sample.c</a> is set up to play through a C-major chord using
+the watchdog timer to switch between the different notes. Program your board with this code.
+You may notice that the level of volume produced by the buzzer is fairly high. If you
+re-configure <code class="language-plaintext highlighter-rouge">P2.1</code> as an INPUT, and set the pull-up or pull-down resistor, the volume will
+be lowered!</p>
+
+<p>For this lab, you’ll need to modify the example code to be general. The way that I
+think of music is as a series of notes, each with a corresponding duration. So a
+function that would play a song would have a prototype that looks like <code class="language-plaintext highlighter-rouge">void
+PlaySound(int *Notes, int* Durations, int Length)</code> (remember that arrays don’t
+have a built in length in C!). Alternatively, one could think of the music as
+having a fundamental duration (e.g., one eighth note), and the song would be
+specified as a series of eighth notes at different frequencies. Then, the
+prototype would look like <code class="language-plaintext highlighter-rouge">void PlaySound(int *Notes, int Length, int
+Duration)</code>, where the <code class="language-plaintext highlighter-rouge">Duration</code> parameter is the length in time of the
+fundamental unit. While the <code class="language-plaintext highlighter-rouge">Notes</code> in either case are probably properly thought
+of as frequencies, you can choose to specify them as periods for runtime
+efficiency. You should implement one of these two prototypes, or, if you have a
+very good (and well-commented reason), another one.</p>
+
+<p>A few notes:</p>
+<ul>
+  <li>Advanced musicians will recognize that in a lot of music there are tiny
+implicit rests between individual notes that allow, for e.g., two quarter
+notes versus an individual half-note to have different sounds. Implement
+this for extra credit.</li>
+  <li>Because each tone has a different frequency, keeping track of how long each
+has played is a slightly nontrivial task (though you may be able to
+figure out a simple way of accumulating periods properly to account for
+their different lengths). Alternatively, you can use the second timer module
+to help with note duration.</li>
+  <li><code class="language-plaintext highlighter-rouge">PlaySound()</code> should initialize the proper global state variables and start 
+the sound playing. An interrupt-driven process should ensure that, once
+started, the sound string is played only once.</li>
+  <li>You should organize your code into two or more source code files, one with
+the <code class="language-plaintext highlighter-rouge">main()</code> function (and maybe other stuff), and one with <code class="language-plaintext highlighter-rouge">PlaySound()</code>
+and maybe other stuff.</li>
+</ul>
+
+<p>Create the proper sequences for the first lines of “Twinkle, twinkle little star”, and “Mary had
+a little lamb”. Set up an infinite loop so that you play a sequence and then have quiet for a
+few seconds.</p>
+
+<p>As always, you will demonstrate your code to your peers in class, changing which song is
+played (ideally by some simple configuration in your code). Code should be turned in on Canvas.</p>
+
+
+
+      <hr>
+      <footer>
+        <p>
+        &copy; 2024 <a href="http://kemerelab.com">Caleb Kemere</a>
+        and <a href="http://www.ece.rice.edu">Rice University ECE</a>
+        </p>
+      </footer>
+    </div>
+
+    
+
+    <script src="/assets/themes/bootstrap/resources/jquery/jquery.min.js"></script>
+    <script src="/assets/themes/bootstrap/resources/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

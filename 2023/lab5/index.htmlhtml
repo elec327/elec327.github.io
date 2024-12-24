@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+     <title>Lab 5</title> 
+    <meta name="description" content="Processing Button Presses">
+    <meta name="author" content="Caleb Kemere">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/2023/assets/themes/bootstrap/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/2023/assets/themes/bootstrap/elec327.css" rel="stylesheet">
+  
+    <!--[if lt IE 9]>
+      <script src="/2023/assets/themes/bootstrap/resources/respond/Respond.min.js"></script>
+    <![endif]-->
+
+    <link href="/2023/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/2023/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" role="navigation">
+        <div class="container">
+        <a class="navbar-brand" href="/2023/">Rice ELEC327 - Digital Systems Laboratory</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-dark mr-auto">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/bonus">Bonus</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/">Home</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/parts_and_notes">Parts/Notes</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/syllabus">Syllabus</a></li>
+      	
+      
+    
+  
+
+
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Labs</a>
+              <ul class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown"role="menu">
+                
+                
+                
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab1/">Lab 1</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab2/">Lab 2</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab3/">Lab 3</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab4/">Lab 4</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item active"><a href="/2023/lab5/" class="dropdown-item active nav-link">Lab 5</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab6/">Lab 6</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/lab7/">Lab 7</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/midterm_project/">Midterm Project</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="nav-item"><a class="dropdown-item nav-link" href="/2023/final_project/">Final Project</a></li>
+      	
+      
+    
+  
+
+
+
+
+              </ul>
+            </li>
+          </ul>
+      </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container under-navbar">
+      
+<h2 id="lab-5-processing-button-presses-and-code-logic">Lab #5: Processing Button Presses and Code Logic</h2>
+
+<p><em>This lab focuses on thinking about a state machine to process user input.</em></p>
+
+<div class="alert alert-danger" role="alert">
+  <h4 id="what-should-be-turned-in-on-canvas">What should be turned in on Canvas?</h4>
+
+  <ol>
+    <li>Your <strong>commented</strong> <code class="language-plaintext highlighter-rouge">main.c</code>, <code class="language-plaintext highlighter-rouge">Numbers.h</code>, and <code class="language-plaintext highlighter-rouge">Numbers.c</code> files. Specifically, the comments
+  should include any instructions that peer graders might need to compile and run your code. Please
+  include the proper interrupt compiler directives to ensure that both the TI and gcc compilers will
+  work.</li>
+  </ol>
+
+  <h4 id="the-lab-will-be-due-february-22-2023-at-159-pm">The lab will be due February 22, 2023 at 1:59 PM.</h4>
+
+</div>
+
+<div class="row">
+  <div class="col-md-3 col-sm-6 col-xs-6">
+    <figure class="figure">
+      <p><a href="Counter.jpg"> <img src="Counter.jpg" class="figure-img img-fluid rounded" alt="APA102 Strip" /></a></p>
+      <figcaption class="figure-caption">
+        <p>Display PCB showing a 2 digit number.</p>
+      </figcaption>
+    </figure>
+
+  </div>
+  <div class="col-md-9 col-sm-12 col-xs-12">
+    <h4 id="process-buttons-to-make-a-timer">Process buttons to make a timer</h4>
+
+    <p>A kitchen timer has two important modes - countdown timing mode and set-the-time mode. Your job is
+to implement a seconds counter using your Lab 3 PCBs. Template code is provided to help you out a
+bit: <a href="https://github.com/ckemere/ELEC327/raw/master/Labs/Lab5/main.c">main.c</a>,
+<a href="https://github.com/ckemere/ELEC327/raw/master/Labs/Lab5/Numbers.h">Numbers.h</a>, and
+<a href="https://github.com/ckemere/ELEC327/raw/master/Labs/Lab5/Numbers.c">Numbers.c</a>. You’ll want to make
+a new CCS project and add all three of these files.</p>
+
+    <h5 id="what-has-been-given-you">What has been given you:</h5>
+    <p>The example code counts upwards from 01 to 99. Pressing one or both of the buttons will pause the
+counting. The <code class="language-plaintext highlighter-rouge">Numbers.*</code> files implement a module for displaying numbers. It provides two
+functions, <code class="language-plaintext highlighter-rouge">initialize_display()</code> and <code class="language-plaintext highlighter-rouge">display_number(int number)</code>. The <code class="language-plaintext highlighter-rouge">main.c</code> code calls these to
+interface with the display. If you look in the <code class="language-plaintext highlighter-rouge">Numbers.h</code> header file, you’ll see that it tells you
+that the module uses TimerA1 and certain pins in P1 and P2. <em>This is a good model to follow! It took
+a fair bit of care to make sure that all P1/P2 values were never explicitly set, only modified, so
+that other parts of the system could make use of other pins.</em></p>
+
+    <p>Looking at the main loop, currently, what happens is that the second timer (which uses the TimerA0
+module) and watchdog timer wake up the loop. The loop checks what the wakeup event was, and if it
+was the second timer, proceeds to update the display. But display update happens only if neither
+button is currently depressed.</p>
+
+    <p>There is a large comment that specifies your task for the lab. You will replace this with your own
+logic to process button presses. The timer should enter or exit “time-setting-mode” if the user
+pushes both buttons together (the mode change should happen on button release!). In
+“time-setting-mode”, button Sw1 should increment the time and SW2 should decrement it. Holding down
+the buttons should result in continuous (but controlled) changing of the values. <strong>Bonus:</strong> Make the
+numbers flash when the device is in “time-setting-mode.” In counting mode, the timer should count
+down to zero and then stop.</p>
+
+    <p><strong>Hint:</strong> You’ll need some sort of state machine to keep track of whether you’re in (A) timing mode (counting
+down) or (B) in setting mode. What happens inside the while loop will depend on this mode. In
+“time-setting-mode”, you want to check whether a single button is depressed and update the display
+accordingly. In the special case where both buttons are depressed at once, you want to wait until
+one of them is released (loop around until true!) and then switch modes. In countdown mode, you need
+to check for both buttons being pressed (temporary state) and then released (switch modes).
+Otherwise, you just decrement the timer value every second until it is zero.</p>
+
+    <p><strong>Hint 2:</strong> Remember that the ports are active low. Also remember that if you’re checking a for a
+button to be pressed, you’re asking whether, e.g.,  <code class="language-plaintext highlighter-rouge">P1IN &amp; 0x80 == 0</code> or <code class="language-plaintext highlighter-rouge">P1IN &amp; 0x80 == 0x80</code>
+(tricky because it’s not <code class="language-plaintext highlighter-rouge">== 1</code>!!!).</p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <p>
+        &copy; 2024 <a href="http://kemerelab.com">Caleb Kemere</a>
+        and <a href="http://www.ece.rice.edu">Rice University ECE</a>
+        </p>
+      </footer>
+    </div>
+
+    
+
+    <script src="/2023/assets/themes/bootstrap/resources/jquery/jquery.min.js"></script>
+    <script src="/2023/assets/themes/bootstrap/resources/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
