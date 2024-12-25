@@ -4,7 +4,7 @@ title: Syllabus
 group: navigation
 ---
 
-## ELEC 327: Digital Systems Laboratory (Spring 2023)
+## ELEC 327: Digital Systems Laboratory (Spring 2025)
 
 ### Syllabus
 
@@ -18,26 +18,31 @@ House (w/ free coffee!)
 caleb.kemere@rice.edu
 
 **Teaching Assistants:**
-  - Matthew Parker ([mcp12](mailto:Matthew.C.Parker@rice.edu))
-  - Joshua Woods ([jw145](joshua.woods@rice.edu))
+  - Someone ([some123](mailto:@rice.edu))
 
 **Lab Assistants:**
-  - Mac Carr ([mac28](mailto:mac28@rice.edu))
+  - Someone ([some123](mailto:@rice.edu))
 
 **Canvas link:**
-  - [Canvas](https://canvas.rice.edu/courses/57123)
+  - [Canvas](https://canvas.rice.edu/courses/76035)
   
  **Lab Communication:**
-  - Sign up for elec327.slack.com (**Create an account** in the top right corner of the sign in page!)
+  - We will use Canvas Discussions for communication
 
-Additional Lab office hours may be requested on Slack or by email
-
----
-**Text Book:** There is no text book, but you should take care of the MSP430 Launchpad you will be given.
+Additional Lab office hours may be requested by email.
 
 ---
+**Text Book:** 
+_Introduction to Embedded Systems Using the MSPM0+_ by Jonathan Valvano. 
+Available on [Amazon](https://www.amazon.com/dp/B0C9SB2QQ9) for $19.95. 
+I'm investigating whether an ebook version is available!
 
-**Class Hours:** MW 2-3:15 PM SST (Space Science)106/FE&P 122B
+In addition, you all will be given a MSPM0+ Launchpad. Please care for it!
+
+---
+
+**Class Hours:** MW 2-3:15 PM O'Connor Bldg for Eng and Sci Room 130 (Lectures and Lab) 
+
 Students are expected to spend significant out-of-class time (~10 hours per week) working on lab assignments.
 
 **Lab Help Sessions:** See Lab Assistant hours or by request on Slack or through email  
@@ -51,7 +56,7 @@ We use 2 different digital resources:
 
 1. The primary location assignments and lecture notes (and other resources) is the course
 website – [http://elec327.github.io](http://elec327.github.io)
-2. We use Canvas ([https://canvas.rice.edu/courses/47062](https://canvas.rice.edu/courses/47062))
+2. We use Canvas ([https://canvas.rice.edu/courses/76035](https://canvas.rice.edu/courses/76035))
 for announcements and for communication. If you have specific questions about course content or
 assignments, please post them on Canvas. As a corollary, you may find it useful to check for
 answers as questions arise.
@@ -82,14 +87,14 @@ including printed-circuit board design and assembly.
 
 ---
 
-**Prerequisites:** ELEC 220. Also useful are 240 and 241.
+**Prerequisites:** ELEC220, ELEC326, COMP140. Also useful are 240 and 241.
 
 **Grading:** Grades will be based on: __completion._ of approximately five lab
 modules (25%), a midterm project (20%), a final project (30%), a skills
 matrix/class participation/in-class quizzes (25%). A number of extra credit
 options will be available throughout the semester for a maximum of 30% of the
 final grade. Late assignments may be accepted (with penalty), except for
-printed circuit board orders , where late submissions may not be accepted.
+printed circuit board orders, where late submissions may not be accepted.
 Students wishing to submit late assignments should contact the instructor prior
 to the due date.
 
@@ -109,7 +114,7 @@ for example, on Amazon for $30-40.
 **Lab Cleanliness:**
 
 Historically, the lab space has not been maintained in a neat and orderly manner.
-Starting in 2017, we will implement spot inspections and **class-wide grade
+Starting in 2025, we will implement spot inspections and **class-wide grade
 deductions** to try to ensure that a high quality working and learning environment
 is maintained.
 
