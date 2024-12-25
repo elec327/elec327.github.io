@@ -7,7 +7,7 @@ group: navigation
 
 {::options parse_block_html="true" /}
 
-<H2>ELEC 327 - Digital Systems Laboratory (2023)</H2>
+<H2>ELEC 327 - Digital Systems Laboratory (2025)</H2>
 
 ---
 
@@ -67,6 +67,7 @@ https://github.com/elec327.)
 </div>
 
 <div class="row">
+<H3>Old Course Content</H3>
 
 **Previous versions of the class website**
 
