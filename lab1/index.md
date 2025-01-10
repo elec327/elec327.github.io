@@ -15,102 +15,146 @@ description: Intro C Programming
 
 
   - To get a taste for writing code in the C programming language. 
-  - To build a mental understanding for pointers and type casting. 
+  - To build a mental understanding for pointers and arrays. 
   
 </div>
 
 <div class="alert alert-danger" role="alert">
 #### **What should be turned in?**
 
-
-  1. Your **commented** summate.c file. 
-  2. We will have an in class quiz in which you will be required to modify and run your program and report the answers. 
+  1. Your **commented** encode_morse.c file. Functionality will be assessed by evaluation of the output in 5 test cases.
 
 </div>
 
 #### Due Date: __Wednesday, January 19, 2022__
 
-
-#### Introduction
-
-You are welcome to use any C compiler that you have access too (e.g, if you are running Linux or another Unix-like environment
-on your own computer). The instructions below assume that you have logged into the Rice student cluster, CLEAR.
-You can connect to CLEAR using ssh: `ssh netid@ssh.clear.rice.edu` will work if you are on campus or VPN. Otherwise
-you will need to first `ssh netid@ssh-students.rice.edu`, and then type in `ssh.clear.rice.edu` at the `Enter remote host:` prompt.
-If you are on campus or connected via VPN, you can mount your home directory using the Samba protocol. (See 
-(https://kb.rice.edu/93597)[https://kb.rice.edu/93597] for
-assistance.) This will allow you to use a GUI code editor such as Visual Stuio Code.
-The examples done in class on Tuesday will be available in the `/clear/courses/elec327/2021/` directory.
-
-In C, variables are associated with "types". The core types include ASCII characters, integers, 
-and floating point numbers. In this lab, we will explore the fact that C allows us to directly
-reference memory, and allows portions of memory to be interpreted as different types. Because the
-interfaces to peripherals in embedded systems are through the memory bus, understanding how
-to access memory is critical to programming embedded systems. In addition, passing by reference 
-(using pointers) is the only method in C for giving a function a variable that it should modify.
-
 #### The Task
 
-Many embedded systems will communicate data to a microprocessor. Sometimes, the structure of the
-data can be known precisely ahead of time, but sometimes the message payload may need to hold
-different items, including variables of different sizes. In this lab, your program needs to
-interpret a message that has been received from an embedded system. The messages contain a series
-of numbers, and the task for your program is to sum these. The challenge is that the numbers are
-all different types. Each message includes a header, which is a series of characters which describe
-the types of the numbers in the message. This is followed by the numbers themselves. The message
-is padded with zeros to a final size of 100 bytes. Your program should print out the sum of the numbers
-in the message file provided as a command line argument.
+In Labs 2 and 3, you will write firmware to flash a message in Morse Code using the LED on your MSPM0+ Launchpad. Morse
+Code is an old way of communicating alphabetic characters that relies on a simple on-or-off signal and timing. We will use 
+the version called "International Morse Code" for these labs. The specification is as follows (credit: 
+[wikipedia article](https://en.wikipedia.org/wiki/Morse_code)). There are five elements:
 
-The characters in the header are described in the following table (you may recognize these if you've used
-the [python struct library](https://docs.python.org/3/library/struct.html)) :
-
-| Character | Type | Size (bytes) |
-| :---: | :---: | ---: |
-| 'b' | signed byte | 1 |
-| 'h' | signed short | 2 |
-| 'i' | signed int | 4 |
-| 'd' | signed double | 8 |
-| 'e' | special character denoting message end | 0 |
-
-The `'e'` character denotes the end of the header. The numbers directly follow it, packed tightly.
-
-The code that I am using to create the files you will work with is actually python. It's [here]
-(make_example.py):
-```python
-import struct
-
-def write_list_to_file(data_list, ofname):
-  format_only = [ x[0] for x in data_list]
-  data_only = [x[1] for x in data_list]
-  print('=' + ''.join(format_only))
-  print(data_only)
-  of = open(ofname, 'wb')
-  of.write(struct.pack('='+'c'*(len(format_only)), *[bytes(c, "utf-8") for c in format_only]))
-  of.write(struct.pack('=c', b'e'))
-  of.write(struct.pack('='+''.join(format_only), *data_only))
-  padding = 100 - of.tell()
-  of.write(struct.pack('={}b'.format(padding), *bytearray(padding)))
-  of.close()
-
-# 'b' = signed char, 'i' = 4 byte int, 'd' = 8 byte double
-
-example1 = [('b',-100), ('i',-100), ('d', -100.0), ('i', -100), ('d', -100.0), ('b', -100)]
-example2 = [('i',10000), ('b',-100), ('b', -100), ('b', -100), ('b', -100), ('b', -100)]
-example3 = [('d',1e7), ('i',10000), ('b',-100), ('b', -100), ('b', -100), ('b', -100), ('b', -100)]
-
-write_list_to_file(example1, 'example1.bin')
-write_list_to_file(example2, 'example2.bin')
-write_list_to_file(example3, 'example3.bin')
+  1. A short "on" signal (called a "short mark", "dot", or "dit"). The duration of this signal is the unit of time. In this
+  lab, dots will be represented by a single period character (`'.'`).
+  2. A long "on" signal (called a "long mark", "dash", or "dah"). The duration of the long signal is three time units. These
+  will be represented as a single hyphen character (`'-'`).
+  3. An inter-element gap of "off" signal between the dots and dashes representing a single character. The duration of
+  this off period is also a single unit of time. Characters will be represented as a series of dots and dashes (e.g., '...'
+  or '.--.'), so these will be defined implicitly.
+  4. A short gap of "off" signal between the groups of dots and dashes representing one character in a word and the next.
+  The duration of this off period is three units of time. In this lab, the gap between letters will be represented as a
+  space character (`' '`).
+  5. A medium gap of "off" signal between words. The duration of this off period is seven units of time. In this lab, the
+  gap between words will be represented as a semicolon character (`';`).
 
 
+To warm up our C coding for the semester, for Lab 1, you will write code to translate a Morse code message, defined as a
+C-string (an array of characters terminated by a zero value (an ASCII NULL, `\0`). You will translate the message into
+`(timing, signal)` tuples, printing out the number of time units for the current item, and it's signal value (`1` or `0`).
+The message will be defined on the command line as a string macro named MESSAGE. 
+
+As an example, if you are given the following string:
+```
+#define MESSAGE "... --- ...;"
+```
+You should print out:
+```
+1,1
+0,1
+1,1
+0,1
+1,1
+0,3
+1,3
+0,1
+1,3
+0,1
+1,3
+0,3
+1,1
+0,1
+1,1
+0,1
+1,1
+0,7
 ```
 
-For the [example1.bin](example1.bin) file, the proper return value is `-600.0` (the number of
-trailing zeros is not critical). More examples: [example2.bin](example2.bin) and 
-[example3.bin](example3.bin). A template C file is given in
-[summate_template.c](summate_template.c). Your task is to fill in the `compute_sum()` function.
+Your code will loop over the character array, interpreting each element and printing out the relevant tuples with a
+newline character (`'\n'`) separating them. You will submit your code on Canvas, in a single C file. The macro `MESSAGE` 
+will define the string that you need to parse. The automatic grading script will compile your code with different test 
+strings and compare the output you produce to the expected output.
 
+#### Testing
 
-**Upload your code to Canvas and be ready for live coding (we'll introduce a wrinkle!)
-in class on Tuesday.**
+You are welcome to use any C compiler that you have access too (e.g, if you are running Linux or another Unix-like environment
+on your own computer), however you should ensure that your code compiles using gcc on CLEAR. The instructions below assume that 
+you have logged into the Rice student cluster, CLEAR. You can connect to CLEAR using ssh: `ssh netid@ssh.clear.rice.edu` will work if you are on campus or VPN. Otherwise you will need to first `ssh netid@ssh-students.rice.edu`, and then type in `ssh.clear.rice.edu` 
+at the `Enter remote host:` prompt. If you are on campus or connected via VPN, you can mount your home directory using the 
+Samba protocol. (See (https://kb.rice.edu/93597)[https://kb.rice.edu/93597] for assistance.) This will allow you to use a GUI 
+code editor such as Visual Stuio Code.
 
+Here are five test strings and the correct output.
+
+  1. `MESSAGE='"-.-. .- -.;--- -- ---;"'` -- (test1.txt)[test1.txt].
+  2. blah
+  3. blah
+  4. blah
+  5. blah
+
+You can test your code using the following commands. For example, for the first message:
+```
+gcc -o morse -D MESSAGE='"-.-. .- -.;--- -- ---;"' morse_timing.c
+```
+This compiles the code in `morse_time.c` with the defined message. Then, capture the output of the program you've compiled
+and compare it to the correct output:
+```
+./morse > test.out
+diff test.out test1.txt -s
+```
+If the output is correct, diff will report `Files test.out and test.out are identical`. 
+The examples are also available in the `/clear/courses/elec327/2025/` directory; thus, if you 
+are running your program on CLEAR, you can instead run:
+```
+./morse > test.out
+diff test.out /clear/courses/elec327/2025/lab1/test1.txt -s
+```
+
+Here is a sample program that produces the correct output for the first message. It is also available to download
+as [morse_timing.c](morse_timing.c).
+
+```
+#include <stdio.h>
+
+#ifndef MESSAGE
+char message[] = "... --- ...;";
+#else
+char message[] = MESSAGE;
+#endif
+
+int main() {
+  
+  printf("1,1\n");
+  printf("0,1\n");
+  printf("1,1\n");
+  printf("0,1\n");
+  printf("1,1\n");
+  printf("0,3\n");
+  printf("1,3\n");
+  printf("0,1\n");
+  printf("1,3\n");
+  printf("0,1\n");
+  printf("1,3\n");
+  printf("0,1\n");
+  printf("1,1\n");
+  printf("0,1\n");
+  printf("1,1\n");
+  printf("0,1\n");
+  printf("1,1\n");
+  printf("0,7\n");
+
+  return 0;
+}
+```
+
+**NOTE** This program obviously won't work for the rest of the lab!!
