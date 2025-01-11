@@ -20,13 +20,14 @@ description: Intro C Programming
 </div>
 
 <div class="alert alert-danger" role="alert">
+#### Due Date: Friday, January 17, 2025
+
 #### **What should be turned in?**
 
   1. Your **commented** encode_morse.c file. Functionality will be assessed by evaluation of the output in 5 test cases.
 
 </div>
 
-#### Due Date: __Wednesday, January 19, 2022__
 
 #### The Task
 

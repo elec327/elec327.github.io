@@ -8,7 +8,7 @@ description: Midterm Project
 
 {::options parse_block_html="true" /}
 
-## Midterm Project (2023): Creating "Simon"
+## Midterm Project (2025): Creating "Simon"
 
 <div class="alert alert-info" role="alert">
 #### **There are three goals for this project:**
@@ -20,6 +20,8 @@ description: Midterm Project
 </div>
 
 <div class="alert alert-danger" role="alert">
+#### Due date: 3/26/2025
+
 #### **How will it be evaluated?**
 
   1. The code for your Simon game will be submitted via canvas. Please include

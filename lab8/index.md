@@ -1,24 +1,24 @@
 ---
-title: Lab 5
-lab: 5
+title: Lab 8
+lab: 8
 layout: default
 group: labs-navigation
-description: PCB Design With KiCAD
+description: Analog to Digital Conversion
 ---
 
 {::options parse_block_html="true" /}
 
-### Lab #5: PCB Design With KiCAD (100 pts)
+### Lab #8: Analog to Digital Conversion (100 pts)
 
 <div class="alert alert-info" role="alert">
 #### **There is one goal for this assignment:**
 
-  - To learn how to design a PCB
+  - To demonstrate the use of an ADC for sampling in input analog signal
   
 </div>
 
 <div class="alert alert-danger" role="alert">
-#### Due Date: 2/21/2025
+#### Due Date: 4/4/2025
 #### **What should be turned in?**
 
 </div>

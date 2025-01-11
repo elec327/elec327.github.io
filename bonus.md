@@ -12,46 +12,10 @@ projects are being done.
 
 ---
 
-### Accelerometer and LED circle board
-
-The EAGLE CAD design files are found in the `Bonus/` directory of the ELEC327 github
-repository. Here is a link to the [schematic
-](https://raw.githubusercontent.com/ckemere/ELEC327/master/Bonus/Bonus.sch) and one to the
-[board](https://raw.githubusercontent.com/ckemere/ELEC327/master/Bonus/Bonus.brd). Note that
-the accelerometer is mis-wired - the MISO and MOSI wires are reversed. You can fix this by
-cutting these traces and soldering on airwires. 
-
-  1. **[1 point for whoever is first]** - Make all 24 lights light up. Create a youtube video 
-  and post to campus. The first timestamped video will be worth 1 bonus point. (Note that 
-  there may be a problem with the PCB!)
-
-  1. **[1 - 2 points]** - implement a clock.  The aesthetics of the clock and code will
-  determine total scorer. Example questions: is there a second hand that ticks? a separate hour
-  and minute hand?  is there some sort of PWM-like intensity modulation? does the device
-  calibrate and use the VLO for low power?
-
-  1. **[3 point]** - create a proof-of-concept accelerometer device (requiring the hardware
-  airwire fix described above). Get data from the accelerometer and display it somehow with the
-  LEDs. (Alternatively, an extra point will be applied for the following bonuses...)
-
-  1. **[2 points]** - implement a tilt sensor in which the LED closest and furthest from the ground
-  light up. The button should be used to make the device sleep/wake up. This will require that
-  you (a) properly solder the MSP430 and 3 shift register chips to drive the LEDs and (b)
-  interface with the accelerometer to read out the gravity vector, and (c) appropriately
-  compute its direction.
-
-  2. **[up to 2 points]** - derive optimized integer routines for (1) so that the update speed can be
-  fast. Obviously, this also requires doing (1).
-
-  3. **[up to 5 points]** - do something cool that links motion to the LEDs.
-
-
----
-
 ### Lab 1 Bonus - Color cyle Morse Code
 
-**[0.25 points]** - Make sure that your implementation of [Lab1 (Lab2 in 2021) morse code blinking
-project](lab2/) is using one of the Timer interrupts for character timing. Display the Morse
+**[0.25 points]** - Make sure that your implementation of [Lab3 morse code blinking project](lab3/) 
+is using one of the Timer interrupts for character timing. Display the Morse
 code message on the RGB led of the Launchpad. Using a different timer interrupt, configure the
 color of the RGB LED to cycle through the rainbow (at least 16 different colors) while the
 message is being flashed. The color cycling should be faster than the character timing.
