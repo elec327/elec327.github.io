@@ -17,11 +17,12 @@ Office Hours: After class or (please verify via email) many mornings between 8:3
 House (w/ free coffee!)
 caleb.kemere@rice.edu
 
-**Teaching Assistants:**
-  - Someone ([some123](mailto:@rice.edu))
-
 **Lab Assistants:**
-  - Someone ([some123](mailto:@rice.edu))
+  - Chengyun Tang [ct77@rice.edu](mailto:ct77@rice.edu)
+  - Noah Giles [neg2@rice.edu](mailto:neg2@rice.edu)
+  - Alex Torres [at80@rice.edu](mailto:at80@rice.edu)
+  - William Nacci [wn15@rice.edu](mailto:wn15@rice.edu) (**PCB Team**)
+  - Matt Gibson [matt.gibson@rice.edu](mailto:matt.gibson@rice.edu) (**PCB Team**)
 
 **Canvas link:**
   - [Canvas](https://canvas.rice.edu/courses/76035)
