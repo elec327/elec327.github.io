@@ -32,12 +32,17 @@ caleb.kemere@rice.edu
 Additional Lab office hours may be requested by email.
 
 ---
-**Text Book:** 
-_Introduction to Embedded Systems Using the MSPM0+_ by Jonathan Valvano. 
-Available on [Amazon](https://www.amazon.com/dp/B0C9SB2QQ9) for $19.95. 
-I'm investigating whether an ebook version is available!
 
-In addition, you all will be given a MSPM0+ Launchpad. Please care for it!
+
+**Required Textbooks and Supplies:**
+
+  - _Introduction to Embedded Systems Using the MSPM0+_ by Jonathan Valvano. 
+    Available on [Amazon](https://www.amazon.com/dp/B0C9SB2QQ9) for $19.95. 
+  - Ebook version here (thanks Prof. Valvano!) - https://users.ece.utexas.edu/~valvano/mspm0/ebook/index.htm
+  - In addition, you all will be given a MSPM0+ Launchpad. Please care for it!
+  - A large solderless breadboard may be useful for prototyping. Prototyping jumpers 
+     will be available in lab. A larger solderless breadboard can be purchased,
+     for example, on Amazon for $30-40.
 
 ---
 
@@ -108,12 +113,6 @@ should be done in pairs). I would like you to write your own code and (especiall
 the labs. If you share code or design elements with other students in the class you **MUST** cite
 this in your returned assignments.
 
-**Required Textbooks and Supplies:**
-
-No textbook is required. Students will be provided with one MSP430-G2553 or MSP430-FR2433
-Launchpad. A large solderless breadboard may be useful for prototyping. Prototyping jumpers 
-will be available in lab. A larger solderless breadboard can be purchased,
-for example, on Amazon for $30-40.
 
 **Lab Cleanliness:**
 
