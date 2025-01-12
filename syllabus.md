@@ -89,11 +89,15 @@ including printed-circuit board design and assembly.
 
 **Prerequisites:** ELEC220, ELEC326, COMP140. Also useful are 240 and 241.
 
-**Grading:** Grades will be based on: __completion._ of approximately five lab
-modules (25%), a midterm project (20%), a final project (30%), a skills
-matrix/class participation/in-class quizzes (25%). A number of extra credit
-options will be available throughout the semester for a maximum of 30% of the
-final grade. Late assignments may be accepted (with penalty), except for
+**Grading:** Grades will be based on: 
+  - __completion_ of approximately nine lab modules (40%)
+  - a midterm project (20%)
+  - a final project (30%), 
+  - a skills matrix/class participation/in-class quizzes (10%). 
+  - A number of extra credit options will be available throughout the semester for a maximum of 30% of the
+    final grade. 
+
+Late assignments may be accepted (with penalty), except for
 printed circuit board orders, where late submissions may not be accepted.
 Students wishing to submit late assignments should contact the instructor prior
 to the due date.
