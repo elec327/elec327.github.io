@@ -1,6 +1,6 @@
 ---
-title: Lab 2
-lab: 2
+title: Lab 9
+lab: 9
 layout: default
 group: labs-navigation
 description: Digital to Analog Conversion
@@ -8,7 +8,7 @@ description: Digital to Analog Conversion
 
 {::options parse_block_html="true" /}
 
-### Lab #2: Digital to Analog Conversion (100 pts)
+### Lab #9: Digital to Analog Conversion (100 pts)
 
 <div class="alert alert-info" role="alert">
 #### **There is one goal for this assignment:**
