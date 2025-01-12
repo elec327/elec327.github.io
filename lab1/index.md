@@ -53,7 +53,7 @@ the version called "International Morse Code" for these labs. The specification 
 To warm up our C coding for the semester, for Lab 1, you will write code to translate a Morse code message, defined as a
 C-string (an array of characters terminated by a zero value (an ASCII NULL, `\0`). You will translate the message into
 `(timing, signal)` tuples, printing out the number of time units for the current item, and it's signal value (`1` or `0`).
-The message will be defined on the command line as a string macro named MESSAGE. 
+The message will be defined on the command line as a string macro named `MESSAGE`. 
 
 As an example, if you are given the following string:
 ```
@@ -86,6 +86,15 @@ newline character (`'\n'`) separating them. You will submit your code on Canvas,
 will define the string that you need to parse. The automatic grading script will compile your code with different test 
 strings and compare the output you produce to the expected output.
 
+**Detailed specification.** In addition to the 5 rules listed above, for this lab, there are a few more rules:
+
+  1. You should treat the character `'_'` as a dash (i.e., the same as a `'-'`). You should treat the character `'\'`
+     as an interword gap (i.e., the same as a `';'`).
+  2. You should ignore unspecified characters (i.e., other than`\0`, '-', '_', '.', ' ', ';').
+  3. Repeated breaks should be decoded as a single one of the longest type. So for example, the sequence `"  "` (2 spaces) 
+     in a message should be decoded as a `' '` (single inter-letter space), with the output `0, 3`. For another example, the sequence
+      `" ;  ; "` in a message should be decaded as a `';'` (single inter-word space) and produce the output `0, 7`.
+
 #### Testing
 
 You are welcome to use any C compiler that you have access too (e.g, if you are running Linux or another Unix-like environment
@@ -95,13 +104,13 @@ at the `Enter remote host:` prompt. If you are on campus or connected via VPN, y
 Samba protocol. (See (https://kb.rice.edu/93597)[https://kb.rice.edu/93597] for assistance.) This will allow you to use a GUI 
 code editor such as Visual Stuio Code.
 
-Here are five test strings and the correct output.
+Here are four test strings and the correct output.
 
   1. `MESSAGE='"-.-. .- -.;--- -- ---;"'` -- (test1.txt)[test1.txt].
-  2. blah
-  3. blah
-  4. blah
-  5. blah
+  3. `MESSAGE='"- . ... - ; ; .-.  .  .--. .  .- -  ..."'` -- (test3.txt)[test3.txt]
+  4. `MESSAGE='"-._. --- -.. ./...- ._ .-. .. .- -. -;-.-. .... .- ._.  ... /"'` -- (test4.txt)[test4.txt]
+  1. `MESSAGE='".-. .. -.-. .;.. ... ; -. .. -.-. . .-.-.- ; .-. .. -.-. . ; .. ... ; -. .. -.-. . .-.-.-;"'` -- (test2.txt)[test2.txt].
+
 
 You can test your code using the following commands. For example, for the first message:
 ```

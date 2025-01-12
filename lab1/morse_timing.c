@@ -19,7 +19,7 @@ int main() {
   printf("1,3\n");
   printf("0,1\n");
   printf("1,3\n");
-  printf("0,1\n");
+  printf("0,3\n");
   printf("1,1\n");
   printf("0,1\n");
   printf("1,1\n");
