@@ -69,10 +69,6 @@ https://github.com/elec327.)
 ---
 
 
-#### MSP M0+ Resources
-  + Datasheet
-  + Programmers Guide
-
 #### C Resources
 
   + [Valvano C Book for specifics on programming for a ARM Cortex M micro-controller](https://users.ece.utexas.edu/~valvano/embed/toc1.htm)
