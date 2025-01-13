@@ -10,8 +10,7 @@ group: navigation
 
 ### Course Staff
 
-#### Instructor: Caleb Kemere**  
-  + Office: BRC 971
+#### Instructor: Prof. Caleb Kemere
   + [caleb.kemere@rice.edu](mailto:caleb.kemere@rice.edu)
 
 
