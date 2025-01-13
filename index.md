@@ -66,17 +66,21 @@ https://github.com/elec327.)
 </div>
 </div>
 
-## C Resources
+#### MSP M0+ Resources
+  + Datasheet
+  + Programmers Guide
 
-    + [Valvano C Book for specifics on programming for a ARM Cortex M micro-controller](https://users.ece.utexas.edu/~valvano/embed/toc1.htm)
-    + Patt and Patel Introduction to Computing Systems: From Bits & Gates to C/C++ & Beyond Ch. 11-17
-    + [Chapter 3](https://users.ece.utexas.edu/~valvano/mspm0/ebook/Ch3_SoftwareDesign.html) of the Valvano M0+ e-book
-    + [A C programming tutorial](https://users.ece.utexas.edu/~valvano/mspm0/ebook/Ch3_SoftwareDesign.html) from Tutorialspoint
+#### C Resources
+
+  + [Valvano C Book for specifics on programming for a ARM Cortex M micro-controller](https://users.ece.utexas.edu/~valvano/embed/toc1.htm)
+  + Patt and Patel Introduction to Computing Systems: From Bits & Gates to C/C++ & Beyond Ch. 11-17
+  + [Chapter 3](https://users.ece.utexas.edu/~valvano/mspm0/ebook/Ch3_SoftwareDesign.html) of the Valvano M0+ e-book
+  + [A C programming tutorial](https://users.ece.utexas.edu/~valvano/mspm0/ebook/Ch3_SoftwareDesign.html) from Tutorialspoint
 
 
-### Old Course Content
+#### Old Course Content
 
-#### Previous versions of the class website
+##### Previous versions of the class website
 
   + [2013](http://dsp.rice.edu/elec327-2013)
   + [2014](http://dsp.rice.edu/elec327-2014)
@@ -85,7 +89,7 @@ https://github.com/elec327.)
   + [2019](http://elec327.github.io/2019) - **CAREFUL YOU DON'T GET STUCK!**
   + [2023](http://elec327.github.io/2023) - **CAREFUL YOU DON'T GET STUCK!**
 
-#### Old Lectures
+##### Old Lectures
 
   + [link to Dropbox folder for 2023](https://www.dropbox.com/sh/cdhfke2z5ei7yox/AAAH6RoPw1t7u4mZVjz3Dm_Ca?dl=0)
   + [link to Dropbox folder for 2022](https://www.dropbox.com/sh/fm5q04qsg7ndzdu/AAB1uFuNtMVNyuNYrUtYK4SKa?dl=0)
