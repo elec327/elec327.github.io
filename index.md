@@ -28,6 +28,8 @@ understand how application-specific blocks enable modern commercial devices._
 
 **Location** -- O'Connor Bldg for Eng and Sci Room 130 (Lectures and Lab) FE&P 122B (Design Lab)
 
+**Dropbox Link For Lectures** -- [Lectures Folder](https://www.dropbox.com/scl/fo/nnjciw6hs8bhzk4ahdyit/AHMWHwrsAlTfNnT_u6---K0?rlkey=mqjw8wk75yabo6rgttjl05mgv&dl=0)
+
 **Time** -- Mondays & Wednesdays 2-3:15 PM
 
 **Prerequisites** -- ELEC220, ELEC326, COMP140

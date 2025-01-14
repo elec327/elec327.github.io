@@ -100,9 +100,8 @@ strings and compare the output you produce to the expected output.
 You are welcome to use any C compiler that you have access too (e.g, if you are running Linux or another Unix-like environment
 on your own computer), however you should ensure that your code compiles using gcc on CLEAR. The instructions below assume that 
 you have logged into the Rice student cluster, CLEAR. You can connect to CLEAR using ssh: `ssh netid@ssh.clear.rice.edu` will work if you are on campus or VPN. Otherwise you will need to first `ssh netid@ssh-students.rice.edu`, and then type in `ssh.clear.rice.edu` 
-at the `Enter remote host:` prompt. If you are on campus or connected via VPN, you can mount your home directory using the 
-Samba protocol. (See (https://kb.rice.edu/93597)[https://kb.rice.edu/93597] for assistance.) This will allow you to use a GUI 
-code editor such as Visual Stuio Code.
+at the `Enter remote host:` prompt. If you want to use the Visual Studio Code editor, there is
+a helpful guide [here](https://kb.rice.edu/internal/117203)!
 
 Here are four test strings and the correct output.
 
