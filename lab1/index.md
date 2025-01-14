@@ -88,12 +88,12 @@ strings and compare the output you produce to the expected output.
 
 **Detailed specification.** In addition to the 5 rules listed above, for this lab, there are a few more rules:
 
-  1. You should treat the character `'_'` as a dash (i.e., the same as a `'-'`). You should treat the character `'\'`
+  1. You should treat the character `'_'` as a dash (i.e., the same as a `'-'`). You should treat the character `'/'`
      as an interword gap (i.e., the same as a `';'`).
   2. You should ignore unspecified characters (i.e., other than`\0`, '-', '_', '.', ' ', ';').
   3. Repeated breaks should be decoded as a single one of the longest type. So for example, the sequence `"  "` (2 spaces) 
-     in a message should be decoded as a `' '` (single inter-letter space), with the output `0, 3`. For another example, the sequence
-      `" ;  ; "` in a message should be decaded as a `';'` (single inter-word space) and produce the output `0, 7`.
+     in a message should be decoded as a `' '` (single inter-letter space), with the output `0,3`. For another example, the sequence
+      `" ;  ; "` in a message should be decaded as a `';'` (single inter-word space) and produce the output `0,7`.
 
 #### Testing
 
@@ -106,9 +106,9 @@ a helpful guide [here](https://kb.rice.edu/internal/117203)!
 Here are four test strings and the correct output.
 
   1. `MESSAGE='"-.-. .- -.;--- -- ---;"'` -- (test1.txt)[test1.txt].
-  3. `MESSAGE='"- . ... - ; ; .-.  .  .--. .  .- -  ..."'` -- (test3.txt)[test3.txt]
-  4. `MESSAGE='"-._. --- -.. ./...- ._ .-. .. .- -. -;-.-. .... .- ._.  ... /"'` -- (test4.txt)[test4.txt]
-  1. `MESSAGE='".-. .. -.-. .;.. ... ; -. .. -.-. . .-.-.- ; .-. .. -.-. . ; .. ... ; -. .. -.-. . .-.-.-;"'` -- (test2.txt)[test2.txt].
+  3. `MESSAGE='"- . ... - ; ; .-.  .  .--. .  .- -  ..."'` -- (test2.txt)[test2.txt]
+  4. `MESSAGE='"-._. --- -.. ./...- ._ .-. .. .- -. -;-.-. .... .- ._.  ... /"'` -- (test3.txt)[test3.txt]
+  1. `MESSAGE='".-. .. -.-. .;.. ... ; -. .. -.-. . .-.-.- ; .-. .. -.-. . ; .. ... ; -. .. -.-. . .-.-.-;"'` -- (test4.txt)[test4.txt].
 
 
 You can test your code using the following commands. For example, for the first message:
@@ -135,11 +135,14 @@ as [morse_timing.c](morse_timing.c).
 ```
 #include <stdio.h>
 
-#ifndef MESSAGE
-char message[] = "... --- ...;";
-#else
-char message[] = MESSAGE;
+#ifndef MESSAGE  // Preprocessor directive. Asks "Is the macro MESSAGE defined? If not, include the following code.""
+#define MESSAGE "... --- ...;" // Preprocessor macro. Will automatically substitite for the string "MESSAGE"
+                               // everywhere that it occurs in the code. Works like a case-sensitive search and replace!
+                               // We can also define this macro on the gcc command line, which will override this
+                               // definition because of the #ifndef.
 #endif
+
+char message[] = MESSAGE; // Uses the macro definition to initialize the message character array
 
 int main() {
   
