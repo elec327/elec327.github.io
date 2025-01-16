@@ -94,6 +94,8 @@ strings and compare the output you produce to the expected output.
   3. Repeated breaks should be decoded as a single one of the longest type. So for example, the sequence `"  "` (2 spaces) 
      in a message should be decoded as a `' '` (single inter-letter space), with the output `0,3`. For another example, the sequence
       `" ;  ; "` in a message should be decaded as a `';'` (single inter-word space) and produce the output `0,7`.
+  4. If a message fails to end with a `';'`, you should add one. This is because for subsequent labs on the microcontroller, you
+     will loop the messages, and so the timing between loops should be an inter-word timing.
 
 #### Testing
 
