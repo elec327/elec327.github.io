@@ -105,10 +105,10 @@ a helpful guide [here](https://kb.rice.edu/internal/117203)!
 
 Here are four test strings and the correct output.
 
-  1. `MESSAGE='"-.-. .- -.;--- -- ---;"'` -- (test1.txt)[test1.txt].
-  3. `MESSAGE='"- . ... - ; ; .-.  .  .--. .  .- -  ..."'` -- (test2.txt)[test2.txt]
-  4. `MESSAGE='"-._. --- -.. ./...- ._ .-. .. .- -. -;-.-. .... .- ._.  ... /"'` -- (test3.txt)[test3.txt]
-  1. `MESSAGE='".-. .. -.-. .;.. ... ; -. .. -.-. . .-.-.- ; .-. .. -.-. . ; .. ... ; -. .. -.-. . .-.-.-;"'` -- (test4.txt)[test4.txt].
+  1. `MESSAGE='"-.-. .- -.;--- -- ---;"'` -- [test1.txt](test1.txt).
+  3. `MESSAGE='"- . ... - ; ; .-.  .  .--. .  .- -  ..."'` -- [test2.txt](test2.txt)
+  4. `MESSAGE='"-._. --- -.. ./...- ._ .-. .. .- -. -;-.-. .... .- ._.  ... /"'` -- [test3.txt](test3.txt)
+  1. `MESSAGE='".-. .. -.-. .;.. ... ; -. .. -.-. . .-.-.- ; .-. .. -.-. . ; .. ... ; -. .. -.-. . .-.-.-;"'` -- [test4.txt](test4.txt)
 
 
 You can test your code using the following commands. For example, for the first message:
