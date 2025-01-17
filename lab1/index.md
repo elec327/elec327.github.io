@@ -52,7 +52,7 @@ the version called "International Morse Code" for these labs. The specification 
 
 To warm up our C coding for the semester, for Lab 1, you will write code to translate a Morse code message, defined as a
 C-string (an array of characters terminated by a zero value (an ASCII NULL, `\0`). You will translate the message into
-`(timing, signal)` tuples, printing out the number of time units for the current item, and it's signal value (`1` or `0`).
+`(signal,timing)` tuples, printing out the number of time units for the current item, and it's signal value (`1` or `0`).
 The message will be defined on the command line as a string macro named `MESSAGE`. 
 
 As an example, if you are given the following string:
