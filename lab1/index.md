@@ -24,7 +24,9 @@ description: Intro C Programming
 
 #### **What should be turned in?**
 
-  1. Your **commented** encode_morse.c file. Functionality will be assessed by evaluation of the output in 5 test cases.
+  1. Your **commented** `encode_morse.c` file. Functionality will be assessed by evaluation of the output in 10 test cases.
+  2. As described below, you can discover whether your code is functioning correctly by submitting it to the Autograder.
+     When you are satisfied, submit your `encode_morse.c` file on Canvas.
 
 </div>
 
@@ -90,12 +92,14 @@ strings and compare the output you produce to the expected output.
 
   1. You should treat the character `'_'` as a dash (i.e., the same as a `'-'`). You should treat the character `'/'`
      as an interword gap (i.e., the same as a `';'`).
-  2. You should ignore unspecified characters (i.e., other than`\0`, '-', '_', '.', ' ', ';').
+  2. You should ignore unspecified characters (i.e., other than`'\0'`, `'-'`, `'_'`, `'.'`, `' '`, `';'`).
   3. Repeated breaks should be decoded as a single one of the longest type. So for example, the sequence `"  "` (2 spaces) 
      in a message should be decoded as a `' '` (single inter-letter space), with the output `0,3`. For another example, the sequence
       `" ;  ; "` in a message should be decaded as a `';'` (single inter-word space) and produce the output `0,7`.
-  4. If a message fails to end with a `';'`, you should add one. This is because for subsequent labs on the microcontroller, you
-     will loop the messages, and so the timing between loops should be an inter-word timing.
+  4. For subsequent labs on the microcontroller, you will loop the messages, and the gap between loops should be an
+     inter-word period. So for this lab, if a message ends with something other than am interword (`';'` or `'/'`), you
+     should still output a `(0,7)` code. (Keeping in mind point 3, if the last character was a single inter-letter space
+     or a dot/dash, you should _only_ output the interword code.)
 
 #### Testing
 
@@ -172,3 +176,10 @@ int main() {
 ```
 
 **NOTE** This program obviously won't work for the rest of the lab!!
+
+#### Using the Autograder and Submitting
+The autograder will be running during the last few days of the turn-in period. It will show you whether your code is
+producing the correct output for the grading test cases. After you are pleased with your results, submit your C file
+on Canvas. **Please only submit a single C file.**
+
+[Autograder Link](http://granule.rice.edu:5000). Note that this is only accessible from within the Rice network (or on VPN).
