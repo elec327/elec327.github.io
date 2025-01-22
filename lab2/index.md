@@ -52,7 +52,7 @@ the duration of on pulses through the serial port.
   message will be concluded with an inter-word character (`";"`).
 
   **Scoring criteria**
-  4. Following the example code, you should set your system oscillator to 4 MHz. (10 pts)
+  4. Following the example code, you should set your system oscillator to 32 MHz. (10 pts)
   5. You should produce the correct output patterns for the 10 test case messages. At the
      end of each message, you should loop infinitely. You may assume that the first character 
      will be either a dot or a dash (not a space). **(40 pts)**
