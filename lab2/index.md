@@ -23,7 +23,8 @@ description: First Launchpad Project
 
   1. Your **commented** encode_morse.c file. Your grade will be assigned based on
      functionality as defined in the Detailed Specifications below.
-
+  2. **CRITICAL** If you have used breakpoints to test your code, please make sure
+     that they are removed or commented out!
 
 </div>
 
@@ -80,3 +81,44 @@ the 3 registers used to effect outputs to GPIOs - `DOUTSET31_0`, `DOUTCLR31_0`, 
 Helpful text references for this Lab can be found in Section 2.2 of the textbook 
 ([Chapter 2](https://users.ece.utexas.edu/~valvano/mspm0/ebook/Ch2_IntroToInterfacing.html) in 
 the online version.)
+
+### Measuring the width of pulses
+There are two simple ways to measure the duration of the pulses that you are measuring. The first
+is to use the debugger and the Systick clock. To enable the Systick, you the following code in 
+initialization.
+```
+    SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk;
+    SysTick->LOAD = 0x00FFFFFF;
+    SysTick->VAL  = 0;
+    SysTick->CTRL |= (SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_ENABLE_Msk);
+```
+When you debug, you will find that the register called `SYSTICK_SYST_CVR` will decrement each
+clock cycle. So you can place breakpoints (either using the helper function `__BKPT(0);` or
+by clicking in the UI), and then observe how many ticks elapse between raising and lowering
+(or lowering and raising) the output pin. Note that executing the breakpoint takes 3 clock
+cycles.
+
+Note that the template file configures the processor to run at 32.768 kHz (very slow), and to
+output the system clock to a pin. This is required for this lab in order to enable the timining
+measurement process to be cycle-accurate. This code in your template file configures the system
+clock to be spit out on PA31.
+```
+void InitializeCLKOut(void) {
+    // This function initializes the GPIO so that the system clock is outputed to pin PA31
+    GPIOA->GPRCM.RSTCTL = (GPIO_RSTCTL_KEY_UNLOCK_W | GPIO_RSTCTL_RESETSTKYCLR_CLR | GPIO_RSTCTL_RESETASSERT_ASSERT);
+    GPIOA->GPRCM.PWREN = (GPIO_PWREN_KEY_UNLOCK_W | GPIO_PWREN_ENABLE_ENABLE);
+    delay_cycles(POWER_STARTUP_DELAY); // delay to enable GPIO to turn on and reset
+    IOMUX->SECCFG.PINCM[(IOMUX_PINCM6)] = (IOMUX_PINCM_PC_CONNECTED | IOMUX_PINCM6_PF_SYSCTL_CLK_OUT);
+    GPIOA->DOESET31_0 = 0x1u<<31; // PA31 is our output pin for the clock
+}
+```
+
+The second way to measure pulsewidth is to leverage this clock output to count clock cycles. A logic analyzer
+would do this easily for you, but since that's not a required purchase for the class, I've written a simple
+program which you can find here [https://github.com/ckemere/ELEC327/tree/master/Code/ClockedPulseWidth](https://github.com/ckemere/ELEC327/tree/master/Code/ClockedPulseWidth).
+If you load `ClockedPulseWidth.out` onto a friends Launchpad, connect pin PB0 to the clock output pin on your
+Morse Code Launcpad (pin PA31) and pin PB16 to the LED driver pin. (To access the LED driver pin, remove the
+jumper and connect to the higher pin (which should be PB22 or PB27 for blue or red LED.) When connected, the measurement
+Launchpad will create a serial connection to your computer from which you can read a stream of pulse widths.
+The program `read_data.py` in the repository will connect and record these data to the pulseslist.txt file
+which you can open later.
