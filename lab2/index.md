@@ -53,13 +53,13 @@ the duration of on pulses through the serial port.
   message will be concluded with an inter-word character (`";"`).
 
   **Scoring criteria**
-  4. Following the example code, you should set your system oscillator to 32 MHz. (10 pts)
+  4. Following the example code, you should set your system oscillator to 32.768 kHz. **(10 pts)**
   5. You should produce the correct output patterns for the 10 test case messages. At the
      end of each message, you should loop infinitely. You may assume that the first character 
-     will be either a dot or a dash (not a space). **(40 pts)**
+     will be either a dot or a dash (not a space). **(50 pts)**
   6. Your code should flash either the blue or red LED on the launchpad. The led color
      will be specified as either `#define REDCOLOR 1` for red or `#define BLUECOLOR 1` for blue.
-     One or the other will be set, but not both. **(20 pts)**
+     One or the other will be set, but not both. **(10 pts)**
   7. Your "dot" unit should be roughly 100 ms long, or 3277 clock cycles. **(20 pts)**
   8. Your morse code output should be cycle precise for arbitrary messages. **(10 pts)**
   9. The projects that achieve 100 pts will be ranked based on the time from processor
