@@ -60,7 +60,7 @@ the duration of on pulses through the serial port.
   6. Your code should flash either the blue or red LED on the launchpad. The led color
      will be specified as either `#define REDCOLOR 1` for red or `#define BLUECOLOR 1` for blue.
      One or the other will be set, but not both. **(20 pts)**
-  7. Your "dot" unit should be precisely 100 ms long, or 3200000 clock cycles. **(20 pts)**
+  7. Your "dot" unit should be roughly 100 ms long, or 3277 clock cycles. **(20 pts)**
   8. Your morse code output should be cycle precise for arbitrary messages. **(10 pts)**
   9. The projects that achieve 100 pts will be ranked based on the time from processor
      reset until the first dot or dash is produced. Bonus points will be assigned 
