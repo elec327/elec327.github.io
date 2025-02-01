@@ -8,7 +8,7 @@ description: Using Interrupts for Precise Timing
 
 {::options parse_block_html="true" /}
 
-### Lab #2: Using Interrupts for Precise Timing
+### Lab #3: Using Interrupts for Precise Timing
 --- (100 pts)
 
 <div class="alert alert-info" role="alert">
