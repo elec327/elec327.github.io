@@ -45,8 +45,7 @@ https://github.com/elec327.)
 
   + [MSPM0350x Datasheet](assets/documents/mspm0g3507.pdf)
   + [MSPM0350xMSPM0 G-Series 80MHz Technical Reference](assets/documents/slau846b.pdf)
-  + [Operating Time From A Capacitor App Note](assets/documents/slaaei3-operating_time_from_a_capacitor.pdf)
-
+  + [More documents](https://github.com/ckemere/ELEC327/blob/master/Documents/README.md)
 
 
 </div>
