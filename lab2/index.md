@@ -58,7 +58,7 @@ the duration of on pulses through the serial port.
      end of each message, you should loop infinitely. You may assume that the first character 
      will be either a dot or a dash (not a space). **(50 pts)**
   6. Your code should flash either the blue or red LED on the launchpad. The led color
-     will be specified as either `#define REDCOLOR 1` for red or `#define BLUECOLOR 1` for blue.
+     will be specified as either `#define REDCOLOR` for red or `#define BLUECOLOR` for blue.
      One or the other will be set, but not both. **(10 pts)**
   7. Your "dot" unit should be roughly 100 ms long, or 3277 clock cycles. **(20 pts)**
   8. Your morse code output should be cycle precise for arbitrary messages. **(10 pts)**
