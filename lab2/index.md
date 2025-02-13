@@ -23,8 +23,9 @@ description: First Launchpad Project
 
   1. Your **commented** encode_morse.c file. Your grade will be assigned based on
      functionality as defined in the Detailed Specifications below.
-  2. **CRITICAL** If you have used breakpoints to test your code, please make sure
-     that they are removed or commented out!
+  2. **CRITICAL** If you have used hard breakpoints (the `__BKPT(0);` instruction your C
+     code) to instrument your code, be aware that I will automatically replace them with
+     3 NOP instructions.
 
 </div>
 
