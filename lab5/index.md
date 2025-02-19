@@ -37,7 +37,7 @@ GitHub (if you have not done so yet). In the `PCBs/ELEC327-Library` subdirectory
 footprint libraries that you should add to your Symbols and Footprints libraries.
 
 Your task is to design a PCB with KiCAD which includes the following parts from the ELEC327 library:
-   - A [MSPS003F4](https://www.ti.com/lit/ds/symlink/mspm0c1104.pdf)
+   - A [MSPS003F4](https://www.ti.com/lit/ds/symlink/mspm0c1104.pdf) ([datasheet][mspm0c1104.pdf])
    - Necessary RC filter for NRST pin
    - Power decoupling capacitors
    - A 2032 battery holder
