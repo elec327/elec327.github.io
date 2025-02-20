@@ -30,6 +30,7 @@ description: PCB Design With KiCAD
   - We will run DRC on the individual PCB layout files, and should not find errors.
   - We will look for your initials to be on either the top or bottom copper layers.
   - We will measure the board area. If it is less than 2.75 square inches, you will receive full credit.
+  - We will give bonus points for tileable PCBs that have less than this minimum area.
 
 </div>
 
@@ -55,6 +56,7 @@ Your task is to design a PCB with KiCAD which includes the following parts from 
 Starter projects with all the parts can be found in two starter projects:
    - If you want to use mainly 0805 surface mount parts [Lab5_SMD.zip](Lab5_SMD.zip)
    - If you want to use larger 1210 surface mount and through hole parts [Lab5_THT.zip](Lab5_THT.zip)
+   - If you want to use a rotational potentiometer [Lab5_SMD_Smaller_Pot.zip](Lab5_SMD_Smaller_Pot.zip])
 
 <div class="alert alert-info" role="alert">
    - Connect the RGB Led properly so that the RGB LED can be driven by TIMG14 PWM outputs.
