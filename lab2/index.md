@@ -133,7 +133,7 @@ or [here](https://raw.githubusercontent.com/ckemere/ELEC327/refs/heads/master/Do
 <div class="row">
 <div class="col-md-6 col-sm-6 col-xs-6">
 <figure class="figure">
-<a href="Launchpad_Schematic_LED"> <img src="Launchpad_Schematic_LED" class="figure-img img-fluid rounded" alt="Launchpad RGB LED"></a>
+<a href="Launchpad_Schematic_LED.png"> <img src="Launchpad_Schematic_LED.png" class="figure-img img-fluid rounded" alt="Launchpad RGB LED"></a>
 <figcaption class="figure-caption"><p>Zoomed in view of RGB LED in schematic</p></figcaption>
 </figure>
 </div>
