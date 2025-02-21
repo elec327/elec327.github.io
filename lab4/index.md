@@ -27,7 +27,7 @@ description: PWM
 
 </div>
 
-#### Hardware PWM Quiz preview
+#### Hardware PWM
 
 The Launchpad MSPM0+ G3507 has a built in RGB LED, which is connected to channels PB22, PB26, and PB27.
 Let's look at the PinMux table in the data sheet.
@@ -48,11 +48,12 @@ LED pins are not connected to pins that allow us to control it's color output wi
 Some sample code for the launchpad that configures two timers and drives a heart-beat effect using PWM
 is in this template project - [Lab4.zip](Lab4.zip).
 
-<!---
-You can generate these using Python (e.g., the [matplotlib hsv
+
+#### Your task is 
+Your task for this lab is to create an array of RGB colors and have the RGB LED cycle through the colors 
+of the rainbow. You can generate these using Python (e.g., the [matplotlib hsv
 colormap](https://matplotlib.org/stable/tutorials/colors/colormaps.html)). Sample code in a Jupyter
 notebook is [here](GenerateColorMap.ipynb). 
---->
 
 Using a Timer interrupt as in Lab 3, cycle through the values of a rainbow. You will need to:
   - chose an appropriate PWM frequency and configure the two timer modules to run at this frequency
