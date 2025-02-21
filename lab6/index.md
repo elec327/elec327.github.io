@@ -106,7 +106,22 @@ img-fluid rounded" alt="Pin Mux Table"></a>
 </div>
 </div>
 
-#### Template file
- 
+In order to change which LED lights up, you will have to understand the message protocol for these
+LEDs, and create different messages (or some sort of message generator function). You may choose
+whatever colors you like for each LED. The suggested approach is to increase the frequency
+of the TIMG0 interrupt and use this as a kernel tick (i.e. 1x per ms). At each tick, you can check 
+the state of the buttons, and change states in a state machine. The LED should light up as soon
+as the button is depressed and turn off as soon as it is released. **You may assume that only
+one button will be depressed at a time.** (Note that adding extra functionality via multi-button
+presses is a bonus option for the midterm project, so you may choose to consider how to do this.)
 
+#### Rubric
+You will be graded based on a collection of your peers assessing whether or not the lights are
+tracking button presses.
+
+#### Supplemental
+Some of you may be interested in doing more with the Simon PCB. The TI-provided "Driverlib" libraries
+make it convenient to explore some of the other functions of the MSPM0+. A Driverlib version of the project
+template is provided in the [Lab6-Driverlib.zip](Lab6-Driverlib.zip) archive. (Note that it does not
+configure PWM for sound.)
 
