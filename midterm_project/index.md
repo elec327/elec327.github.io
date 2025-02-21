@@ -27,12 +27,10 @@ description: Midterm Project
   1. The code for your Simon game will be submitted via canvas. Please include
   only code files and a "README.txt" that describes (a) briefly your code architecture
   and approach, (b) the score that you think you should get based on the rubric
-  below, and (c) how to access or run any special features. You may include two
-  different "main.c" files if desired, but the default functionality should be
-  Simon.
+  below, and (c) how to access or run any special features. 
 
-  2. Prof. Kemere or the lab assistants will be running your code on their
-  boards for evaluation. Your score for the final project will be based on the
+  2. In addition to peer grading, Prof. Kemere or the lab assistants may run your code 
+  on their boards for evaluation. Your score for the final project will be based on the
   rubric below.
 
   3. Students from the class will be given the chance to evaluate
@@ -41,26 +39,38 @@ description: Midterm Project
   Additionally, a small bonus will be given for each of your peer's Simon games
   you evaluate.
 
-  4. To facilitate peer grading, the code will be due **March 27, 2023**.
+  4. We will grade in class on **March 26, 2025**.
 
-  **Rubric:** (10 pts each (mvp is 30 pts, code is 20 pts), 130 total) 
-  1. MVP (minimally viable product): Does it actually run properly off of a
-    battery and (occasionally) perform in a Simon-esque way? (30 pts)
-  2. Gameplay-ButtonFeedback (when a button is pressed during play, does the
-    light and sound asssociated with that button track the button press, i.e.,
-    start when it is depressed and stop when it is released?)
-  3. Gameplay-Timeout (does it game over after a while if no button is pressed?)
-  4. Gameplay-MisplayingError (does it game over if the wrong button is pressed?)
-  5. Gameplay-Win (does it do something special when the player wins?)
-  6. Gameplay-Random (does it play a different sequence each time, including after power cycles?)
-  7. Style-Animations (are there mustic/light animations for start/win and lose/game-over?)
-  8. Style-SoundLight (do lights and sounds work well together and convey information?)
-  9. Is it easy to change the length of a sequence required to win?
-  10. Well-commented, logical code architecture (does the architecture make sense? are there good
-    comments?, functions (libraries?) used intelligently?) - 20 pts
+ #### Rubric: (10 pts each, 150 total) 
+  1. Power-on animation: When powered on, does the game display an animation that involves 
+     changing patterns of the lights?
+  2. Power-on animation: Does the power on animation also include changing sounds?
+  3. Power-on animation: Does the power-on animation transition to game play when a button is pressed?
+  4. Random-Gameplay: Is the first element displayed random, including between power cycles?
+  5. Gameplay-ButtonFeedback: When a button is pressed during play, does the **light** asssociated with 
+     that button track the button press, i.e., turn on when it is depressed and turn off when it 
+     is released?
+  6. Gameplay-ButtonFeedback: When a button is pressed during play, does the **sound** asssociated with 
+     that button track the button press, i.e., turn on when it is depressed and turn off when it 
+     is released?
+  7. Gameplay-Timeout: Does the game transition to a "loss" state if no button is pressed within some period during the response?
+  8. Gameplay-MisplayingError: Does the game transition to a "loss" state if a wrong button is pressed during a response?
+  9. Gameplay-Win Animation: If the player wins (correctly responds to a sequence of length 5), does
+     the game display an animated sequence of **lights**? (This can be the same as the power on sequence but must 
+     be different than the gameplay-lose animation.) 
+  10. Gameplay-Win Animation: Does the win animation also include **sounds**?
+  11. Gameplay-Lose Animation: If the player loses (times out or responds incorrectly), does
+      the game display an animated sequence of **lights**? (This can be the same as the power on sequence but must 
+      be different than the gameplay-win animation.) 
+  12. Gameplay-Lose Animation: Does the lose animation also include **sounds**?
+  13. Can the length of a sequence required to win be changed by changing no more than one line of code?
+  14. Well-commented, logical code architecture (does the architecture make sense? are there good
+      comments?, functions (libraries?) used intelligently?) - 20 pts
 
 </div>
 
+
+### Background
 
 The game ["Simon"](https://en.wikipedia.org/wiki/Simon_(game)) is a classic toy which tests the
 working memory of the player. For the final project, you will create a small,
@@ -84,9 +94,9 @@ turn. Each turn, after the sequence is played, the player must push the appropri
 recreate the sequence. If they do it correctly, the game proceeds to the *n+1*th turn. If they
 make an error or wait too long (measured by the time since the last button press), they lose.
 Winning corresponds to playing the full *M*-element sequence. If the player loses, the device
-should play a "Game Over - Lost" animation that continues until it is reset. Similarly, if the
-player wins, the device should play a "Game Over - Won" animation until it is reset (e.g., by
-power cycling or pressing a button). 
+should play a "Game Over - Lost" animation that continues until it is reset (e.g., by
+power cycling or pressing a button). Similarly, if the player wins, the device should play 
+a "Game Over - Won" animation until it is reset. 
 
 Details:
 
@@ -95,15 +105,14 @@ Details:
   - Sequences should be random each game (make sure your random routine produces a different
     value on startup!)
   - When a button is pressed, the appropriate LED should flash (and tone should sound).
-  - The light and sound associated with the button should be displayed/played as long as the button is held down, and
-    then should stop. (So _not_ like in the example video below where they play for a constant length of time regardless of
-    how long the button is pressed for.)
-  - The timeout period should not be a constant. Rather, each time a player pushes a button, a
-    new timeout should start. Thus, a timeout of 1-2 s is appropriate.
-  - Errors should result in immediate game over (i.e., button presses should be processed
-    immediately).
-  - You should make the maximum sequence size adjustable. For your video, sequences of length 5
-    are appropriate.
+  - The light and sound associated with the button should be displayed/played as long as the button 
+    is held down, and then should stop. (So _not_ like in the example video below where they 
+    play for a constant length of time regardless of how long the button is pressed for.)
+  - The timeout error should calculated relative from when a player **depresses** the previous button. 
+    A timeout of 1-2 s is appropriate.
+  - An erroneous button press should result in a game over either when the button is depressed
+    or when it is released. 
+  - You should make the maximum sequence size adjustable by changing at most one line of code.
 
 Here's a nice video from Joshua Harper (Spring 2022) showing a Simon board in action.
 
@@ -112,14 +121,13 @@ frameborder="0" allowfullscreen></iframe>
 
 #### Helpful Tips
 Much of Simon can be pieced together by using code developed from previous labs. To help you,
-
- - Example code for Labs 5, 6, and 7 has been provided to you via the class Slack channel. 
- - More code is provided on the github: [Simon Github](https://github.com/ckemere/ELEC327/tree/master/Labs/Midterm/Firmware)
+ - Build off of an accepted solution for Lab 6.
+ - Code which configures PWM to activate the buzzer at a particular frequency is given here.
  - Remember that the LFSR random number generator can be used to both generate the button/light sequences **and** check
    the playback (if you store the seed used and start over during the button pressing)
 
 Physical information is given in the
-[ELEC327 Simon repository](https://github.com/ckemere/ELEC327/tree/master/Labs/Midterm/)
+[ELEC327 Simon repository](https://github.com/ckemere/ELEC327/tree/master/PCBs/Simon-2025)
 Eagle CAD schematic in the ELEC327 git repository. 
 
 
