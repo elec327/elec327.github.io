@@ -70,7 +70,43 @@ the next word to be transmitted into the module while the current word is being 
 previously received word out while the current word is being received). In the MSPM0+, we additonally have
 a multi-word FIFO queue that feeds from/to these buffer registers. AND, to top it off, we can load/empty that
 queue using DMA. So it is possible to automatically transfer long strings of data without involving the CPU.
+For this lab, we will stop at the first buffer layer, but if you reconfigure the code to use the FIFO or 
+DMA (without leveraging the Driverlib libraries!!), you can get bonus points.
 
-However, for this lab, we will stop at the first buffer layer. The template project configures SPI module
+### Your task for Lab 6
+For Lab 6, we are handing out the PCBs that you will use not only for this lab, but also Lab 7 and
+the Midterm project. Looking at the PCB, in addition to an MSPM0G3507 in the center, you can see 4 buttons
+at the outside corners, and 4 SPI RGB LEDs in a square diagonally aligned with them. Your task for Lab 6
+is to configure the PCB such that when you depress one of the buttons, the corresponding LED will light
+up. It is strongly suggested that you adopt a state machine structure to achieve this goal!
+
+The schematic for the Simon PCB can be found on the github - [https://github.com/ckemere/ELEC327/tree/master/PCBs/Simon-2025](https://github.com/ckemere/ELEC327/tree/master/PCBs/Simon-2025).
+Of critical importance, the GPIOs conneted to the buttons are PA23, PA24, PA25, and PA26.
+The [Lab6.zip](Lab6.zip) template Code Composer Studio project helps you out by configuring the GPIO for 
+those 4 buttons, as well as 3 modules: 
+
+  - TIMG0 - configured to use the LFCLK for a timer interrupt 
+  - SPI0 - configured to connect to the correct pins to control the RGB LEDs on the Simon PCB
+  - TIMA1 - configured to drive PWM on the buzzer pin.  (You will use this for Lab 8.) 
+
+In order to program the Simon PCB, remove the 10 jumpers that connect across the top of the Launchpad.
+These connect an XDS110 debugging interface at the top of the PCB to the microcontroller at the bottom.
+Instead, you need to connect these pins to the Simon PCB. The programming pins are labelled - you will
+need to connect `GND`, `VCC`=`3V3`, `NRST`, `SWDIO`, and `SWCLK`. (The other ones we won't connect allow
+the debug interface to pass through UART communications to the PC and enable some sort of boot-strap loader.)
+The video below shows a jumper cable connecting the Launcpad and a Simon PCB.
+
+<div class="row">
+<div class="col-md-10 col-sm-10 col-xs-10">
+<figure class="figure">
+<a href="LaunchpadAndSimon.mp4"> <img src="LaunchpadAndSimon.mp4" class="figure-img
+img-fluid rounded" alt="Pin Mux Table"></a>
+<figcaption class="figure-caption"><p>Video of Launchpad Connected to Simon PCB</p></figcaption>
+</figure>
+</div>
+</div>
+
+#### Template file
+ 
 
 
