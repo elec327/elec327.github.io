@@ -123,3 +123,18 @@ jumper and connect to the higher pin (which should be PB22 or PB27 for blue or r
 Launchpad will create a serial connection to your computer from which you can read a stream of pulse widths.
 The program `read_data.py` in the repository will connect and record these data to the pulseslist.txt file
 which you can open later.
+
+### Knowing which GPIOs the LED is connected to
+If you squint at the Launchpad, you can see the RGB led driver pins labeled. They are also given in the schematic
+for the Launchpad, which you can download from the class repository
+[https://github.com/ckemere/ELEC327/blob/master/Documents/Launchpad/slar172a/LP-MSPM0G3507_Hardware_Design_Files_V2/MCU098_LP-MSPM0G3507.pdf](https://github.com/ckemere/ELEC327/blob/master/Documents/Launchpad/slar172a/LP-MSPM0G3507_Hardware_Design_Files_V2/MCU098_LP-MSPM0G3507.pdf) 
+or [here](https://raw.githubusercontent.com/ckemere/ELEC327/refs/heads/master/Documents/Launchpad/slar172a/LP-MSPM0G3507_Hardware_Design_Files_V2/MCU098_LP-MSPM0G3507.pdf). Here's the relevant part:
+
+<div class="row">
+<div class="col-md-6 col-sm-6 col-xs-6">
+<figure class="figure">
+<a href="Launchpad_Schematic_LED"> <img src="Launchpad_Schematic_LED" class="figure-img img-fluid rounded" alt="Launchpad RGB LED"></a>
+<figcaption class="figure-caption"><p>Zoomed in view of RGB LED in schematic</p></figcaption>
+</figure>
+</div>
+</div>
