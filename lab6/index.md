@@ -99,10 +99,9 @@ The video below shows a jumper cable connecting the Launcpad and a Simon PCB.
 <div class="row">
 <div class="col-md-10 col-sm-10 col-xs-10">
 <figure class="figure">
-<a href="LaunchpadAndSimon.mp4"> 
 <video class="figure-img img-fluid rounded" alt="Pin Mux Table" controls autoplay loop>
 <source src="LaunchpadAndSimon.mp4">
-</video></a>
+</video>
 <figcaption class="figure-caption"><p>Video of Launchpad Connected to Simon PCB</p></figcaption>
 </figure>
 </div>
