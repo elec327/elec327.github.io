@@ -65,6 +65,19 @@ Starter projects with all the parts can be found in two starter projects:
    - Put your initials in Text on either the Top or Bottom  (copper) layers.
 </div>
 
+#### DRC and Manufacturing
+To facilitate manufacturing in the Advanced Circuits Barebones process, 
+[AdvancedCircuits_8mil.zip](AdvancedCircuits_8mil.zip) contains a minimal KiCAD project that
+sets the appropriate layers as well as "Design Rule Check" (DRC) rules. The DRC rules include that
+the minimum sizes for traces and spacing is "8 mil" (0.008 inches), and the minimum drill size is
+"10 mil". You can set these rules for your PCB by doing the following:
+  - Unzip the AdvancedCircuits project.
+  - Open your project, and open the PCB in the PCB editor.
+  - Select the "Board Setup" option from the "File" menu.
+  - At the bottom of the dialog box, there is an option to "Import Settings From Another Board".
+  - In the resulting dialog, select the AdvancedCircuits_8mil pcb that you have unzipped
+  - Click on the "Select All" option in the bottom left corner, and then "Import Settings".
+
 <!--
 Eagle comes with a good number of parts, but not all that you need. You can either
 create a personal library for parts you make or add them to the ELEC327 library. Once you have
@@ -87,10 +100,23 @@ After you place your components and route traces, please put your initials or so
 identifying mark on the board **on either the top or bottom copper layer** (since this is a
 barebones process, there is no silkscreen).{: style="text-decoration:underline"}
 
-When you're finished, run the CAM job to create the necessary files for manufacturing. We will 
-submit a panel of the class's designs for manufacturing, and in a subsequent lab, you will assemble 
+When you're finished, if you're interested in seeing what manufacturing files look like, you can generate them.
+To generate the manufacturing files:
+  - Select "File Menu"->"Fabrication Outputs"->"Gerbers (.gbr)"
+  - Click "Plot" to generate three "Gerber" files (for our PCBs, these describe the copper layers and the board outline)
+  - Note that for the panel, we will check the "Disable aperture macros" option, and uncheck the "Include netlist options",
+    but if you do fabrication elsewhere, these options are likely acceptable.
+  - Click the "Generate Drill Files..." button.
+  - Note that for the panel, we will select the "PTH and NPTH in a single file", "Use alternate drill mode", and "Keep Zeros"
+    options.
+
+
+### Turning in
+We will submit a panel of the class's designs for manufacturing, and in a subsequent lab, you will assemble 
 and test your PCBs. Thus, late submissions of this portion of the assignment will mean that you lose 
-points not only for this lab but also a subsequent one!!!!
+points not only for this lab but also a subsequent one!!!! We will regenerate the manufacturing files from
+your PCB files, so the only thing you need to submit is the `.kicad_pcb` file from your project.
+
 
 ### PCB Design Patterns and Anti-Patterns
 
