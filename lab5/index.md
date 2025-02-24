@@ -21,15 +21,17 @@ description: PCB Design With KiCAD
 #### Due Date: 2/27/2025
 #### What should be turned in?
 
-  1. The KiCAD .kicad_sch and ..kicad_pcb files for your design. (_Canvas_)
+  1. Just the KiCAD `.kicad_pcb` file for your design. (_Canvas_)
+<!--
   2. The manufacturing files - `your-file-name.GBL` (bottom layer), `your-file-name.GML` (board
   outline), `your-file-name.GTL` (top layer) and `your-file-name.TXT` (drill locations). (**TODO**)
   **Don't zip, compress, or otherwise combine these files!** (_Canvas_)
+-->
 
 #### How will you be assessed?
   - We will run DRC on the individual PCB layout files, and should not find errors.
   - We will look for your initials to be on either the top or bottom copper layers.
-  - We will measure the board area. If it is less than 2.75 square inches, you will receive full credit.
+  - We will measure the board area. If it is less than 3 square inches, you will receive full credit.
   - We will give bonus points for tileable PCBs that have less than this minimum area.
 
 </div>
