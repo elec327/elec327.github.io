@@ -113,7 +113,7 @@ The video below shows a jumper cable connecting the Launcpad and a Simon PCB.
 In order to change which LED lights up, you will have to understand the SPI message protocol for these
 LEDs, and pre-generate different SPI messages (or some sort of message generator function). You may choose
 whatever colors you like for each LED. The suggested approach is to increase the frequency
-of the TIMG0 interrupt and use this as a kernel tick (i.e. 1x per ms). At each tick, you can check 
+of the TIMG0 interrupt and use this as a kernel tick (i.e. 1 tick every 10 ms). At each tick, you can check 
 the state of the buttons, and change states in a state machine. The LED should light up as soon
 as the button is depressed and turn off as soon as it is released. **You may assume that only
 one button will be depressed at a time.** (Note that adding extra functionality via multi-button
