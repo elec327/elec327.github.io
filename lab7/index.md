@@ -33,11 +33,15 @@ When the duty cycle is set to 50%, PWM creates a square wave signal at the frequ
 selected by the period register. Thus, In order to change the sound that is created,
 you need to change the value both of the period register (to change the frequency)
 and the duty cycle. On the Simon PCB, the buzzer is connected to TIMA1 channel C0.
-The code in `lab6_helper.c` which initializes the buzzer frequency and duty cycle is
-```
-    TIMA1->COUNTERREGS.LOAD = 3999; // Period is LOAD+1 - this is 32000000/4000 = 8kHz
-    // HEADS UP: This sets the frequency of the buzzer!
+In `lab6_helper.c`, the TIMA1 module is configured to count based on the main
+SYSOSC BUSCLK (32 MHz) with a divider of 4, so at 8 MHz.
 
+When the Lab 6 template code is run, the buzzer beeps briefly at startup. The code 
+which configures the frequency of this beep is at the end of the TIMA1 initialization
+in `lab6_helper.c`. **Note that both the period and the duty cycle need to be configured!**
+```
+    TIMA1->COUNTERREGS.LOAD = 3999; // Period is LOAD+1 - this is 8000000/4000 = 2kHz
+    // HEADS UP: This sets the frequency of the buzzer!
     TIMA1->COUNTERREGS.CC_01[0] = (TIMA1->COUNTERREGS.LOAD  + 1) / 2; // half of load to make this a square wave
 ```
 
@@ -51,7 +55,7 @@ turns the PWM, and thus sound, on.
 ```
 
 Second, at the top of the `lab6.c` function, we have the following lines of code which
-disable the Timer Module counting, which turns off the PWM / sound.
+disables the Timer Module counting, which turns off the PWM / sound.
 
 ```
     // let the buzzer run for 0.1 s just so we know it's there!
@@ -74,6 +78,18 @@ Start with the state machine code you wrote for Lab 6. Modify the button depress
 the light off state, the PWM counter should be disabled to turn off sound. When a button is
 depressed, set the frequency and duty cycle and enable the PWM counter to play the appropriate
 sound. This should be fairly straight forward.
+
+From this [website](https://www.waitingforfriday.com/?p=586), we have the suggestion that
+the notes for Simon should be:
+
+  - Green -- G4 391.995 Hz
+  - Red -- E4 329.628 Hz
+  - Yellow -- C4 261.626 Hz
+  - Blue -- G3 195.998 Hz
+
+Our buzzer has a fundamental frequency in the 4-8 kHz range. Frequencies outside this range
+will induce more nonlinearities in the piezo mebrane. So using notes that are
+two octaves higher (i.e., G6, E6, C6, and G5) will sound a bit less mechanical.
 
 #### Mary Had A Little Lamb
 In order to play music, you need the ability to specify both the frequency and duration of
