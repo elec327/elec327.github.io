@@ -121,8 +121,7 @@ frameborder="0" allowfullscreen></iframe>
 
 #### Helpful Tips
 Much of Simon can be pieced together by using code developed from previous labs. To help you,
- - Build off of an accepted solution for Lab 6.
- - Code which configures PWM to activate the buzzer at a particular frequency is given here.
+ - Build off of an accepted solution for Lab 7.
  - Remember that the LFSR random number generator can be used to both generate the button/light sequences **and** check
    the playback (if you store the seed used and start over during the button pressing)
 

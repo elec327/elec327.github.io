@@ -102,3 +102,7 @@ duty cycle of the PWM. **Importantly**, when no tone should be being played (e.g
 brief periods between notes or during a musical rest), you can disable the counter
 using the CTRCTL register's enable/disable bit. 
 
+### Bonus
+The buzzer is also connected to a pin that can be controlled by the DAC output of the MSMPM0+.
+Rather than driving the sounds with PWM square-waves, implement more complex waveforms like
+sinusoids.

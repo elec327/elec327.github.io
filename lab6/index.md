@@ -129,3 +129,7 @@ make it convenient to explore some of the other functions of the MSPM0+. A Drive
 template is provided in the [Lab6-Driverlib.zip](Lab6-Driverlib.zip) archive. (Note that it does not
 configure PWM for sound.)
 
+### Bonus
+As we will discuss in class, the GPIO inputs have options for filtering glitches that are associated
+with button presses. (These facilitate "debouncing".) Use this option and change your state machine 
+from being timer-interrupt based to being driven by GPIO interrupts. 

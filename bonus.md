@@ -57,7 +57,7 @@ brighter. (Note that they are 0402 size!)
 
 ---
 
-### Lab 4-5 Bonus - Make your own PCB and related ideas
+### Lab 5 Bonus - Make your own PCB and related ideas
 
 __Note that all of these are PCB-related bonuses. You can create a second PCB for Lab 4
 or submit these designs as part of the midterm or final project board runs.
@@ -69,24 +69,30 @@ exclusive (i.e., one PCB couldn't do everything); the rest should be considered 
 <b>Keep in mind the lead time for these services can be as much as two weeks!</b>
 </div>
 
+<!-- 
 **[0.5 points]** - Design and manufacture a PCB that includes nice features in silkscreen
 and/or soldermask layers.
+-->
 
 <div class="alert alert-info" role="alert">
-<b>[1-3 points]</b> - Design, manunfacture, populate, and program a board that uses an MSP430 to do
+<b>[1 point]</b> - Design, manunfacture, populate, and program a board that uses an MSPM0+ to do
 something interesting. In particular, the PCB design should be in the shape of an Owl. If your design
-is chosen by the judges, it will be printed on a t-shirt for the ECE department!
+is chosen by the judges, it may be printed on a t-shirt for the ECE department!
 </div>
 
+<!--
 **[1 point]** - Use the 32-pin QFN package of the MSP430 rather than the 20 pin one provided.
 You will have to find or create a proper EAGLE part for this device, which you should add to
 the ELEC327 library and generate a pull-request on github. Manufacture, populate, and
 program the board.
+-->
 
-**[1 point]** - Add a button (or capacitive touch pad!) to the Lab 4 device to be used to go 
-into LPM4 as in Lab 2.  You may use a capacitor (and resistor if desired) to debounce, or implement 
-some  sort of software debouncing.
+**[1-2 point]** - Create a musical sequencer involving the button, the slide potentiometer,
+and the buzzer. You should be able to program sequences of sounds with frequency controlled
+by the potentiometer, with selection and potentially timing controlled by the button.
+A long press should transition between programming and playback modes.
 
+<!-- 
 **[1-3 points]** - Add the necessary components to use this
 [thermistor](https://www.digikey.com/product-detail/en/ametherm/DG103395/570-1177-ND/5967491)
 to measure the temperature of a liquid. Note that you'll want to make a resistor divider
@@ -94,7 +100,7 @@ circuit, with your ADC sampling the midpoint of the thermistor and a second resi
 you should choose intelligently. Turn your thermodot into a drink temperature alarm, possibly
 integrated into a cup. (For example, if the liquid is too hot to drink, display a red color and
 flash.) A useful device would probably also have a power button as described above.
-
+-->
 ---
 
 ### Midterm Bonus - Better Simon
@@ -108,8 +114,8 @@ quality, humor, or other aesthetics.
 
 
 **[0.5 - 1 point each]** - Possible improvements or modifications for Simon:
-  - Implement software debouncing. (This requires removing the capacitors. Please reach out ASAP if you want a Simon
-    board without capacitors and I will mail it.)
+  - As described for Lab 6, implement a Simon that is driven by GPIO interrupts rather than
+    just a simple timer tick.
   - Allow the user to select the level of difficulty - the timeout period and/or speed of initial
     sequence playing. You could implement this by which button is used to start the game after
     a reset.
@@ -123,6 +129,10 @@ quality, humor, or other aesthetics.
   - Use the PCB for something else in addition to Simon (e.g., a different game, a music
     sequencer) that is executed depending on some startup condtion.
 
+**[1-3 points]** - Use the accelerometer on the Simon PCB to do something interesting.
+For example, have the LEDs signal the orientation of the PCB, so that if you hold it sideways,
+the LEDs always point up. Do something cool where you attach the PCB to a string and swing it
+in the air to create forces larger than 1g, with the LED denoting the intensity of acceleration.
 
 ---
 
