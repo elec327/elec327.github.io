@@ -20,8 +20,10 @@ description: Serial Communication Protocols and Button Logic
 </div>
 
 <div class="alert alert-danger" role="alert">
-#### Due Date: 2/328/2025
+#### Due Date: 3/7/2025
 #### **What should be turned in?**
+
+  - Your firmware code which controls RGB LEDs in response to button presses
 
 </div>
 
@@ -76,7 +78,8 @@ DMA (without leveraging the Driverlib libraries!!), you can get bonus points.
 ### Your task for Lab 6
 For Lab 6, we are handing out the PCBs that you will use not only for this lab, but also Lab 7 and
 the Midterm project. Looking at the PCB, in addition to an MSPM0G3507 in the center, you can see 4 buttons
-at the outside corners, and 4 SPI RGB LEDs in a square diagonally aligned with them. Your task for Lab 6
+at the outside corners, and 4 SPI RGB LEDs in a square diagonally aligned with them. 
+**Your task for Lab 6**
 is to configure the PCB such that when you depress one of the buttons, the corresponding LED will light
 up. It is strongly suggested that you adopt a state machine structure to achieve this goal!
 
@@ -107,8 +110,8 @@ The video below shows a jumper cable connecting the Launcpad and a Simon PCB.
 </div>
 </div>
 
-In order to change which LED lights up, you will have to understand the message protocol for these
-LEDs, and create different messages (or some sort of message generator function). You may choose
+In order to change which LED lights up, you will have to understand the SPI message protocol for these
+LEDs, and pre-generate different SPI messages (or some sort of message generator function). You may choose
 whatever colors you like for each LED. The suggested approach is to increase the frequency
 of the TIMG0 interrupt and use this as a kernel tick (i.e. 1x per ms). At each tick, you can check 
 the state of the buttons, and change states in a state machine. The LED should light up as soon
