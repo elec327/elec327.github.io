@@ -22,11 +22,6 @@ description: PCB Design With KiCAD
 #### What should be turned in?
 
   1. Just the KiCAD `.kicad_pcb` file for your design. (_Canvas_)
-<!--
-  2. The manufacturing files - `your-file-name.GBL` (bottom layer), `your-file-name.GML` (board
-  outline), `your-file-name.GTL` (top layer) and `your-file-name.TXT` (drill locations). (**TODO**)
-  **Don't zip, compress, or otherwise combine these files!** (_Canvas_)
--->
 
 #### How will you be assessed?
   - We will run DRC on the individual PCB layout files, and should not find errors.
