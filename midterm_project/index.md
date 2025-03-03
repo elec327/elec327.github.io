@@ -122,8 +122,14 @@ frameborder="0" allowfullscreen></iframe>
 #### Helpful Tips
 Much of Simon can be pieced together by using code developed from previous labs. To help you,
  - Build off of an accepted solution for Lab 7.
- - Remember that the LFSR random number generator can be used to both generate the button/light sequences **and** check
-   the playback (if you store the seed used and start over during the button pressing)
+ - An example random number generator is given in [simon_random.c](simon_random.c)
+and [simon_random.h](simon_random.h). 
+ - Remember that the LFSR random number generator can be used to both generate the 
+   button/light sequences **and** check the playback (if you store the seed used 
+   and start over during the button pressing)
+ - Here's a gist that shows how to turn on the TRNG module and grab a random
+   number from it - [https://gist.github.com/kemerelab/a8de90811a15cb982f5fb3d0e2410c70](https://gist.github.com/kemerelab/a8de90811a15cb982f5fb3d0e2410c70)
+
 
 Physical information is given in the
 [ELEC327 Simon repository](https://github.com/ckemere/ELEC327/tree/master/PCBs/Simon-2025)
