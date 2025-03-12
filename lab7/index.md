@@ -33,8 +33,8 @@ _Simon board plays "Mary Had a Little Lamb" at start up, then transitions to ton
   - 10 pts Note durations include the short pause (the half note -- including the pause -- is twice that 
     of the the quarte note -- including the pause)
   - 10 pts Pressing any button stops the Mary Had a Little Lamb
-  - 15 pts When each button is depressed, a tone plays. 
-  - 15 pts Tones stop when all buttons are released.
+  - 10 pts When each button is depressed, a tone plays. 
+  - 10 pts Tones stop when all buttons are released.
   - 20 pts Each button causes a distinct tone to be played
 
 </div>
