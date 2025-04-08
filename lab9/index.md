@@ -34,6 +34,9 @@ struct variable on line 100. If you set a breakpoint on this line, and creatae a
 watch expression for "currentAccel", you will see the value of the acceleration
 which has been read in.
 
+[Data sheet for ST Microelectronics LIS2HH12 SPI Accelerometer](lis2hh12.pdf)
+[Application Note for LIS2HH12 SPI Accelerometer](an4662-lis2hh12-mems-digital-output-motion-sensor-ultralowpower-highperformance-3axis-pico-accelerometer-stmicroelectronics)
+
 #### Your task
 Your goal is to write code so that the 4 LEDs on the Simon PCB "point downward".
 This takes advantage of the fact that we are always experiencing the earth's
