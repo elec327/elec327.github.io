@@ -133,7 +133,8 @@ and [simon_random.h](simon_random.h).
 
 Physical information is given in the
 [ELEC327 Simon repository](https://github.com/ckemere/ELEC327/tree/master/PCBs/Simon-2025)
-Eagle CAD schematic in the ELEC327 git repository. 
+
+Or, it can be downloaded here: [Simon 2025](Simon-2025-JLC.zip).
 
 
 
