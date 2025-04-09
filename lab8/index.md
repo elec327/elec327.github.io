@@ -24,8 +24,8 @@ description: Analog to Digital Conversion
 Either turn in a video of the demo code running on your PCB or have one of the course
 staff sign off that your PCB is functional.
 
+</div>
+
 The test code can be found in this CCS project, which you'll need to import as usual:
 [lab8_test.zip](lab8_test.zip).
-
-</div>
 
