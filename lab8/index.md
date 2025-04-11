@@ -26,10 +26,8 @@ staff sign off that your PCB is functional.
 
 </div>
 
+The test code changes the color of the LED based on the potentiometer position. In
+addition, the buzzer turns on and off at a specific potentiometer position.
 The compiled test code can be found in [lab8_test.out](lab8_test.out). If you want to
 look at it, the underlying code can be found in this CCS project, which you'll need to import as usual:
-[lab8_test.zip](lab8_test.zip). Unfortunately a bug in CCS prevents the proper device (MSPS003F3)
-from being chosen. So the project is configured for a MSPS003F4, which has 16K of memory instead of 8K.
-Fixing this is complicated, but in the compiled code, it has been done. Reach out to Prof. Kemere
-if you want to know more.
-
+[lab8_test.zip](lab8_test.zip). 
