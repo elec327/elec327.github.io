@@ -7,7 +7,7 @@ group: navigation
 
 {::options parse_block_html="true" /}
 
-## ELEC 327 - Digital Systems Laboratory (2025)
+## ELEC 327 - Digital Systems Laboratory (2026)
 
 ---
 
@@ -28,7 +28,7 @@ understand how application-specific blocks enable modern commercial devices._
 
 **Location** -- O'Connor Bldg for Eng and Sci Room 130 (Lectures and Lab) FE&P 122B (Design Lab)
 
-**Dropbox Link For Lectures** -- [Lectures Folder](https://www.dropbox.com/scl/fo/nnjciw6hs8bhzk4ahdyit/AHMWHwrsAlTfNnT_u6---K0?rlkey=mqjw8wk75yabo6rgttjl05mgv&dl=0)
+**Dropbox Link For Lectures** -- [Lectures Folder](https://www.dropbox.com/scl/fo/cqytq445xdgcysu5htwnf/AIE4VTudLri5OGhSScMRgIs?rlkey=48tpp6dhux5m1ivyar5vqow2n&st=d9xyi6br&dl=0)
 
 **Time** -- Mondays & Wednesdays 2-3:15 PM
 
