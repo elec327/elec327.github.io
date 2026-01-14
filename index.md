@@ -47,8 +47,8 @@ https://github.com/elec327.)
  
 **Useful links**
 
-  + [MSPM0350x Datasheet](assets/documents/mspm0g3507.pdf)
-  + [MSPM0350xMSPM0 G-Series 80MHz Technical Reference](assets/documents/slau846b.pdf)
+  + [MSPM0350x Datasheet](assets/documents/mspm0g3507.pdf) [Github Permalink](https://raw.githubusercontent.com/ckemere/ELEC327/master/Documents/mspm0g3507.pdf)
+  + [MSPM0350xMSPM0 G-Series 80MHz Technical Reference](assets/documents/trm_slau846b.pdf) [Github Link](https://raw.githubusercontent.com/ckemere/ELEC327/master/Documents/trm_slau846c.pdf)
   + [More documents](https://github.com/ckemere/ELEC327/blob/master/Documents/README.md)
 
 
