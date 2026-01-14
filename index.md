@@ -34,7 +34,7 @@ understand how application-specific blocks enable modern commercial devices._
 
 **Prerequisites** -- ELEC220, ELEC326, COMP140
 
-**Syllabus & Lab Office Hours** -- [here](/syllabus.html)
+**Syllabus & Lab Office Hours** -- <!-- [here](/syllabus.html) -->
 
 **Github repository** -
 [https://github.com/ckemere/ELEC327](https://github.com/ckemere/ELEC327) (Note that this
