@@ -2,7 +2,7 @@
 title: Lab 1
 lab: 1
 layout: default
-group: labs-navigation
+# group: labs-navigation
 description: Intro C Programming
 ---
 
