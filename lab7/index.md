@@ -2,7 +2,7 @@
 title: Lab 7
 lab: 7
 layout: default
-group: labs-navigation
+# group: labs-navigation
 description: Generating sounds using PWM
 ---
 

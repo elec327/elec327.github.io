@@ -2,7 +2,7 @@
 title: Lab 5
 lab: 5
 layout: default
-group: labs-navigation
+# group: labs-navigation
 description: PCB Design With KiCAD
 ---
 

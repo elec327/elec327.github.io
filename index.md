@@ -41,6 +41,10 @@ understand how application-specific blocks enable modern commercial devices._
 website is also hosted on github. If you're interested in how it works, you can find it just at
 https://github.com/elec327.)
 
+**Text book** -
+  + [Introduction to Embedded Systems Using the MSPM0+](https://www.amazon.com/Introduction-Embedded-Systems-Using-MSPM0/dp/B0C9SB2QQ9)
+  + [Ebook](https://users.ece.utexas.edu/~valvano/mspm0/ebook/) of the Valvano M0+ e-book
+ 
 **Useful links**
 
   + [MSPM0350x Datasheet](assets/documents/mspm0g3507.pdf)
@@ -71,22 +75,13 @@ https://github.com/elec327.)
 
 #### C Resources
 
-  + [Valvano C Book for specifics on programming for a ARM Cortex M micro-controller](https://users.ece.utexas.edu/~valvano/embed/toc1.htm)
   + Patt and Patel Introduction to Computing Systems: From Bits & Gates to C/C++ & Beyond Ch. 11-17
   + [Chapter 3](https://users.ece.utexas.edu/~valvano/mspm0/ebook/Ch3_SoftwareDesign.html) of the Valvano M0+ e-book
   + [A C programming tutorial](https://users.ece.utexas.edu/~valvano/mspm0/ebook/Ch3_SoftwareDesign.html) from Tutorialspoint
+  + [Valvano C Book for specifics on programming for a ARM Cortex M micro-controller](https://users.ece.utexas.edu/~valvano/embed/toc1.htm)
 
 
 #### Old Course Content
-
-##### Previous versions of the class website
-
-  + [2013](http://dsp.rice.edu/elec327-2013)
-  + [2014](http://dsp.rice.edu/elec327-2014)
-  + [2017](http://elec327.github.io/2017) - **CAREFUL YOU DON'T GET STUCK!**
-  + [2018](http://elec327.github.io/2018) - **CAREFUL YOU DON'T GET STUCK!**
-  + [2019](http://elec327.github.io/2019) - **CAREFUL YOU DON'T GET STUCK!**
-  + [2023](http://elec327.github.io/2023) - **CAREFUL YOU DON'T GET STUCK!**
 
 ##### Old Lectures
 

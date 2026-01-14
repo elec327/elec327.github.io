@@ -2,7 +2,7 @@
 title: Lab 8
 lab: 8
 layout: default
-group: labs-navigation
+# group: labs-navigation
 description: Analog to Digital Conversion
 ---
 
