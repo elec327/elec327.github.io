@@ -31,6 +31,10 @@ to the rubric described below.
   1. A document in TXT or PDF format explaining your design. This might also include a diagram.
   2. Your **commented** code files.
 
+#### **Textbook**
+
+Chapter 2 of the the textbook has an extensive discussion of the GPIO interface.
+
 </div>
 
 
@@ -123,7 +127,6 @@ with a corresponding header file, `initialize_leds.h`. The function `InitializeL
 with the code for `PA0`. You should modify this function so that it properly completes the IOMUX, channel
 initialization, and channel enabling for each LED on the board.
 
-<div class="alert alert-info" role="alert">
 
 <div class="alert alert-info" role="alert">
 The IOMUX has a different register for each pin. In addition to enabling the pin (`IOMUX_PINCM_PC_CONNECTED`),
@@ -174,7 +177,7 @@ The choice of which to do is really down to which one you can read and understan
 you come back to maintain it later. (So comments are probably more important than actual code!)
 
 The `DOUT31_0` versus `DOUTSET31_0` choice is identical for initializing the values of the GPIO pins.
-<div>
+</div>
 
 ##### 2. Setting/clearing pins for individual LEDs in your code
 
