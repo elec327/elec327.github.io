@@ -120,7 +120,7 @@ ONE ADDITIONAL thing you need to know to initialize it for functionality. What a
 <div class="alert alert-danger" role="alert">
 **Checkpoint #0**: Take a look at the schematic. Answer Question #1 for every pin. Do you need to reset 
 and power on both  `GPIOA` **and** `GPIOB`? 
-<div>
+</div>
 
 A `Lab1` project has been added to the git repository. It contains a new file, called `initialize_leds.c`
 with a corresponding header file, `initialize_leds.h`. The function `InitializeLEDs()` has been prototyped
