@@ -95,7 +95,7 @@ the anode of the LED is connected to VCC and the cathode is connected to the GPI
 that if the pin is digital high (or about VCC), no current will flow, but if the pin is digital low
 (or about GND), current WILL flow and the LED will illuminate. So the LEDs are active in the LOW/ZERO
 state!
-<div>
+</div>
 
 For each LED, there are TWO things that you need to know in order to make it light up (or turn off) and
 ONE ADDITIONAL thing you need to know to initialize it for functionality. What are these three things?
