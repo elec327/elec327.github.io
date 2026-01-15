@@ -122,7 +122,7 @@ ONE ADDITIONAL thing you need to know to initialize it for functionality. What a
 and power on both  `GPIOA` **and** `GPIOB`? 
 <div>
 
-A `lab1` project has been added to the git repository. It contains a new file, called `initialize_leds.c`
+A `Lab1` project has been added to the git repository. It contains a new file, called `initialize_leds.c`
 with a corresponding header file, `initialize_leds.h`. The function `InitializeLEDs()` has been prototyped
 with the code for `PA0`. You should modify this function so that it properly completes the IOMUX, channel
 initialization, and channel enabling for each LED on the board.
