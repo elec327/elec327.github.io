@@ -206,10 +206,11 @@ can be confident in the function of the final system.
 
 For this project, we would suggest at least the following 3 preliminary stages. 
   1. **Programming the PCB.** Wire up the PCB to the Launchpad debug section. Program the `blink` project
-     and ensure that you see the 12 o'clock LED flashing. __Completion of this stage will give you confidence
-     that you understand how to wire up the PCB for programming and that it functions correctly.__
+     and ensure that you see the 12 o'clock LED (marked as D1 on the PCB) flashing. 
+     _Completion of this stage will give you confidence that you understand how to wire up the 
+     PCB for programming and that it functions correctly._
   2. **Initializing the LEDs.** Write your initialization code, and then set the value of all 24 of the LEDs
-     to be on. __This at least partially validates your initialization code and ensures that your PCB is
-     functional in terms of LEDs being connected to known ports.__
+     to be on. _This at least partially validates your initialization code and ensures that your PCB is
+     functional in terms of LEDs being connected to known ports._
   3. **Make the LEDs Flash in Sequence**. Write code to go through a loop of all of the LEDs one at a time.
-     __This will ensure that you have correctly mapped LEDs to GPIO port/channels.__
+     _This will ensure that you have correctly mapped LEDs to GPIO port/channels._
