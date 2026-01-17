@@ -48,6 +48,12 @@ The outer LED ring is intended to mark hours, and the inner ring is intended to 
 the PCB design, these are labeled LEDA12, LEDA1, ..., LEDA11 (hours / outer ring) and 
 LEDB12, LEDB1, ..., LEDB11 (seconds / inner ring).
 
+<div class="alert alert-danger" role="alert">
+**For this lab, you should change the state of the LEDs once per second. (The inner ring should circle in 12,
+and the outer ring in 12 * 12 = 144.)** The delay() function delays in clock cycles. You should adjust the
+value of the delay to achieve this goal.
+</div>
+
 The full KiCad project is available in the git repository in the [PCBs/Clock directory](https://github.com/ckemere/ELEC327/tree/master/PCBs/Clock).
 Here is a screenshot of the block showing how the LEDs are connected to the MSPM0 pins.
 
