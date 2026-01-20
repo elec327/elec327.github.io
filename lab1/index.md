@@ -220,3 +220,30 @@ For this project, we would suggest at least the following 3 preliminary stages.
      functional in terms of LEDs being connected to known ports._
   3. **Make the LEDs Flash in Sequence**. Write code to go through a loop of all of the LEDs one at a time.
      _This will ensure that you have correctly mapped LEDs to GPIO port/channels._
+
+
+#### Grading Rubric
+
+Here are a list of items which will be assessed as part of the grading of this lab.
+
+<div class="alert alert-danger" role="alert">
+
+  - Design Document Present: Did the student submit a separate text or PDF file explaining their design approach?
+  - Diagram Included: Does the design document include a diagram (block diagram, state machine, or flow chart) visualizing the logic?
+  - State Machine Explanation: Does the documentation textually explain the states (e.g., "State A turns on LED 1...")?
+  - Code Commentary: Are comments present in the C code explaining why specific hex values/registers are used?
+  - Power/Reset GPIO?: Does the code write to $GPRCM.RSTCTL$ and $GPRCM.PWREN$ for the appropriate GPIO module(s)?
+  - IOMUX Configuration: Is the IOMUX->SECCFG.PINCM register configured for the specific pins used (Function 1 + Connected)?
+  - Output Enable (DOE): Does the code enable the output driver for the relevant pins?
+  - Does the code use safe Read-Modify-Write logic or other techniques to avoid overwriting other potential pins on GPIOA?
+  - GPIO State Initialization: Does the initialization set the default output value appropriately so LEDs start OFF?
+  - Completeness: Does the initialization code address all 24 LEDs (Outer ring + Inner ring)?
+  - LED Activation Logic: To turn an LED ON, does the code use the appropriate values (i.e., 1 or 0)?
+  - Infinite Loop: Is the main logic wrapped in a while(1) or similar infinite loop structure?
+  - Data Structure/State Machine: Does code use a struct/array/switch-case rather than just linear if statements?
+  - Does the logic successfully manage the "Two Active Hands" requirement, ensuring that updating the Minute hand does not accidentally turn off the Hour hand (or vice versa)?
+  - Distinct Rings: Does the code attempt to control both the Outer Ring (Hours) and Inner Ring (Seconds)?
+  - Timing Delay: Is there a delay mechanism (e.g., __delay_cycles or loop) so changes are visible at 1 Hz?
+  - Sequence Wrap: Does the logic allow the sequence to wrap around (e.g., LED12 -> LED1)?
+
+</div>
