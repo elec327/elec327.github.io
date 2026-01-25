@@ -3,7 +3,7 @@ title: Lab 2
 lab: 2
 layout: default
 group: labs-navigation
-description: First Launchpad Project
+description: Low Power Design
 ---
 
 {::options parse_block_html="true" /}
