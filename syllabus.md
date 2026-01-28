@@ -4,7 +4,7 @@ title: Syllabus
 group: navigation
 ---
 
-## ELEC 327: Digital Systems Laboratory (Spring 2025)
+## ELEC 327: Digital Systems Laboratory (Spring 2026)
 
 ## Syllabus
 
@@ -15,11 +15,11 @@ group: navigation
 
 
 #### Lab Assistants
-  - Chengyun Tang [ct77@rice.edu](mailto:ct77@rice.edu)
-  - Noah Giles [neg2@rice.edu](mailto:neg2@rice.edu)
-  - Alex Torres [at80@rice.edu](mailto:at80@rice.edu)
-  - William Nacci [wn15@rice.edu](mailto:wn15@rice.edu) (**PCB Team**)
-  - Matt Gibson [matt.gibson@rice.edu](mailto:matt.gibson@rice.edu) (**PCB Team**)
+  - Leo Marek [lnm7@rice.edu](lnm7@rice.edu)
+  - Ben Welchman [bw51@rice.edu](mailto:bw51@rice.edu)
+  - Max Kuhlman [mtk5@rice.edu](mailto:mtk5@rice.edu)
+  - Wonjune Kim [wk13@rice.edu](mailto:wk13@rice.edu)
+  - William Nacci [wn15@rice.edu](mailto:wn15@rice.edu)
 
 #### Office Hours
   - Prof. Kemere office Hours: After class or (please verify via email) many mornings between 8:30-9:30am RMC Coffee House (w/ free coffee!)
@@ -35,7 +35,7 @@ Mondays will be a lecture and Wednesdays will be a working lab period. **Note!**
 out-of-class time (~10 hours per week) working on lab assignments!
 
 #### Course Communication
-We will use Canvas Discussions for communication. ([2025 Canvas Link ](https://canvas.rice.edu/courses/76035))
+We will use Canvas Discussions for communication. ([2026 Canvas Link ](https://canvas.rice.edu/courses/86795))
   
 ---
 
@@ -55,7 +55,7 @@ We will use Canvas Discussions for communication. ([2025 Canvas Link ](https://c
 #### Course websites
 1. The primary location assignments and lecture notes (and other resources) is the course
 website – [http://elec327.github.io](http://elec327.github.io)
-2. We use Canvas ([https://canvas.rice.edu/courses/76035](https://canvas.rice.edu/courses/76035))
+2. We use Canvas ([https://canvas.rice.edu/courses/86795](https://canvas.rice.edu/courses/86795))
 for announcements and for communication. If you have specific questions about course content or
 assignments, please post them on Canvas. As a corollary, you may find it useful to check for
 answers as questions arise.
@@ -96,10 +96,9 @@ including printed-circuit board design and assembly.
   - A number of extra credit options will be available throughout the semester for a maximum of 30% of the
     final grade. 
 
-Late assignments may be accepted (with penalty), except for
-printed circuit board orders, where late submissions may not be accepted.
-Students wishing to submit late assignments should contact the instructor prior
-to the due date.
+Late assignments may be accepted (with penalty), except for printed circuit board orders, where late submissions 
+may not be accepted.
+Students wishing to submit late assignments should contact the instructor prior to the due date.
 
 **Honor code:**  You are encouraged to work **with** other students in ELEC327 on the labs. Each
 student should turn in their own lab writeup. 
