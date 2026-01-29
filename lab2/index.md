@@ -110,6 +110,7 @@ clock firmware, and then measure it. As for Phases 1 and 2, document your estima
 your estimation process and measurements.
 
 ### Grading Rubric
+
 | Section | Criteria (Binary Assessment) |
 |--------|------------------------------|
 | **I. Firmware Phase 1 - Compiles** | Baseline Code Included: Did the student include the original Lab 1 firmware as a separate, buildable codebase? |
