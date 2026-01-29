@@ -125,6 +125,7 @@ your estimation process and measurements.
 | **III. Firmware Phase 3 - State Machine** | Code Architecture: Is the PWM implemented using a state machine? |
 | **III. Firmware Phase 3 - PWM LED Control** | Reduced Brightness Achieved: Is LED brightness clearly reduced compared to always-on output? |
 | **III. Firmware Phase 3 - Aesthetics** | No Visible Flicker: Do the LEDs appear steady with no visible flashing or strobing? |
+| **III. Firmware Phase 3 - Documentation** | State Machine Diagrammed: Does the report explain how the added PWM requirement is integrated into the state machine architecture? |
 | **III. Firmware Phase 3 - Documentation** | PWM Frequency Justified: Does the report clearly justify the chosen PWM frequency in terms of sleep time vs. perceptual flicker? |
 | **III. Firmware Phase 3 - Documentation** | PWM Power Reported: Is power consumption measured or estimated for the PWM version? |
 | **III. Firmware Phase 3 - Documentation** | Comparison to Other Phases: Does the report compare PWM power usage to both the baseline and sleep-only versions? |
