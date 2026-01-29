@@ -24,11 +24,22 @@ description: Low Power Design
 #### **What should be turned in?**
 
   1. A written report documenting (a) your estimates and (b) your measurements
-     of the power consumption of the three different firmware variants for the clock
-     described below.
+     of the power consumption of the three different firmware Phases for the clock
+     described below. The report should be in TXT or PDF format.
   2. Three zip files containing the all of the code files (.c and ,h) required to
-     compile your firmware variants. (Note that the first should just be a copy
-     of your Lab 1 code.)
+     compile your firmware Phases. Specifically Lab1.zip (either the same as Lab 1, or revised if desired), 
+     Phase2.zip (Lab 1 revised with interrupts), and Phase3.zip (Phase 2 revised with pulse-width-modulated LED intensity.)
+
+To be precise, YOU SHOULD NOT MODIFY delay.c or delay.h or startup_mspm0g350x_ticlang.c.
+
+Each zip file should include ONLY and EXACTLY the following 7 files:
+  - initialize_leds.c
+  - initialize_leds.h
+  - lab2.c
+  - state_machine_logic.h
+  - state_machine_logic.c
+
+One of the grading rubrics will be that your submission meets this specification.
 
 </div>
 
@@ -97,3 +108,23 @@ Maintaining the state machine discipline we adopted in Lab 1, you should code th
 modulation within the state machine context. Estimate the power of the PWM-modulated 
 clock firmware, and then measure it. As for Phases 1 and 2, document your estimation
 your estimation process and measurements.
+
+### Grading Rubric
+| Section | Criteria (Binary Assessment) |
+|--------|------------------------------|
+| **I. Firmware Phase 1 - Compiles** | Baseline Code Included: Did the student include the original Lab 1 firmware as a separate, buildable codebase? |
+| **I. Firmware Phase 1 - Works** | Functional Correctness: Does the baseline firmware behave the same as Lab 1 (correct LED sequencing and timing)? |
+| **I. Firmware Phase 1 - Documented** | Baseline Power Reported: Is baseline power consumption estimated or measured and documented? |
+| **II. Firmware Phase 2 - Compiles** | Baseline Code Included: Did the student include the Phase 2 firmware as a separate, buildable codebase? |
+| **II. Firmware Phase 2 - Architecture** | Hardware Timer Interrupt Used: Does the firmware use a timer interrupt rather than busy-wait delays? |
+| **II. Firmware Phase 2 - Works** | Correct Behavior Preserved: Does the LED behavior match the baseline version? |
+| **II. Firmware Phase 2 - Documented** | Sleep-Mode Power Reported: Is power consumption for the sleep-based version estimated or measured? |
+| **II. Firmware Phase 2 - Documented** | Power Reduction Explained: Does the report explain *why* this version consumes less power than the baseline? |
+| **II. Firmware Phase 23- Compiles** | Baseline Code Included: Did the student include the Phase 3 firmware as a separate, buildable codebase? |
+| **III. Firmware Phase 3 - State Machine** | Code Architecture: Is the PWM implemented using a state machine? |
+| **III. Firmware Phase 3 - PWM LED Control** | Reduced Brightness Achieved: Is LED brightness clearly reduced compared to always-on output? |
+| **III. Firmware Phase 3 - Aesthetics** | No Visible Flicker: Do the LEDs appear steady with no visible flashing or strobing? |
+| **III. Firmware Phase 3 - Documentation** | PWM Frequency Justified: Does the report clearly justify the chosen PWM frequency in terms of sleep time vs. perceptual flicker? |
+| **III. Firmware Phase 3 - Documentation** | PWM Power Reported: Is power consumption measured or estimated for the PWM version? |
+| **III. Firmware Phase 3 - Documentation** | Comparison to Other Phases: Does the report compare PWM power usage to both the baseline and sleep-only versions? |
+
