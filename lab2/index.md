@@ -32,7 +32,7 @@ description: Low Power Design
 
 To be precise, YOU SHOULD NOT MODIFY delay.c or delay.h or startup_mspm0g350x_ticlang.c.
 
-Each zip file should include ONLY and EXACTLY the following 7 files:
+Each zip file should include ONLY and EXACTLY the following 5 files:
   - initialize_leds.c
   - initialize_leds.h
   - lab2.c
