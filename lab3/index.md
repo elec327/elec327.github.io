@@ -94,6 +94,7 @@ The pushbutton on PB8 must behave as follows:
 #### Short Press
 - A **short press** is a press shorter than the long-press threshold
 - Short presses are used to **increment the time value** when in a setting mode
+- Critically, a short press should be at least 5 ms long. (This is equivalent to debouncing!)
 
 ---
 
@@ -191,6 +192,7 @@ Before submitting, verify:
 - ☐ Short presses increment the hour correctly  
 - ☐ Long press enters Minute-Set Mode  
 - ☐ Minute indicator flashes in Minute-Set Mode  
+- ☐ Short presses correctly differentiate between bounces (too short) and actual short presses
 - ☐ Short presses increment the minute correctly  
 - ☐ Long press exits back to Normal Clock Mode  
 - ☐ Button presses are reliable (no false triggers)
