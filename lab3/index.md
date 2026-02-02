@@ -184,7 +184,9 @@ to the operating mode and internal substates. This will enable you to separate b
 logic from clock setting logic from clock operating logic from PWM logic.
 
 <div class="alert alert-info" role="alert">
+
 Critically, the next state should now depend on the **input** as well as the current state!
+
 </div>
 
 ---
