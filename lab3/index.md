@@ -2,20 +2,19 @@
 title: Lab 3
 lab: 3
 layout: default
-# group: labs-navigation
-description: Using Interrupts for Precise Timing
+group: labs-navigation
+description: Processing Input
 ---
 
 {::options parse_block_html="true" /}
 
-### Lab #3: Using Interrupts for Precise Timing
+# Lab #3: Processing GPIO Input - Setting the Clock
 --- (100 pts)
 
 <div class="alert alert-info" role="alert">
-#### **There is one goal for this assignment:**
+#### **Goal for this assignment:**
 
-  - To write your first interrupt service routine in order to provide precise timing
-  - To think about low power modes
+  - To develop more complex input driven state machines
   
 </div>
 
@@ -28,50 +27,192 @@ description: Using Interrupts for Precise Timing
 
 </div>
 
-### High level overview
+## Overview
 
-This lab follows the theme begun in [Lab 1](../lab1), except now, instead of using
-`printf()` to output text to a terminal screen, you will flash a Morse code message 
-on one of the LEDs on your MSPM0 Launchpad. Critically, now that you've suffered
-through the process of trying to achieve precise timing with delays, we're going
-to do it a better way -- using a Timer Module Interrupt!
+In Lab 1, you built a simple LED-based clock display using GPIO.  
+In Lab 2, you replaced software delays with hardware timers and PWM to improve the power consumption of the clock.
 
-The Autograder will be configured to record the digital output of your Launchpad, 
-and your grade will be based on the details below. Unfortunately, using the SYSTICK
-register to test precise timing details of your outputs will not work for this lab,
-as the interrupt process makes it inaccurate. As demonstrated in class, one can use
-a second timer module (i.e., TIMA1->CTR) rather than SYSTICK to observe proper timing
-details. HOWEVER, if you follow the state machine approach, this should not be necessary.
-You may also use another Launchpad configured to count clock edges
-([project here](https://github.com/ckemere/ELEC327/tree/master/Code/ClockedPulseWidth)). 
+In this lab, you will add **user interaction** to your clock by implementing a **button-controlled time-setting interface**. You will use the pushbutton connected to **PB8 (GPIO Port B, pin 8)** to enter and exit clock-setting modes, and to adjust the displayed time.
+
+This lab introduces:
+- GPIO input configuration
+- Button debouncing
+- Long-press vs short-press detection
+- Increasing the complexitt of the finite state machine construct to include input
+- Extending without breaking existing timing behavior
+
+---
+
+## Hardware
+
+You will continue to use the custom ELEC 327 PCB from Labs 1 and 2.
+
+Relevant circuitry for this lab:
+
+- **Pushbutton** connected to **PB8 (GPIOB pin 8)**
+- Hour and minute LED outputs from Labs 1 and 2
+- Hardware timer and PWM configuration from Lab 2
+
+No additional hardware is required.
+
+---
+
+## Starting Point
+
+Start from your **Lab 2 working codebase**.
+
+Your program should already:
+- Use a hardware timer interrupt to maintain time
+- Drive the hour and minute displays correctly
+- Use PWM (or timer-driven logic) to update LED brightness or sequencing
+
+If your Lab 2 code does not work correctly, a solution will be provided Wednesday Feb 4, 2026.
+
+---
+
+## Functional Requirements
+
+### 1. Clock Operating Modes
+
+Your firmware must support **three operating modes**:
+
+1. **Normal Clock Mode**
+2. **Hour-Set Mode**
+3. **Minute-Set Mode**
+4. **\[Extra-Credit\] Brightness-setting Mode**
+
+---
+
+### 2. Button Behavior
+
+The pushbutton on PB8 must behave as follows:
+
+#### Long Press
+- A **long press** is defined as holding the button continuously for **≥ 1 second**
+- Long presses are used to **change modes**
+
+#### Short Press
+- A **short press** is a press shorter than the long-press threshold
+- Short presses are used to **increment the time value** when in a setting mode
+
+---
+
+### 3. Mode Transitions
+
+| Current Mode       | Long Press Action              |
+|--------------------|--------------------------------|
+| Normal Clock       | Enter Hour-Set Mode            |
+| Hour-Set Mode      | Enter Minute-Set Mode          |
+| Minute-Set Mode    | Return to Normal Clock Mode    |
+
+---
+
+### 4. Visual Feedback
+
+To provide clear user feedback:
+
+- **Normal Clock Mode**
+  - Clock operates normally
+  - No flashing indicators
+
+- **Hour-Set Mode**
+  - The **hour hand/location must flash**
+  - The minute display remains steady
+  - Clock time does **not advance automatically**
+
+- **Minute-Set Mode**
+  - The **minute hand/location must flash**
+  - The hour display remains steady
+  - Clock time does **not advance automatically**
+
+- **\[Extra-Credit\] Brightness-Set Mode**
+  - Both **hour hand/location and minute hand/location flash**
+  - Hour and minute locations remain steady
+  - Clock time does **not advance automatically**
+
+Flashing should be implemented using the state machine mechanism (do **not** use blocking delays).
+
+---
+
+### 5. Adjustment
+
+- In **Hour-Set Mode**:
+  - Each **short press** advances the hour by 1
+  - Hour values should wrap correctly (e.g., 12 → 1)
+
+- In **Minute-Set Mode**:
+  - Each **short press** advances the minute by 1 LED (5 minutes)
+  - Minutes should wrap correctly (e.g., 55 → 0)
+
+It is strongly recommended (but not required) that the change in LED position should be actuated
+when the button is released. __However it is implemented, the position should not advance when
+the user changes the mode using a long-press.__
+
+When exiting Hour-Set or Minute-Set Mode, the newly set time becomes the active clock time.
+
+**Extra Credit:** For extra credit, add a third setting mode after hour and minute. In this third
+mode, the user will change the LED brightness setting. 
+   - Each **short press** in brightness mode increases the brightness by one level. 
+   - There should be at least 15 levels of brightness.
+   - After maximum brightness is reached, another short press should cycle the brightness back to the minimum level.
+   - The minimum brightness level should be visible (in the dark)
+
+---
+
+### 6. Button Debouncing
+
+Your firmware must handle button debouncing as part of the state machine architecture. 
+You may assume that "real" button presses last longer than 100 ms, and that glitches when the button is depressed
+longer than this duration will not occur.
+
+---
+
+## Implementation 
+
+As with Labs 1 and 2, the final implementation must be a state machine, where the next state
+depends on the current state. However, now, the next state will depend on the current state 
+AND the input. We will modify the Lab 2 template code together during class to develop a Lab 3
+template main() function.
+
+In the final implementation, you are strongly encouraged to construct your state machine in
+such a way that the the logic is handled heirarchically using state variables corresponding
+to the operating mode and internal substates. This will enable you to separate button handling 
+logic from clock setting logic from clock operating logic from PWM logic.
+
+---
+
+## Testing Checklist
+
+Before submitting, verify:
+
+- ☐ Clock runs normally in Normal Clock Mode  
+- ☐ Long press enters Hour-Set Mode  
+- ☐ Hour indicator flashes in Hour-Set Mode  
+- ☐ Short presses increment the hour correctly  
+- ☐ Long press enters Minute-Set Mode  
+- ☐ Minute indicator flashes in Minute-Set Mode  
+- ☐ Short presses increment the minute correctly  
+- ☐ Long press exits back to Normal Clock Mode  
+- ☐ Button presses are reliable (no false triggers)
+
+---
+
+## Submission
+
+Submit the following:
+
+1. **Source code**
+   - Clearly organized and commented
+   - State machine logic must be identifiable
+   - Single zip file as in Lab 3
+
+2. **README (brief)**
+   - Description of your state machine
+   - Explanation of how long vs short presses are detected
+   - Any known limitations or assumptions
+
+---
 
 
-### Detailed specification
-
-  1. Message specification is as described in [Lab 2](../lab2/).
-
-  2. Template code which enables the LFCLK output, and a timer interrupt 
-     which yields precise 100 ms timing can be found in this zip archive  [Lab3.zip](Lab3.zip).
-     Because we are using interrupts, if you follow the state machine pattern from
-     the template, you do not need to worry about measuring the timing statistics of
-     your code - it is produced for free!
-
-  3. Your main task is to develop a state machine functional form for the morse code
-     transmission problem. In this case, the state machine should have a structure
-     where the next state is completely determined by the current state, and (potentially)
-     the current/next symbol message string. 
-
-  **Scoring criteria**
-  4. You should produce the correct output patterns for the test case messages. At the
-     end of each message, you should loop back to the beginning infinitely. 
-     You may assume that the first character will be either a dot or a dash (not a space). **(70 pts)**
-  5. Your code should flash the **green** LED on the launchpad.  **(10 pts)**
-  6. Your "dot" unit should be roughly 100 ms long, or 3277 clock cycles. (Measuring this is
-     difficult. You can assume it to be correct if you do not change the structure of the code.) **(10 pts)**
-  7. Your morse code output should be cycle precise for arbitrary messages. **(20 pts)**
-  8. The projects that achieve 100 pts will be ranked based on the time from processor
-     reset until the first dot or dash is produced. Bonus points will be assigned 
-     based on latency rankings. Note that the microcontroller must utilize STANDBY mode 
-     to receive bonus credit here.
 
 
