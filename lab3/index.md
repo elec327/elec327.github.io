@@ -68,6 +68,9 @@ Your program should already:
 
 If your Lab 2 code does not work correctly, a solution will be provided Wednesday Feb 4, 2026.
 
+**Goal:** GetNextState and GetStateOutput should now be functions of both the current state
+and the input!
+
 ---
 
 ## Functional Requirements
@@ -163,8 +166,8 @@ mode, the user will change the LED brightness setting.
 ### 6. Button Debouncing
 
 Your firmware must handle button debouncing as part of the state machine architecture. 
-You may assume that "real" button presses last longer than 100 ms, and that glitches when the button is depressed
-longer than this duration will not occur.
+You may assume that "real" button presses last longer than 5 ms, and that
+glitches when the button is depressed longer than this duration will not occur.
 
 ---
 
@@ -179,6 +182,10 @@ In the final implementation, you are strongly encouraged to construct your state
 such a way that the the logic is handled heirarchically using state variables corresponding
 to the operating mode and internal substates. This will enable you to separate button handling 
 logic from clock setting logic from clock operating logic from PWM logic.
+
+<div class="alert alert-info" role="alert">
+Critically, the next state should now depend on the **input** as well as the current state!
+</div>
 
 ---
 
