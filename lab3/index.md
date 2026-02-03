@@ -183,15 +183,14 @@ such a way that the the logic is handled heirarchically using state variables co
 to the operating mode and internal substates. This will enable you to separate button handling 
 logic from clock setting logic from clock operating logic from PWM logic.
 
-<div class="alert alert-info" role="alert">
+<div class="alert alert-danger" role="alert">
 Critically, the next state should now depend on the **input** as well as the current state!
-</dv>
+</div>
 
 ---
 
+<div class="alert alert-info" role="alert">
 ## Testing Checklist
-
-Before submitting, verify:
 
 - ☐ Clock runs normally in Normal Clock Mode  
 - ☐ Long press enters Hour-Set Mode  
@@ -204,6 +203,7 @@ Before submitting, verify:
 - ☐ Long press exits back to Normal Clock Mode  
 - ☐ Button presses are reliable (no false triggers)
 
+</div>
 ---
 
 ## Submission
