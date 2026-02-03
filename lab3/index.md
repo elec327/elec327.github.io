@@ -183,8 +183,9 @@ such a way that the the logic is handled heirarchically using state variables co
 to the operating mode and internal substates. This will enable you to separate button handling 
 logic from clock setting logic from clock operating logic from PWM logic.
 
-### Critically, the next state should now depend on the **input** as well as the current state!
-
+<div class="alert alert-info" role="alert">
+Critically, the next state should now depend on the **input** as well as the current state!
+</dv>
 
 ---
 
