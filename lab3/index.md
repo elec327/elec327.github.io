@@ -22,7 +22,7 @@ description: Processing Input
 #### Due Date: 2/7/2025
 #### **What should be turned in?**
 
-  1. Your **commented** lab3.c file. Your grade will be assigned based on
+  1. A zip file containing your modified code files. Your grade will be assigned based on
      functionality as defined in the Detailed Specifications below.
 
 </div>
