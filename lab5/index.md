@@ -1,63 +1,139 @@
 ---
-title: Lab 4
-lab: 4
+title: Lab 5
+lab: 5
 layout: default
-# group: labs-navigation
-description: PWM
+group: labs-navigation
+description: Generating sounds using PWM
 ---
-
 
 {::options parse_block_html="true" /}
 
-
-## Lab #4: RGB LED PWM
+# Lab #5: Generating sounds using PWM (100 pts)
 
 <div class="alert alert-info" role="alert">
-#### There is one goal for this assignment:
+## **There are two goals for this assignment:**
 
-  - To practice using Timer moldule-based PWM
+  - To write microcontroller code to generate different music using PWM
+  - To write microcontroller code to generate sounds in response to button presses
   
 </div>
 
 <div class="alert alert-danger" role="alert">
-#### What should be turned in?
-#### What should be demoed live?
+## Due Date: 3/1/2026
+## **What should be turned in?**
+  - Your microntroller code which plays "Mary Had a Little Lamb" then transitions to responding
+    to button presses
+  - Please upload using the https://granule.rice.edu:5000 submission server
 
-#### Files are due Wednesday, February 15 at midnight.
+#### Rubric
+_Simon board plays "Mary Had a Little Lamb" at start up, then transitions to tones when buttons are pressed_
+  - 10 pts Plays 3 distinct notes
+  - 10 pts Distinct notes are the correct frequencies
+  - 10 pts Whole note duration is twice the half not duration, which itself is twice the quarter note duration
+  - 10 pts Notes are distinct, with a short pause in between
+  - 10 pts Note durations include the short pause (the half note -- including the pause -- is twice that 
+    of the the quarte note -- including the pause)
+  - 10 pts Pressing any button stops the Mary Had a Little Lamb
+  - 10 pts When each button is depressed, a tone plays. 
+  - 10 pts Tones stop when all buttons are released.
+  - 20 pts Each button causes a distinct tone to be played
 
 </div>
 
-#### Hardware PWM
+### Controlling sounds using PWM
+In the template project for Lab 5, Timer Module TIMA1 is configured to drive the buzzer
+on the Simon PCB. In this lab, you will integrate this buzzer into the Lab 5 concept.
 
-The Launchpad MSPM0+ G3507 has a built in RGB LED, which is connected to channels PB22, PB26, and PB27.
-Let's look at the PinMux table in the data sheet.
-<div class="row">
-<div class="col-md-10 col-sm-10 col-xs-10">
-<figure class="figure">
-<a href="PinMuxTable.png"> <img src="PinMuxTable.png" class="figure-img
-img-fluid rounded" alt="Pin Mux Table"></a>
-<figcaption class="figure-caption"><p>Pin Mux Table - RGB Entries</p></figcaption>
-</figure>
-</div>
-</div>
+When the duty cycle is set to 50%, PWM creates a square wave signal at the frequency
+selected by the period register. Thus, In order to change the sound that is created,
+you need to change the value both of the period register (to change the frequency)
+and the duty cycle. On the Simon PCB, the buzzer is connected to TIMA1 channel C0.
+In `init_timer.c`, the TIMA1 module is configured to count based on the main
+SYSOSC BUSCLK (32 MHz) with a divider of 4, so at 8 MHz.
 
-We see that while we have a couple of options for Timer module PWM outputs on PB26 and PB27, but only one
-for PB22 (and it's a different one). The G3507 has two different kinds of Timer modules, TIMA and TIMG. 
-The TIMA modules have 4 PWM outputs, but the TIMG variants only have two. And unfortunately, our RGB 
-LED pins are not connected to pins that allow us to control it's color output with just one Timer module.
-Some sample code for the launchpad that configures two timers and drives a heart-beat effect using PWM
-is in this template project - [Lab4.zip](Lab4.zip).
+When the Lab 5 template code is run, the buzzer beeps briefly at startup. The code 
+which configures the frequency of this beep is at the end of the TIMA1 initialization
+in `init_timer.c`. **Note that both the period and the duty cycle need to be configured!**
+```
+    TIMA1->COUNTERREGS.LOAD = 3999; // Period is LOAD+1 - this is 8000000/4000 = 2kHz
+    // HEADS UP: This sets the frequency of the buzzer!
+    TIMA1->COUNTERREGS.CC_01[0] = (TIMA1->COUNTERREGS.LOAD  + 1) / 2; // half of load to make this a square wave
+```
 
+There are two other lines of code which are relevant. First, the following line in `init_timer.c`
+enables the Timer Module's counting function (enables the counter to tick). This is the
+standard way of effectively enabling the Timer Module's functioning, and in this case, it
+turns the PWM, and thus sound, on.
 
-#### Your task is 
-Your task for this lab is to create an array of RGB colors and have the RGB LED cycle through the colors 
-of the rainbow. You can generate these using Python (e.g., the [matplotlib hsv
-colormap](https://matplotlib.org/stable/tutorials/colors/colormaps.html)). Sample code in a Jupyter
-notebook is [here](GenerateColorMap.ipynb). 
+```
+    TIMA1->COUNTERREGS.CTRCTL |= (GPTIMER_CTRCTL_EN_ENABLED);
+```
 
-Using a Timer interrupt as in Lab 3, cycle through the values of a rainbow. You will need to:
-  - chose an appropriate PWM frequency and configure the two timer modules to run at this frequency
-  - configure the CC ("capture compare") registers for the 3 channels to cycle through colors based
-    on the values in your array
+Second, at the top of the `lab5.c` function, we have the following lines of code which
+disables the Timer Module counting, which turns off the PWM / sound.
 
-You do not need to use STANDBY mode in this lab. In fact, the available timers will not allow it!
+```
+    // let the buzzer run for 0.1 s just so we know it's there!
+    delay_cycles(1600000);
+    TIMA1->COUNTERREGS.CTRCTL &= ~(GPTIMER_CTRCTL_EN_ENABLED); // Disable the buzzer
+```
+
+### Your task in Lab 5
+Your task in Lab 5 is twofold. 
+**First**, conceptually, you can start with your button state machine code from Lab 3. 
+For this lab, we do not care about long-presses or short-presses. Instead, the goal is 
+that whenever a button is pressed (not bouncing), you should play a tone that corresponds 
+to the button being depressed.
+
+**Second**, similarly to how there were two highest-level states for the clock (ticking or setting),
+there should be two highest-level states. In the first, which is active upon reboot,
+your PCB should play the song "Mary Had a Little Lamb" repeatedly. When any button is depressed,
+you should transition out of the the initialization state into the button-tone state described
+above.
+
+#### Adding sound to button-presses
+When a button is depressed, set the frequency and duty cycle and enable the PWM counter to 
+play the appropriate sound. (**Hint:** Begin by adding your state machine code to the lab 
+template. Remove the long-press states, and modify the short-pressed state to enable PWM.)
+
+From this [website](https://www.waitingforfriday.com/?p=586), we have the suggestion that
+the notes for Simon should be:
+
+  - Green -- G4 391.995 Hz
+  - Red -- E4 329.628 Hz
+  - Yellow -- C4 261.626 Hz
+  - Blue -- G3 195.998 Hz
+
+Our buzzer has a fundamental frequency in the 4-8 kHz range. Frequencies outside this range
+will induce more nonlinearities in the piezo mebrane. So using notes that are
+two octaves higher (i.e., G6, E6, C6, and G5) will sound a bit less mechanical.
+
+#### Mary Had A Little Lamb
+In order to play music, you need the ability to specify both the frequency and duration of
+the notes that you are playing. (Music comprises both tonal sound and silence!) If we notated
+music as tuples of note and duration, if "q" is a quarter note, "h" is a half note, and 
+"w" is a whole note, Mary Had a Little Lamb could be represented as:
+```
+(E,q) (D,q) (C,q) (D,q)   (E,q) (E,q) (E,h)  (D,q) (D,q) (D,h)  (E,q) (E,q) (E,h)
+(E,q) (D,q) (C,q) (D,q)   (E,q) (E,q) (E,q) (C,q)  (D,q) (D,q) (E,q) (D,q)  (C,w)
+```
+
+Here is the suggested approach.
+1. Create a pair of arrays corresponding to the notes and durations (or define a struct 
+   and create a struct array). For notes, you can use the values you will want to put in
+   the LOAD (and CC_01[0] registers) to make the correct tones.
+2. Create a new "playing music" state. When in this state, cycle through the song array. 
+3. When a button is pressed transition to the button-tone state.
+
+Presumably quarter notes will correspond to something like 600-800 ms, while your interrupt
+ticks will occur every 10 ms. Thus, the "music playing" state will need to implement a counter
+that resets for each note and then counts down while the note should be being played.
+In order to play a note, you will need to set the approriate values for the frequncy and 
+duty cycle of the PWM. **Importantly**, when no tone should be being played (e.g., during the 
+brief periods between notes or during a musical rest), you can disable the counter
+using the CTRCTL register's enable/disable bit. 
+
+### Bonus
+The buzzer is also connected to a pin that can be controlled by the DAC output of the MSMPM0+.
+Rather than driving the sounds with PWM square-waves, implement more complex waveforms like
+sinusoids.
