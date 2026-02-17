@@ -134,6 +134,12 @@ brief periods between notes or during a musical rest), you can disable the count
 using the CTRCTL register's enable/disable bit. 
 
 ### Bonus
-The buzzer is also connected to a pin that can be controlled by the DAC output of the MSMPM0+.
+1. The buzzer is also connected to a pin that can be controlled by the DAC output of the MSMPM0+.
 Rather than driving the sounds with PWM square-waves, implement more complex waveforms like
 sinusoids.
+
+2. Optimize your code for lower power. Configure the SYSOSC to use a 4 MHz frequency for both 
+your code and timer. Implement at GPIO interrupt to additionally trigger wakeups with button
+state changes and timer G0 wakeups. Optimize the timer interrupt for debouncing.
+Ensure that you go into SLEEP while waiting for input. Measure power consumption before
+and after these changes and demonstrate the improvement.
