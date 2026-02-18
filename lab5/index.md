@@ -19,7 +19,7 @@ description: Generating sounds using PWM
 </div>
 
 <div class="alert alert-danger" role="alert">
-## Due Date: 3/1/2026
+## Due Date: 2/28/2026
 ## **What should be turned in?**
   - Your microntroller code which plays "Mary Had a Little Lamb" then transitions to responding
     to button presses
