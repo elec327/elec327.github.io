@@ -133,6 +133,16 @@ duty cycle of the PWM. **Importantly**, when no tone should be being played (e.g
 brief periods between notes or during a musical rest), you can disable the counter
 using the CTRCTL register's enable/disable bit. 
 
+Full rubric credit for the song requires that the song be easily changed to a different
+musical score.
+
+##### Internotes
+One more requirement for the notes for this lab is that sounds should not slur from one note to
+another. This means that there needs to be a gap of silence between notes. Full credit for this
+requirement requires that the whole note **including the internote gap** is four times as long as
+the quarter note **including the internote gap**. (This makes it harder to just paste on to
+existing code.)
+
 ### Bonus
 1. The buzzer is also connected to a pin that can be controlled by the DAC output of the MSMPM0+.
 Rather than driving the sounds with PWM square-waves, implement more complex waveforms like
