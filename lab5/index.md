@@ -48,19 +48,19 @@ When the duty cycle is set to 50%, PWM creates a square wave signal at the frequ
 selected by the period register. Thus, In order to change the sound that is created,
 you need to change the value both of the period register (to change the frequency)
 and the duty cycle. On the Simon PCB, the buzzer is connected to TIMA1 channel C0.
-In `init_timer.c`, the TIMA1 module is configured to count based on the main
+In `hw_interface.c`, the TIMA1 module is configured to count based on the main
 SYSOSC BUSCLK (32 MHz) with a divider of 4, so at 8 MHz.
 
 When the Lab 5 template code is run, the buzzer beeps briefly at startup. The code 
 which configures the frequency of this beep is at the end of the TIMA1 initialization
-in `init_timer.c`. **Note that both the period and the duty cycle need to be configured!**
+in `hw_interface.c`. **Note that both the period and the duty cycle need to be configured!**
 ```
     TIMA1->COUNTERREGS.LOAD = 3999; // Period is LOAD+1 - this is 8000000/4000 = 2kHz
     // HEADS UP: This sets the frequency of the buzzer!
     TIMA1->COUNTERREGS.CC_01[0] = (TIMA1->COUNTERREGS.LOAD  + 1) / 2; // half of load to make this a square wave
 ```
 
-There are two other lines of code which are relevant. First, the following line in `init_timer.c`
+There are two other lines of code which are relevant. First, the following line in `hw_interface.c`
 enables the Timer Module's counting function (enables the counter to tick). This is the
 standard way of effectively enabling the Timer Module's functioning, and in this case, it
 turns the PWM, and thus sound, on.
