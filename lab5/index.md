@@ -99,10 +99,10 @@ template. Remove the long-press states, and modify the short-pressed state to en
 From this [website](https://www.waitingforfriday.com/?p=586), we have the suggestion that
 the notes for Simon should be:
 
-  - Green -- G4 391.995 Hz
-  - Red -- E4 329.628 Hz
-  - Yellow -- C4 261.626 Hz
-  - Blue -- G3 195.998 Hz
+  - Green (SW1) -- G4 391.995 Hz
+  - Red (SW2) -- E4 329.628 Hz
+  - Yellow (SW3) -- C4 261.626 Hz
+  - Blue (SW4) -- G3 195.998 Hz
 
 Our buzzer has a fundamental frequency in the 4-8 kHz range. Frequencies outside this range
 will induce more nonlinearities in the piezo mebrane. So using notes that are
