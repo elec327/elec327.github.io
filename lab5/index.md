@@ -161,3 +161,32 @@ your code and timer. Implement at GPIO interrupt to additionally trigger wakeups
 state changes and timer G0 wakeups. Optimize the timer interrupt for debouncing.
 Ensure that you go into SLEEP while waiting for input. Measure power consumption before
 and after these changes and demonstrate the improvement.
+
+
+### Further notes
+
+The schematic for the Simon PCB can be found on the github - [https://github.com/ckemere/ELEC327/tree/master/PCBs/Simon-2026-JLC](https://github.com/ckemere/ELEC327/tree/master/PCBs/Simon-2026-JLC).
+Of critical importance, the GPIOs conneted to the buttons are PA23, PA24, PA25, and PA26.
+The Workspace template Code Composer Studio project [https://github.com/ckemere/ELEC327/tree/master/Workspace/Lab5](https://github.com/ckemere/ELEC327/tree/master/Workspace/Lab5) helps you out by configuring the GPIO for 
+those 4 buttons, as well as 2 modules: 
+
+  - TIMG0 - configured to use the LFCLK for a timer interrupt 
+  - TIMA1 - configured to drive PWM on the buzzer pin.  (You will use this for Lab 8.) 
+
+In order to program the Simon PCB, remove the 10 jumpers that connect across the top of the Launchpad.
+These connect an XDS110 debugging interface at the top of the PCB to the microcontroller at the bottom.
+Instead, you need to connect these pins to the Simon PCB. The programming pins are labelled - you will
+need to connect `GND`, `VCC`=`3V3`, `NRST`, `SWDIO`, and `SWCLK`. (The other ones we won't connect allow
+the debug interface to pass through UART communications to the PC and enable some sort of boot-strap loader.)
+The video below shows a jumper cable connecting the Launcpad and a Simon PCB.
+
+<div class="row">
+<div class="col-md-10 col-sm-10 col-xs-10">
+<figure class="figure">
+<video class="figure-img img-fluid rounded" alt="Pin Mux Table" controls autoplay loop>
+<source src="LaunchpadAndSimon.mp4">
+</video>
+<figcaption class="figure-caption"><p>Video of Launchpad Connected to Simon PCB</p></figcaption>
+</figure>
+</div>
+</div>
