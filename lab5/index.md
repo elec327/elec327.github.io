@@ -23,20 +23,28 @@ description: Generating sounds using PWM
 ## **What should be turned in?**
   - Your microntroller code which plays "Mary Had a Little Lamb" then transitions to responding
     to button presses
+  - A short writeup document (in TXT or PDF format) which describes the code architecture (i.e. state machine)
+    and addresses issues described in the rubric below.
   - Please upload using the https://granule.rice.edu:5000 submission server
 
 #### Rubric
 _Simon board plays "Mary Had a Little Lamb" at start up, then transitions to tones when buttons are pressed_
-  - 10 pts Plays 3 distinct notes
-  - 10 pts Distinct notes are the correct frequencies
+
+**Points related to music:**
+
+  - 10 pts Plays 3 notes in a song pattern at startup
+  - 10 pts 3 notes are correct for Mary Had A Little Lamb
   - 10 pts Whole note duration is twice the half not duration, which itself is twice the quarter note duration
   - 10 pts Notes are distinct, with a short pause in between
   - 10 pts Note durations include the short pause (the half note -- including the pause -- is twice that 
-    of the the quarte note -- including the pause)
+    of the the quarter note -- including the pause)
+  - 10 pts Some documentation of music can be easily changed
+
+**Points related to buttons:**
   - 10 pts Pressing any button stops the Mary Had a Little Lamb
   - 10 pts When each button is depressed, a tone plays. 
   - 10 pts Tones stop when all buttons are released.
-  - 20 pts Each button causes a distinct tone to be played
+  - 10 pts Each button causes a distinct tone to be played
 
 </div>
 
