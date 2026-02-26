@@ -21,7 +21,7 @@ description: SPI Serial Output
 
 <div class="alert alert-danger" role="alert">
 
-#### Due Date: 3/7/2025
+#### Due Date: 3/5/2026
 #### **What should be turned in?**
 
   - Your firmware code which controls RGB LEDs to change in sequence with the music and turn on/off with the button presses.

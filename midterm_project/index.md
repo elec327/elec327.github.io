@@ -8,7 +8,7 @@ description: Midterm Project
 
 {::options parse_block_html="true" /}
 
-## Midterm Project (2025): Creating "Simon"
+## Midterm Project (2026): Creating "Simon"
 
 <div class="alert alert-info" role="alert">
 #### **There are three goals for this project:**
@@ -20,7 +20,7 @@ description: Midterm Project
 </div>
 
 <div class="alert alert-danger" role="alert">
-#### Due date: 3/26/2025
+#### Due date: 3/27/2026
 
 #### **How will it be evaluated?**
 
