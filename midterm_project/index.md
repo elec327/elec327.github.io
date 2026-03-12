@@ -39,7 +39,7 @@ description: Midterm Project
   Additionally, a small bonus will be given for each of your peer's Simon games
   you evaluate.
 
-  4. We will grade in class on **March 26, 2025**.
+  4. There is a hard deadline of **Friday, March 27, 2026**.
 
  #### Rubric: (10 pts each, 150 total) 
   1. Power-on animation: When powered on, does the game display an animation that involves 
@@ -56,16 +56,23 @@ description: Midterm Project
   7. Gameplay-Timeout: Does the game transition to a "loss" state if no button is pressed within some period during the response?
   8. Gameplay-MisplayingError: Does the game transition to a "loss" state if a wrong button is pressed during a response?
   9. Gameplay-Win Animation: If the player wins (correctly responds to a sequence of length 5), does
-     the game display an animated sequence of **lights**? (This can be the same as the power on sequence but must 
-     be different than the gameplay-lose animation.) 
-  10. Gameplay-Win Animation: Does the win animation also include **sounds**?
-  11. Gameplay-Lose Animation: If the player loses (times out or responds incorrectly), does
-      the game display an animated sequence of **lights**? (This can be the same as the power on sequence but must 
-      be different than the gameplay-win animation.) 
-  12. Gameplay-Lose Animation: Does the lose animation also include **sounds**?
-  13. Can the length of a sequence required to win be changed by changing no more than one line of code?
-  14. Well-commented, logical code architecture (does the architecture make sense? are there good
-      comments?, functions (libraries?) used intelligently?) - 20 pts
+     the game display an animated sequence of **lights** and **sounds**? (This can be the same as the 
+     power on sequence but must be different than the gameplay-lose animation.) 
+  10. Gameplay-Lose Animation: If the player loses (times out or responds incorrectly), does
+      the game display an animated sequence of **lights** and **sounds**? (This can be the same as the 
+      power on sequence but must be different than the gameplay-win animation.) 
+  11. Gameplay-Playability 1: Is there a pause and/or other meaningful transition between when the 
+      player releases a button to start the game (i.e., ending one of the animations) and when the first
+      light/sound of the sequence is played (so that the game is clearly distinguished from the 
+      before-game animations)?
+  12. Gameplay-Playability 2: Is there a pause and/or other meaningful transition between when the
+      player releases the last correct button of a sequence and when the subsequent sequence+1 
+      is played (so that the game clearly distinguishes between the player's button presses and
+      the sequence)?
+  13. Gameplay-Difficulty: Can the length of a sequence required to win be changed by changing no 
+      more than one line of code?
+  14. Writeup and code- Are design choices well documented? Does the architecture make sense? 
+      Are there good comments?, functions (libraries?) used intelligently? - 20 pts
 
 </div>
 
@@ -78,11 +85,6 @@ coin cell-operated Simon game. This will involve PCB design and fairly involved 
 achieve an enjoyable user experience. In addition, you will be invited to add some sort of
 interesting feature beyond the Simon game. In the past, this has ranged from simple animations
 to a mode in which the device becomes a music sequencer.
-
-Here's a video from Tiger Yang (Spring 2019), showing a Simon board in action along with a number of bonuses.
-
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=DYyrkACy08Q"
-frameborder="0" allowfullscreen></iframe>
 
 #### Rules for the ELEC327 version of the Simon game
 
@@ -112,19 +114,22 @@ Details:
     A timeout of 1-2 s is appropriate.
   - An erroneous button press should result in a game over either when the button is depressed
     or when it is released. 
+  - It's very helpful for playability if there's a slight pause and/or additional animation (i) 
+    when the player releases the button to transition from the animations and (ii) after the player
+    releases the last correct button press in a sequence to indicate the next presentation of
+    sequence+1. Without these pauses, the distinction between the first light/sound of the sequence
+    and the button response light/sound can often be hard to distinguish.
   - You should make the maximum sequence size adjustable by changing at most one line of code.
 
-Here's a nice video from Joshua Harper (Spring 2022) showing a Simon board in action.
-
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=6odXYgCBaWI"
-frameborder="0" allowfullscreen></iframe>
 
 #### Helpful Tips
 Much of Simon can be pieced together by using code developed from previous labs. To help you,
- - Build off of an accepted solution for Lab 7.
- - An example random number generator is given in [simon_random.c](simon_random.c)
-and [simon_random.h](simon_random.h). 
- - Remember that the LFSR random number generator can be used to both generate the 
+ - A template workspace has been provided
+ - For your state machine logic, build off of your solution for Lab 6
+ - Note that an example random number generator is given in the workspace which provides 
+   a `rand()` which generates random numbers in [0,3] and an `srand(seed)` which sets the
+   LFSR state.
+  - Remember that the LFSR random number generator can be used to both generate the 
    button/light sequences **and** check the playback (if you store the seed used 
    and start over during the button pressing)
  - Here's a gist that shows how to turn on the TRNG module and grab a random
@@ -132,9 +137,8 @@ and [simon_random.h](simon_random.h).
 
 
 Physical information is given in the
-[ELEC327 Simon repository](https://github.com/ckemere/ELEC327/tree/master/PCBs/Simon-2025)
+[ELEC327 Simon repository](https://github.com/ckemere/ELEC327/tree/master/PCBs/Simon-2026)
 
-Or, it can be downloaded here: [Simon 2025](Simon-2025-JLC.zip).
 
 
 
