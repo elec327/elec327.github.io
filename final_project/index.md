@@ -5,9 +5,7 @@ layout: default
 group: labs-navigation
 description: Final Project
 ---
-
 {::options parse_block_html="true" /}
-
 ## Final Project: Closed-Loop Low-Power Embedded Systems
 #### Final Project Goals
 The goal for the final project is to create a low-power embedded system that interacts with the
@@ -35,81 +33,208 @@ design, and exceptional demo videos.
 
 ---
 
-**Core requirements — 80 points**
+<p style="font-size:0.85em; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#555; margin-bottom:0.25em;">Core requirements — 80 points</p>
 
 **1. Functional product (30 pts)**
 
-| Criterion | Points |
-|-----------|-------:|
-| Device powers on independently and can be handed to the instructor | 10 |
-| Real inputs and real outputs working together in real time | 10 |
-| Final product matches the proposal (partial credit if scope changed — document why) | 10 |
+<table style="width:100%; border-collapse:collapse; font-size:0.9em; margin-bottom:1em;">
+  <thead>
+    <tr style="background:#f0f4f8;">
+      <th style="text-align:left; padding:7px 10px; border:1px solid #d0d7de;">Criterion</th>
+      <th style="text-align:right; padding:7px 10px; border:1px solid #d0d7de; white-space:nowrap;">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">Device powers on independently and can be handed to the instructor</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">10</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">Real inputs and real outputs working together in real time</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">10</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">Final product matches the proposal <em>(partial credit if scope changed — document why)</em></td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">10</td>
+    </tr>
+  </tbody>
+</table>
 
 **2. Custom PCB & hardware (20 pts)**
 
-| Criterion | Points |
-|-----------|-------:|
-| MSPM0 is the computational brain on a custom PCB *(using the Launchpad for compute = 0/15)* | 15 |
-| Device is self-powered — not drawing from the Launchpad's power rail | 5 |
+<table style="width:100%; border-collapse:collapse; font-size:0.9em; margin-bottom:0.5em;">
+  <thead>
+    <tr style="background:#f0f4f8;">
+      <th style="text-align:left; padding:7px 10px; border:1px solid #d0d7de;">Criterion</th>
+      <th style="text-align:right; padding:7px 10px; border:1px solid #d0d7de; white-space:nowrap;">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">MSPM0 is the computational brain on a custom PCB <em>(using the Launchpad for compute = 0/15)</em></td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">15</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">Device is self-powered — not drawing from the Launchpad's power rail</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">5</td>
+    </tr>
+  </tbody>
+</table>
 
-Note: breakout boards hanging from wires will reduce your score. The more things are dangling,
-the less impressed I'll be.
+<p style="font-size:0.9em; color:#555; margin-top:0.25em;">Note: breakout boards hanging from wires will reduce your score. The more things are dangling, the less impressed I'll be.</p>
 
 **3. New MSPM0 module — required (10 pts)**
 
-| Criterion | Points |
-|-----------|-------:|
-| Uses at least one MSPM0 hardware module not covered in labs | 10 |
+<table style="width:100%; border-collapse:collapse; font-size:0.9em; margin-bottom:0.5em;">
+  <thead>
+    <tr style="background:#f0f4f8;">
+      <th style="text-align:left; padding:7px 10px; border:1px solid #d0d7de;">Criterion</th>
+      <th style="text-align:right; padding:7px 10px; border:1px solid #d0d7de; white-space:nowrap;">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">Uses at least one MSPM0 hardware module not covered in labs</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">10</td>
+    </tr>
+  </tbody>
+</table>
 
-Modules already covered in labs: TIMG/TIMA timer interrupts, PWM, SPI transmit. Everything
-else counts — ADC, I²C, UART, DMA, DAC, comparator, RTC, etc. The module must be evident in
-your code and explained in your report.
+<p style="font-size:0.9em; color:#555;">Modules already covered in labs: TIMG/TIMA timer interrupts, PWM, SPI transmit. Everything else counts — ADC, I²C, UART, DMA, DAC, comparator, RTC, etc. The module must be evident in your code and explained in your report.</p>
 
 **4. Code quality (10 pts)**
 
-| Criterion | Points |
-|-----------|-------:|
-| Code is readable and well commented | 5 |
-| Good system architecture — hardware modules used where appropriate, minimal busy-waiting | 5 |
+<table style="width:100%; border-collapse:collapse; font-size:0.9em; margin-bottom:1em;">
+  <thead>
+    <tr style="background:#f0f4f8;">
+      <th style="text-align:left; padding:7px 10px; border:1px solid #d0d7de;">Criterion</th>
+      <th style="text-align:right; padding:7px 10px; border:1px solid #d0d7de; white-space:nowrap;">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">Code is readable and well commented</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">5</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">Good system architecture — hardware modules used where appropriate, minimal busy-waiting</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">5</td>
+    </tr>
+  </tbody>
+</table>
 
 **5. Presentation (10 pts)**
 
-| Criterion | Points |
-|-----------|-------:|
-| Written report (2–3 pages): concept, architecture, and pedagogical content on sensors/devices used | 4 |
-| Long presentation video with slides — explains design and implementation decisions | 3 |
-| Short demo video (≤ 2 min) — shows the product working | 3 |
+<table style="width:100%; border-collapse:collapse; font-size:0.9em; margin-bottom:1em;">
+  <thead>
+    <tr style="background:#f0f4f8;">
+      <th style="text-align:left; padding:7px 10px; border:1px solid #d0d7de;">Criterion</th>
+      <th style="text-align:right; padding:7px 10px; border:1px solid #d0d7de; white-space:nowrap;">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">Written report (2–3 pages): concept, architecture, and pedagogical content on sensors/devices used</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">4</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">Long presentation video with slides — explains design and implementation decisions</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">3</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">Short demo video (≤ 2 min) — shows the product working</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">3</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
-**Complexity bonuses — up to +40 points**
+<p style="font-size:0.85em; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#555; margin-bottom:0.25em;">Complexity bonuses — up to +40 points</p>
 
 **6. Code complexity bonus (up to +15 pts)**
 
 Significant lines of code (SLOC, excluding blanks and comments) as a proxy for implementation
 depth. Please include a SLOC count in your report — run `cloc` on your source directory.
 
-| SLOC | Points |
-|------|-------:|
-| < 200 | 0 |
-| 200 – 400 | 5 |
-| 400 – 700 | 8 |
-| 700 – 1000 | 11 |
-| 1000 – 1500 | 13 |
-| > 1500 | 15 |
+<table style="width:100%; border-collapse:collapse; font-size:0.9em; margin-bottom:1em;">
+  <thead>
+    <tr style="background:#eaf3de;">
+      <th style="text-align:left; padding:7px 10px; border:1px solid #c0dd97;">SLOC</th>
+      <th style="text-align:right; padding:7px 10px; border:1px solid #c0dd97; white-space:nowrap;">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">&lt; 200</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">0</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">200 – 400</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">5</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">400 – 700</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">8</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">700 – 1000</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">11</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">1000 – 1500</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">13</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">&gt; 1500</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">15</td>
+    </tr>
+  </tbody>
+</table>
 
 **7. PCB design complexity bonus (up to +15 pts)**
 
-| Signal types present on board | Points |
-|-------------------------------|-------:|
-| Power + simple digital I/O only | 3 |
-| + analog signals or RF | 6 |
-| + high-speed or impedance-matched traces | 9 |
-| + mixed-signal layout with ground plane partitioning | 12 |
+<table style="width:100%; border-collapse:collapse; font-size:0.9em; margin-bottom:0.75em;">
+  <thead>
+    <tr style="background:#eaf3de;">
+      <th style="text-align:left; padding:7px 10px; border:1px solid #c0dd97;">Signal types present on board</th>
+      <th style="text-align:right; padding:7px 10px; border:1px solid #c0dd97; white-space:nowrap;">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">Power + simple digital I/O only</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">3</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">+ analog signals or RF</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">6</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">+ high-speed or impedance-matched traces</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">9</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">+ mixed-signal layout with ground plane partitioning</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">12</td>
+    </tr>
+  </tbody>
+</table>
 
-| Integration bonus | Points |
-|-------------------|-------:|
-| All external components soldered directly — no dangling breakout boards | +3 |
+<table style="width:100%; border-collapse:collapse; font-size:0.9em; margin-bottom:1em;">
+  <thead>
+    <tr style="background:#eaf3de;">
+      <th style="text-align:left; padding:7px 10px; border:1px solid #c0dd97;">Integration bonus</th>
+      <th style="text-align:right; padding:7px 10px; border:1px solid #c0dd97; white-space:nowrap;">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:6px 10px; border:1px solid #d0d7de;">All external components soldered directly — no dangling breakout boards</td>
+      <td style="text-align:right; padding:6px 10px; border:1px solid #d0d7de;">+3</td>
+    </tr>
+  </tbody>
+</table>
 
 **8. Video joy bonus (up to +10 pts)**
 
@@ -121,7 +246,10 @@ for the class?" bonus.
 
 **Extra credit:** GitHub repo with code and design files, plus an associated project website → up to +5 pts.
 
-
+#### Lame-O Backup project
+If you are struggling to come up with a project, I have designed and manufactured PCBs that could
+be used to play Tic-Tac-Toe. You may optionally choose to take one of these PCBs and write the code
+for the game on it. 
 #### Projects from previous years
 **2015**
 - [A Biometric Security Application for Vending Machine & Safe Box](__http://zjelec.github.io/ELEC-327-Final-Project/__)
