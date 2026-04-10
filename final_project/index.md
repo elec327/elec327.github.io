@@ -242,14 +242,14 @@ The short demo video is genuinely fun to watch. It shows ambition, craft, or jus
 Awarded at instructor discretion — think of it as the "would I show this in a recruitment video
 for the class?" bonus.
 
+
+**Additional Extra credit:** 
+
+GitHub repo with code and design files, plus an associated project website → up to +5 pts.
+
 ---
 
-**Extra credit:** GitHub repo with code and design files, plus an associated project website → up to +5 pts.
 
-#### Lame-O Backup project
-If you are struggling to come up with a project, I have designed and manufactured PCBs that could
-be used to play Tic-Tac-Toe. You may optionally choose to take one of these PCBs and write the code
-for the game on it. 
 #### Projects from previous years
 **2015**
 - [A Biometric Security Application for Vending Machine & Safe Box](__http://zjelec.github.io/ELEC-327-Final-Project/__)
